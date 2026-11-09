@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html lang="mn"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Reputation &amp; Analytics Dashboard | Indigo Nexus</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#eff4ff",
+                        "surface-container-high": "#dce9ff",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-tertiary-container": "#28a094",
+                        "background": "#f8f9ff",
+                        "on-secondary-container": "#5c2400",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#f8f9ff",
+                        "on-primary": "#ffffff",
+                        "primary": "#091426",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#3c475a",
+                        "inverse-primary": "#bcc7de",
+                        "secondary-fixed": "#ffdbca",
+                        "secondary": "#9d4300",
+                        "inverse-on-surface": "#eaf1ff",
+                        "secondary-fixed-dim": "#ffb690",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-surface-variant": "#45474c",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#8590a6",
+                        "primary-container": "#1e293b",
+                        "inverse-surface": "#213145",
+                        "on-secondary-fixed": "#341100",
+                        "primary-fixed": "#d8e3fb",
+                        "on-background": "#0b1c30",
+                        "on-tertiary-fixed-variant": "#005049",
+                        "surface-dim": "#cbdbf5",
+                        "primary-fixed-dim": "#bcc7de",
+                        "surface-container": "#e5eeff",
+                        "surface-tint": "#545f73",
+                        "on-secondary-fixed-variant": "#783200",
+                        "surface-variant": "#d3e4fe",
+                        "secondary-container": "#fd761a",
+                        "tertiary": "#001815",
+                        "tertiary-fixed": "#89f5e7",
+                        "surface": "#f8f9ff",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed": "#00201d",
+                        "outline-variant": "#c5c6cd",
+                        "outline": "#75777d",
+                        "on-primary-fixed": "#111c2d",
+                        "tertiary-container": "#002f2a",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed-dim": "#6bd8cb",
+                        "on-surface": "#0b1c30"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "margin": "32px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "headline-xl": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "1.4", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .spider-web {
+            clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 shadow-sm sticky top-0 z-50">
+<div class="flex justify-between items-center h-16 px-6 max-w-[1280px] mx-auto w-full">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tight text-indigo-900 dark:text-indigo-100">Indigo Nexus</span>
+<nav class="hidden md:flex gap-6">
+<a class="text-slate-500 dark:text-slate-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors duration-200 font-label-md" href="#">Marketplace</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors duration-200 font-label-md" href="#">Designers</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors duration-200 font-label-md" href="#">Sellers</a>
+<a class="text-indigo-600 dark:text-indigo-400 border-b-2 border-indigo-600 pb-1 font-label-md" href="#">Reviews</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex items-center bg-surface-container px-3 py-1.5 rounded-full border border-outline-variant/30">
+<span class="material-symbols-outlined text-outline text-lg">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-32 lg:w-48" placeholder="Search..." type="text"/>
+</div>
+<button class="material-symbols-outlined text-indigo-900 dark:text-indigo-400">notifications</button>
+<button class="material-symbols-outlined text-indigo-900 dark:text-indigo-400">settings</button>
+<img alt="User profile" class="w-8 h-8 rounded-full border-2 border-indigo-100" data-alt="Close-up portrait of a professional male designer with a kind expression in a modern creative studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3dnrgnYq8s8kL5Yyz4YFhEggRdQ3o71JWOcHjoc71puI1ErYs_g4JZcAwgtJuL_jcV2Ss0WxYoNb3y41fv8wa9TdjLUX-nVs07vckLd1TzPBqZFkWEKjRG5dOVbed2SVgIgj9h2VIXr4RPrCg71qawrNE2-O-7FJpLZPfDMztfubkv_KR7UedyqelSjVo_6mF88eABGyqDD1FpT8CU_vsccQ90tBriKUrlP4Hc-QhlW3gw8igYK0Hg7h2NMaQeEjbSPsBMAr0XSs"/>
+</div>
+</div>
+</header>
+<div class="max-w-[1280px] mx-auto flex min-h-[calc(100vh-64px)]">
+<!-- SideNavBar -->
+<aside class="hidden lg:flex flex-col py-6 h-full w-64 border-r border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-3 mb-2">
+<img alt="User workspace" class="w-10 h-10 rounded-lg" data-alt="minimalist modern office workspace logo with clean geometric lines in indigo and white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjl44Pog83vD2ippEx-ygR44ntUNRHRy8q9HTN7SIlhiWZ9hwXm7kgnED9HK3GglqIE-BdxaZyfudO67j5ueUie69x8d3PqMYoXKOMaTRvcZkdY8Ck9ZgNdczPOqkuNXmUiFmZrgu4Nqw68ZlG-kvS7PpMSwljVabWi1FH1rGP9D4wEXVHm0EqztURnvdoCsdazZkGP_-o_ZWHd_zA0iUpHIpXjZiMD1sGh2WzaLDD2f62DijbuswVuoTkMznMiZ-Hsx_IMHHGQcw"/>
+<div>
+<p class="text-lg font-black text-indigo-950 dark:text-white leading-tight">Nexus Metrics</p>
+<p class="text-xs text-slate-500">Quality Analytics</p>
+</div>
+</div>
+</div>
+<nav class="flex-1">
+<ul class="space-y-1 px-3">
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 transition-all font-label-md" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 transition-all font-label-md" href="#">
+<span class="material-symbols-outlined">monitoring</span>
+<span>Performance</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-200 border-r-4 border-indigo-600 font-label-md" href="#">
+<span class="material-symbols-outlined">rate_review</span>
+<span>Reviews</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 transition-all font-label-md" href="#">
+<span class="material-symbols-outlined">workspace_premium</span>
+<span>Achievements</span>
+</a>
+</li>
+</ul>
+</nav>
+<div class="px-6 mt-auto">
+<button class="w-full bg-secondary-container text-on-secondary-container py-3 rounded-xl font-label-md active:scale-95 transition-transform">
+                    Submit Review
+                </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 p-6 md:p-8 overflow-y-auto">
+<header class="mb-10">
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 bg-tertiary-fixed text-on-tertiary-fixed text-[10px] rounded uppercase font-bold tracking-widest animate-pulse">Live</span>
+<span class="text-sm text-on-primary-container font-medium uppercase tracking-wider">Mongol Design Hub</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-primary flex flex-wrap items-baseline gap-3">
+                    Reputation &amp; Analytics Dashboard
+                    <span class="font-headline-md text-headline-md text-on-primary-container opacity-60">(Чанарын нэгдсэн үзүүлэлт)</span>
+</h1>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Profile & Overall Stats -->
+<div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm border border-slate-100 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-6">
+<div class="w-16 h-16 bg-indigo-100 rounded-2xl flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl text-indigo-700" style="font-variation-settings: 'FILL' 1;">stars</span>
+</div>
+<div class="text-right">
+<p class="text-xs font-bold text-on-primary-container uppercase tracking-widest">Trust Score</p>
+<p class="text-3xl font-black text-indigo-900">98.4</p>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2">Excellent Standing</h3>
+<p class="text-on-surface-variant text-sm mb-6">You are in the top 2% of contributors this quarter. Your reliability rating has increased by 4.2% since last month.</p>
+</div>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold text-indigo-900">MASTER DESIGNER</span>
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-xs font-bold text-indigo-900">VERIFIED HUB</span>
+</div>
+</div>
+<!-- Spider Chart Concept (CSS Representation) -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm border border-slate-100 relative overflow-hidden">
+<h4 class="font-label-md text-label-md mb-6 uppercase tracking-wider text-on-surface-variant">Metric Distribution</h4>
+<div class="flex justify-center items-center h-40">
+<div class="relative w-32 h-32">
+<div class="absolute inset-0 border-2 border-indigo-50 spider-web"></div>
+<div class="absolute inset-2 border-2 border-indigo-50 spider-web"></div>
+<div class="absolute inset-4 border-2 border-indigo-50 spider-web"></div>
+<div class="absolute inset-0 bg-indigo-600/20 spider-web scale-[0.85] border-2 border-indigo-600"></div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-4">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-indigo-600"></div>
+<span class="text-[10px] font-bold text-on-surface-variant uppercase">Quality</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></div>
+<span class="text-[10px] font-bold text-on-surface-variant uppercase">Time</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Earned Badges -->
+<div class="lg:col-span-4 bg-primary text-on-primary rounded-2xl p-6 shadow-xl relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl"></div>
+<h3 class="font-headline-md text-headline-md mb-6">Earned Badges</h3>
+<div class="space-y-4">
+<div class="flex items-center gap-4 bg-white/5 p-3 rounded-xl border border-white/10">
+<div class="w-12 h-12 rounded-lg bg-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-secondary-container" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+<div>
+<p class="font-bold text-sm">Best Manufacturer</p>
+<p class="text-xs text-indigo-200">Awarded for 50+ defect-free orders</p>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-white/5 p-3 rounded-xl border border-white/10">
+<div class="w-12 h-12 rounded-lg bg-on-tertiary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">speed</span>
+</div>
+<div>
+<p class="font-bold text-sm">Top Designer</p>
+<p class="text-xs text-indigo-200">Ranked #1 in UI/UX hub category</p>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-white/5 p-3 rounded-xl border border-white/10 opacity-50">
+<div class="w-12 h-12 rounded-lg bg-slate-700 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-white">handshake</span>
+</div>
+<div>
+<p class="font-bold text-sm">Community Leader</p>
+<p class="text-xs text-indigo-200">Locked: Requires 10 more mentors</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Detailed Metrics Progress -->
+<div class="lg:col-span-6 bg-surface-container-lowest rounded-2xl p-8 shadow-sm border border-slate-100">
+<h3 class="font-headline-md text-headline-md mb-8">Performance breakdown</h3>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-label-md text-label-md text-on-surface">Product Quality</span>
+<span class="font-bold text-indigo-600">96%</span>
+</div>
+<div class="h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-indigo-600 rounded-full" style="width: 96%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-label-md text-label-md text-on-surface">Timeliness</span>
+<span class="font-bold text-indigo-600">88%</span>
+</div>
+<div class="h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-indigo-600 rounded-full" style="width: 88%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-label-md text-label-md text-on-surface">Communication</span>
+<span class="font-bold text-indigo-600">100%</span>
+</div>
+<div class="h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-tertiary-fixed-dim rounded-full" style="width: 100%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-2">
+<span class="font-label-md text-label-md text-on-surface">Technical Accuracy</span>
+<span class="font-bold text-indigo-600">92%</span>
+</div>
+<div class="h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-indigo-600 rounded-full" style="width: 92%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Reviews Feed -->
+<div class="lg:col-span-6 bg-surface-container-lowest rounded-2xl p-8 shadow-sm border border-slate-100 flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-md text-headline-md">Recent Reviews</h3>
+<button class="text-indigo-600 font-label-md hover:underline">View all</button>
+</div>
+<div class="space-y-6 flex-1 overflow-y-auto max-h-[340px] pr-2">
+<!-- Review Item 1 -->
+<div class="border-b border-slate-100 pb-6">
+<div class="flex justify-between items-start mb-3">
+<div class="flex gap-3">
+<img alt="Reviewer 1" class="w-10 h-10 rounded-full" data-alt="Professional profile photo of a smiling female creative director in a bright airy studio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATyLt5jytUQrzzf6Hj7WTrUYd4yJ20lgiuki2oYm_5pcJNHxDefABqgmnJEPnoP_by7DpE9a2SahX71Mg0TbLyJbqUvRMLW9QL8VHXKHG_MUvztigdMriS3LC5jYRwEEttaaRok2CYfyeAtcVQR3bY8YyphXPyi334Z_GaVc3HQw0KkN31iLQOgmErvWV5jikcExItr1ajE1KSaWlTPM7JjtAmyBD_WnxRaNY-IrVvQE22GaXqXVm8VM1sYxNdVym_a-v9_8RLipc"/>
+<div>
+<p class="font-bold text-sm">Saraa Ganzorig</p>
+<p class="text-xs text-on-surface-variant">Senior Project Lead</p>
+</div>
+</div>
+<div class="flex text-secondary-container">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                                "The technical accuracy on the last manufacturing blueprint was exceptional. Communication was proactive throughout the entire sprint cycle."
+                            </p>
+</div>
+<!-- Review Item 2 -->
+<div class="border-b border-slate-100 pb-6">
+<div class="flex justify-between items-start mb-3">
+<div class="flex gap-3">
+<img alt="Reviewer 2" class="w-10 h-10 rounded-full" data-alt="Close-up headshot of a mature businessman with graying hair and a confident, professional demeanor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDID88TcfRIO2T7EbDbYdFEjUw3SsE6qpU9fSWdLxnS7zNik4FI2J9awyZ_kKLcAT5eWWnfML9ckOBiQC1ngv4RXVY2A-6dfK28l6rzJKHrQZWQPkMdVqe07AkscIOS1vAy9HKezhKAAmJbaOWwgN8ZqOffYJFSJruelHFQfMwKtujGiWeJ_hob1mHotrTrct2XhudEfkPrhGJCMH6WyqjRoMU0D9K4IixLtV83vnS9U6reHLFTRuPP0jJ2ofncyJtBWGnAvzMMm7g"/>
+<div>
+<p class="font-bold text-sm">Batu Khans</p>
+<p class="text-xs text-on-surface-variant">Hub Seller</p>
+</div>
+</div>
+<div class="flex text-secondary-container">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm">star</span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                                "Delivered ahead of schedule. The quality of the renders exceeded our marketplace standards. Looking forward to more collaborations."
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 lg:hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 rounded-t-2xl shadow-[0_-4px_12px_rgba(30,41,59,0.05)]">
+<button class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-semibold uppercase tracking-wider">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/50 rounded-xl px-4 py-1 active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-[10px] font-semibold uppercase tracking-wider">Reviews</span>
+</button>
+<button class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-[10px] font-semibold uppercase tracking-wider">Metrics</span>
+</button>
+<button class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-semibold uppercase tracking-wider">Profile</span>
+</button>
+</nav>
+<script src="assets/site.js"></script></body></html>

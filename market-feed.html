@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mongol Design Hub - Community</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#0b1c30",
+                        "outline-variant": "#c5c6cd",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#dce9ff",
+                        "primary-fixed-dim": "#bcc7de",
+                        "surface-dim": "#cbdbf5",
+                        "on-error": "#ffffff",
+                        "inverse-primary": "#bcc7de",
+                        "inverse-surface": "#213145",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "background": "#f8f9ff",
+                        "surface": "#f8f9ff",
+                        "on-tertiary-container": "#28a094",
+                        "surface-bright": "#f8f9ff",
+                        "secondary-fixed": "#ffdbca",
+                        "on-tertiary-fixed-variant": "#005049",
+                        "surface-variant": "#d3e4fe",
+                        "tertiary-fixed": "#89f5e7",
+                        "on-primary-fixed": "#111c2d",
+                        "outline": "#75777d",
+                        "on-tertiary-fixed": "#00201d",
+                        "on-tertiary": "#ffffff",
+                        "surface-container": "#e5eeff",
+                        "secondary-container": "#fd761a",
+                        "surface-container-highest": "#d3e4fe",
+                        "error": "#ba1a1a",
+                        "primary": "#091426",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#ffb690",
+                        "primary-container": "#1e293b",
+                        "tertiary": "#001815",
+                        "surface-container-low": "#eff4ff",
+                        "on-surface-variant": "#45474c",
+                        "secondary": "#9d4300",
+                        "on-secondary-fixed-variant": "#783200",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#6bd8cb",
+                        "on-surface": "#0b1c30",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#d8e3fb",
+                        "on-primary-container": "#8590a6",
+                        "on-secondary-container": "#5c2400",
+                        "on-secondary-fixed": "#341100",
+                        "surface-tint": "#545f73",
+                        "on-primary-fixed-variant": "#3c475a",
+                        "tertiary-container": "#002f2a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "container-max": "1280px",
+                        "margin": "32px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col">
+<!-- TopNavBar Shared Component -->
+<nav class="fixed top-0 w-full z-50 border-b border-slate-200 shadow-sm bg-white/90 backdrop-blur-md font-sans text-slate-900">
+<div class="max-w-[1280px] mx-auto px-6 flex justify-between items-center h-16">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tight text-indigo-900">FabricateHub</span>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-slate-600 hover:text-indigo-500 transition-colors" href="#">Marketplace</a>
+<a class="text-indigo-600 border-b-2 border-indigo-600 pb-1" href="#">Community</a>
+<a class="text-slate-600 hover:text-indigo-500 transition-colors" href="#">Referrals</a>
+<a class="text-slate-600 hover:text-indigo-500 transition-colors" href="#">Analytics</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex relative text-slate-600">
+<span class="material-symbols-outlined absolute left-2 top-1/2 -translate-y-1/2 text-[20px]">search</span>
+<input class="pl-9 pr-4 py-1.5 rounded-full border border-slate-200 bg-slate-50 focus:outline-none focus:border-indigo-400 text-sm" placeholder="Search..." type="text"/>
+</div>
+<div class="flex items-center gap-3">
+<button class="text-slate-600 hover:text-indigo-500 transition-colors active:scale-95 duration-150 flex items-center justify-center">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-slate-600 hover:text-indigo-500 transition-colors active:scale-95 duration-150 flex items-center justify-center">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<button class="bg-indigo-600 text-white px-4 py-1.5 rounded-lg text-sm font-medium hover:bg-indigo-700 active:scale-95 transition-all duration-150 shadow-sm">
+                        Create Design
+                    </button>
+<div class="h-8 w-8 rounded-full bg-slate-200 border border-slate-300 overflow-hidden cursor-pointer">
+<img alt="User profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeI5ckmqZFfcJHtRmCIUBtoUrU7m4VJrPouuffx4yk_OSPo4yka3Dc1Ig9U08Bczy3XstW1c2zV2O7t_HNAsaxh7UeDk4LvqE1OSXYxH1mkSNLiPZFbtfe2rTE-ueRyQkv3sE80vWWM4h13FlpbGCVK4EaECQrR6pzQJ8puGhi7mSquFIdskdc0Sx74uhrjFtvASNhIVsa-xnGptkYISlrYBOPhCJdfUZys_amqgYZA7QBV3rkH2DpLzXl5wt60kGwc7zGPGWJZOs"/>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow max-w-container-max w-full mx-auto px-gutter pt-[104px] pb-margin">
+<header class="mb-8 flex items-end justify-between">
+<div>
+<h1 class="font-headline-xl text-headline-xl text-primary">Discovery Feed</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2">Explore White Gold masterpieces and connect with artisans.</p>
+</div>
+<div class="flex gap-2">
+<button class="flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container border border-outline-variant hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[20px]">filter_list</span>
+<span class="font-label-md text-label-md">Filters</span>
+</button>
+</div>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Sidebar: Spotlight & Achievements -->
+<aside class="lg:col-span-3 flex flex-col gap-6">
+<!-- Designer Spotlight -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-5 border border-surface-container-highest relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-full h-1 bg-secondary-container"></div>
+<div class="flex items-center justify-between mb-4">
+<h2 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Spotlight</h2>
+<span class="material-symbols-outlined text-secondary-container text-[20px]" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden mb-4 relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="portrait of a Mongolian artisan smiling in a modern woodshop with warm natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJYH8AxELEodBhcdtoqClIr2ku-Jm7n_oKfVTKuEUgeQRQyN6s_AqnmMVcyHYKdxzpyOpu6eCUzKacLO7IU62iBfFCclQJVQCyeRFaL9pqG9sCw7Z8HhigXQYWNWGzEPjF5-k4Eu86wVePSqUvPSqMmeeue-9S9cEtNS7SUo35xo9nBvnAhwEs28zRRbrHu4-_6kxrJK8e_1DUmNTf_jpwcDJqcbL58ZRRQtPoV9CDNybY2Fi_oLt6aZoNTkmtJn0vYd82xFWxEa4"/>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-1">Bat-Erdene</h3>
+<p class="font-label-sm text-label-sm text-secondary-container mb-3">Master Woodcarver</p>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-4">Blending traditional Mongolian motifs with contemporary functional design.</p>
+<button class="w-full py-2 rounded-lg bg-surface-container text-primary font-label-md text-label-md hover:bg-surface-container-high transition-colors">View Portfolio</button>
+</div>
+<!-- Referral & Achievements -->
+<div class="bg-primary rounded-xl shadow-sm p-5 text-on-primary relative overflow-hidden">
+<div class="absolute -right-8 -top-8 w-32 h-32 bg-secondary-container/20 rounded-full blur-2xl"></div>
+<h2 class="font-headline-md text-headline-md mb-2 relative z-10">Your Impact</h2>
+<div class="flex items-end gap-2 mb-4 relative z-10">
+<span class="font-headline-xl text-headline-xl text-secondary-container">2,450</span>
+<span class="font-label-sm text-label-sm text-primary-fixed-dim pb-2">Pts</span>
+</div>
+<div class="mb-4 relative z-10">
+<div class="flex justify-between font-label-sm text-label-sm mb-1 text-primary-fixed">
+<span>White Gold Pioneer</span>
+<span>Lvl 4</span>
+</div>
+<div class="h-2 bg-primary-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container rounded-full" style="width: 75%"></div>
+</div>
+</div>
+<button class="w-full flex items-center justify-center gap-2 py-2 rounded-lg bg-secondary-container text-on-secondary-container font-label-md text-label-md hover:bg-secondary transition-colors relative z-10">
+<span class="material-symbols-outlined text-[18px]">group_add</span>
+                        Invite Artisans
+                    </button>
+</div>
+</aside>
+<!-- Center Content: Discovery Feed (Bento Grid) -->
+<section class="lg:col-span-6 flex flex-col gap-4">
+<div class="grid grid-cols-2 gap-4 auto-rows-[200px]">
+<!-- Bento Item 1 (Large) -->
+<div class="col-span-2 row-span-2 rounded-xl overflow-hidden relative group cursor-pointer shadow-sm">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="modern minimalist armchair upholstered in thick natural white wool with light oak wood frame in a bright studio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9BtZeHRUbpkyE9pCZrearEOsUyaqBvVoi-MNf1R2W3vx7koMFCmtMa2Am9-mB2FlWwJ1GLtYdEE4SmhDLRVC42cfxjEdspV0x2ISYvV1xaUN42zVlHSkQTdAwMN9Npd7Fj0jA7yepxBK06UCkN_yaVx3Riah1XJZ7eHFKYffryI2UXl_vG5ZE7GSS8rcutomC8YdA-EeFHfr18B2cnl6Ot18dxVdvD7Wn0qcExm-8Kzo8YNbbso3wgtIxpJsS9fxQdTe8ToKPNOc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 w-full p-5 flex justify-between items-end">
+<div>
+<span class="px-2 py-1 bg-surface-container-lowest/20 backdrop-blur-md rounded text-on-primary font-label-sm text-label-sm border border-white/10 mb-2 inline-block">White Gold</span>
+<h3 class="font-headline-lg text-headline-lg text-on-primary drop-shadow-md">Nomadic Lounge</h3>
+<p class="font-body-md text-body-md text-primary-fixed mt-1">By Studio Altai</p>
+</div>
+<div class="flex gap-2">
+<button class="h-10 w-10 rounded-full bg-surface-container-lowest/20 backdrop-blur-md flex items-center justify-center text-on-primary hover:bg-white/40 transition-colors border border-white/10">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bento Item 2 -->
+<div class="col-span-1 row-span-1 rounded-xl overflow-hidden relative group cursor-pointer shadow-sm">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="close up of intricate geometric patterns carved deeply into a rich walnut wood panel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXRclivXUivdCusonB-Z4H40H3xJXo-fyZn-ggxtXDoPud1GnWkHZkCkaNtEbSDGbSepqYffHli1x_1I7-5BofJC7FpOGOHIipLOdROivRZNsO0uXB_oX1VIXicfVjEuBNnvDaNV57RSw21p_69J88iFHu9dL2TwZuy8-bOtQfv9ii70XAdT7xjUPIw_20MNSmOwvUEuPhROp2Bpr3q22QequWJ8LmlUp24AURGiz-L6X-q37VVPwsYWSbyYRi649Ls9HvicoYVwY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/70 to-transparent"></div>
+<div class="absolute bottom-0 left-0 w-full p-4">
+<h3 class="font-headline-md text-headline-md text-on-primary leading-tight">Steppe Patterns</h3>
+<p class="font-label-sm text-label-sm text-primary-fixed mt-1">Bat-Erdene</p>
+</div>
+</div>
+<!-- Bento Item 3 -->
+<div class="col-span-1 row-span-1 rounded-xl overflow-hidden relative group cursor-pointer shadow-sm">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="premium crafted white leather saddle bag with modern brass hardware resting on a stone surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACCm9SNSUS7xdEd8qIy_8h5jr3flh54aboI3VyVbkMQuNU237rELefWB3hZAw3aBC6fsQOKXRKpUQwrtOo9wvWN1vo5uTS3Gdwj00i1d_PEFXbimTrHfLx42S3ezGOtQqkIbmTPI1zpi4mSoKZigqJ8jzrEW2LBl6Ou8WSmTzbscU9CELmf1SEJxiP8E8SHC6sdkPRjhmuiKczSyLPP0xKyWSn27J0Og4YDu_HyIAKqHTpNIKREut5hs2CbVm8bEqvIblW7YFlGoY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/70 to-transparent"></div>
+<div class="absolute top-3 right-3">
+<span class="material-symbols-outlined text-secondary-container drop-shadow-md" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+<div class="absolute bottom-0 left-0 w-full p-4">
+<h3 class="font-headline-md text-headline-md text-on-primary leading-tight">Urban Saddle</h3>
+<p class="font-label-sm text-label-sm text-primary-fixed mt-1">LeatherCraft Guild</p>
+</div>
+</div>
+</div>
+<button class="w-full py-3 rounded-xl border-2 border-dashed border-outline-variant text-on-surface-variant font-label-md text-label-md hover:bg-surface-container hover:border-outline transition-colors flex items-center justify-center gap-2 mt-2">
+<span class="material-symbols-outlined">expand_more</span>
+                    Load More Discoveries
+                </button>
+</section>
+<!-- Right Sidebar: Community Forum -->
+<aside class="lg:col-span-3 flex flex-col gap-6">
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-5 border border-surface-container-highest">
+<div class="flex items-center justify-between mb-5">
+<h2 class="font-headline-md text-headline-md text-primary">Active Discussions</h2>
+<button class="text-secondary-container hover:text-secondary transition-colors">
+<span class="material-symbols-outlined">edit_square</span>
+</button>
+</div>
+<div class="flex flex-col gap-4">
+<!-- Thread 1 -->
+<div class="group cursor-pointer">
+<div class="flex gap-3 items-start">
+<div class="w-8 h-8 rounded-full bg-surface-container overflow-hidden shrink-0 mt-1">
+<img class="w-full h-full object-cover" data-alt="profile picture of a woman smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABDyzdsoGCCgRIlA0GUn-vr7qw3nSKUEABtIEtIc6bX9lnlc4kmUmx90ExnPEgrXLCFB7Od4GfgftVINcwYRIy4wFmm3yzZC4Jhwkysq79J0lSzTERkhrJrwqgHUgfzPfnUTToBDg28YLOIfeuU58SSZFlsxdLbVpyWaAdGwtcebB5qUvpRNwcuCigQmRrqW0OdbzxYCP_ENOoUbJ6Y8_WI5dI4116OOOnlSsgxfxuudSJlF_zHLd41S2O-d54Q86JPOnIKFbF_q8"/>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors line-clamp-2">Best techniques for sealing raw oak furniture?</h4>
+<div class="flex items-center gap-3 mt-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">forum</span> 12</span>
+<span>2h ago</span>
+</div>
+</div>
+</div>
+</div>
+<hr class="border-surface-container-highest"/>
+<!-- Thread 2 -->
+<div class="group cursor-pointer">
+<div class="flex gap-3 items-start">
+<div class="w-8 h-8 rounded-full bg-surface-container shrink-0 mt-1 flex items-center justify-center text-primary font-label-md">
+                                    M
+                                </div>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-[10px] uppercase">Sourcing</span>
+</div>
+<h4 class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors line-clamp-2">Supplier recommendations for ethical winter wool?</h4>
+<div class="flex items-center gap-3 mt-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">forum</span> 45</span>
+<span>5h ago</span>
+</div>
+</div>
+</div>
+</div>
+<hr class="border-surface-container-highest"/>
+<!-- Thread 3 -->
+<div class="group cursor-pointer">
+<div class="flex gap-3 items-start">
+<div class="w-8 h-8 rounded-full bg-surface-container overflow-hidden shrink-0 mt-1">
+<img class="w-full h-full object-cover" data-alt="profile picture of a man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4nnj_1FZwUK243kQFLo6Hrv_50A7zaHhp-3zVNZ1bTY6GBmnBflSddb9BvuvZVyoPZv2tvW4rcshUhCNqIBFk9gL_gSQ9jp3cK8cIA58RNeKOGhsLvSv2hQAjzQVYLeepqBe-WP584d8Vy5fjfkgrUqlL-GaMD7bE5WD0AdfcZC1ZZurJeZ1FutZARTL0uZ24lgOImVzX2qE59nwu3v3Ux8DY-vHj5RP-oLuTzyzz513ydGLLf4ZuzH1eCPsdhGDYT-rfPQjsfWM"/>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface group-hover:text-primary transition-colors line-clamp-2">Collaboration opportunity: Leather &amp; Wood chair design</h4>
+<div class="flex items-center gap-3 mt-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">forum</span> 8</span>
+<span>1d ago</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full mt-5 py-2 rounded-lg bg-surface text-primary font-label-md text-label-md hover:bg-surface-container transition-colors border border-outline-variant">Enter Forum</button>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer Shared Component -->
+<footer class="w-full py-12 border-t border-slate-100 bg-white font-sans mt-auto">
+<div class="max-w-[1280px] mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="col-span-1 md:col-span-2">
+<div class="text-lg font-black text-slate-900 mb-4">FabricateHub</div>
+<p class="text-xs text-slate-500">© 2024 FabricateHub. Precision in design, excellence in manufacturing.</p>
+</div>
+<div class="col-span-1 md:col-span-2 flex flex-wrap gap-6 justify-start md:justify-end">
+<a class="text-xs text-slate-500 hover:text-indigo-500 underline" href="#">About</a>
+<a class="text-xs text-slate-500 hover:text-indigo-500 underline" href="#">Terms</a>
+<a class="text-xs text-slate-500 hover:text-indigo-500 underline" href="#">Privacy</a>
+<a class="text-xs text-slate-500 hover:text-indigo-500 underline" href="#">Careers</a>
+<a class="text-xs text-slate-500 hover:text-indigo-500 underline" href="#">Contact</a>
+</div>
+</div>
+</footer>
+<script src="assets/site.js"></script></body></html>

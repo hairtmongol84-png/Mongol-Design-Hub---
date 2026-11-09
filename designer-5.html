@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+<html lang="mn"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Designer Portfolio &amp; Profit Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "background": "#f8f9ff",
+                        "outline": "#75777d",
+                        "outline-variant": "#c5c6cd",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#545f73",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#213145",
+                        "secondary-container": "#fd761a",
+                        "surface-container-high": "#dce9ff",
+                        "primary-container": "#1e293b",
+                        "primary": "#091426",
+                        "on-error-container": "#93000a",
+                        "on-secondary-container": "#5c2400",
+                        "on-surface-variant": "#45474c",
+                        "tertiary-fixed": "#89f5e7",
+                        "on-tertiary-container": "#28a094",
+                        "on-secondary-fixed": "#341100",
+                        "tertiary-fixed-dim": "#6bd8cb",
+                        "primary-fixed-dim": "#bcc7de",
+                        "surface-bright": "#f8f9ff",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "secondary-fixed-dim": "#ffb690",
+                        "on-secondary-fixed-variant": "#783200",
+                        "surface-container-low": "#eff4ff",
+                        "surface": "#f8f9ff",
+                        "primary-fixed": "#d8e3fb",
+                        "on-tertiary-fixed": "#00201d",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#ffdbca",
+                        "on-background": "#0b1c30",
+                        "surface-container-highest": "#d3e4fe",
+                        "surface-variant": "#d3e4fe",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#005049",
+                        "on-surface": "#0b1c30",
+                        "surface-container": "#e5eeff",
+                        "secondary": "#9d4300",
+                        "on-primary-fixed-variant": "#3c475a",
+                        "inverse-primary": "#bcc7de",
+                        "on-primary-container": "#8590a6",
+                        "tertiary-container": "#002f2a",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#cbdbf5",
+                        "on-primary-fixed": "#111c2d",
+                        "tertiary": "#001815"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "container-max": "1280px",
+                        "margin": "32px",
+                        "gutter": "24px",
+                        "base": "8px"
+                    },
+                    fontFamily: {
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    fontSize: {
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "headline-xl": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .shadow-ambient-1 { box-shadow: 0 4px 12px rgba(9, 20, 38, 0.05); }
+        .shadow-ambient-2 { box-shadow: 0 12px 24px rgba(9, 20, 38, 0.08); }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased overflow-hidden">
+<div class="flex h-screen w-full">
+<!-- Shared Component: SideNavBar -->
+<nav class="h-screen w-64 fixed left-0 top-0 border-r bg-slate-50 dark:bg-slate-950 flex flex-col p-4 space-y-2 z-40 bg-slate-50 dark:bg-slate-900/50 ease-in-out duration-200 transition-all font-['Inter'] text-sm font-medium">
+<div class="mb-6 flex flex-col px-4 pt-2">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-indigo-900 flex items-center justify-center text-white font-bold">M</div>
+<h1 class="text-lg font-black text-indigo-900 dark:text-white">Mongol Design</h1>
+</div>
+<span class="text-xs text-slate-500 mt-1">Creative Marketplace</span>
+</div>
+<button class="mb-6 mx-2 bg-indigo-700 text-white rounded-lg py-2.5 px-4 font-semibold hover:bg-indigo-800 transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span> New Project
+        </button>
+<div class="flex flex-col space-y-1 flex-1">
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-indigo-700 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/20 border-r-4 border-indigo-700 dark:border-indigo-400 cursor-pointer active:opacity-80 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                Overview
+            </a>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-300 hover:bg-indigo-50/50 dark:hover:bg-slate-800/50 cursor-pointer active:opacity-80 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="gavel">gavel</span>
+                Tender Management
+            </a>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-300 hover:bg-indigo-50/50 dark:hover:bg-slate-800/50 cursor-pointer active:opacity-80 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+                Profit Tracking
+            </a>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-300 hover:bg-indigo-50/50 dark:hover:bg-slate-800/50 cursor-pointer active:opacity-80 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+                Payment Settings
+            </a>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-300 hover:bg-indigo-50/50 dark:hover:bg-slate-800/50 cursor-pointer active:opacity-80 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                Settings
+            </a>
+</div>
+<div class="flex flex-col space-y-1 mt-auto pt-4 border-t border-slate-200 dark:border-slate-800">
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-300 hover:bg-indigo-50/50 dark:hover:bg-slate-800/50 cursor-pointer active:opacity-80 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+                Support
+            </a>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-300 hover:bg-indigo-50/50 dark:hover:bg-slate-800/50 cursor-pointer active:opacity-80 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                Logout
+            </a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 ml-64 flex flex-col h-screen relative">
+<!-- Shared Component: TopAppBar -->
+<header class="w-full top-0 z-50 border-b bg-white dark:bg-slate-900 font-['Inter'] antialiased border-slate-100 dark:border-slate-800 shadow-sm flex-shrink-0">
+<div class="flex justify-between items-center h-16 px-6 w-full max-w-[1280px] mx-auto">
+<div class="flex items-center gap-4">
+<div class="relative w-64 hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+<input class="w-full bg-slate-50 border-none rounded-full pl-9 pr-4 py-2 text-sm focus:ring-2 focus:ring-indigo-100 outline-none" placeholder="Хайх..." type="text"/>
+</div>
+</div>
+<div class="text-xl font-bold tracking-tight text-indigo-900 dark:text-indigo-100 hidden lg:block">
+                    Mongol Design Hub
+                </div>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-full text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors cursor-pointer active:opacity-80 transition-all relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-secondary-container rounded-full border-2 border-white"></span>
+</button>
+<button class="p-2 rounded-full text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors cursor-pointer active:opacity-80 transition-all">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+</button>
+<button class="p-2 rounded-full text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors cursor-pointer active:opacity-80 transition-all">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+<div class="ml-2 w-9 h-9 rounded-full bg-surface-variant overflow-hidden border border-slate-200 cursor-pointer">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBs6X8nXQSfE5dDP8vE774JOtUAuiXI3l8hwAMQVx-pYkJzSM8aPQ9iOWM9-W0NgQ2goaz93bSjDdTWxMxB-OYgWubc0p76kkbtHI6axVAhF0SvV4J-2qybnftNkRvk6MtPbnPArzE-6bBEFICIybZcHDYAWUHqVLdP4Y7MxKPeV20703T9M00Ig1uBGlOmRH_L4YGaSzt2oourXMJHWs7vORZTGBEt7a7dP079g9MkvVcxOdIRjA2v7KSkM0A17owa5cg2fMEwkS8"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Dashboard Canvas -->
+<main class="flex-1 overflow-y-auto p-gutter bg-background">
+<div class="max-w-container-max mx-auto flex flex-col gap-gutter pb-margin">
+<div class="flex items-end justify-between w-full pt-4">
+<div>
+<h2 class="font-headline-xl text-headline-xl text-primary">Хяналтын самбар</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Таны санхүүгийн болон бүтээлийн нэгдсэн тайлан.</p>
+</div>
+<div class="flex gap-3">
+<button class="h-10 px-4 rounded-lg bg-surface border border-outline-variant text-on-surface font-label-md text-label-md flex items-center gap-2 shadow-ambient-1 hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[18px]">download</span> Тайлан татах
+                        </button>
+</div>
+</div>
+<!-- Bento Grid: Top Stats -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Total Earnings -->
+<div class="bg-surface rounded-xl shadow-ambient-1 p-6 border border-surface-container-highest relative overflow-hidden group hover:shadow-ambient-2 transition-all">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-primary-fixed rounded-full opacity-20 blur-2xl group-hover:bg-primary-fixed-dim transition-colors"></div>
+<div class="flex justify-between items-start mb-4 relative z-10">
+<div class="p-2.5 bg-surface-container rounded-lg text-primary">
+<span class="material-symbols-outlined">account_balance</span>
+</div>
+<span class="bg-surface-container-low text-on-tertiary-container text-[12px] font-bold px-2 py-1 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span> 12%
+                            </span>
+</div>
+<h3 class="font-label-md text-label-md text-on-surface-variant mb-1 relative z-10">Нийт орлого</h3>
+<div class="font-headline-lg text-headline-lg text-primary relative z-10">₮ 14,250,000</div>
+</div>
+<!-- Pending Balance -->
+<div class="bg-surface rounded-xl shadow-ambient-1 p-6 border border-surface-container-highest relative overflow-hidden group hover:shadow-ambient-2 transition-all">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-secondary-fixed rounded-full opacity-20 blur-2xl"></div>
+<div class="flex justify-between items-start mb-4 relative z-10">
+<div class="p-2.5 bg-surface-container rounded-lg text-primary">
+<span class="material-symbols-outlined">pending_actions</span>
+</div>
+</div>
+<h3 class="font-label-md text-label-md text-on-surface-variant mb-1 relative z-10">Хүлээгдэж буй үлдэгдэл</h3>
+<div class="font-headline-lg text-headline-lg text-primary relative z-10">₮ 1,800,000</div>
+</div>
+<!-- Sales Count -->
+<div class="bg-surface rounded-xl shadow-ambient-1 p-6 border border-surface-container-highest relative overflow-hidden group hover:shadow-ambient-2 transition-all">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-tertiary-fixed rounded-full opacity-20 blur-2xl"></div>
+<div class="flex justify-between items-start mb-4 relative z-10">
+<div class="p-2.5 bg-surface-container rounded-lg text-primary">
+<span class="material-symbols-outlined">shopping_cart_checkout</span>
+</div>
+<span class="bg-surface-container-low text-on-tertiary-container text-[12px] font-bold px-2 py-1 rounded flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span> 5%
+                            </span>
+</div>
+<h3 class="font-label-md text-label-md text-on-surface-variant mb-1 relative z-10">Борлуулалтын тоо</h3>
+<div class="font-headline-lg text-headline-lg text-primary relative z-10">342</div>
+</div>
+</div>
+<!-- Bento Grid: Reputation & Active Tenders -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Reputation Card (4 cols) -->
+<div class="lg:col-span-4 bg-primary text-on-primary rounded-xl p-6 shadow-ambient-2 flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-primary-container to-transparent opacity-50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4"></div>
+<div class="relative z-10">
+<h3 class="font-headline-md text-headline-md mb-6">Үнэлгээ &amp; Статус</h3>
+<div class="flex items-center gap-4 mb-8">
+<div class="text-5xl font-bold tracking-tight">4.9</div>
+<div class="flex flex-col">
+<div class="flex text-secondary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined">star_half</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary-fixed-dim mt-1">128 сэтгэгдэл</span>
+</div>
+</div>
+</div>
+<div class="relative z-10 bg-primary-container/50 rounded-lg p-4 border border-outline/20">
+<div class="flex justify-between items-center mb-2">
+<span class="font-label-md text-label-md">Шилдэг Дизайнер</span>
+<span class="font-label-md text-label-md text-tertiary-fixed">85%</span>
+</div>
+<div class="w-full h-2 bg-primary-container rounded-full overflow-hidden">
+<div class="h-full bg-tertiary-fixed w-[85%] rounded-full"></div>
+</div>
+<p class="font-label-sm text-label-sm text-primary-fixed-dim mt-3">Дахин 15 борлуулалт хийснээр дээд зэрэглэлд хүрнэ.</p>
+</div>
+</div>
+<!-- Active Tenders (8 cols) -->
+<div class="lg:col-span-8 bg-surface rounded-xl shadow-ambient-1 p-6 border border-surface-container-highest flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-md text-headline-md text-primary">Идэвхтэй оролцож буй тендерүүд</h3>
+<button class="text-secondary font-label-md text-label-md hover:underline flex items-center">
+                                Бүгдийг харах <span class="material-symbols-outlined text-[18px] ml-1">chevron_right</span>
+</button>
+</div>
+<div class="flex flex-col gap-3 flex-1">
+<!-- Tender Item 1 -->
+<div class="flex items-center justify-between p-4 rounded-lg border border-outline-variant/40 hover:bg-surface-container-low transition-colors group cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded bg-surface-variant flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">architecture</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary group-hover:text-secondary transition-colors">Үндэсний үйлдвэрлэгчийн брэндбүүк</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Төсөв: ₮ 5,000,000</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-tertiary-container/10 text-on-tertiary-container font-label-sm text-label-sm border border-tertiary-container/20">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse"></span> Идэвхтэй
+                                    </div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">arrow_forward</span>
+</div>
+</div>
+<!-- Tender Item 2 -->
+<div class="flex items-center justify-between p-4 rounded-lg border border-outline-variant/40 hover:bg-surface-container-low transition-colors group cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded bg-surface-variant flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">web</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-primary group-hover:text-secondary transition-colors">Эко бүтээгдэхүүний вэбсайт дизайн</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Төсөв: ₮ 2,500,000</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm border border-outline-variant/50">
+                                        Шалгаруулалтад
+                                    </div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Uploaded Designs Section -->
+<div class="mt-4">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-md text-headline-md text-primary">Сүүлд хуулсан загварууд</h3>
+<button class="h-9 px-4 rounded-lg bg-primary text-on-primary font-label-md text-label-md flex items-center gap-2 hover:bg-inverse-surface transition-colors">
+<span class="material-symbols-outlined text-[18px]">upload</span> Шинэ загвар
+                        </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Design Card 1 -->
+<div class="bg-surface rounded-xl shadow-ambient-1 overflow-hidden border border-surface-container-highest group flex flex-col">
+<div class="relative h-48 w-full overflow-hidden bg-surface-variant">
+<img alt="Design Preview" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="abstract geometric graphic design poster with bold typography and vibrant neon gradient colors on dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdxW7gKl-okaGDk2fHJ7jK5KqintyI9Hh88lP1VEtntSq428IjBqasYiI7q2jeqSzdzmMJTXq068aH6Za_g6QGcj-JicTZEvMosYOH3W3y5YPF7BZKiYURXtTSSAdm1yiaNRONuwPb9i4n2aG03Iux5f8I-BH2jh5VwJsR1pAEkikvFmamJfuObBawTFXY6bh7Y0lk8ZtO73EQMpJQmrRVsl0jSVkBQTQvTJnEj-ci1zqJRxGHMKoRlZbDz6lHrNjGBpK2dTYvkvg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-between p-4">
+<button class="bg-white/90 text-primary p-2 rounded-lg backdrop-blur-sm hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<h4 class="font-label-md text-label-md text-primary mb-3 line-clamp-1">Орчин үеийн абстракт постер сет</h4>
+<div class="flex justify-between items-end mt-auto pt-4 border-t border-surface-container">
+<div>
+<span class="block font-label-sm text-label-sm text-on-surface-variant mb-0.5">Борлуулалт</span>
+<span class="font-label-md text-label-md text-primary">124</span>
+</div>
+<div class="text-right">
+<span class="block font-label-sm text-label-sm text-on-surface-variant mb-0.5">Нийт орлого</span>
+<span class="font-label-md text-label-md text-secondary-container">₮ 3,100,000</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Design Card 2 -->
+<div class="bg-surface rounded-xl shadow-ambient-1 overflow-hidden border border-surface-container-highest group flex flex-col">
+<div class="relative h-48 w-full overflow-hidden bg-surface-variant">
+<img alt="Design Preview" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="minimalist UI kit presentation mockup showing mobile app screens floating over soft pastel blue background with gentle shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcC20FtNhQXxs-UrV4noMXb7TB-DCcZz3fUQA76a42zVvFmjmr3_dDlUx9RfJCHTpLIcCEyb-g-rXkCBu1sFjPI7owill6SSehqcC_j4UayA65PKT-UWNNjiuwyi8DWGR_CsdcV_YcD9WytSpP9r-lu3FtiXABZ3VxftqO317dHvzITioI7XxsBKci59CQZOlydcXituDhjEL75BtP9muy7sr1AbyGFBRUJqYdUsTeWGA-EXBXBvuclW29RYnIHM3PT8GYURbPs1I"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-between p-4">
+<button class="bg-white/90 text-primary p-2 rounded-lg backdrop-blur-sm hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<h4 class="font-label-md text-label-md text-primary mb-3 line-clamp-1">E-commerce UI Kit (Дарк мод)</h4>
+<div class="flex justify-between items-end mt-auto pt-4 border-t border-surface-container">
+<div>
+<span class="block font-label-sm text-label-sm text-on-surface-variant mb-0.5">Борлуулалт</span>
+<span class="font-label-md text-label-md text-primary">85</span>
+</div>
+<div class="text-right">
+<span class="block font-label-sm text-label-sm text-on-surface-variant mb-0.5">Нийт орлого</span>
+<span class="font-label-md text-label-md text-secondary-container">₮ 4,250,000</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Design Card 3 -->
+<div class="bg-surface rounded-xl shadow-ambient-1 overflow-hidden border border-surface-container-highest group flex flex-col">
+<div class="relative h-48 w-full overflow-hidden bg-surface-variant">
+<img alt="Design Preview" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="corporate brand identity stationary mockup set including business cards letterhead and notebook arranged neatly on a grey textured surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXv6JDxTzpMIkbDd2_BjG5atBstQ8Wcdd2ySKO56Ue1mwB-1iKkh15Dc4JfNXPjhnxO-fWwKTAzQUS40Y1zNHIFYJN1Gc6asfTSB9s3slix_P3gDUovpOF9RxvYDIBiM-VDM6TNxOTZCvdyc7GHCjPICvyvraqYULcc7zLGMziiGAZiGz2y9RUw8WH8hdoDeYks4Xp87FmBWtS22UpzSTasAzYXFBJVUPtftlRJJct9Kpq1I07bENMkHKFJG9aCPb7gBa9mte6hdY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-between p-4">
+<button class="bg-white/90 text-primary p-2 rounded-lg backdrop-blur-sm hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1">
+<h4 class="font-label-md text-label-md text-primary mb-3 line-clamp-1">Байгууллагын брэндбүүк темплэйт</h4>
+<div class="flex justify-between items-end mt-auto pt-4 border-t border-surface-container">
+<div>
+<span class="block font-label-sm text-label-sm text-on-surface-variant mb-0.5">Борлуулалт</span>
+<span class="font-label-md text-label-md text-primary">42</span>
+</div>
+<div class="text-right">
+<span class="block font-label-sm text-label-sm text-on-surface-variant mb-0.5">Нийт орлого</span>
+<span class="font-label-md text-label-md text-secondary-container">₮ 1,680,000</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+<script src="assets/site.js"></script></body></html>

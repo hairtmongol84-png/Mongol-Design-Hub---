@@ -1,0 +1,1572 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Global Dashboard - Mongol Design Hub</title>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline-variant": "#c5c6cd",
+                    "surface-bright": "#f7f9fb",
+                    "tertiary-fixed": "#d3e4fe",
+                    "on-tertiary-fixed-variant": "#38485d",
+                    "surface-variant": "#e0e3e5",
+                    "inverse-on-surface": "#eff1f3",
+                    "on-primary-container": "#8590a6",
+                    "secondary-container": "#fed65b",
+                    "surface-container-low": "#f2f4f6",
+                    "surface": "#f7f9fb",
+                    "on-tertiary-container": "#8191a9",
+                    "surface-container-high": "#e6e8ea",
+                    "on-surface-variant": "#45474c",
+                    "on-secondary": "#ffffff",
+                    "primary-container": "#1e293b",
+                    "surface-container": "#eceef0",
+                    "secondary-fixed-dim": "#e9c349",
+                    "on-background": "#191c1e",
+                    "tertiary": "#041528",
+                    "on-tertiary-fixed": "#0b1c30",
+                    "on-error": "#ffffff",
+                    "on-surface": "#191c1e",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-highest": "#e0e3e5",
+                    "primary-fixed-dim": "#bcc7de",
+                    "tertiary-fixed-dim": "#b7c8e1",
+                    "outline": "#75777d",
+                    "surface-dim": "#d8dadc",
+                    "primary": "#091426",
+                    "on-primary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed": "#241a00",
+                    "on-primary-fixed-variant": "#3c475a",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed-variant": "#574500",
+                    "secondary": "#735c00",
+                    "primary-fixed": "#d8e3fb",
+                    "inverse-primary": "#bcc7de",
+                    "on-error-container": "#93000a",
+                    "tertiary-container": "#1a2a3e",
+                    "on-secondary-container": "#745c00",
+                    "background": "#f7f9fb",
+                    "secondary-fixed": "#ffe088",
+                    "inverse-surface": "#2d3133",
+                    "on-primary-fixed": "#111c2d",
+                    "surface-tint": "#545f73"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "margin-desktop": "64px",
+                    "unit": "8px",
+                    "margin-mobile": "20px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "label-caps": [
+                            "Inter"
+                    ],
+                    "headline-lg-mobile": [
+                            "Inter"
+                    ],
+                    "headline-lg": [
+                            "Inter"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "body-md": [
+                            "Inter"
+                    ],
+                    "headline-md": [
+                            "Inter"
+                    ],
+                    "display-lg": [
+                            "Inter"
+                    ]
+            },
+            "fontSize": {
+                    "label-caps": [
+                            "12px",
+                            {
+                                    "lineHeight": "1.0",
+                                    "letterSpacing": "0.08em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "28px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.5",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ]
+            }
+        },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<meta content="web_dashboard" name="shell-type"></head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased min-h-screen flex flex-col">
+<!-- TopNavBar (Shared Component) -->
+<header class="fixed top-0 w-full z-50 bg-surface-container-lowest border-b border-outline-variant">
+<div class="flex justify-between items-center px-gutter max-w-container-max mx-auto h-16">
+<!-- Brand -->
+<div class="flex items-center gap-4">
+<span class="font-headline-md text-headline-md font-bold text-primary">Mongol Design Hub</span>
+</div>
+<!-- Navigation Links (Web) -->
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-on-surface-variant hover:text-primary font-body-md text-body-md transition-colors" href="#">Marketplace</a>
+<a class="text-on-surface-variant hover:text-primary font-body-md text-body-md transition-colors" href="#">Designers</a>
+<a class="text-on-surface-variant hover:text-primary font-body-md text-body-md transition-colors" href="#">Licensing</a>
+<a class="text-on-surface-variant hover:text-primary font-body-md text-body-md transition-colors" href="#">Compliance</a>
+</nav>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-4">
+<span class="text-on-surface-variant font-body-md text-body-md hidden sm:block">Language: EN</span>
+<button class="text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center h-10 w-10 rounded-full hover:bg-surface-container-low" data-icon="notifications">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center h-10 w-10 rounded-full hover:bg-surface-container-low" data-icon="account_circle">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<div class="flex flex-1 pt-16">
+<!-- SideNavBar (Shared Component) -->
+<aside class="hidden lg:flex flex-col h-[calc(100vh-4rem)] fixed left-0 top-16 w-64 p-4 border-r border-outline-variant bg-surface-container-low z-40 overflow-y-auto">
+<!-- Profile Header -->
+<div class="flex items-center gap-4 mb-8 p-2">
+<img alt="Vendor Profile Image" class="w-12 h-12 rounded-full border border-outline-variant object-cover" data-alt="A professional headshot of a corporate vendor account manager. The individual has a composed, authoritative expression, dressed in a sleek charcoal blazer over a crisp white shirt. The background is a minimalist, softly lit office environment with neutral tones. High-resolution photography, corporate aesthetic, well-lit." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnIHEhxXnnruAFf4Qp5x0pTKx72Q5XRzwvkcfyGd1SymFEnn1pswIQuBOG2kQZ9sazVI4cEJz-hWSyqmwhYQ2cr628Nn1AFIE9hWSm765A2WLHlfxzx4t-ZcQEmOM0FwBL53W58Z48lULxVZJ4YUZK7T8C8WvibLkyDp3f2hfCq7_qxGTdVRlKBvzxDPjJkXIu8vSg9sFutb7-0x7paTWsKIRP8Y06evvqclT0Gwmzc03SLLm84leKE_gXegpmnJkimtuYDTuZ-v8">
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-primary leading-tight">Vendor Dashboard</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-1">Premium Export Account</p>
+</div>
+</div>
+<!-- CTA -->
+<button class="w-full bg-primary text-on-primary rounded-xl py-3 px-4 font-label-caps text-label-caps flex items-center justify-center gap-2 mb-6 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined" style="font-size: 18px;">add</span>
+                New Listing
+            </button>
+<!-- Navigation Tabs -->
+<nav class="flex-1 space-y-1">
+<!-- Active Tab: Dashboard -->
+<a class="flex items-center gap-3 bg-primary-container text-on-primary-container rounded-lg px-4 py-2 font-label-caps text-label-caps transition-all opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                    Dashboard
+                </a>
+<!-- Inactive Tabs -->
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-variant rounded-lg font-label-caps text-label-caps transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+                    Inventory
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-variant rounded-lg font-label-caps text-label-caps transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+                    Orders
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-variant rounded-lg font-label-caps text-label-caps transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="gavel">gavel</span>
+                    Compliance
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-variant rounded-lg font-label-caps text-label-caps transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+                    Analytics
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-variant rounded-lg font-label-caps text-label-caps transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                    Settings
+                </a>
+</nav>
+<!-- Footer Tabs -->
+<div class="mt-auto pt-6 border-t border-outline-variant space-y-1">
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-variant rounded-lg font-label-caps text-label-caps transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+                    Support
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-variant rounded-lg font-label-caps text-label-caps transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                    Sign Out
+                </a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 lg:ml-64 w-full"><div class="flex flex-col w-full">
+<div class="p-6 md:p-10 max-w-container-max mx-auto w-full space-y-10">
+<!-- Top Executive Header & Realtime Ledger Telemetry -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 border-b border-outline-variant/40">
+<div class="space-y-2">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold tracking-wide bg-primary/10 text-primary uppercase font-label-caps">
+            Fintech Mesh v4.2
+          </span>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-xs font-medium bg-surface-container-high text-on-surface-variant font-label-caps">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            Production Mode
+          </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg font-bold text-primary tracking-tight">
+          Төлбөрийн Гарц &amp; Санхүүгийн Тохиргоо
+        </h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+          Орон нутгийн (MNT) болон олон улсын (USD, EUR, CNY, RUB) төлбөрийн гарц, шимтгэл суутгал, авто-хөрвүүлэлт болон татан авалтын нэгдсэн хяналт.
+        </p>
+</div>
+<!-- Quick Actions -->
+<div class="flex flex-wrap items-center gap-3">
+<button class="px-4 py-2.5 rounded-xl bg-surface-container-highest hover:bg-surface-variant text-on-surface font-label-caps text-label-caps flex items-center gap-2 transition shadow-sm" id="sandbox-btn">
+<span class="material-symbols-outlined text-lg">science</span>
+          Sandbox Туршилт
+        </button>
+<button class="px-5 py-2.5 rounded-xl bg-primary hover:bg-primary/90 text-on-primary font-label-caps text-label-caps flex items-center gap-2 transition shadow-md">
+<span class="material-symbols-outlined text-lg">save</span>
+          Тохиргоог Хадгалах
+        </button>
+</div>
+</div>
+<!-- Telemetry Status Pills -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm flex items-start gap-4">
+<div class="p-3 bg-primary-container text-on-primary-container rounded-lg">
+<span class="material-symbols-outlined text-2xl">account_balance</span>
+</div>
+<div class="space-y-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Идэвхтэй Гарцууд</span>
+<div class="font-headline-md text-headline-md font-bold text-primary">4 Холбогдсон</div>
+<span class="text-xs text-on-surface-variant flex items-center gap-1 font-body-md">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500"></span> QPay, Khan, Stripe, PayPal
+          </span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm flex items-start gap-4">
+<div class="p-3 bg-secondary-fixed text-on-secondary-fixed rounded-lg">
+<span class="material-symbols-outlined text-2xl">currency_exchange</span>
+</div>
+<div class="space-y-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Монголбанкны Ханш</span>
+<div class="font-headline-md text-headline-md font-bold text-primary">3,420.50 ₮</div>
+<span class="text-xs text-on-surface-variant flex items-center gap-1 font-body-md">
+<span class="material-symbols-outlined text-xs">sync</span> Шинэчлэгдсэн: 12 минутын өмнө
+          </span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm flex items-start gap-4">
+<div class="p-3 bg-tertiary-fixed text-on-tertiary-fixed rounded-lg">
+<span class="material-symbols-outlined text-2xl">lock</span>
+</div>
+<div class="space-y-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Escrow Vault</span>
+<div class="font-headline-md text-headline-md font-bold text-primary">Хамгаалагдсан</div>
+<span class="text-xs text-on-surface-variant flex items-center gap-1 font-body-md">
+<span class="material-symbols-outlined text-xs">verified_user</span> Multi-sig AES-256
+          </span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm flex items-start gap-4">
+<div class="p-3 bg-surface-container-high text-on-surface-variant rounded-lg">
+<span class="material-symbols-outlined text-2xl">speed</span>
+</div>
+<div class="space-y-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Эвлэрүүлэлтийн Хугацаа</span>
+<div class="font-headline-md text-headline-md font-bold text-primary">T+0 / Instant</div>
+<span class="text-xs text-on-surface-variant flex items-center gap-1 font-body-md">
+            99.98% Гүйлгээ амжилттай
+          </span>
+</div>
+</div>
+</div>
+<!-- Section 1: Payment Gateways Configuration (Domestic & Global) -->
+<div class="space-y-6">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant tracking-wider">Гарцын Удирдлага</span>
+<h2 class="font-headline-md text-headline-md font-bold text-primary mt-1">
+            Орон Нутгийн ба Олон Улсын Төлбөрийн Сүлжээ
+          </h2>
+</div>
+<button class="text-primary hover:text-primary-container font-label-caps text-label-caps flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">tune</span>
+          Гарцын дэс дараалал өөрчлөх
+        </button>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Domestic Panel (MNT) -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm space-y-6">
+<div class="flex items-center justify-between pb-4 border-b border-surface-container">
+<div class="flex items-center gap-3">
+<span class="w-10 h-10 rounded-xl bg-primary text-on-primary flex items-center justify-center font-bold text-sm tracking-wider font-label-caps">MNT</span>
+<div>
+<h3 class="font-headline-sm text-headline-md font-bold text-primary leading-tight">Орон нутгийн сувгууд</h3>
+<p class="text-xs text-on-surface-variant font-body-md">Төгрөгийн данс ба шууд төлбөрийн экосистем</p>
+</div>
+</div>
+<span class="px-3 py-1 bg-surface-container text-on-surface rounded-full text-xs font-label-caps font-semibold">2 Гарц холбогдсон</span>
+</div>
+<!-- QPay Enterprise Card -->
+<div class="bg-surface-container-low rounded-xl p-5 space-y-4">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-surface-container-lowest flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary text-2xl">qr_code_2</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h4 class="font-headline-md text-body-lg font-bold text-primary">QPay Enterprise V2</h4>
+<span class="px-2 py-0.5 rounded text-[11px] font-label-caps bg-emerald-100 text-emerald-800">Идэвхтэй</span>
+</div>
+<p class="text-xs text-on-surface-variant font-body-md mt-0.5">Шимтгэл: 1.0% · Settlement: Шуурхай (T+0)</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox">
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+<div class="space-y-1">
+<span class="text-on-surface-variant font-label-caps">Merchant ID:</span>
+<div class="bg-surface-container-lowest px-3 py-2 rounded-lg font-mono text-primary truncate select-all">
+                  QPAY_MN_CORP_8992019
+                </div>
+</div>
+<div class="space-y-1">
+<span class="text-on-surface-variant font-label-caps">Webhook Status:</span>
+<div class="bg-surface-container-lowest px-3 py-2 rounded-lg text-emerald-700 font-semibold flex items-center gap-1.5 truncate">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span> 200 OK (0.12s latency)
+                </div>
+</div>
+</div>
+<div class="pt-2 flex flex-wrap gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-xs font-label-caps text-primary shadow-sm flex items-center gap-1.5 transition">
+<span class="material-symbols-outlined text-sm">key</span> Түлхүүр шинэчлэх
+              </button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-xs font-label-caps text-primary shadow-sm flex items-center gap-1.5 transition">
+<span class="material-symbols-outlined text-sm">send</span> Тест гүйлгээ (₮1,000)
+              </button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-xs font-label-caps text-on-surface-variant shadow-sm flex items-center gap-1.5 transition ml-auto">
+<span class="material-symbols-outlined text-sm">settings</span> Тохиргоо
+              </button>
+</div>
+</div>
+<!-- SocialPay & Bank Direct 3DS -->
+<div class="bg-surface-container-low rounded-xl p-5 space-y-4">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-surface-container-lowest flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary text-2xl">credit_card</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h4 class="font-headline-md text-body-lg font-bold text-primary">SocialPay &amp; Банкны Карт (3DS 2.0)</h4>
+<span class="px-2 py-0.5 rounded text-[11px] font-label-caps bg-emerald-100 text-emerald-800">Идэвхтэй</span>
+</div>
+<p class="text-xs text-on-surface-variant font-body-md mt-0.5">Khan Bank, Golomt Bank Direct · Шимтгэл: 1.5% · T+1</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox">
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="space-y-1 text-xs">
+<span class="text-on-surface-variant font-label-caps">API Endpoint Callback:</span>
+<div class="bg-surface-container-lowest px-3 py-2 rounded-lg font-mono text-primary text-xs truncate">
+                https://api.mongoldesignhub.mn/v1/payments/card-callback-listener
+              </div>
+</div>
+<div class="pt-2 flex flex-wrap gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-xs font-label-caps text-primary shadow-sm flex items-center gap-1.5 transition">
+<span class="material-symbols-outlined text-sm">security</span> 3D Secure 2.2 шалгах
+              </button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-xs font-label-caps text-primary shadow-sm flex items-center gap-1.5 transition">
+<span class="material-symbols-outlined text-sm">terminal</span> Logs
+              </button>
+</div>
+</div>
+</div>
+<!-- International Panel (USD / EUR / Cross-Border) -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm space-y-6">
+<div class="flex items-center justify-between pb-4 border-b border-surface-container">
+<div class="flex items-center gap-3">
+<span class="w-10 h-10 rounded-xl bg-tertiary-container text-on-tertiary-container flex items-center justify-center font-bold text-sm tracking-wider font-label-caps">FX</span>
+<div>
+<h3 class="font-headline-sm text-headline-md font-bold text-primary leading-tight">Олон улсын сувгууд</h3>
+<p class="text-xs text-on-surface-variant font-body-md">Stripe Connect, PayPal, WeChat Pay &amp; Alipay</p>
+</div>
+</div>
+<span class="px-3 py-1 bg-surface-container text-on-surface rounded-full text-xs font-label-caps font-semibold">Бүрэн интеграц</span>
+</div>
+<!-- Stripe Connect Custom -->
+<div class="bg-surface-container-low rounded-xl p-5 space-y-4">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-surface-container-lowest flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary text-2xl">payments</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h4 class="font-headline-md text-body-lg font-bold text-primary">Stripe Connect Custom</h4>
+<span class="px-2 py-0.5 rounded text-[11px] font-label-caps bg-emerald-100 text-emerald-800">Бүрэн Баталгаажсан</span>
+</div>
+<p class="text-xs text-on-surface-variant font-body-md mt-0.5">Visa, Mastercard, Apple Pay, Google Pay · 2.9% + $0.30</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox">
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+<div class="space-y-1">
+<span class="text-on-surface-variant font-label-caps">Platform Account ID:</span>
+<div class="bg-surface-container-lowest px-3 py-2 rounded-lg font-mono text-primary truncate select-all">
+                  acct_1Ou92J8MGl39Xn
+                </div>
+</div>
+<div class="space-y-1">
+<span class="text-on-surface-variant font-label-caps">Split Settlement:</span>
+<div class="bg-surface-container-lowest px-3 py-2 rounded-lg text-primary font-medium flex items-center gap-1 truncate">
+<span class="material-symbols-outlined text-sm text-secondary">pie_chart</span> Автомат Split асаалттай
+                </div>
+</div>
+</div>
+<div class="pt-2 flex flex-wrap gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-xs font-label-caps text-primary shadow-sm flex items-center gap-1.5 transition">
+<span class="material-symbols-outlined text-sm">open_in_new</span> Stripe Express Dashboard
+              </button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-xs font-label-caps text-primary shadow-sm flex items-center gap-1.5 transition">
+<span class="material-symbols-outlined text-sm">chevron_forward</span> Payout Route
+              </button>
+</div>
+</div>
+<!-- PayPal & WeChat / Alipay Cross-border -->
+<div class="bg-surface-container-low rounded-xl p-5 space-y-4">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-surface-container-lowest flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary text-2xl">public</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h4 class="font-headline-md text-body-lg font-bold text-primary">Cross-border China &amp; APAC (WeChat/Alipay)</h4>
+<span class="px-2 py-0.5 rounded text-[11px] font-label-caps bg-secondary-fixed text-on-secondary-fixed">Идэвхтэй (CNY)</span>
+</div>
+<p class="text-xs text-on-surface-variant font-body-md mt-0.5">Цагаан алт, ноолуурын хятад худалдан авагчдад · Шимтгэл: 2.2%</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox">
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="space-y-1 text-xs">
+<span class="text-on-surface-variant font-label-caps">Currency Auto-Route Target:</span>
+<div class="bg-surface-container-lowest px-3 py-2 rounded-lg text-primary font-body-md text-xs flex items-center justify-between">
+<span class="">CNY (Юань) → Авто-хөрвүүлэлт: USD Vault Данс руу</span>
+<span class="font-semibold text-secondary">0.4% FX Буфер</span>
+</div>
+</div>
+<div class="pt-2 flex flex-wrap gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-xs font-label-caps text-primary shadow-sm flex items-center gap-1.5 transition">
+<span class="material-symbols-outlined text-sm">settings_ethernet</span> Маршрут солих
+              </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 2: Multi-Currency & Forex Policy Matrix -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 md:p-8 shadow-sm space-y-6">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-surface-container">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant tracking-wider">Валютын Бодлого</span>
+<h2 class="font-headline-md text-headline-md font-bold text-primary mt-1">
+            Валют &amp; Ханшийн Автомат Тохиргоо (Multi-Forex Engine)
+          </h2>
+</div>
+<div class="flex items-center gap-3">
+<div class="text-right hidden sm:block">
+<p class="text-xs text-on-surface-variant font-label-caps">Суурь Суваг</p>
+<p class="font-semibold text-primary text-sm">Mongolbank FX API v3</p>
+</div>
+<button class="px-3 py-2 bg-surface-container-low hover:bg-surface-container text-primary rounded-xl font-label-caps text-xs flex items-center gap-1.5 shadow-sm transition">
+<span class="material-symbols-outlined text-base">refresh</span> Одоо шинэчлэх
+          </button>
+</div>
+</div>
+<!-- Currency Cards Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- USD Card -->
+<div class="bg-surface-container-low p-4 rounded-xl space-y-3">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center font-bold text-xs">USD</span>
+<span class="font-semibold text-primary text-sm font-label-caps">АНУ Доллар</span>
+</div>
+<span class="text-xs px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-label-caps">+0.8% Buffer</span>
+</div>
+<div class="space-y-0.5">
+<div class="font-headline-md text-headline-md font-bold text-primary">3,420.50 ₮</div>
+<div class="text-xs text-on-surface-variant font-body-md flex justify-between">
+<span class="">Албан ханш: 3,393.35 ₮</span>
+<span class="text-emerald-700 font-medium">Тогтвортой</span>
+</div>
+</div>
+<div class="pt-2 text-xs flex items-center justify-between text-on-surface-variant border-t border-surface-variant/40">
+<span class="">Авто-хөрвүүлэлт</span>
+<span class="font-semibold text-primary">Идэвхтэй</span>
+</div>
+</div>
+<!-- CNY Card -->
+<div class="bg-surface-container-low p-4 rounded-xl space-y-3">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-lg bg-surface-container-highest text-primary flex items-center justify-center font-bold text-xs">CNY</span>
+<span class="font-semibold text-primary text-sm font-label-caps">Хятад Юань</span>
+</div>
+<span class="text-xs px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-label-caps">+0.8% Buffer</span>
+</div>
+<div class="space-y-0.5">
+<div class="font-headline-md text-headline-md font-bold text-primary">472.10 ₮</div>
+<div class="text-xs text-on-surface-variant font-body-md flex justify-between">
+<span class="">Албан ханш: 468.35 ₮</span>
+<span class="text-emerald-700 font-medium">+0.12%</span>
+</div>
+</div>
+<div class="pt-2 text-xs flex items-center justify-between text-on-surface-variant border-t border-surface-variant/40">
+<span class="">Cross-border Pay</span>
+<span class="font-semibold text-primary">Асаалттай</span>
+</div>
+</div>
+<!-- EUR Card -->
+<div class="bg-surface-container-low p-4 rounded-xl space-y-3">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-lg bg-surface-container-highest text-primary flex items-center justify-center font-bold text-xs">EUR</span>
+<span class="font-semibold text-primary text-sm font-label-caps">Европ Евро</span>
+</div>
+<span class="text-xs px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-label-caps">+0.8% Buffer</span>
+</div>
+<div class="space-y-0.5">
+<div class="font-headline-md text-headline-md font-bold text-primary">3,710.20 ₮</div>
+<div class="text-xs text-on-surface-variant font-body-md flex justify-between">
+<span class="">Албан ханш: 3,680.75 ₮</span>
+<span class="text-on-surface-variant font-medium">-0.05%</span>
+</div>
+</div>
+<div class="pt-2 text-xs flex items-center justify-between text-on-surface-variant border-t border-surface-variant/40">
+<span class="">SEPA Экспорт</span>
+<span class="font-semibold text-primary">Бэлэн</span>
+</div>
+</div>
+<!-- RUB Card -->
+<div class="bg-surface-container-low p-4 rounded-xl space-y-3">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-lg bg-surface-container-highest text-primary flex items-center justify-center font-bold text-xs">RUB</span>
+<span class="font-semibold text-primary text-sm font-label-caps">ОХУ Рубль</span>
+</div>
+<span class="text-xs px-2 py-0.5 rounded bg-amber-100 text-amber-900 font-label-caps">+1.5% Buffer</span>
+</div>
+<div class="space-y-0.5">
+<div class="font-headline-md text-headline-md font-bold text-primary">35.80 ₮</div>
+<div class="text-xs text-on-surface-variant font-body-md flex justify-between">
+<span class="">Албан ханш: 35.27 ₮</span>
+<span class="text-amber-800 font-medium">Хэлбэлзэлтэй</span>
+</div>
+</div>
+<div class="pt-2 text-xs flex items-center justify-between text-on-surface-variant border-t border-surface-variant/40">
+<span class="">Хязгаарлагдмал</span>
+<span class="font-semibold text-primary">Хянагдаж буй</span>
+</div>
+</div>
+</div>
+<!-- Controls & Buffer Config -->
+<div class="bg-surface-container p-5 rounded-xl flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="space-y-1 w-full md:w-auto">
+<div class="font-headline-md text-body-lg font-bold text-primary">Ханш шинэчлэх цикл &amp; Валютын хамгаалалтын буфер</div>
+<p class="text-xs text-on-surface-variant font-body-md">Худалдааны хэлбэлзлээс экспортлогчдыг хамгаалах автомат зөрүү</p>
+</div>
+<div class="flex flex-wrap items-center gap-3 w-full md:w-auto justify-end">
+<div class="flex items-center gap-2 bg-surface-container-lowest px-3 py-2 rounded-lg text-xs">
+<span class="text-on-surface-variant font-label-caps">Хамгаалалт:</span>
+<select class="bg-transparent font-semibold text-primary focus:outline-none text-xs">
+<option>+0.8% (Стандарт)</option>
+<option>+1.2% (Консерватив)</option>
+<option>+0.5% (Минимал)</option>
+</select>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-lowest px-3 py-2 rounded-lg text-xs">
+<span class="text-on-surface-variant font-label-caps">Давтамж:</span>
+<select class="bg-transparent font-semibold text-primary focus:outline-none text-xs">
+<option>15 минут тутамд (Auto)</option>
+<option>1 цаг тутамд</option>
+<option>Өдөрт нэг удаа</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 3: Escrow & Split Payment Matrix Diagram -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 md:p-8 shadow-sm space-y-6"><div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-4 border-b border-surface-container"><div><div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-xl">receipt_long</span><span class="font-label-caps text-label-caps uppercase text-on-surface-variant tracking-wider">Татварын Ухаалаг Систем</span><span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-label-caps bg-emerald-100 text-emerald-800 font-semibold"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> ТЕГ Холбогдсон</span></div><h2 class="font-headline-md text-headline-md font-bold text-primary mt-1">Татвар &amp; И-Баримт (E-Barimt 3.0) Автомат Систем</h2><p class="text-xs text-on-surface-variant font-body-md mt-0.5">ТЕГ-ын нэгдсэн системтэй бодит цагийн холболт, НӨАТ (10%), Нийслэл хотын татвар (НХАТ) болон экспортын 0% чөлөөлөлтийн нэгдсэн зохицуулалт</p></div><div class="flex flex-wrap items-center gap-3"><div class="inline-flex items-center gap-2 bg-surface-container-low px-3 py-1.5 rounded-xl border border-outline-variant/40"><span class="text-xs text-on-surface-variant font-label-caps">API V3.0 Статус:</span><span class="text-xs font-bold text-emerald-700 font-mono flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> Хэвийн (Active)</span></div><button class="px-3.5 py-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-primary font-label-caps text-xs flex items-center gap-1.5 transition shadow-sm border border-outline-variant/40"><span class="material-symbols-outlined text-base">description</span> НӨАТ-ын тайлан (XLSX)</button><button class="px-4 py-2 bg-primary hover:bg-primary/90 text-on-primary rounded-xl font-label-caps text-xs flex items-center gap-1.5 transition shadow-md"><span class="material-symbols-outlined text-base">sync</span> ТЕГ шалгах</button></div></div><div class="grid grid-cols-1 lg:grid-cols-2 gap-8"><div class="bg-surface-container-low rounded-xl p-5 space-y-4"><div class="flex items-center justify-between pb-3 border-b border-surface-variant/40"><div class="flex items-center gap-2.5"><div class="w-10 h-10 rounded-xl bg-primary text-on-primary flex items-center justify-center font-bold text-sm tracking-wider font-label-caps">E-3.0</div><div><h3 class="font-headline-md text-body-lg font-bold text-primary">E-Barimt API V3.0 Тохиргоо</h3><p class="text-xs text-on-surface-variant">Мерчант бүртгэл ба баримт үүсгэлтийн параметрүүд</p></div></div><span class="px-2 py-0.5 rounded text-[11px] font-label-caps bg-emerald-100 text-emerald-800 font-semibold">Бүрэн баталгаажсан</span></div><div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs"><div class="space-y-1"><span class="text-on-surface-variant font-label-caps">ТЕГ Татвар Төлөгчийн Дугаар (ТТД):</span><div class="bg-surface-container-lowest px-3 py-2 rounded-lg font-mono text-primary font-bold flex items-center justify-between"><span class="select-all">5489201940</span><span class="material-symbols-outlined text-emerald-600 text-base" title="Баталгаажсан ААН">verified</span></div></div><div class="space-y-1"><span class="text-on-surface-variant font-label-caps">ПОС / Салбарын дугаар:</span><div class="bg-surface-container-lowest px-3 py-2 rounded-lg font-mono text-primary font-bold flex items-center justify-between"><span class="select-all">POS-00912</span><span class="text-[10px] text-on-surface-variant font-label-caps">Online POS</span></div></div></div><div class="space-y-2 pt-1 text-xs"><div class="p-3 bg-surface-container-lowest rounded-lg border border-outline-variant/40 flex items-center justify-between"><div class="space-y-0.5"><span class="font-semibold text-primary font-label-caps">НӨАТ суутган төлөгч (10% VAT)</span><p class="text-[11px] text-on-surface-variant">Худалдан авалтын дүн дээр 10% НӨАТ-ыг автоматаар суутган тооцно</p></div><label class="relative inline-flex items-center cursor-pointer"><input checked="" class="sr-only peer" type="checkbox"><div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div></label></div><div class="p-3 bg-surface-container-lowest rounded-lg border border-outline-variant/40 flex items-center justify-between"><div class="space-y-0.5"><span class="font-semibold text-primary font-label-caps">Автомат И-Баримт илгээх (B2C SMS/Email)</span><p class="text-[11px] text-on-surface-variant">Худалдан авалт дуусмагц ДДТД, сугалааны дугаарыг хэрэглэгч рүү илгээнэ</p></div><label class="relative inline-flex items-center cursor-pointer"><input checked="" class="sr-only peer" type="checkbox"><div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div></label></div><div class="p-3 bg-surface-container-lowest rounded-lg border border-outline-variant/40 flex items-center justify-between"><div class="space-y-0.5"><span class="font-semibold text-primary font-label-caps">Нийслэл хотын албан татвар (НХАТ)</span><p class="text-[11px] text-on-surface-variant">Зочид буудал, ресторан, онцгой нэр төрлийн бүтээгдэхүүнд хамаарна</p></div><select class="bg-surface-container-low font-semibold text-primary px-2.5 py-1 rounded-lg border border-outline-variant/40 text-xs focus:outline-none cursor-pointer"><option>0% (Хэрэглэхгүй)</option><option selected="">1.0% (Улаанбаатар хот)</option><option>2.0% (Тусгай ангилал)</option></select></div></div></div><div class="bg-surface-container-low rounded-xl p-5 space-y-4 flex flex-col justify-between"><div><div class="flex items-center justify-between pb-3 border-b border-surface-variant/40"><div class="flex items-center gap-2.5"><div class="w-10 h-10 rounded-xl bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-bold text-sm tracking-wider font-label-caps"><span class="material-symbols-outlined text-lg">calculate</span></div><div><h3 class="font-headline-md text-body-lg font-bold text-primary">Татвар Тооцоолох Дүрэм &amp; Задаргаа</h3><p class="text-xs text-on-surface-variant">Экспорт ба B2B байгууллагын татварын бодлого</p></div></div><span class="px-2 py-0.5 rounded text-[11px] font-label-caps bg-primary/10 text-primary font-semibold">Автомат Формула</span></div><div class="space-y-2.5 pt-1 text-xs"><div class="bg-surface-container-lowest p-3 rounded-lg space-y-1.5"><div class="flex justify-between items-center"><span class="text-on-surface-variant font-label-caps">Суурь үнэ (Барааны дүн):</span><span class="font-mono font-bold text-primary">100,000 ₮</span></div><div class="flex justify-between items-center"><span class="text-on-surface-variant font-label-caps">НӨАТ (10.0%):</span><span class="font-mono font-semibold text-emerald-700">+10,000 ₮</span></div><div class="flex justify-between items-center"><span class="text-on-surface-variant font-label-caps">НХАТ (1.0%):</span><span class="font-mono font-semibold text-secondary">+1,000 ₮</span></div><div class="pt-1.5 border-t border-surface-variant/40 flex justify-between items-center"><span class="font-bold text-primary font-label-caps">Нийт төлөх дүн:</span><span class="font-mono font-bold text-primary text-sm">111,000 ₮</span></div></div><div class="p-3 bg-surface-container-lowest rounded-lg border border-outline-variant/40 space-y-1.5"><div class="flex items-center justify-between"><span class="font-semibold text-primary font-label-caps flex items-center gap-1.5"><span class="material-symbols-outlined text-secondary text-sm">flight_takeoff</span> Экспорт 0% НӨАТ Горим</span><span class="px-2 py-0.5 rounded text-[10px] font-label-caps bg-emerald-100 text-emerald-800 font-bold">Хуулийн дагуу</span></div><p class="text-[11px] text-on-surface-variant leading-snug">МУ-ын НӨАТ-ын тухай хуулийн 12-р зүйлд заасны дагуу гадаад хаяг руу хийгдэх дижитал бүтээгдэхүүн ба ноолуурын экспортод НӨАТ 0% тооцогдоно.</p><div class="pt-1 flex items-center justify-between border-t border-surface-container text-xs"><span class="text-[10px] text-on-surface-variant font-label-caps flex items-center gap-1"><span class="material-symbols-outlined text-xs text-secondary">assignment_turned_in</span> Гаалийн мэдүүлэг (CN23) бэлэн</span><button onclick="document.getElementById('ebarimt-modal').classList.remove('hidden'); document.getElementById('tab-btn-customs').click();" class="px-2.5 py-1 rounded bg-secondary-fixed text-on-secondary-fixed hover:bg-secondary-fixed-dim text-[11px] font-label-caps font-bold flex items-center gap-1 transition shadow-sm"><span class="material-symbols-outlined text-xs">verified_user</span> Гаалийн мэдүүлэг нээх</button></div></div><div class="p-3 bg-surface-container-lowest rounded-lg border border-outline-variant/40 space-y-1.5"><div class="flex items-center justify-between"><span class="font-semibold text-primary font-label-caps flex items-center gap-1.5"><span class="material-symbols-outlined text-primary text-sm">domain</span> B2B Байгууллагын ТТД Шалгагч</span><span class="text-[10px] text-emerald-700 font-semibold flex items-center gap-1"><span class="material-symbols-outlined text-xs">check_circle</span> Live Validation</span></div><div class="flex gap-2"><input type="text" value="5084920" placeholder="Байгууллагын ТТД оруулах..." class="flex-1 bg-surface-container-low px-2.5 py-1.5 rounded-lg border border-outline-variant/40 text-primary font-mono text-xs focus:outline-none"><button class="px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-caps text-xs flex items-center gap-1 transition shadow-sm hover:opacity-90">Шалгах</button></div></div></div></div><div class="pt-2 flex justify-end gap-2"><button class="px-4 py-2 bg-surface-container-highest hover:bg-surface-variant text-primary rounded-lg text-xs font-label-caps flex items-center gap-1.5 transition shadow-sm"><span class="material-symbols-outlined text-sm">restart_alt</span> Буцаах</button><button class="px-4 py-2 bg-primary text-on-primary rounded-lg text-xs font-label-caps flex items-center gap-1.5 transition shadow-sm hover:opacity-90"><span class="material-symbols-outlined text-sm">save</span> Тохиргоог Хадгалах</button></div></div></div><div class="space-y-3 pt-2"><div class="flex items-center justify-between"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-lg">history</span><h4 class="font-headline-md text-sm font-bold text-primary font-label-caps">Сүүлийн Үүсгэсэн И-Баримтууд (Recent E-Barimt Slips)</h4></div><span class="text-xs text-on-surface-variant font-label-caps">Нийт 247 баримт илгээгдсэн</span></div><div class="overflow-x-auto border border-surface-container rounded-xl"><table class="w-full text-left text-xs font-body-md"><thead><tr class="bg-surface-container-low text-on-surface-variant font-label-caps uppercase border-b border-surface-container"><th class="py-3 px-4 font-semibold">ДДТД (33 оронтой код)</th><th class="py-3 px-4 font-semibold">Огноо &amp; Цаг</th><th class="py-3 px-4 font-semibold">Дүн</th><th class="py-3 px-4 font-semibold">НӨАТ (10%)</th><th class="py-3 px-4 font-semibold">Сугалааны №</th><th class="py-3 px-4 font-semibold">Төлөв</th><th class="py-3 px-4 font-semibold text-right">Үйлдэл</th></tr></thead><tbody class="divide-y divide-surface-container bg-surface-container-lowest"><tr class="hover:bg-surface-container-low/60 transition"><td class="py-3 px-4 font-mono font-bold text-primary flex items-center gap-1.5"><span class="material-symbols-outlined text-base text-primary">qr_code</span><span class="truncate max-w-[140px] select-all" title="384920194850291827401928374829102">38492019...29102</span></td><td class="py-3 px-4 text-on-surface-variant">2024.10.15 14:28</td><td class="py-3 px-4 font-mono font-bold text-primary">150,000 ₮</td><td class="py-3 px-4 font-mono text-emerald-700">13,636 ₮</td><td class="py-3 px-4 font-mono font-bold text-primary">MN-849201</td><td class="py-3 px-4"><span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-label-caps bg-emerald-100 text-emerald-800 font-semibold"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Илгээгдсэн (200 OK)</span></td><td class="py-3 px-4 text-right"><div class="flex items-center justify-end gap-1.5"><button class="px-2 py-1 rounded bg-surface-container-low hover:bg-surface-container text-primary font-label-caps text-[11px] flex items-center gap-1 transition shadow-sm" title="Хэвлэх / Баримт үзэх" onclick="document.getElementById('ebarimt-modal').classList.remove('hidden')"><span class="material-symbols-outlined text-xs">visibility</span> Үзэх</button><button class="px-2 py-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-label-caps text-[11px] flex items-center gap-1 transition shadow-sm" title="ТЕГ дахин илгээх"><span class="material-symbols-outlined text-xs">send</span> Дахин илгээх</button></div></td></tr><tr class="hover:bg-surface-container-low/60 transition"><td class="py-3 px-4 font-mono font-bold text-primary flex items-center gap-1.5"><span class="material-symbols-outlined text-base text-primary">qr_code</span><span class="truncate max-w-[140px] select-all" title="192837465019283746501928374650192">19283746...50192</span></td><td class="py-3 px-4 text-on-surface-variant">2024.10.15 13:45</td><td class="py-3 px-4 font-mono font-bold text-primary">88,000 ₮</td><td class="py-3 px-4 font-mono text-emerald-700">8,000 ₮</td><td class="py-3 px-4 font-mono font-bold text-primary">MN-492018</td><td class="py-3 px-4"><span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-label-caps bg-emerald-100 text-emerald-800 font-semibold"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Илгээгдсэн (200 OK)</span></td><td class="py-3 px-4 text-right"><div class="flex items-center justify-end gap-1.5"><button class="px-2 py-1 rounded bg-surface-container-low hover:bg-surface-container text-primary font-label-caps text-[11px] flex items-center gap-1 transition shadow-sm" title="Хэвлэх / Баримт үзэх"><span class="material-symbols-outlined text-xs">visibility</span> Үзэх</button><button class="px-2 py-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-label-caps text-[11px] flex items-center gap-1 transition shadow-sm" title="ТЕГ дахин илгээх"><span class="material-symbols-outlined text-xs">send</span> Дахин илгээх</button></div></td></tr><tr class="hover:bg-surface-container-low/60 transition"><td class="py-3 px-4 font-mono font-bold text-primary flex items-center gap-1.5"><span class="material-symbols-outlined text-base text-secondary">travel_explore</span><span class="truncate max-w-[140px] select-all" title="748291039485720194857201948572019">74829103...72019</span></td><td class="py-3 px-4 text-on-surface-variant">2024.10.14 19:10</td><td class="py-3 px-4 font-mono font-bold text-primary">$280.00 (Экспорт)</td><td class="py-3 px-4 font-mono text-secondary">0₮ (Экспорт 0%)</td><td class="py-3 px-4 font-mono text-on-surface-variant">EXP-Чөлөөлөгдсөн</td><td class="py-3 px-4"><span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-label-caps bg-secondary-fixed text-on-secondary-fixed font-semibold"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Экспорт 0% НӨАТ</span></td><td class="py-3 px-4 text-right"><div class="flex items-center justify-end gap-1.5"><button onclick="document.getElementById('ebarimt-modal').classList.remove('hidden'); document.getElementById('tab-btn-customs').click();" class="px-2 py-1 rounded bg-secondary-fixed text-on-secondary-fixed hover:bg-secondary-fixed-dim font-label-caps text-[11px] flex items-center gap-1 transition shadow-sm" title="Гаалийн мэдүүлэг (CN23)"><span class="material-symbols-outlined text-xs">verified_user</span> CN23</button><button class="px-2 py-1 rounded bg-surface-container-low hover:bg-surface-container text-primary font-label-caps text-[11px] flex items-center gap-1 transition shadow-sm" title="Хэвлэх / Баримт үзэх"><span class="material-symbols-outlined text-xs">visibility</span> Үзэх</button><button class="px-2 py-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-label-caps text-[11px] flex items-center gap-1 transition shadow-sm" title="ТЕГ дахин илгээх"><span class="material-symbols-outlined text-xs">send</span> Дахин илгээх</button></div></td></tr></tbody></table></div></div></div><div class="bg-surface-container-lowest rounded-2xl p-6 md:p-8 shadow-sm space-y-6">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-surface-container">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant tracking-wider">Санхүүгийн Ухаалаг Хуваарилалт</span>
+<h2 class="font-headline-md text-headline-md font-bold text-primary mt-1">
+            Escrow &amp; Төлбөр Хуваарилалтын Дүрэм (Split Logic)
+          </h2>
+</div>
+<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low text-xs font-label-caps text-on-surface-variant">
+<span class="material-symbols-outlined text-sm text-secondary">verified</span>
+          Монголбанк &amp; Татварын Нийцэлтэй
+        </span>
+</div>
+<!-- Flow Architecture Interactive Visual -->
+<div class="bg-surface-container-low p-6 rounded-xl space-y-6">
+<div class="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+<div class="space-y-1">
+<div class="text-xs uppercase font-label-caps text-on-surface-variant">Алхам 1: Төлбөр хийгдэх</div>
+<div class="font-headline-md text-body-lg font-bold text-primary">100% Худалдан авагчийн төлбөр</div>
+<p class="text-xs text-on-surface-variant">Escrow хадгаламжийн дансанд түр царцаагдана (Smart Contract Lock)</p>
+</div>
+<div class="hidden md:flex items-center text-primary-container">
+<span class="material-symbols-outlined text-3xl">arrow_forward</span>
+</div>
+<div class="space-y-1">
+<div class="text-xs uppercase font-label-caps text-on-surface-variant">Алхам 2: Хүргэлт &amp; QC Баталгаажуулалт</div>
+<div class="font-headline-md text-body-lg font-bold text-primary">Чанарын шалгалт амжилттай</div>
+<p class="text-xs text-on-surface-variant">Хүлээн авагчийн дижитал гарын үсэг зурагдмагц хуваарилалт эхэлнэ</p>
+</div>
+</div>
+<!-- Split Progress Bar Representation -->
+<div class="space-y-2">
+<div class="h-6 w-full rounded-xl overflow-hidden flex shadow-inner">
+<div class="bg-primary hover:opacity-90 transition-all flex items-center justify-center text-on-primary text-[11px] font-label-caps font-semibold" style="width: 88%;">
+              88% Борлуулагч
+            </div>
+<div class="bg-secondary hover:opacity-90 transition-all flex items-center justify-center text-on-secondary text-[11px] font-label-caps font-semibold" style="width: 8%;">
+              8% Дизайнер
+            </div>
+<div class="bg-surface-tint hover:opacity-90 transition-all flex items-center justify-center text-on-primary text-[11px] font-label-caps font-semibold" style="width: 4%;">
+              4% Платформ
+            </div>
+</div>
+<div class="flex flex-wrap items-center justify-between text-xs text-on-surface-variant font-label-caps pt-1">
+<span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-primary inline-block"></span> Борлуулагчийн цэвэр орлого (88.0%)</span>
+<span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-secondary inline-block"></span> Дизайнерын Зохиогчийн Роялти (8.0%)</span>
+<span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-surface-tint inline-block"></span> Платформын технологийн шимтгэл (4.0%)</span>
+</div>
+</div>
+<!-- Split Rules Matrix Details -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+<div class="bg-surface-container-lowest p-4 rounded-xl space-y-2 shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-headline-md text-body-lg font-bold text-primary">Борлуулагчийн Хувь</span>
+<span class="text-xs font-bold text-primary font-label-caps">85% - 92%</span>
+</div>
+<p class="text-xs text-on-surface-variant font-body-md">
+              Сонгосон багцын дагуу (Pro vs Enterprise). Үйлдвэрлэгчийн шууд данс руу T+0 горимоор татан авна.
+            </p>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl space-y-2 shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-headline-md text-body-lg font-bold text-primary">Зохиогчийн Роялти</span>
+<span class="text-xs font-bold text-secondary font-label-caps">5% - 10%</span>
+</div>
+<p class="text-xs text-on-surface-variant font-body-md">
+              Дизайнерын оюуны өмч, загвар ашигласан борлуулалт тутамд автоматаар дизайнер руу хуваарилагдана.
+            </p>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl space-y-2 shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-headline-md text-body-lg font-bold text-primary">Nexus Платформ</span>
+<span class="text-xs font-bold text-on-surface-variant font-label-caps">3% - 5%</span>
+</div>
+<p class="text-xs text-on-surface-variant font-body-md">
+              Серверийн аюулгүй байдал, хил гаалийн дэмжлэг. Зөвхөн энэ дүнгээс НӨАТ &amp; ААНОАТ тооцогдоно.
+            </p>
+</div>
+</div>
+</div>
+<!-- Bank Payout Settlement Registry Section -->
+<div class="space-y-4 pt-2">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-md text-body-lg font-bold text-primary">
+            Бүртгэлтэй Татан Авалтын (Payout) Данснууд
+          </h3>
+<button class="px-3 py-1.5 bg-primary text-on-primary rounded-lg text-xs font-label-caps flex items-center gap-1.5 shadow-sm hover:opacity-90 transition">
+<span class="material-symbols-outlined text-sm">add</span> Данс Нэмэх
+          </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Khan Bank Account Card -->
+<div class="p-4 bg-surface-container-low rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-emerald-800 text-white flex items-center justify-center font-bold text-xs font-label-caps">
+                KHAN
+              </div>
+<div class="space-y-0.5">
+<div class="flex items-center gap-2">
+<span class="font-semibold text-primary text-sm font-label-caps">Хаан Банк (Үндсэн MNT)</span>
+<span class="text-[10px] px-1.5 py-0.5 rounded bg-surface-container font-label-caps">Үндсэн</span>
+</div>
+<div class="font-mono text-xs text-on-surface-variant">5021 •••• •••• 9924</div>
+<p class="text-[11px] text-on-surface-variant">Монгол Дизайн Хаб ХХК</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-600 text-xl" title="Баталгаажсан">verified</span>
+<button class="p-1.5 text-on-surface-variant hover:text-primary rounded-lg hover:bg-surface-container">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</div>
+</div>
+<!-- International SWIFT / IBAN Card -->
+<div class="p-4 bg-surface-container-low rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary text-on-primary flex items-center justify-center font-bold text-xs font-label-caps">
+                SWIFT
+              </div>
+<div class="space-y-0.5">
+<div class="flex items-center gap-2">
+<span class="font-semibold text-primary text-sm font-label-caps">Golomt Bank Corporate (USD)</span>
+<span class="text-[10px] px-1.5 py-0.5 rounded bg-surface-container font-label-caps">Гадаад валют</span>
+</div>
+<div class="font-mono text-xs text-on-surface-variant">GLMTMNUB •••• 4001</div>
+<p class="text-[11px] text-on-surface-variant">IBAN / SWIFT Баталгаажсан</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-600 text-xl" title="Баталгаажсан">verified</span>
+<button class="p-1.5 text-on-surface-variant hover:text-primary rounded-lg hover:bg-surface-container">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+</div><div class="space-y-4 pt-4 border-t border-surface-container"><div class="flex flex-col md:flex-row md:items-center justify-between gap-2"><div><div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-xl">account_balance_wallet</span><h3 class="font-headline-md text-body-lg font-bold text-primary">Татан Авалтын Шимтгэл ба Хязгаарын Тохиргоо (Payout Fees &amp; Withdrawal Limits)</h3></div><p class="text-xs text-on-surface-variant font-body-md mt-0.5">Борлуулалтын орлогоо данс руугаа татах лимит, мөчлөг, банкны шимтгэл болон хамгаалалтын дүрэм</p></div><div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed text-xs font-label-caps font-semibold"><span class="material-symbols-outlined text-sm">security</span>KYC Level 2 Баталгаажсан</div></div><div class="grid grid-cols-1 lg:grid-cols-3 gap-4"><div class="bg-surface-container-low p-4 rounded-xl space-y-3"><div class="flex items-center justify-between pb-2 border-b border-surface-variant/40"><span class="font-semibold text-primary text-sm font-label-caps flex items-center gap-1.5"><span class="material-symbols-outlined text-sm text-primary">tune</span>Татан Авалтын Хязгаар</span><span class="text-[11px] font-label-caps text-on-surface-variant">MNT / USD</span></div><div class="space-y-2.5 text-xs"><div class="flex justify-between items-center bg-surface-container-lowest p-2.5 rounded-lg"><span class="text-on-surface-variant">Доод хязгаар (Min):</span><span class="font-mono font-bold text-primary">50,000₮ / $50.00</span></div><div class="flex justify-between items-center bg-surface-container-lowest p-2.5 rounded-lg"><div class="flex flex-col"><span class="text-on-surface-variant">Өдрийн дээд хязгаар:</span><span class="text-[10px] text-emerald-700 font-semibold">KYC 2-р шат</span></div><span class="font-mono font-bold text-primary">20,000,000₮ / $10,000</span></div><div class="flex justify-between items-center bg-surface-container-lowest p-2.5 rounded-lg"><span class="text-on-surface-variant">Сар тутмын дээд хязгаар:</span><span class="font-mono font-bold text-primary">100,000,000₮ / $50,000</span></div></div></div><div class="bg-surface-container-low p-4 rounded-xl space-y-3"><div class="flex items-center justify-between pb-2 border-b border-surface-variant/40"><span class="font-semibold text-primary text-sm font-label-caps flex items-center gap-1.5"><span class="material-symbols-outlined text-sm text-primary">receipt_long</span>Суутгах Шимтгэл (Fees)</span><span class="text-[11px] font-label-caps text-on-surface-variant">Standard</span></div><div class="space-y-2.5 text-xs"><div class="bg-surface-container-lowest p-2.5 rounded-lg space-y-1"><div class="flex justify-between items-center"><span class="text-on-surface-variant">MNT Банк хооронд:</span><span class="font-bold text-primary font-mono">500₮</span></div><div class="text-[10px] text-emerald-700 font-medium flex items-center gap-1"><span class="material-symbols-outlined text-xs">check_circle</span> 100,000₮-с дээш үнэгүй (0₮)</div></div><div class="bg-surface-container-lowest p-2.5 rounded-lg space-y-1"><div class="flex justify-between items-center"><span class="text-on-surface-variant">Гадаад SWIFT / Wire:</span><span class="font-bold text-primary font-mono">$15.00 + 0.5%</span></div><div class="text-[10px] text-on-surface-variant">+ Банкны зуучлалын зардал</div></div><div class="bg-surface-container-lowest p-2.5 rounded-lg space-y-1"><div class="flex justify-between items-center"><span class="text-on-surface-variant">Түргэвчилсэн (T+0 Express):</span><span class="font-bold text-secondary font-mono">+1.0%</span></div><div class="text-[10px] text-on-surface-variant">Шуурхай дансанд олгогдоно</div></div></div></div><div class="bg-surface-container-low p-4 rounded-xl space-y-3 flex flex-col justify-between"><div><div class="flex items-center justify-between pb-2 border-b border-surface-variant/40"><span class="font-semibold text-primary text-sm font-label-caps flex items-center gap-1.5"><span class="material-symbols-outlined text-sm text-primary">schedule</span>Мөчлөг &amp; Аргачлал</span><span class="text-[11px] font-label-caps text-primary font-bold">Auto / Manual</span></div><div class="space-y-2.5 pt-2 text-xs"><div class="space-y-1"><span class="text-on-surface-variant font-label-caps">Автомат хуваарьт татан авалт:</span><select class="w-full bg-surface-container-lowest font-semibold text-primary p-2 rounded-lg border border-outline-variant/40 focus:outline-none text-xs"><option>7 хоног тутам (Даваа гараг бүр)</option><option>Өдөр бүр (Ажлын өдрүүдэд 18:00)</option><option>Сар бүр (Сүүлийн өдөр)</option><option>Гараар хүсэлт илгээх (Manual on-demand)</option></select></div><div class="p-2.5 bg-surface-container-lowest rounded-lg border border-outline-variant/40 space-y-1.5"><div class="flex items-center justify-between"><span class="font-semibold text-primary text-xs font-label-caps">Гараар хүсэлт илгээх горим</span><label class="relative inline-flex items-center cursor-pointer"><input checked="" class="sr-only peer" type="checkbox"><div class="w-8 h-4 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-primary"></div></label></div><p class="text-[10px] text-on-surface-variant leading-tight">Идэвхжүүлснээр шаардлагатай үед шууд payout үүсгэнэ.</p></div></div></div><button class="w-full py-2 bg-primary text-on-primary rounded-lg text-xs font-label-caps flex items-center justify-center gap-1.5 shadow-sm hover:opacity-90 transition mt-2"><span class="material-symbols-outlined text-sm">save</span>Хязгаар &amp; Тохиргоо Хадгалах</button></div></div><div class="bg-amber-100/70 border border-secondary-fixed-dim/60 p-3.5 rounded-xl flex items-start sm:items-center justify-between gap-3 text-xs"><div class="flex items-start sm:items-center gap-2.5"><span class="material-symbols-outlined text-amber-900 text-xl">shield</span><div class="text-amber-900 leading-snug"><span class="font-bold font-label-caps">Аюулгүй Байдлын Дүрэм:</span> 5,000,000₮ (буюу $2,500)-с дээш татан авалтад 24 цагийн аюулгүй байдлын хориг (Cooling-off Period) болон Санхүүгийн 2FA OTP код заавал шаардагдана.</div></div><span class="shrink-0 px-2.5 py-1 rounded bg-amber-100 text-amber-900 font-label-caps text-[11px] font-bold border border-amber-900/20">2FA Шаардлагатай</span></div></div>
+</div>
+<!-- Section 4: Security, Webhook Health & Live Audit Logging -->
+<!-- Section: Payout History (Татан авалтын түүх) -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 md:p-8 shadow-sm space-y-6">
+  <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-4 border-b border-surface-container">
+    <div>
+      <span class="font-label-caps text-label-caps uppercase text-on-surface-variant tracking-wider">Гүйлгээний Тайлан &amp; Аудит</span>
+      <h2 class="font-headline-md text-headline-md font-bold text-primary mt-1">
+        Татан авалтын түүх (Payout History)
+      </h2>
+      <p class="text-xs text-on-surface-variant font-body-md mt-0.5">
+        Сүүлийн хийгдсэн татан авалт, шилжүүлгийн дэлгэрэнгүй жагсаалт ба баримт (Receipts)
+      </p>
+    </div>
+    <div class="flex flex-wrap items-center gap-3">
+      <button class="px-3.5 py-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-primary font-label-caps text-xs flex items-center gap-1.5 transition shadow-sm border border-outline-variant/40">
+        <span class="material-symbols-outlined text-base">download</span> CSV татах
+      </button>
+      <button class="px-4 py-2 bg-primary hover:bg-primary/90 text-on-primary rounded-xl font-label-caps text-xs flex items-center gap-1.5 transition shadow-md">
+        <span class="material-symbols-outlined text-base">add</span> Шинээр татан авалт хийх
+      </button>
+    </div>
+  </div>
+
+  <!-- Filters and Search Toolbar -->
+  <div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3 text-xs">
+    <div class="flex flex-wrap items-center gap-2.5">
+      <div class="flex items-center gap-1.5 bg-surface-container-low px-3 py-1.5 rounded-lg border border-outline-variant/40">
+        <span class="text-on-surface-variant font-label-caps">Төлөв:</span>
+        <select class="bg-transparent font-semibold text-primary focus:outline-none cursor-pointer">
+          <option>Бүгд (All Status)</option>
+          <option>Амжилттай (Completed)</option>
+          <option>Боловсруулж буй (Processing)</option>
+          <option>Хүлээгдэж буй (Queued)</option>
+        </select>
+      </div>
+      <div class="flex items-center gap-1.5 bg-surface-container-low px-3 py-1.5 rounded-lg border border-outline-variant/40">
+        <span class="text-on-surface-variant font-label-caps">Валют:</span>
+        <select class="bg-transparent font-semibold text-primary focus:outline-none cursor-pointer">
+          <option>Бүх Валют</option>
+          <option>MNT (₮)</option>
+          <option>USD ($)</option>
+        </select>
+      </div>
+      <div class="flex items-center gap-1.5 bg-surface-container-low px-3 py-1.5 rounded-lg border border-outline-variant/40">
+        <span class="material-symbols-outlined text-xs text-on-surface-variant">calendar_today</span>
+        <select class="bg-transparent font-semibold text-primary focus:outline-none cursor-pointer">
+          <option>Сүүлийн 30 хоног</option>
+          <option>Энэ улирал (Q4)</option>
+          <option>2024 он бүхэлдээ</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="relative flex-1 md:max-w-xs">
+      <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-base">search</span>
+      <input type="text" placeholder="ID, данс, утгаар хайх..." class="w-full pl-9 pr-3 py-1.5 bg-surface-container-low rounded-lg border border-outline-variant/40 text-primary text-xs placeholder:text-on-surface-variant focus:outline-none">
+    </div>
+  </div>
+
+  <!-- Table Element -->
+  <div class="overflow-x-auto border border-surface-container rounded-xl">
+    <table class="w-full text-left text-xs font-body-md">
+      <thead>
+        <tr class="bg-surface-container-low text-on-surface-variant font-label-caps uppercase border-b border-surface-container">
+          <th class="py-3.5 px-4 font-semibold">Гүйлгээний ID</th>
+          <th class="py-3.5 px-4 font-semibold">Огноо &amp; Цаг</th>
+          <th class="py-3.5 px-4 font-semibold">Хүлээн авагч данс / Банк</th>
+          <th class="py-3.5 px-4 font-semibold">Дүн</th>
+          <th class="py-3.5 px-4 font-semibold">Суутгасан шимтгэл</th>
+          <th class="py-3.5 px-4 font-semibold">Төлөв</th>
+          <th class="py-3.5 px-4 font-semibold text-right">Үйлдэл</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-surface-container bg-surface-container-lowest">
+        <!-- Row 1 -->
+        <tr class="hover:bg-surface-container-low/60 transition">
+          <td class="py-3.5 px-4 font-mono font-bold text-primary">#PO-94821</td>
+          <td class="py-3.5 px-4 text-on-surface-variant">2024.10.15 14:20</td>
+          <td class="py-3.5 px-4">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded bg-emerald-800 text-white flex items-center justify-center font-bold text-[9px] font-label-caps">KHAN</span>
+              <div>
+                <p class="font-semibold text-primary">Хаан Банк (MNT)</p>
+                <p class="text-[11px] font-mono text-on-surface-variant">•••• 9924</p>
+              </div>
+            </div>
+          </td>
+          <td class="py-3.5 px-4 font-headline-md text-sm font-bold text-primary font-mono">14,850,000 ₮</td>
+          <td class="py-3.5 px-4 text-on-surface-variant font-mono">0 ₮ <span class="text-[10px] text-emerald-700 font-sans">(Үнэгүй)</span></td>
+          <td class="py-3.5 px-4">
+            <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-label-caps bg-emerald-100 text-emerald-800 font-semibold">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Амжилттай
+            </span>
+          </td>
+          <td class="py-3.5 px-4 text-right">
+            <div class="flex items-center justify-end gap-1.5">
+              <button class="px-2 py-1 rounded bg-surface-container-low hover:bg-surface-container text-primary font-label-caps text-[11px] flex items-center gap-1 transition shadow-sm" title="Баримт татах">
+                <span class="material-symbols-outlined text-xs text-primary">receipt</span> PDF
+              </button>
+              <button class="p-1 text-on-surface-variant hover:text-primary rounded hover:bg-surface-container">
+                <span class="material-symbols-outlined text-base">chevron_right</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Row 2 -->
+        <tr class="hover:bg-surface-container-low/60 transition">
+          <td class="py-3.5 px-4 font-mono font-bold text-primary">#PO-94750</td>
+          <td class="py-3.5 px-4 text-on-surface-variant">2024.10.12 11:05</td>
+          <td class="py-3.5 px-4">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded bg-primary text-on-primary flex items-center justify-center font-bold text-[9px] font-label-caps">SWIFT</span>
+              <div>
+                <p class="font-semibold text-primary">Golomt Corporate (USD)</p>
+                <p class="text-[11px] font-mono text-on-surface-variant">•••• 4001</p>
+              </div>
+            </div>
+          </td>
+          <td class="py-3.5 px-4 font-headline-md text-sm font-bold text-primary font-mono">$4,250.00</td>
+          <td class="py-3.5 px-4 text-on-surface-variant font-mono">$15.00 + 0.5%</td>
+          <td class="py-3.5 px-4">
+            <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-label-caps bg-emerald-100 text-emerald-800 font-semibold">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Амжилттай
+            </span>
+          </td>
+          <td class="py-3.5 px-4 text-right">
+            <div class="flex items-center justify-end gap-1.5">
+              <button class="px-2 py-1 rounded bg-surface-container-low hover:bg-surface-container text-primary font-label-caps text-[11px] flex items-center gap-1 transition shadow-sm" title="Баримт татах">
+                <span class="material-symbols-outlined text-xs text-primary">receipt</span> PDF
+              </button>
+              <button class="p-1 text-on-surface-variant hover:text-primary rounded hover:bg-surface-container">
+                <span class="material-symbols-outlined text-base">chevron_right</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Row 3 -->
+        <tr class="hover:bg-surface-container-low/60 transition">
+          <td class="py-3.5 px-4 font-mono font-bold text-primary">#PO-94612</td>
+          <td class="py-3.5 px-4 text-on-surface-variant">2024.10.08 09:45</td>
+          <td class="py-3.5 px-4">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded bg-emerald-800 text-white flex items-center justify-center font-bold text-[9px] font-label-caps">KHAN</span>
+              <div>
+                <p class="font-semibold text-primary">Хаан Банк (MNT)</p>
+                <p class="text-[11px] font-mono text-on-surface-variant">•••• 9924</p>
+              </div>
+            </div>
+          </td>
+          <td class="py-3.5 px-4 font-headline-md text-sm font-bold text-primary font-mono">8,200,000 ₮</td>
+          <td class="py-3.5 px-4 text-on-surface-variant font-mono">500 ₮</td>
+          <td class="py-3.5 px-4">
+            <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-label-caps bg-amber-100 text-amber-900 font-semibold">
+              <span class="w-1.5 h-1.5 rounded-full bg-amber-800 animate-pulse"></span> Боловсруулж буй
+            </span>
+          </td>
+          <td class="py-3.5 px-4 text-right">
+            <div class="flex items-center justify-end gap-1.5"><button onclick="document.getElementById('ebarimt-modal').classList.remove('hidden'); document.getElementById('tab-btn-customs').click();" class="px-2 py-1 rounded bg-secondary-fixed text-on-secondary-fixed hover:bg-secondary-fixed-dim font-label-caps text-[11px] flex items-center gap-1 transition shadow-sm" title="Гаалийн мэдүүлэг (CN23)"><span class="material-symbols-outlined text-xs">verified_user</span> CN23</button>
+              <button class="px-2 py-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-label-caps text-[11px] flex items-center gap-1 transition shadow-sm" title="Хүлээгдэж буй">
+                <span class="material-symbols-outlined text-xs">hourglass_empty</span> Түр хүлээлт
+              </button>
+              <button class="p-1 text-on-surface-variant hover:text-primary rounded hover:bg-surface-container">
+                <span class="material-symbols-outlined text-base">chevron_right</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Row 4 -->
+        <tr class="hover:bg-surface-container-low/60 transition">
+          <td class="py-3.5 px-4 font-mono font-bold text-primary">#PO-94503</td>
+          <td class="py-3.5 px-4 text-on-surface-variant">2024.10.04 16:30</td>
+          <td class="py-3.5 px-4">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded bg-tertiary-container text-on-tertiary-container flex items-center justify-center font-bold text-[9px] font-label-caps">STRIPE</span>
+              <div>
+                <p class="font-semibold text-primary">Stripe Express Payout</p>
+                <p class="text-[11px] font-mono text-on-surface-variant">acct_1Ou92J8MGl39Xn</p>
+              </div>
+            </div>
+          </td>
+          <td class="py-3.5 px-4 font-headline-md text-sm font-bold text-primary font-mono">$1,800.00</td>
+          <td class="py-3.5 px-4 text-on-surface-variant font-mono">$24.00</td>
+          <td class="py-3.5 px-4">
+            <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-label-caps bg-emerald-100 text-emerald-800 font-semibold">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Амжилттай
+            </span>
+          </td>
+          <td class="py-3.5 px-4 text-right">
+            <div class="flex items-center justify-end gap-1.5">
+              <button class="px-2 py-1 rounded bg-surface-container-low hover:bg-surface-container text-primary font-label-caps text-[11px] flex items-center gap-1 transition shadow-sm" title="Баримт татах">
+                <span class="material-symbols-outlined text-xs text-primary">receipt</span> PDF
+              </button>
+              <button class="p-1 text-on-surface-variant hover:text-primary rounded hover:bg-surface-container">
+                <span class="material-symbols-outlined text-base">chevron_right</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+
+        <!-- Row 5 -->
+        <tr class="hover:bg-surface-container-low/60 transition">
+          <td class="py-3.5 px-4 font-mono font-bold text-primary">#PO-94389</td>
+          <td class="py-3.5 px-4 text-on-surface-variant">2024.10.01 11:15</td>
+          <td class="py-3.5 px-4">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded bg-primary text-on-primary flex items-center justify-center font-bold text-[9px] font-label-caps">SWIFT</span>
+              <div>
+                <p class="font-semibold text-primary">Golomt Corporate (USD)</p>
+                <p class="text-[11px] font-mono text-on-surface-variant">•••• 4001</p>
+              </div>
+            </div>
+          </td>
+          <td class="py-3.5 px-4 font-headline-md text-sm font-bold text-primary font-mono">$3,100.00</td>
+          <td class="py-3.5 px-4 text-on-surface-variant font-mono">$15.00 + 0.5%</td>
+          <td class="py-3.5 px-4">
+            <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-label-caps bg-tertiary-fixed text-on-tertiary-fixed font-semibold">
+              <span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Хүлээгдэж буй
+            </span>
+          </td>
+          <td class="py-3.5 px-4 text-right">
+            <div class="flex items-center justify-end gap-1.5">
+              <button class="px-2 py-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-label-caps text-[11px] flex items-center gap-1 transition shadow-sm" title="Хүлээгдэж буй">
+                <span class="material-symbols-outlined text-xs">schedule</span> Хүлээгдэж буй
+              </button>
+              <button class="p-1 text-on-surface-variant hover:text-primary rounded hover:bg-surface-container">
+                <span class="material-symbols-outlined text-base">chevron_right</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Table Pagination Footer -->
+  <div class="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs pt-1">
+    <span class="text-on-surface-variant font-label-caps">
+      Нийт 48 гүйлгээнээс 1-5 харуулж байна
+    </span>
+    <div class="flex items-center gap-1">
+      <button class="px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-label-caps flex items-center gap-1 transition shadow-sm disabled:opacity-50" disabled="">
+        <span class="material-symbols-outlined text-sm">chevron_left</span> Өмнөх
+      </button>
+      <button class="w-8 h-8 rounded-lg bg-primary text-on-primary font-bold text-xs flex items-center justify-center font-label-caps shadow-sm">
+        1
+      </button>
+      <button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-surface-container text-primary font-bold text-xs flex items-center justify-center font-label-caps transition">
+        2
+      </button>
+      <button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-surface-container text-primary font-bold text-xs flex items-center justify-center font-label-caps transition">
+        3
+      </button>
+      <span class="px-1 text-on-surface-variant">...</span>
+      <button class="w-8 h-8 rounded-lg bg-surface-container-low hover:bg-surface-container text-primary font-bold text-xs flex items-center justify-center font-label-caps transition">
+        10
+      </button>
+      <button class="px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-primary font-label-caps flex items-center gap-1 transition shadow-sm ml-1">
+        Дараах <span class="material-symbols-outlined text-sm">chevron_right</span>
+      </button>
+    </div>
+  </div>
+</div><div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Security Governance (1 Col) -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm space-y-5">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant tracking-wider">Аюулгүй Байдал</span>
+<h3 class="font-headline-md text-headline-md font-bold text-primary mt-1">
+            2FA &amp; Хамгаалалт
+          </h3>
+</div>
+<div class="space-y-4 text-xs font-body-md">
+<div class="p-4 bg-surface-container-low rounded-xl space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-semibold text-primary font-label-caps">Санхүүгийн 2FA OTP</span>
+<span class="text-emerald-700 font-bold font-label-caps">Идэвхтэй</span>
+</div>
+<p class="text-on-surface-variant">Данс нэмэх болон шимтгэлийн хувь өөрчлөхөд заавал Google Authenticator код шаардагдана.</p>
+</div>
+<div class="p-4 bg-surface-container-low rounded-xl space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-semibold text-primary font-label-caps">API IP Whitelist</span>
+<span class="text-primary font-bold font-label-caps">3 IP заасан</span>
+</div>
+<p class="text-on-surface-variant">Зөвхөн баталгаажсан серверүүдээс гүйлгээний төлөв шинэчлэх эрх олгогдсон.</p>
+</div>
+<div class="pt-2">
+<button class="w-full py-2.5 rounded-xl bg-surface-container-high hover:bg-surface-variant text-primary font-label-caps text-xs flex items-center justify-center gap-2 transition">
+<span class="material-symbols-outlined text-sm">lock_reset</span> Түлхүүрүүдийг Дахин Үүсгэх
+            </button>
+</div>
+</div>
+</div>
+<!-- Live Webhook Telemetry Table (2 Cols) -->
+<div class="lg:col-span-2 bg-surface-container-lowest rounded-2xl p-6 shadow-sm space-y-5">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant tracking-wider">Шууд Хяналт</span>
+<h3 class="font-headline-md text-headline-md font-bold text-primary mt-1">
+              Сүүлийн 5 Төлбөрийн Webhook Лог
+            </h3>
+</div>
+<span class="text-xs text-on-surface-variant font-label-caps flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span> Live Listener
+          </span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left text-xs font-body-md">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-caps uppercase">
+<th class="py-3 px-4 rounded-l-lg">Үйл явдал</th>
+<th class="py-3 px-4">Суваг</th>
+<th class="py-3 px-4">IP Хаяг</th>
+<th class="py-3 px-4">Статус</th>
+<th class="py-3 px-4 rounded-r-lg">Цаг</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<tr class="hover:bg-surface-container-low/60 transition">
+<td class="py-3.5 px-4 font-mono font-medium text-primary">payment_intent.succeeded</td>
+<td class="py-3.5 px-4">Stripe Connect</td>
+<td class="py-3.5 px-4 font-mono text-on-surface-variant">54.187.174.169</td>
+<td class="py-3.5 px-4">
+<span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-label-caps font-semibold">200 OK</span>
+</td>
+<td class="py-3.5 px-4 text-on-surface-variant">14:32:08</td>
+</tr>
+<tr class="hover:bg-surface-container-low/60 transition">
+<td class="py-3.5 px-4 font-mono font-medium text-primary">qpay.invoice.paid</td>
+<td class="py-3.5 px-4">QPay Enterprise</td>
+<td class="py-3.5 px-4 font-mono text-on-surface-variant">103.143.40.12</td>
+<td class="py-3.5 px-4">
+<span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-label-caps font-semibold">200 OK</span>
+</td>
+<td class="py-3.5 px-4 text-on-surface-variant">14:28:44</td>
+</tr>
+<tr class="hover:bg-surface-container-low/60 transition">
+<td class="py-3.5 px-4 font-mono font-medium text-primary">split.royalty.dispatched</td>
+<td class="py-3.5 px-4">Ledger Router</td>
+<td class="py-3.5 px-4 font-mono text-on-surface-variant">Internal Mesh</td>
+<td class="py-3.5 px-4">
+<span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-label-caps font-semibold">200 OK</span>
+</td>
+<td class="py-3.5 px-4 text-on-surface-variant">14:28:46</td>
+</tr>
+<tr class="hover:bg-surface-container-low/60 transition">
+<td class="py-3.5 px-4 font-mono font-medium text-primary">wechat.crossborder.cleared</td>
+<td class="py-3.5 px-4">APAC Route</td>
+<td class="py-3.5 px-4 font-mono text-on-surface-variant">183.3.226.35</td>
+<td class="py-3.5 px-4">
+<span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-label-caps font-semibold">200 OK</span>
+</td>
+<td class="py-3.5 px-4 text-on-surface-variant">14:15:10</td>
+</tr>
+<tr class="hover:bg-surface-container-low/60 transition">
+<td class="py-3.5 px-4 font-mono font-medium text-primary">payout.batch.settled</td>
+<td class="py-3.5 px-4">Khan Bank Direct</td>
+<td class="py-3.5 px-4 font-mono text-on-surface-variant">202.131.225.2</td>
+<td class="py-3.5 px-4">
+<span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-label-caps font-semibold">200 OK</span>
+</td>
+<td class="py-3.5 px-4 text-on-surface-variant">13:50:02</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Toast Notification for Micro-interaction -->
+<!-- E-Barimt Preview & Print Modal Dialog -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-primary/60 backdrop-blur-sm overflow-y-auto" id="ebarimt-modal" role="dialog" aria-modal="true">
+  <div class="bg-surface-container-lowest rounded-2xl shadow-2xl border border-outline-variant/40 w-full max-w-2xl overflow-hidden flex flex-col my-8 transition-all">
+    <!-- Modal Header with Tab Navigation -->
+    <div class="px-6 pt-5 pb-0 border-b border-surface-container bg-surface-container-low flex flex-col gap-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-xl bg-primary text-on-primary flex items-center justify-center font-bold text-xs font-label-caps" id="modal-badge-icon">
+            DOC
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h3 class="font-headline-md text-base font-bold text-primary" id="modal-title-text">Төлбөрийн Баримт &amp; Нэхэмжлэх</h3>
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-label-caps bg-emerald-100 text-emerald-800 font-bold flex items-center gap-1" id="modal-status-badge">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Баталгаажсан
+              </span>
+            </div>
+            <p class="text-xs text-on-surface-variant font-body-md">Цахим татварын тайлан ба гадаад худалдааны баримтын урьдчилсан харагдац</p>
+          </div>
+        </div>
+        <button onclick="document.getElementById('ebarimt-modal').classList.add('hidden')" class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container transition" title="Хаах">
+          <span class="material-symbols-outlined text-lg">close</span>
+        </button>
+      </div>
+
+      <!-- Interactive Tabs -->
+      <div class="flex items-center gap-2 border-b border-outline-variant/40 -mb-px">
+        <button id="tab-btn-domestic" onclick="document.getElementById('view-domestic-slip').classList.remove('hidden'); document.getElementById('view-export-invoice').classList.add('hidden'); if(document.getElementById('view-customs-declaration')) document.getElementById('view-customs-declaration').classList.add('hidden'); this.className='pb-3 px-3 text-xs font-label-caps font-bold border-b-2 border-primary text-primary flex items-center gap-1.5 transition'; document.getElementById('tab-btn-export').className='pb-3 px-3 text-xs font-label-caps font-medium border-b-2 border-transparent text-on-surface-variant hover:text-primary flex items-center gap-1.5 transition'; if(document.getElementById('tab-btn-customs')) document.getElementById('tab-btn-customs').className='pb-3 px-3 text-xs font-label-caps font-medium border-b-2 border-transparent text-on-surface-variant hover:text-primary flex items-center gap-1.5 transition'; document.getElementById('modal-footer-export-btns').classList.add('hidden'); if(document.getElementById('modal-footer-customs-btns')) document.getElementById('modal-footer-customs-btns').classList.add('hidden'); document.getElementById('modal-footer-domestic-btns').classList.remove('hidden');" class="pb-3 px-3 text-xs font-label-caps font-bold border-b-2 border-primary text-primary flex items-center gap-1.5 transition">
+          <span class="material-symbols-outlined text-sm">receipt_long</span> Дотоодын И-Баримт (POS Slip)
+        </button>
+        <button id="tab-btn-export" onclick="document.getElementById('view-domestic-slip').classList.add('hidden'); document.getElementById('view-export-invoice').classList.remove('hidden'); if(document.getElementById('view-customs-declaration')) document.getElementById('view-customs-declaration').classList.add('hidden'); this.className='pb-3 px-3 text-xs font-label-caps font-bold border-b-2 border-primary text-primary flex items-center gap-1.5 transition'; document.getElementById('tab-btn-domestic').className='pb-3 px-3 text-xs font-label-caps font-medium border-b-2 border-transparent text-on-surface-variant hover:text-primary flex items-center gap-1.5 transition'; if(document.getElementById('tab-btn-customs')) document.getElementById('tab-btn-customs').className='pb-3 px-3 text-xs font-label-caps font-medium border-b-2 border-transparent text-on-surface-variant hover:text-primary flex items-center gap-1.5 transition'; document.getElementById('modal-footer-domestic-btns').classList.add('hidden'); if(document.getElementById('modal-footer-customs-btns')) document.getElementById('modal-footer-customs-btns').classList.add('hidden'); document.getElementById('modal-footer-export-btns').classList.remove('hidden');" class="pb-3 px-3 text-xs font-label-caps font-medium border-b-2 border-transparent text-on-surface-variant hover:text-primary flex items-center gap-1.5 transition">
+          <span class="material-symbols-outlined text-sm">flight_takeoff</span> Экспортын Нэхэмжлэх (Commercial Invoice / 0% VAT)
+        </button>
+      <button id="tab-btn-customs" onclick="document.getElementById('view-domestic-slip').classList.add('hidden'); document.getElementById('view-export-invoice').classList.add('hidden'); document.getElementById('view-customs-declaration').classList.remove('hidden'); this.className='pb-3 px-3 text-xs font-label-caps font-bold border-b-2 border-primary text-primary flex items-center gap-1.5 transition'; document.getElementById('tab-btn-domestic').className='pb-3 px-3 text-xs font-label-caps font-medium border-b-2 border-transparent text-on-surface-variant hover:text-primary flex items-center gap-1.5 transition'; document.getElementById('tab-btn-export').className='pb-3 px-3 text-xs font-label-caps font-medium border-b-2 border-transparent text-on-surface-variant hover:text-primary flex items-center gap-1.5 transition'; document.getElementById('modal-footer-domestic-btns').classList.add('hidden'); document.getElementById('modal-footer-export-btns').classList.add('hidden'); document.getElementById('modal-footer-customs-btns').classList.remove('hidden');" class="pb-3 px-3 text-xs font-label-caps font-medium border-b-2 border-transparent text-on-surface-variant hover:text-primary flex items-center gap-1.5 transition"><span class="material-symbols-outlined text-sm">verified_user</span> Гаалийн мэдүүлэг (Customs CN23 / E-Customs)</button></div>
+    </div>
+
+    <!-- Modal Body Content -->
+    <div class="p-6 overflow-y-auto max-h-[72vh] bg-surface-container-low/30">
+      <!-- VIEW 1: DOMESTIC POS SLIP -->
+      <div id="view-domestic-slip" class="space-y-4 max-w-lg mx-auto">
+        <div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/60 shadow-sm space-y-4 font-mono">
+          <!-- Receipt Brand & Header -->
+          <div class="text-center space-y-1 pb-3 border-b border-dashed border-outline-variant">
+            <div class="font-headline-md text-base font-bold text-primary font-sans">Монгол Дизайн Хаб ХХК</div>
+            <p class="text-xs text-on-surface-variant font-sans">Цахим Худалдаа ба Экспортын Төв</p>
+            <div class="text-xs text-primary font-semibold pt-1">
+              <span class="">ТТД: </span><span class="tracking-wider select-all font-bold">5489201940</span>
+            </div>
+          </div>
+
+          <!-- Meta Details -->
+          <div class="space-y-1.5 text-xs text-on-surface-variant pb-3 border-b border-dashed border-outline-variant font-sans">
+            <div class="flex justify-between">
+              <span class="">ПОС / Салбар:</span>
+              <span class="font-mono font-bold text-primary">POS-00912</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="">Огноо &amp; Цаг:</span>
+              <span class="font-mono font-bold text-primary">2024.10.15 14:28:45</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="">Гүйлгээний №:</span>
+              <span class="font-mono text-primary">TXN-20241015-8492</span>
+            </div>
+            <div class="flex justify-between items-start pt-1">
+              <span class="shrink-0">ДДТД (33 орон):</span>
+              <span class="font-mono text-[11px] font-bold text-primary break-all text-right select-all pl-2">384920194820192847291048201929102</span>
+            </div>
+          </div>
+
+          <!-- Item Breakdown Table -->
+          <div class="space-y-2 pb-3 border-b border-dashed border-outline-variant font-sans">
+            <div class="flex justify-between text-xs text-on-surface-variant font-label-caps uppercase pb-1 border-b border-surface-container">
+              <span class="">Барааны нэр</span>
+              <span class="">Дүн</span>
+            </div>
+            <div class="space-y-1 text-xs">
+              <div class="flex justify-between items-start">
+                <div class="pr-2">
+                  <p class="font-semibold text-primary">Ноолууран ороолт (Дизайн #8F92)</p>
+                  <p class="text-[11px] text-on-surface-variant font-mono">1 ш x 100,000 ₮</p>
+                </div>
+                <span class="font-mono font-bold text-primary">100,000 ₮</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tax Breakdown Totals -->
+          <div class="space-y-1.5 text-xs pb-3 border-b border-dashed border-outline-variant font-sans">
+            <div class="flex justify-between text-on-surface-variant">
+              <span class="">Суурь үнэ (НӨАТ-гүй):</span>
+              <span class="font-mono font-semibold text-primary">100,000 ₮</span>
+            </div>
+            <div class="flex justify-between text-on-surface-variant">
+              <span class="">НӨАТ (10.0%):</span>
+              <span class="font-mono font-bold text-emerald-700">+10,000 ₮</span>
+            </div>
+            <div class="flex justify-between text-on-surface-variant">
+              <span class="">НХАТ (1.0%):</span>
+              <span class="font-mono font-bold text-secondary">+1,000 ₮</span>
+            </div>
+            <div class="flex justify-between items-center pt-2 border-t border-surface-container text-sm font-bold text-primary">
+              <span class="">НИЙТ ТӨЛСӨН ДҮН:</span>
+              <span class="font-mono text-base text-primary font-bold">111,000 ₮</span>
+            </div>
+            <div class="flex justify-between text-[11px] text-on-surface-variant pt-0.5">
+              <span class="">Төлбөрийн хэлбэр:</span>
+              <span class="font-semibold text-primary font-sans">Бэлэн бус (QPay V2 / Данс)</span>
+            </div>
+          </div>
+
+          <!-- QR Code & Lottery -->
+          <div class="flex flex-col items-center justify-center p-3 bg-surface-container-low rounded-xl text-center space-y-2.5 font-sans">
+            <div class="p-2.5 bg-white rounded-lg shadow-sm border border-outline-variant/40 flex items-center justify-center">
+              <svg class="w-28 h-28 text-primary" viewBox="0 0 100 100" fill="currentColor">
+                <rect x="0" y="0" width="30" height="30" rx="2" fill="currentColor"></rect>
+                <rect x="4" y="4" width="22" height="22" rx="1" fill="white"></rect>
+                <rect x="8" y="8" width="14" height="14" fill="currentColor"></rect>
+                <rect x="70" y="0" width="30" height="30" rx="2" fill="currentColor"></rect>
+                <rect x="74" y="4" width="22" height="22" rx="1" fill="white"></rect>
+                <rect x="78" y="8" width="14" height="14" fill="currentColor"></rect>
+                <rect x="0" y="70" width="30" height="30" rx="2" fill="currentColor"></rect>
+                <rect x="4" y="74" width="22" height="22" rx="1" fill="white"></rect>
+                <rect x="8" y="78" width="14" height="14" fill="currentColor"></rect>
+                <rect x="36" y="8" width="6" height="14" fill="currentColor"></rect>
+                <rect x="48" y="4" width="14" height="6" fill="currentColor"></rect>
+                <rect x="40" y="22" width="8" height="8" fill="currentColor"></rect>
+                <rect x="54" y="16" width="10" height="10" fill="currentColor"></rect>
+                <rect x="8" y="36" width="14" height="6" fill="currentColor"></rect>
+                <rect x="22" y="44" width="8" height="12" fill="currentColor"></rect>
+                <rect x="36" y="36" width="28" height="28" rx="2" fill="currentColor"></rect>
+                <rect x="42" y="42" width="16" height="16" fill="white"></rect>
+                <rect x="46" y="46" width="8" height="8" fill="currentColor"></rect>
+                <rect x="70" y="36" width="10" height="8" fill="currentColor"></rect>
+                <rect x="86" y="40" width="8" height="18" fill="currentColor"></rect>
+                <rect x="72" y="50" width="8" height="12" fill="currentColor"></rect>
+                <rect x="36" y="70" width="10" height="10" fill="currentColor"></rect>
+                <rect x="52" y="72" width="12" height="6" fill="currentColor"></rect>
+                <rect x="40" y="86" width="18" height="8" fill="currentColor"></rect>
+                <rect x="70" y="70" width="12" height="8" fill="currentColor"></rect>
+                <rect x="88" y="74" width="8" height="18" fill="currentColor"></rect>
+                <rect x="74" y="84" width="8" height="10" fill="currentColor"></rect>
+              </svg>
+            </div>
+            <div class="space-y-1 w-full">
+              <div class="text-xs text-on-surface-variant font-label-caps">Сугалааны дугаар:</div>
+              <div class="bg-surface-container-lowest px-4 py-1.5 rounded-lg border border-secondary-fixed-dim/80 font-mono text-base font-bold text-primary tracking-widest inline-block shadow-sm select-all">
+                MN-849201
+              </div>
+              <p class="text-[11px] text-on-surface-variant font-body-md pt-0.5">
+                ebarimt.mn гар утасны аппликейшнээр QR кодыг уншуулна уу.
+              </p>
+              <div class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-label-caps bg-emerald-100 text-emerald-800 font-semibold mt-1">
+                <span class="material-symbols-outlined text-xs">verified</span> НӨАТ-ын 2%-ийн буцаан олголт бодогдоно
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VIEW 2: EXPORT COMMERCIAL INVOICE (INTERNATIONAL COMPLIANT) -->
+      <div id="view-export-invoice" class="hidden space-y-5 bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/60 shadow-sm">
+        <!-- Invoice Official Header & Customs Stamp Ribbon -->
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 border-b border-surface-container">
+          <div class="space-y-1">
+            <div class="flex items-center gap-2">
+              <span class="w-7 h-7 rounded-lg bg-primary text-on-primary flex items-center justify-center font-bold text-xs font-label-caps">FX</span>
+              <h4 class="font-headline-md text-base font-bold text-primary tracking-tight font-sans">COMMERCIAL INVOICE / ЭКСПОРТЫН НЭХЭМЖЛЭХ</h4>
+            </div>
+            <p class="text-xs text-on-surface-variant font-body-md">Гадаад худалдааны олон улсын нийцэл &amp; Татварын албан баримт</p>
+          </div>
+          <!-- Export 0% VAT Verification Badge -->
+          <div class="flex flex-col items-end">
+            <span class="px-3 py-1 rounded-full text-xs font-label-caps bg-emerald-100 text-emerald-800 font-bold border border-emerald-500/30 flex items-center gap-1.5 shadow-sm">
+              <span class="material-symbols-outlined text-sm text-emerald-600">verified</span> EXEMPT 0% VAT EXPORT VERIFIED
+            </span>
+            <span class="text-[10px] text-on-surface-variant font-mono mt-0.5">МУ-ын НӨАТ-ын хууль: 12-р зүйл (Zero-Rated)</span>
+          </div>
+        </div>
+
+        <!-- Metadata Grid: Invoice No, Date, Incoterms, Currency -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 p-3.5 bg-surface-container-low rounded-xl text-xs font-mono border border-outline-variant/40">
+          <div>
+            <span class="text-on-surface-variant font-sans font-label-caps text-[11px] block">Нэхэмжлэх №:</span>
+            <span class="font-bold text-primary text-xs select-all">#EXP-2024-8842</span>
+          </div>
+          <div>
+            <span class="text-on-surface-variant font-sans font-label-caps text-[11px] block">Огноо / Date:</span>
+            <span class="font-bold text-primary text-xs">2024.10.15 14:28 UTC</span>
+          </div>
+          <div>
+            <span class="text-on-surface-variant font-sans font-label-caps text-[11px] block">Incoterms 2020:</span>
+            <span class="font-bold text-primary text-xs">DAP Stockholm / FOB UB</span>
+          </div>
+          <div>
+            <span class="text-on-surface-variant font-sans font-label-caps text-[11px] block">Валют / Currency:</span>
+            <span class="font-bold text-emerald-700 text-xs">USD ($) / Cross-Border</span>
+          </div>
+        </div>
+
+        <!-- Exporter vs Consignee Two-Column -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-body-md">
+          <!-- Exporter Box -->
+          <div class="p-3.5 bg-surface-container-low/60 rounded-xl border border-outline-variant/40 space-y-1.5">
+            <div class="flex items-center justify-between pb-1 border-b border-surface-variant/40">
+              <span class="font-label-caps font-bold text-primary flex items-center gap-1">
+                <span class="material-symbols-outlined text-sm text-secondary">business</span> Экспортлогч (Shipper / Exporter)
+              </span>
+              <span class="text-[10px] text-on-surface-variant font-mono">EXP-MN-REG</span>
+            </div>
+            <p class="font-bold text-primary">Монгол Дизайн Хаб ХХК (Mongol Design Hub LLC)</p>
+            <p class="text-on-surface-variant text-[11px]">ТТД / Tax ID: <span class="font-mono font-semibold text-primary select-all">5489201940</span></p>
+            <p class="text-on-surface-variant text-[11px]">Гаалийн экспортын код: <span class="font-mono font-semibold text-primary">MN-CUST-89021</span></p>
+            <p class="text-on-surface-variant text-[11px]">Хаяг: Peace Avenue 15/1, Сүхбаатар дүүрэг, Улаанбаатар, Монгол Улс</p>
+          </div>
+
+          <!-- Consignee Box -->
+          <div class="p-3.5 bg-surface-container-low/60 rounded-xl border border-outline-variant/40 space-y-1.5">
+            <div class="flex items-center justify-between pb-1 border-b border-surface-variant/40">
+              <span class="font-label-caps font-bold text-primary flex items-center gap-1">
+                <span class="material-symbols-outlined text-sm text-primary">public</span> Хүлээн авагч (Consignee / Buyer)
+              </span>
+              <span class="text-[10px] text-emerald-700 font-semibold">Баталгаажсан Худалдан авагч</span>
+            </div>
+            <p class="font-bold text-primary">Nordic Heritage Studio Inc.</p>
+            <p class="text-on-surface-variant text-[11px]">VAT / Reg ID: <span class="font-mono font-semibold text-primary">SE556012345601</span></p>
+            <p class="text-on-surface-variant text-[11px]">Гаалийн БТН Код (HS Code): <span class="font-mono font-semibold text-primary">6117.10 (Cashmere Shawls)</span></p>
+            <p class="text-on-surface-variant text-[11px]">Хаяг: Drottninggatan 48, SE-111 21 Stockholm, Sweden (Швед)</p>
+          </div>
+        </div>
+
+        <!-- Itemized Export Billing Table -->
+        <div class="border border-surface-container rounded-xl overflow-hidden">
+          <table class="w-full text-left text-xs">
+            <thead>
+              <tr class="bg-surface-container-low text-on-surface-variant font-label-caps uppercase border-b border-surface-container">
+                <th class="py-2.5 px-3 font-semibold">Барааны тодорхойлолт &amp; HS Код</th>
+                <th class="py-2.5 px-3 font-semibold text-center">Тоо ширхэг</th>
+                <th class="py-2.5 px-3 font-semibold text-right">Нэгж үнэ</th>
+                <th class="py-2.5 px-3 font-semibold text-right">НӨАТ (VAT)</th>
+                <th class="py-2.5 px-3 font-semibold text-right">Нийт дүн</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-surface-container bg-surface-container-lowest font-body-md">
+              <tr>
+                <td class="py-3 px-3">
+                  <p class="font-bold text-primary">Pure Cashmere Scarf (Designer Special Ed. #8F92)</p>
+                  <p class="text-[11px] text-on-surface-variant font-mono">100% Mongolian Organic Cashmere, Jacquard Pattern · HS Code: 6117.10</p>
+                </td>
+                <td class="py-3 px-3 text-center font-mono font-bold text-primary">10 pcs</td>
+                <td class="py-3 px-3 text-right font-mono text-primary">$65.00</td>
+                <td class="py-3 px-3 text-right font-mono text-emerald-700 font-semibold">0.00% ($0.00)</td>
+                <td class="py-3 px-3 text-right font-mono font-bold text-primary">$650.00</td>
+              </tr>
+              <tr class="bg-surface-container-low/30">
+                <td class="py-2.5 px-3">
+                  <p class="font-semibold text-primary">Express International Air Freight &amp; Export Packaging</p>
+                  <p class="text-[11px] text-on-surface-variant font-mono">DHL Express / Mongol Post Air Cargo (Insured &amp; Tracked)</p>
+                </td>
+                <td class="py-2.5 px-3 text-center font-mono text-on-surface-variant">1 pkg</td>
+                <td class="py-2.5 px-3 text-right font-mono text-primary">$45.00</td>
+                <td class="py-2.5 px-3 text-right font-mono text-emerald-700 font-semibold">0.00% ($0.00)</td>
+                <td class="py-2.5 px-3 text-right font-mono font-bold text-primary">$45.00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Export Summary & Payment Gateway Settlement -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 items-start pt-1">
+          <!-- Settlement Reference -->
+          <div class="p-3 bg-surface-container-low rounded-xl text-xs space-y-1.5 border border-outline-variant/40">
+            <div class="flex items-center justify-between">
+              <span class="font-label-caps font-bold text-primary">Төлбөрийн Гарц &amp; Эвлэрүүлэлт:</span>
+              <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-label-caps text-[10px] font-bold">Settled</span>
+            </div>
+            <div class="font-mono text-primary text-[11px] space-y-0.5">
+              <p class="">Gateway: <span class="font-semibold">Stripe Connect Custom (Cross-Border Escrow)</span></p>
+              <p class="">Stripe TXN Ref: <span class="font-semibold select-all text-secondary">#ST-9912048X-APAC</span></p>
+              <p class="">Escrow Vault Clearance: <span class="text-emerald-700 font-semibold">Multi-Sig Verified (T+0 Lock)</span></p>
+            </div>
+          </div>
+
+          <!-- Export Total Calculation -->
+          <div class="p-3 bg-surface-container-low rounded-xl text-xs space-y-1.5 border border-outline-variant/40">
+            <div class="flex justify-between text-on-surface-variant">
+              <span class="">Export Subtotal:</span>
+              <span class="font-mono font-semibold text-primary">$650.00 USD</span>
+            </div>
+            <div class="flex justify-between text-on-surface-variant">
+              <span class="">Express Freight &amp; Insurance:</span>
+              <span class="font-mono font-semibold text-primary">$45.00 USD</span>
+            </div>
+            <div class="flex justify-between text-emerald-700 font-semibold">
+              <span class="">Export VAT Rate (0% Article 12):</span>
+              <span class="font-mono">$0.00 USD</span>
+            </div>
+            <div class="pt-1.5 border-t border-surface-container flex justify-between items-center text-sm font-bold text-primary">
+              <span class="font-sans">TOTAL PAYABLE:</span>
+              <span class="font-mono text-base font-bold text-primary">$695.00 USD</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Official Stamps & Signatures Footer -->
+        <div class="p-3.5 bg-surface-container-low rounded-xl border border-secondary-fixed-dim/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+          <div class="flex items-center gap-3">
+            <!-- Circular Customs Digital Seal Simulation -->
+            <div class="w-16 h-16 rounded-full border-2 border-dashed border-secondary flex flex-col items-center justify-center p-1 text-center shrink-0 bg-white/80">
+              <span class="text-[8px] font-bold text-secondary uppercase tracking-tight">CUSTOMS 0%</span>
+              <span class="material-symbols-outlined text-sm text-secondary">gavel</span>
+              <span class="text-[7px] font-mono text-primary font-bold">EXPORT MGL</span>
+            </div>
+            <div>
+              <div class="font-label-caps font-bold text-primary text-xs flex items-center gap-1">
+                <span class="material-symbols-outlined text-xs text-emerald-600">verified</span> Олон Улсын Экспортын Цахим Тамга
+              </div>
+              <p class="text-[11px] text-on-surface-variant mt-0.5">Энэхүү экспортын нэхэмжлэх нь Гаалийн ерөнхий газар болон ТЕГ-ын цахим санд баталгаажсан дижитал гэрчилгээтэй болно.</p>
+            </div>
+          </div>
+          <div class="text-right shrink-0">
+            <p class="text-[10px] text-on-surface-variant font-label-caps">Эрх бүхий гарын үсэг / Authorized Signature:</p>
+            <p class="font-mono font-bold text-primary text-xs mt-0.5">Mongol Design Hub Finance</p>
+            <span class="inline-block px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 text-[10px] font-mono font-bold mt-1">SHA-256 e-Sign Valid</span>
+          </div>
+        </div>
+      </div><div id="view-customs-declaration" class="hidden space-y-5 bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/60 shadow-sm"><div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 border-b border-surface-container"><div class="space-y-1.5"><div class="flex items-center gap-2"><span class="w-8 h-8 rounded-lg bg-emerald-800 text-white flex items-center justify-center font-bold text-xs font-label-caps">MGL</span><div><h4 class="font-headline-md text-base font-bold text-primary tracking-tight font-sans">ГААЛИЙН МЭДҮҮЛЭГ / EXPORT CUSTOMS DECLARATION (CN23)</h4><p class="text-[11px] text-on-surface-variant font-label-caps uppercase">Монгол Улсын Гаалийн Ерөнхий Газар · WCO Standard Compliance</p></div></div></div><div class="flex flex-col items-end gap-1"><span class="px-3 py-1 rounded-full text-xs font-label-caps bg-emerald-100 text-emerald-800 font-bold border border-emerald-500/30 flex items-center gap-1.5 shadow-sm"><span class="material-symbols-outlined text-sm text-emerald-600">verified</span> НОГООН ХОНГИЛ (GREEN CHANNEL - RELEASED)</span><span class="text-[10px] text-on-surface-variant font-mono">Мэдүүлгийн дугаар: MGL-EXP-2024-90412</span></div></div><div class="grid grid-cols-2 sm:grid-cols-4 gap-3 p-3.5 bg-surface-container-low rounded-xl text-xs font-mono border border-outline-variant/40"><div><span class="text-on-surface-variant font-sans font-label-caps text-[11px] block">Гаалийн Газар / Office:</span><span class="font-bold text-primary text-xs">Буянт-Ухаа дахь Гааль (021)</span></div><div><span class="text-on-surface-variant font-sans font-label-caps text-[11px] block">Бүртгэлийн огноо:</span><span class="font-bold text-primary text-xs">2024.10.15 14:30 ULN</span></div><div><span class="text-on-surface-variant font-sans font-label-caps text-[11px] block">Тээврийн төрөл:</span><span class="font-bold text-primary text-xs">Агаар (Air Freight / DHL)</span></div><div><span class="text-on-surface-variant font-sans font-label-caps text-[11px] block">E-Customs Статус:</span><span class="font-bold text-emerald-700 text-xs flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Зөвшөөрөгдсөн (Cleared)</span></div></div><div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-body-md"><div class="p-3.5 bg-surface-container-low/60 rounded-xl border border-outline-variant/40 space-y-1.5"><div class="flex items-center justify-between pb-1 border-b border-surface-variant/40"><span class="font-label-caps font-bold text-primary flex items-center gap-1"><span class="material-symbols-outlined text-sm text-primary">flight_takeoff</span> Илгээгч / Shipper (Экспортлогч)</span><span class="text-[10px] text-on-surface-variant font-mono">#CB-8812</span></div><p class="font-bold text-primary">Монгол Дизайн Хаб ХХК (Mongol Design Hub LLC)</p><p class="text-on-surface-variant text-[11px]">ТТД: <span class="font-mono font-semibold text-primary select-all">5489201940</span> | Брокер: MDH Logistics Agent</p><p class="text-on-surface-variant text-[11px]">Гарал үүслийн гэрчилгээ: <span class="font-mono font-semibold text-secondary select-all">MN-COO-2024-8841 (Form A)</span></p><p class="text-on-surface-variant text-[11px]">Хаяг: Peace Ave 15/1, Сүхбаатар дүүрэг, Улаанбаатар</p></div><div class="p-3.5 bg-surface-container-low/60 rounded-xl border border-outline-variant/40 space-y-1.5"><div class="flex items-center justify-between pb-1 border-b border-surface-variant/40"><span class="font-label-caps font-bold text-primary flex items-center gap-1"><span class="material-symbols-outlined text-sm text-secondary">flight_land</span> Хүлээн авагч / Consignee (Импортлогч)</span><span class="text-[10px] text-emerald-700 font-semibold">Швед (SE)</span></div><p class="font-bold text-primary">Nordic Heritage Studio Inc.</p><p class="text-on-surface-variant text-[11px]">VAT / EORI: <span class="font-mono font-semibold text-primary">SE556012345601</span></p><p class="text-on-surface-variant text-[11px]">Хүргэх хаяг: Drottninggatan 48, SE-111 21 Stockholm, Sweden</p><p class="text-on-surface-variant text-[11px]">Хүргэлтийн нөхцөл: DAP Stockholm (Incoterms 2020)</p></div></div><div class="border border-surface-container rounded-xl overflow-hidden"><table class="w-full text-left text-xs"><thead><tr class="bg-surface-container-low text-on-surface-variant font-label-caps uppercase border-b border-surface-container"><th class="py-2.5 px-3 font-semibold">Барааны код (HS Code) &amp; Нэр төрөл</th><th class="py-2.5 px-3 font-semibold text-center">Тоо ширхэг</th><th class="py-2.5 px-3 font-semibold text-center">Цэвэр/Бохир жин</th><th class="py-2.5 px-3 font-semibold text-right">Гаалийн үнэлгээ (FOB)</th><th class="py-2.5 px-3 font-semibold text-right">Экспорт Татвар</th></tr></thead><tbody class="divide-y divide-surface-container bg-surface-container-lowest font-body-md"><tr><td class="py-3 px-3"><div class="flex items-center gap-1.5"><span class="font-mono font-bold text-primary bg-surface-container px-1.5 py-0.5 rounded text-[11px]">6117.10.00</span><span class="font-bold text-primary">Ноолууран ороолт (100% Cashmere Shawls)</span></div><p class="text-[11px] text-on-surface-variant font-mono mt-0.5">Origin: MN - Монгол Улс | Загварын дугаар: #8F92</p></td><td class="py-3 px-3 text-center font-mono font-bold text-primary">10 ш (10 pcs)</td><td class="py-3 px-3 text-center font-mono text-on-surface-variant">2.45 kg / 3.10 kg</td><td class="py-3 px-3 text-right font-mono font-bold text-primary">$650.00 (₮2,242,500)</td><td class="py-3 px-3 text-right font-mono text-emerald-700 font-bold">0% (Чөлөөлөгдсөн)</td></tr></tbody></table></div><div class="grid grid-cols-1 sm:grid-cols-2 gap-4 items-start pt-1"><div class="p-3 bg-surface-container-low rounded-xl text-xs space-y-1.5 border border-outline-variant/40"><div class="flex items-center justify-between"><span class="font-label-caps font-bold text-primary">Гаалийн Хураамж &amp; Нийцэл:</span><span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-label-caps text-[10px] font-bold">Төлөгдсөн</span></div><div class="space-y-1 font-mono text-[11px] text-on-surface-variant"><div class="flex justify-between"><span class="">Экспортын тариф:</span><span class="font-bold text-emerald-700">0% (Article 12 VAT Free)</span></div><div class="flex justify-between"><span class="">Гаалийн бүрдүүлэлтийн хураамж:</span><span class="font-bold text-primary">10,000 ₮</span></div><div class="flex justify-between"><span class="">Гарал үүслийн гэрчилгээ (Form A):</span><span class="font-bold text-primary">MN-COO-2024-8841</span></div></div></div><div class="p-3 bg-surface-container-low rounded-xl text-xs space-y-1.5 border border-outline-variant/40"><div class="flex items-center justify-between"><span class="font-label-caps font-bold text-primary">Цахим Шалгалт &amp; Цахим Баталгаажилт:</span><span class="text-emerald-700 font-bold font-mono text-[11px]">E-CUSTOMS SYNCED</span></div><div class="space-y-1 text-[11px] text-on-surface-variant"><p class="">Шалгалтын төлөв: <span class="font-semibold text-emerald-700">Эрсдэлгүй - Биет шалгалт шаардахгүй</span></p><p class="">Гаалийн байцаагч: <span class="font-mono font-bold text-primary">INSP #0492-BATBOLD</span></p><p class="">Цахим тамга (SHA-256): <span class="font-mono font-bold text-secondary text-[10px] select-all">9F2A-88B1-CUSTOMS-APPROVED-2024</span></p></div></div></div><div class="p-3.5 bg-surface-container-low rounded-xl border border-secondary-fixed-dim/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs"><div class="flex items-center gap-3"><div class="w-16 h-16 rounded-full border-2 border-dashed border-emerald-700 flex flex-col items-center justify-center p-1 text-center shrink-0 bg-white/80"><span class="text-[8px] font-bold text-emerald-800 uppercase tracking-tight">E-CUSTOMS</span><span class="material-symbols-outlined text-sm text-emerald-700">verified</span><span class="text-[7px] font-mono text-primary font-bold">RELEASED</span></div><div><div class="font-label-caps font-bold text-primary text-xs flex items-center gap-1"><span class="material-symbols-outlined text-xs text-emerald-600">task_alt</span> Монгол Улсын Гаалийн Албан Ёсны Цахим Зөвшөөрөл</div><p class="text-[11px] text-on-surface-variant mt-0.5">Энэхүү цахим мэдүүлэг нь Дэлхийн Гаалийн Байгууллага (WCO)-ын CN23 стандартын дагуу олон улсад хүчинтэй цахим тамгатай болно.</p></div></div><div class="text-right shrink-0"><p class="text-[10px] text-on-surface-variant font-label-caps">Гаалийн байцаагчийн цахим гарын үсэг:</p><p class="font-mono font-bold text-primary text-xs mt-0.5">Customs Inspectorate UB</p><span class="inline-block px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 text-[10px] font-mono font-bold mt-1">E-Stamp Valid</span></div></div></div>
+    </div>
+
+    <!-- Modal Footer Actions with Tab Sensitivity -->
+    <div class="flex flex-wrap items-center justify-between gap-3 px-6 py-4 border-t border-surface-container bg-surface-container-low">
+      <button onclick="document.getElementById('ebarimt-modal').classList.add('hidden')" class="px-4 py-2 rounded-xl bg-surface-container hover:bg-surface-variant text-on-surface font-label-caps text-xs flex items-center gap-1.5 transition">
+        Хаах (Close)
+      </button>
+
+      <!-- Domestic Actions -->
+      <div id="modal-footer-domestic-btns" class="flex items-center gap-2">
+        <button onclick="window.print()" class="px-3.5 py-2 rounded-xl bg-surface-container-highest hover:bg-surface-variant text-primary font-label-caps text-xs flex items-center gap-1.5 transition shadow-sm border border-outline-variant/40">
+          <span class="material-symbols-outlined text-base">download</span> PDF татах
+        </button>
+        <button onclick="window.print()" class="px-4 py-2 rounded-xl bg-primary hover:bg-primary/90 text-on-primary font-label-caps text-xs flex items-center gap-1.5 transition shadow-md">
+          <span class="material-symbols-outlined text-base">print</span> Хэвлэх (Print POS Slip)
+        </button>
+      </div>
+
+      <!-- Export Actions (Shown when Export tab active) -->
+      <div id="modal-footer-export-btns" class="hidden flex items-center gap-2">
+        <button onclick="window.print()" class="px-3.5 py-2 rounded-xl bg-surface-container-highest hover:bg-surface-variant text-primary font-label-caps text-xs flex items-center gap-1.5 transition shadow-sm border border-outline-variant/40">
+          <span class="material-symbols-outlined text-base">download</span> Экспортын PDF татах
+        </button>
+        <button onclick="window.print()" class="px-4 py-2 rounded-xl bg-primary hover:bg-primary/90 text-on-primary font-label-caps text-xs flex items-center gap-1.5 transition shadow-md">
+          <span class="material-symbols-outlined text-base">print</span> Хэвлэх (Print Invoice)
+        </button>
+      </div><div id="modal-footer-customs-btns" class="hidden flex items-center gap-2"><button onclick="window.print()" class="px-3.5 py-2 rounded-xl bg-surface-container-highest hover:bg-surface-variant text-primary font-label-caps text-xs flex items-center gap-1.5 transition shadow-sm border border-outline-variant/40"><span class="material-symbols-outlined text-base">download</span> Гаалийн мэдүүлэг PDF татах</button><button onclick="window.print()" class="px-3.5 py-2 rounded-xl bg-surface-container-highest hover:bg-surface-variant text-primary font-label-caps text-xs flex items-center gap-1.5 transition shadow-sm border border-outline-variant/40"><span class="material-symbols-outlined text-base">print</span> Хэвлэх (Print CN23)</button><button onclick="document.getElementById('toast-message').textContent='Гаалийн төв сервертэй (E-Customs) мэдээлэл амжилттай синхрончлогдлоо.'; document.getElementById('toast').classList.remove('hidden'); setTimeout(() =&gt; document.getElementById('toast').classList.add('hidden'), 3000);" class="px-4 py-2 rounded-xl bg-primary hover:bg-primary/90 text-on-primary font-label-caps text-xs flex items-center gap-1.5 transition shadow-md"><span class="material-symbols-outlined text-base">sync_alt</span> Гаалийн төв сервер рүү илгээх (E-Customs Sync)</button></div>
+    </div>
+  </div>
+</div><div class="fixed bottom-6 right-6 hidden transform transition-all duration-300 z-50" id="toast">
+<div class="bg-primary text-on-primary px-5 py-3 rounded-xl shadow-xl flex items-center gap-3">
+<span class="material-symbols-outlined text-emerald-400">check_circle</span>
+<span class="text-xs font-body-md" id="toast-message">Төлбөрийн гарцын шинэчилсэн тохиргоо амжилттай хадгалагдлаа.</span>
+</div>
+</div>
+</div>
+<script>
+    (function () {
+      const sandboxBtn = document.getElementById('sandbox-btn');
+      const toast = document.getElementById('toast');
+      const toastMessage = document.getElementById('toast-message');
+
+      function showToast(msg) {
+        if (!toast) return;
+        toastMessage.textContent = msg;
+        toast.classList.remove('hidden');
+        setTimeout(() => {
+          toast.classList.add('hidden');
+        }, 3200);
+      }
+
+      if (sandboxBtn) {
+        sandboxBtn.addEventListener('click', function () {
+          showToast('Sandbox симуляци амжилттай ажиллаж байна. Тест төлбөр QPay & Stripe дээр идэвхжлээ.');
+        });
+      }
+    })();
+  </script>
+</div></main>
+</div>
+
+
+<script src="assets/site.js"></script></body></html>

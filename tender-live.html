@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html lang="mn"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Нээлттэй тендерүүд (Live)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#eff4ff",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#c5c6cd",
+                        "primary": "#091426",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#d3e4fe",
+                        "secondary": "#9d4300",
+                        "primary-fixed-dim": "#bcc7de",
+                        "tertiary-fixed": "#89f5e7",
+                        "on-primary-container": "#8590a6",
+                        "on-tertiary-fixed": "#00201d",
+                        "tertiary": "#001815",
+                        "surface-bright": "#f8f9ff",
+                        "on-tertiary-container": "#28a094",
+                        "surface": "#f8f9ff",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#fd761a",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-tertiary-fixed-variant": "#005049",
+                        "on-secondary-fixed": "#341100",
+                        "inverse-surface": "#213145",
+                        "secondary-fixed": "#ffdbca",
+                        "inverse-on-surface": "#eaf1ff",
+                        "primary-container": "#1e293b",
+                        "on-primary-fixed": "#111c2d",
+                        "background": "#f8f9ff",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#dce9ff",
+                        "on-primary-fixed-variant": "#3c475a",
+                        "primary-fixed": "#d8e3fb",
+                        "tertiary-fixed-dim": "#6bd8cb",
+                        "on-background": "#0b1c30",
+                        "inverse-primary": "#bcc7de",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#545f73",
+                        "on-secondary-fixed-variant": "#783200",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#ffb690",
+                        "outline": "#75777d",
+                        "on-surface-variant": "#45474c",
+                        "on-secondary-container": "#5c2400",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#002f2a",
+                        "surface-dim": "#cbdbf5",
+                        "on-surface": "#0b1c30",
+                        "surface-container": "#e5eeff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin": "32px",
+                        "container-max": "1280px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col">
+<header class="fixed w-full top-0 border-b z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md text-indigo-900 dark:text-indigo-400 font-['Inter'] antialiased tracking-tight border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-center w-full px-6 py-3 max-w-[1280px] mx-auto">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-black tracking-tighter text-indigo-900 dark:text-white">CraftFlow</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-indigo-600 dark:hover:text-indigo-300 transition-colors duration-200 hover:bg-slate-50 dark:hover:bg-slate-800 active:scale-95 transition-transform duration-150 px-2 py-1 rounded-DEFAULT" href="#">Browse</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-indigo-600 dark:hover:text-indigo-300 transition-colors duration-200 hover:bg-slate-50 dark:hover:bg-slate-800 active:scale-95 transition-transform duration-150 px-2 py-1 rounded-DEFAULT" href="#">Auctions</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-indigo-600 dark:hover:text-indigo-300 transition-colors duration-200 hover:bg-slate-50 dark:hover:bg-slate-800 active:scale-95 transition-transform duration-150 px-2 py-1 rounded-DEFAULT" href="#">Mockups</a>
+<a class="text-indigo-600 dark:text-indigo-400 border-b-2 border-indigo-600 pb-1 active:scale-95 transition-transform duration-150 px-2 pt-1" href="#">Tenders</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 text-on-primary-container">
+<button class="p-2 rounded-full hover:bg-surface-variant transition-colors"><span class="material-symbols-outlined" data-icon="notifications">notifications</span></button>
+<button class="p-2 rounded-full hover:bg-surface-variant transition-colors"><span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span></button>
+<button class="p-2 rounded-full hover:bg-surface-variant transition-colors"><span class="material-symbols-outlined" data-icon="chat">chat</span></button>
+</div>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-4 py-2 rounded-lg hover:bg-inverse-surface transition-colors duration-200">Create Project</button>
+<img alt="User avatar" class="w-8 h-8 rounded-full border border-outline-variant" data-alt="Close up professional headshot of a smiling young man with short brown hair" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTXRo6OVRBI_Lu8gKnl-tszKC91itD6Nufq8MiLgzMgBMidWWZa3L1VAQ3rxrXrNizLBKFtFx3H-WpPVjW4YHciGdgvHAM1XLQlDuvSF7ni0aIFZ-uVSpP7GTEfrmR4sTmqLrn8DFvaRY83IIMX4e0HtGJFHtv5668desF1Yto_Y04fGi6LuFdLni5-BHDuxXLCw14V5vCMVnGv0hDtCJmkRajyXMDtRIk4HCMX5lHoU_O2vtaTqQjBR7-iGitg2Mn_H99bT7duN4"/>
+</div>
+</div>
+</header>
+<div class="flex flex-1 pt-[60px]">
+<aside class="fixed left-0 top-[60px] h-[calc(100vh-60px)] flex flex-col p-4 space-y-2 w-64 border-r bg-slate-50 dark:bg-slate-950 text-indigo-900 dark:text-indigo-400 font-['Inter'] text-sm font-medium border-slate-200 dark:border-slate-800">
+<div class="px-4 py-4 mb-2 flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-variant flex items-center justify-center overflow-hidden">
+<img alt="Organization Logo" class="w-full h-full object-cover" data-alt="Abstract minimal geometric logo design with intersecting lines in blue and gray" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9JOiBTqfO5aAh7-19JdbHs46khlMzPxtn3WT78p5PjMft_fTcD-tNOvixp9l799yCJPTGl_RGSweR1CCNZxwZ_zJRIveLWWmWjI_Du6VTt-kyUr9b1eDsZmF7iAfNUoKAt-Xxtv4Ntl6x0by1avSXQpGGT-GMHDU472EJGuwZ1H9FjxJTmnvPf07Mr_pbjdOPmmh2nV6YBdCdlTiKK_vm_lrcbhoGkOeXRSWHp6Bemc3mcYxB1JX3ENbFc6r-O9ejH4rviPyEoL0"/>
+</div>
+<div>
+<h2 class="font-headline-md text-label-md font-bold text-on-surface">Creative Hub</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Verified Marketplace</p>
+</div>
+</div>
+<button class="w-full mb-4 bg-primary text-on-primary font-label-md text-label-md py-2.5 rounded-lg flex items-center justify-center gap-2 hover:bg-inverse-surface transition-colors duration-200 ease-in-out">
+<span class="material-symbols-outlined text-sm">add</span> Post Tender
+            </button>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-4 py-2.5 rounded-lg hover:bg-slate-200/50 dark:hover:bg-slate-800/50 hover:text-indigo-600 dark:hover:text-indigo-300 duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span> Dashboard
+                </a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-4 py-2.5 rounded-lg hover:bg-slate-200/50 dark:hover:bg-slate-800/50 hover:text-indigo-600 dark:hover:text-indigo-300 duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span> My Tenders
+                </a>
+<a class="flex items-center gap-3 bg-indigo-50 dark:bg-indigo-900/20 text-indigo-700 dark:text-indigo-300 rounded-lg px-4 py-2.5 shadow-sm duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="gavel" style="font-variation-settings: 'FILL' 1;">gavel</span> Live Bids
+                </a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-4 py-2.5 rounded-lg hover:bg-slate-200/50 dark:hover:bg-slate-800/50 hover:text-indigo-600 dark:hover:text-indigo-300 duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="forum">forum</span> Escrow Chat
+                </a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-4 py-2.5 rounded-lg hover:bg-slate-200/50 dark:hover:bg-slate-800/50 hover:text-indigo-600 dark:hover:text-indigo-300 duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="view_in_ar">view_in_ar</span> 3D Previews
+                </a>
+</nav>
+<div class="mt-auto border-t border-slate-200 dark:border-slate-800 pt-4 space-y-1">
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-4 py-2.5 rounded-lg hover:bg-slate-200/50 dark:hover:bg-slate-800/50 hover:text-indigo-600 dark:hover:text-indigo-300 duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span> Settings
+                </a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-4 py-2.5 rounded-lg hover:bg-slate-200/50 dark:hover:bg-slate-800/50 hover:text-indigo-600 dark:hover:text-indigo-300 duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span> Support
+                </a>
+</div>
+</aside>
+<main class="flex-1 ml-64 bg-background">
+<div class="max-w-container-max mx-auto p-margin">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+<div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface mb-2">Нээлттэй тендерүүд (Live)</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Яг одоо явагдаж буй тендерүүдэд үнэ хаялцах.</p>
+</div>
+<div class="flex bg-surface-container-low p-1 rounded-lg border border-outline-variant/30">
+<button class="px-4 py-2 rounded-DEFAULT bg-surface-container-lowest shadow-sm font-label-md text-label-md text-on-surface">Бүгд</button>
+<button class="px-4 py-2 rounded-DEFAULT font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors">Шил</button>
+<button class="px-4 py-2 rounded-DEFAULT font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors">Мод</button>
+<button class="px-4 py-2 rounded-DEFAULT font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors">Металл</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-gutter">
+<article class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/20 overflow-hidden flex flex-col group ring-2 ring-tertiary-container ring-offset-2 ring-offset-background">
+<div class="relative h-48 w-full overflow-hidden">
+<img alt="Glass partition" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Modern bright office interior with sleek frameless glass partition walls reflecting warm sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHpiJzvSyXHz1UWSHGDv7h__SD0VAFY6tFzm4Q5MUz8WEoa9T8ttIBjKh1szFdSwoYmeyuBjiwOr-oatn1j7jcjU-SQeg7NiVABT1y6EQtCv3DFprNY5919CZfQZs0HxAaJmGW47K26WGhIkKJm9A7YSNB-HGHWHVGXG5M8TrHCslR5WV-iThNsFuZMBS1Zrc3dD4jua1XMmKVAKJXm0bmbiN6pS5wcyJ3YBb1a1IPl0_J7u-PTEoJ8nOQNeYtOF4lvijd5H30250"/>
+<div class="absolute top-4 left-4 bg-tertiary-container text-on-tertiary-container font-label-sm text-label-sm px-3 py-1 rounded-full flex items-center gap-1.5 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container"></span>
+                                LIVE
+                            </div>
+<div class="absolute top-4 right-4 bg-error text-on-error font-label-sm text-label-sm px-3 py-1 rounded-full shadow-sm font-bold tracking-wide">
+                                Шинэ санал
+                            </div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="inline-block px-2 py-1 bg-surface-variant text-on-surface-variant font-label-sm text-label-sm rounded-DEFAULT mb-2">Шил</span>
+<h3 class="font-headline-md text-headline-md text-on-surface line-clamp-2">Оффисын шилэн хаалт, хаалганы систем</h3>
+</div>
+</div>
+<div class="mt-auto space-y-4">
+<div class="flex justify-between items-end pb-4 border-b border-surface-container-high">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Одоогийн хамгийн бага үнэ</p>
+<p class="font-headline-md text-headline-md text-primary font-bold">₮ 12,500,000</p>
+</div>
+<div class="text-right">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Үлдсэн хугацаа</p>
+<p class="font-body-lg text-body-lg tabular-nums text-error font-bold flex items-center gap-1 justify-end">
+<span class="material-symbols-outlined text-sm">schedule</span> 00:14:59
+                                        </p>
+</div>
+</div>
+<button class="w-full bg-secondary-container text-on-secondary-container font-label-md text-label-md py-3 rounded-lg hover:bg-secondary transition-colors duration-200 flex items-center justify-center gap-2 font-bold shadow-sm">
+                                    Үнэ санал болгох <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+<article class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/20 overflow-hidden flex flex-col group hover:shadow-md transition-shadow duration-300">
+<div class="relative h-48 w-full overflow-hidden bg-surface-variant">
+<img alt="Wood table" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close up of a large solid oak wood conference table with natural edge and fine grain texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuAInEgqdbfejRa-uhIBmhjvedXUREKeeapgh7lhUv0ipck0Gw5jxreWOGDWLIjtudRtJ3525qDTlpWlNOMjSsz3TqVW3W1Ul-5MStfe1mG-6cVo9AM5wK8enGMOjDvytMCWWuhPGcoDx9J1ACNUn3qhxBSgQUENlyqo9gm5QM60T1BAItl3zqVlBf-tHGINR4VL6qGDCxOq1lwDeDU-aUovr-WI5JrPE1TGyGVMKrLfUQTxl8T1CguA_wSiZyCoJt_-UWbjsfg9A"/>
+<div class="absolute top-4 left-4 bg-tertiary-container text-on-tertiary-container font-label-sm text-label-sm px-3 py-1 rounded-full flex items-center gap-1.5 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container"></span>
+                                LIVE
+                            </div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="inline-block px-2 py-1 bg-surface-variant text-on-surface-variant font-label-sm text-label-sm rounded-DEFAULT mb-2">Мод</span>
+<h3 class="font-headline-md text-headline-md text-on-surface line-clamp-2">Царс модон 12 хүний хурлын ширээ</h3>
+</div>
+</div>
+<div class="mt-auto space-y-4">
+<div class="flex justify-between items-end pb-4 border-b border-surface-container-high">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Одоогийн хамгийн бага үнэ</p>
+<p class="font-headline-md text-headline-md text-primary font-bold">₮ 4,800,000</p>
+</div>
+<div class="text-right">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Үлдсэн хугацаа</p>
+<p class="font-body-lg text-body-lg tabular-nums text-on-surface font-semibold flex items-center gap-1 justify-end">
+<span class="material-symbols-outlined text-sm">schedule</span> 02:45:10
+                                        </p>
+</div>
+</div>
+<button class="w-full border-2 border-secondary-container text-secondary-container font-label-md text-label-md py-3 rounded-lg hover:bg-secondary-container hover:text-on-secondary-container transition-colors duration-200 flex items-center justify-center gap-2 font-bold">
+                                    Үнэ санал болгох
+                                </button>
+</div>
+</div>
+</article>
+<article class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/20 overflow-hidden flex flex-col group hover:shadow-md transition-shadow duration-300">
+<div class="relative h-48 w-full overflow-hidden bg-surface-variant">
+<img alt="Metal beams" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Industrial setting showing heavy steel structural I-beams stacked in a warehouse with cool lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-3gFr8TtVFET5G65qfmXWEtUiXL8aLNpIjtPW9gndTvWaRaBFfRe7Z-UdwLYcHiSJS2sJp5lpVKKXuJhoElWQf0m59jCjFenPzjPnPw9NNAeJGwgMWVRwTl6rBWxddf6nZKkeIP8Qw7CJdIOv14UcHI4vPZyPEQeqvHqObZh_kmF0lioWsAgCNJRO77k9eN59F-G0qXV4Uh8gxmRW194dcskzXMuoBtdHV7UlTQgYY2xXMbAJfNXp_aOsmOolJtxM6FPMWf8-QrQ"/>
+<div class="absolute top-4 left-4 bg-tertiary-container text-on-tertiary-container font-label-sm text-label-sm px-3 py-1 rounded-full flex items-center gap-1.5 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container"></span>
+                                LIVE
+                            </div>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="inline-block px-2 py-1 bg-surface-variant text-on-surface-variant font-label-sm text-label-sm rounded-DEFAULT mb-2">Металл</span>
+<h3 class="font-headline-md text-headline-md text-on-surface line-clamp-2">Ган бүтээцийн дам нуруу, тулгуур 50тн</h3>
+</div>
+</div>
+<div class="mt-auto space-y-4">
+<div class="flex justify-between items-end pb-4 border-b border-surface-container-high">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Одоогийн хамгийн бага үнэ</p>
+<p class="font-headline-md text-headline-md text-primary font-bold">₮ 85,000,000</p>
+</div>
+<div class="text-right">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Үлдсэн хугацаа</p>
+<p class="font-body-lg text-body-lg tabular-nums text-on-surface font-semibold flex items-center gap-1 justify-end">
+<span class="material-symbols-outlined text-sm">schedule</span> 14:20:00
+                                        </p>
+</div>
+</div>
+<button class="w-full border-2 border-secondary-container text-secondary-container font-label-md text-label-md py-3 rounded-lg hover:bg-secondary-container hover:text-on-secondary-container transition-colors duration-200 flex items-center justify-center gap-2 font-bold">
+                                    Үнэ санал болгох
+                                </button>
+</div>
+</div>
+</article>
+</div>
+</div>
+<footer class="bg-white dark:bg-slate-900 text-indigo-900 dark:text-indigo-400 font-['Inter'] text-xs text-slate-500 full-width border-t mt-auto border-slate-200 dark:border-slate-800 flat w-full py-8 px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="text-sm font-bold text-slate-900 dark:text-white">CraftFlow</div>
+<div class="flex flex-wrap justify-center gap-4">
+<a class="text-slate-500 hover:text-indigo-600 transition-colors underline underline-offset-4" href="#">Privacy Policy</a>
+<a class="text-slate-500 hover:text-indigo-600 transition-colors underline underline-offset-4" href="#">Terms of Service</a>
+<a class="text-slate-500 hover:text-indigo-600 transition-colors underline underline-offset-4" href="#">Escrow Guarantee</a>
+<a class="text-slate-500 hover:text-indigo-600 transition-colors underline underline-offset-4" href="#">Material Guides</a>
+</div>
+<div>© 2024 CraftFlow Creative Marketplace. All rights reserved.</div>
+</footer>
+</main>
+</div>
+<script src="assets/site.js"></script></body></html>

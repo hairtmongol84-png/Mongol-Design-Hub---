@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html lang="mn"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Аюулгүй байдлын төв - MarketGuard Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-tint": "#545f73",
+                      "primary": "#091426",
+                      "on-secondary-container": "#5c2400",
+                      "surface-container-highest": "#d3e4fe",
+                      "background": "#f8f9ff",
+                      "surface-container": "#e5eeff",
+                      "primary-fixed": "#d8e3fb",
+                      "on-primary": "#ffffff",
+                      "on-surface": "#0b1c30",
+                      "on-tertiary-fixed": "#00201d",
+                      "surface-container-low": "#eff4ff",
+                      "surface-container-high": "#dce9ff",
+                      "secondary-fixed": "#ffdbca",
+                      "surface-bright": "#f8f9ff",
+                      "surface-variant": "#d3e4fe",
+                      "primary-fixed-dim": "#bcc7de",
+                      "inverse-primary": "#bcc7de",
+                      "on-primary-fixed-variant": "#3c475a",
+                      "surface-dim": "#cbdbf5",
+                      "primary-container": "#1e293b",
+                      "outline-variant": "#c5c6cd",
+                      "surface-container-lowest": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "on-secondary-fixed-variant": "#783200",
+                      "inverse-on-surface": "#eaf1ff",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#005049",
+                      "error": "#ba1a1a",
+                      "secondary-fixed-dim": "#ffb690",
+                      "on-primary-fixed": "#111c2d",
+                      "on-error": "#ffffff",
+                      "tertiary": "#001815",
+                      "tertiary-fixed": "#89f5e7",
+                      "tertiary-container": "#002f2a",
+                      "on-surface-variant": "#45474c",
+                      "on-secondary-fixed": "#341100",
+                      "on-secondary": "#ffffff",
+                      "on-background": "#0b1c30",
+                      "on-primary-container": "#8590a6",
+                      "inverse-surface": "#213145",
+                      "secondary": "#9d4300",
+                      "surface": "#f8f9ff",
+                      "secondary-container": "#fd761a",
+                      "tertiary-fixed-dim": "#6bd8cb",
+                      "on-tertiary-container": "#28a094",
+                      "on-error-container": "#93000a",
+                      "outline": "#75777d"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "container-max": "1280px",
+                      "margin": "32px",
+                      "base": "8px"
+              },
+              "fontFamily": {
+                      "headline-xl": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "label-md": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "body-md": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-xl": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                      "label-md": ["14px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                      "label-sm": ["12px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+              }
+            }
+          }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex font-body-md overflow-x-hidden">
+<!-- SideNavBar -->
+<aside class="docked left-0 h-screen w-64 border-r border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 flat no shadows flex-shrink-0 hidden md:flex flex-col">
+<div class="p-6 border-b border-slate-200 dark:border-slate-800 flex items-center gap-3">
+<img alt="Marketplace Logo" class="w-10 h-10 rounded-lg object-cover" data-alt="abstract geometric logo design with deep indigo and vibrant orange accents conveying security and modernity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmoL5QH9QomFvp_KkYPkNfb_YUDiralKIVPh1mqADxFAe2Aw6rD8lJRur6MOs39vDkgnM9r0fPnOdvXQ925Jo-OBw1LtshxnAR92493hh_ZDDOGkfuuza-M1ONsYj_4hWPzIYMqPEKvJcFNT0QnmSNB_nVYbq5TEoQEcH8Vv87smXLsmZhSQiD2rj2ZqDB8LRgpfK52N8uf1-djWqbipEpN6qDd_8iOXGUH80MlDPFJaK0Nz5ZThliT3qWF5uZdKcqy3PgHoyxG20"/>
+<div>
+<h1 class="font-['Inter'] text-xl font-bold text-slate-900 dark:text-white">MarketGuard</h1>
+<p class="font-['Inter'] text-sm font-semibold text-slate-500">Admin Console</p>
+</div>
+</div>
+<div class="p-4 flex-1 overflow-y-auto flex flex-col gap-2">
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-slate-900 text-indigo-600 dark:text-indigo-400 rounded-lg shadow-sm border border-slate-200 dark:border-slate-800 cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">security</span>
+<span class="font-['Inter'] text-sm font-semibold">Security Overview</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg hover:translate-x-1 transition-all duration-200 cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">warning</span>
+<span class="font-['Inter'] text-sm font-semibold">Real-time Alerts</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg hover:translate-x-1 transition-all duration-200 cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">block</span>
+<span class="font-['Inter'] text-sm font-semibold">IP Blocking</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg hover:translate-x-1 transition-all duration-200 cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="font-['Inter'] text-sm font-semibold">Audit Logs</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg hover:translate-x-1 transition-all duration-200 cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">admin_panel_settings</span>
+<span class="font-['Inter'] text-sm font-semibold">Access Control</span>
+</a>
+</nav>
+</div>
+<div class="p-4 mt-auto">
+<button class="w-full bg-secondary-container text-on-secondary-container font-label-md py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-secondary hover:text-on-secondary transition-colors shadow-sm">
+<span class="material-symbols-outlined">search</span>
+                Run Scan
+            </button>
+</div>
+<div class="p-4 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined">cloud_done</span>
+<span class="font-['Inter'] text-sm font-semibold">System Status</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-['Inter'] text-sm font-semibold">Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Wrapper -->
+<div class="flex-1 flex flex-col min-w-0">
+<!-- TopNavBar -->
+<header class="docked full-width top-0 sticky z-50 border-b border-slate-200 dark:border-slate-800 shadow-sm dark:shadow-none bg-white/80 dark:bg-slate-900/80 backdrop-blur-md">
+<div class="flex justify-between items-center w-full px-6 h-16">
+<!-- Mobile Menu & Brand -->
+<div class="flex items-center gap-4">
+<button class="md:hidden text-slate-500">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="font-['Inter'] text-lg font-black tracking-tighter text-indigo-900 dark:text-indigo-100 md:hidden">MarketGuard Admin</div>
+<!-- Top Navigation Links (Desktop) -->
+<nav class="hidden md:flex gap-6 items-center ml-8">
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 font-['Inter'] text-sm font-medium tracking-tight hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors duration-200 py-1" href="#">Network Stats</a>
+<a class="text-indigo-600 dark:text-indigo-400 border-b-2 border-indigo-600 pb-1 font-['Inter'] text-sm font-medium tracking-tight" href="#">Security Center</a>
+</nav>
+</div>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-4">
+<button class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors duration-200 p-2 rounded-full active:scale-95">
+<span class="material-symbols-outlined">notifications_active</span>
+</button>
+<button class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors duration-200 p-2 rounded-full active:scale-95">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<button class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors duration-200 p-2 rounded-full active:scale-95 hidden sm:block">
+<span class="material-symbols-outlined">help</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant ml-2">
+<img alt="Admin Avatar" class="w-full h-full object-cover" data-alt="professional portrait of a male tech administrator looking confidently at camera with modern office background blurred" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIyUpNgGQacIcF_GJfLq5Aq4PKczhAXw_1X_4UuFsTh75sJ_N43UIC2kgggsaT2LKodgLPRTBGJKu_82T_D748Q9Ud2W2UoJYKgc8WkG60OLPn9PL4yYO71pEfEl6KkoO79NhyX3h6sdpzfO0__Gbp7Xo4W_-bT6ubhK0bRHpv9Drzc0oSmymK5r3WnDVxyrBpKXCqPStMUWFbSXbQpHphfA5RlFOXdmlD8ZGIPo3qYr_6G-SH_lQp522vodEzWjA5GmQSLBu8UpM"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-1 p-gutter overflow-y-auto max-w-[1280px] w-full mx-auto">
+<div class="mb-8">
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-2">Аюулгүй байдлын төв</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Системийн төлөв болон сүүлийн үеийн үйл явдлуудын тойм.</p>
+</div>
+<!-- Dashboard Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- System Health Status -->
+<div class="col-span-1 lg:col-span-2 bg-surface-container-lowest rounded-[16px] p-6 shadow-sm border border-surface-container-high relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="absolute inset-0 opacity-5 bg-gradient-to-br from-tertiary-fixed to-transparent z-0"></div>
+<div class="relative z-10 flex flex-col h-full justify-between">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-container" style="font-variation-settings: 'FILL' 1;">shield</span>
+                                    Системийн төлөв
+                                </h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Бүх систем хэвийн ажиллаж байна</p>
+</div>
+<span class="bg-[#e6f4ea] text-[#137333] px-3 py-1 rounded-full font-label-sm text-label-sm flex items-center gap-1 border border-[#ceead6]">
+<span class="w-2 h-2 rounded-full bg-[#1e8e3e] animate-pulse"></span>
+                                Идэвхтэй хамгаалалт
+                            </span>
+</div>
+<div class="grid grid-cols-2 gap-4 mt-6">
+<div class="bg-surface p-4 rounded-lg border border-surface-container">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">DDoS Хамгаалалт</p>
+<p class="font-headline-md text-headline-md text-primary">Идэвхтэй</p>
+</div>
+<div class="bg-surface p-4 rounded-lg border border-surface-container">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">WAF Төлөв</p>
+<p class="font-headline-md text-headline-md text-primary">Хэвийн</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Actions -->
+<div class="col-span-1 bg-surface-container-lowest rounded-[16px] p-6 shadow-sm border border-surface-container-high">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6">Шуурхай үйлдэл</h3>
+<div class="flex flex-col gap-4">
+<button class="w-full flex items-center justify-between p-4 rounded-lg border border-outline-variant hover:border-primary hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-3 text-on-surface">
+<div class="w-10 h-10 rounded-full bg-error-container text-error flex items-center justify-center">
+<span class="material-symbols-outlined">block</span>
+</div>
+<span class="font-label-md text-label-md">IP Хаах</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-4 rounded-lg border border-outline-variant hover:border-primary hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-3 text-on-surface">
+<div class="w-10 h-10 rounded-full bg-surface-variant text-primary flex items-center justify-center">
+<span class="material-symbols-outlined">admin_panel_settings</span>
+</div>
+<span class="font-label-md text-label-md">Хандалтын хяналт</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Real-time Security Alerts -->
+<div class="col-span-1 lg:col-span-3 bg-surface-container-lowest rounded-[16px] p-0 shadow-sm border border-surface-container-high overflow-hidden">
+<div class="p-6 border-b border-surface-container-high flex justify-between items-center bg-surface">
+<h3 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-container">warning</span>
+                            Бодит цагийн анхааруулга
+                        </h3>
+<a class="font-label-md text-label-md text-primary hover:underline" href="#">Бүгдийг харах</a>
+</div>
+<div class="divide-y divide-surface-container-high">
+<div class="p-4 flex items-start gap-4 hover:bg-surface-container-lowest transition-colors">
+<div class="mt-1">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">error</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between">
+<p class="font-label-md text-label-md text-on-surface">Амжилтгүй нэвтрэх оролдлого (5+)</p>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2 мин өмнө</span>
+</div>
+<p class="font-body-sm text-on-surface-variant mt-1">IP: 192.168.1.105 - Олон удаагийн нууц үг буруу оруулсан.</p>
+</div>
+</div>
+<div class="p-4 flex items-start gap-4 hover:bg-surface-container-lowest transition-colors">
+<div class="mt-1">
+<span class="material-symbols-outlined text-secondary-container" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between">
+<p class="font-label-md text-label-md text-on-surface">Сэжигтэй IP хандалт</p>
+<span class="font-label-sm text-label-sm text-on-surface-variant">15 мин өмнө</span>
+</div>
+<p class="font-body-sm text-on-surface-variant mt-1">Түгээмэл бус бүс нутгаас хандсан хандалт илэрлээ.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Audit Logs Table -->
+<div class="col-span-1 lg:col-span-3 bg-surface-container-lowest rounded-[16px] shadow-sm border border-surface-container-high overflow-hidden">
+<div class="p-6 border-b border-surface-container-high flex justify-between items-center bg-surface">
+<h3 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">history</span>
+                            Аудит лог
+                        </h3>
+<div class="flex gap-2">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm">search</span>
+<input class="pl-9 pr-4 py-2 border border-outline-variant rounded-lg font-body-md text-sm focus:border-primary focus:ring-1 focus:ring-primary w-64 bg-surface-container-lowest" placeholder="Хайх..." type="text"/>
+</div>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-surface-container-high">
+<th class="p-4 font-label-md text-label-md text-on-surface-variant">Хэрэглэгч ID</th>
+<th class="p-4 font-label-md text-label-md text-on-surface-variant">Үйлдэл</th>
+<th class="p-4 font-label-md text-label-md text-on-surface-variant">Цаг хугацаа</th>
+<th class="p-4 font-label-md text-label-md text-on-surface-variant">IP Хаяг</th>
+<th class="p-4 font-label-md text-label-md text-on-surface-variant">Байршил</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high">
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-4 font-body-md text-on-surface">USR-8492</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-variant text-primary font-label-sm text-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                                            Тохиргоо өөрчилсөн
+                                        </span>
+</td>
+<td class="p-4 font-body-md text-on-surface-variant font-mono text-sm">2023-10-27 14:32:01</td>
+<td class="p-4 font-body-md text-on-surface-variant font-mono text-sm">103.24.55.12</td>
+<td class="p-4 font-body-md text-on-surface-variant flex items-center gap-1">
+                                        Улаанбаатар, MN
+                                    </td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-4 font-body-md text-on-surface">USR-1102</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-error-container text-error font-label-sm text-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                                            Нэвтрэх алдаа
+                                        </span>
+</td>
+<td class="p-4 font-body-md text-on-surface-variant font-mono text-sm">2023-10-27 14:15:44</td>
+<td class="p-4 font-body-md text-on-surface-variant font-mono text-sm">45.22.19.88</td>
+<td class="p-4 font-body-md text-on-surface-variant flex items-center gap-1">
+                                        Seoul, KR
+                                    </td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-4 font-body-md text-on-surface">SYS-ADMIN</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#e6f4ea] text-[#137333] font-label-sm text-xs border border-[#ceead6]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#1e8e3e]"></span>
+                                            Тайлан үүсгэсэн
+                                        </span>
+</td>
+<td class="p-4 font-body-md text-on-surface-variant font-mono text-sm">2023-10-27 13:00:22</td>
+<td class="p-4 font-body-md text-on-surface-variant font-mono text-sm">192.168.1.50</td>
+<td class="p-4 font-body-md text-on-surface-variant flex items-center gap-1">
+                                        Улаанбаатар, MN
+                                    </td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</div>
+<script src="assets/site.js"></script></body></html>

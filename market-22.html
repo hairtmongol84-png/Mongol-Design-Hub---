@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+
+<html class="light" lang="mn"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#cbdbf5",
+                    "surface": "#f8f9ff",
+                    "on-secondary-fixed-variant": "#783200",
+                    "outline-variant": "#c5c6cd",
+                    "on-secondary-fixed": "#341100",
+                    "tertiary-fixed": "#89f5e7",
+                    "primary": "#091426",
+                    "on-primary": "#ffffff",
+                    "tertiary-container": "#002f2a",
+                    "inverse-on-surface": "#eaf1ff",
+                    "primary-fixed": "#d8e3fb",
+                    "surface-tint": "#545f73",
+                    "primary-container": "#1e293b",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed-dim": "#bcc7de",
+                    "on-secondary-container": "#5c2400",
+                    "on-surface-variant": "#45474c",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#213145",
+                    "on-background": "#0b1c30",
+                    "inverse-primary": "#bcc7de",
+                    "surface-bright": "#f8f9ff",
+                    "on-primary-fixed-variant": "#3c475a",
+                    "on-surface": "#0b1c30",
+                    "on-tertiary-fixed-variant": "#005049",
+                    "tertiary-fixed-dim": "#6bd8cb",
+                    "surface-container-low": "#eff4ff",
+                    "secondary-container": "#fd761a",
+                    "error": "#ba1a1a",
+                    "secondary-fixed-dim": "#ffb690",
+                    "tertiary": "#001815",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container": "#e5eeff",
+                    "error-container": "#ffdad6",
+                    "on-primary-container": "#8590a6",
+                    "background": "#f8f9ff",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed": "#ffdbca",
+                    "on-tertiary-container": "#28a094",
+                    "secondary": "#9d4300",
+                    "surface-variant": "#d3e4fe",
+                    "on-error-container": "#93000a",
+                    "surface-container-highest": "#d3e4fe",
+                    "on-tertiary-fixed": "#00201d",
+                    "on-primary-fixed": "#111c2d",
+                    "surface-container-high": "#dce9ff",
+                    "outline": "#75777d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "base": "8px",
+                    "margin": "32px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-xl": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "label-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-xl": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "label-md": ["14px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #f8f9ff;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface antialiased">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 border-r fixed left-0 top-0 bg-slate-50 border-slate-200 flex flex-col h-full p-4 z-50">
+<div class="mb-8 px-2">
+<h2 class="text-lg font-bold text-slate-900 tracking-tight">Marketplace Dashboard</h2>
+<p class="text-xs text-slate-500">Affiliate Portal</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="bg-slate-200 text-slate-900 font-semibold rounded-md flex items-center px-3 py-2 transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Overview</span>
+</a>
+<a class="text-slate-600 hover:text-slate-900 hover:bg-slate-100 flex items-center px-3 py-2 transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="monitoring">monitoring</span>
+<span class="font-label-md text-label-md">Analytics</span>
+</a>
+<a class="text-slate-600 hover:text-slate-900 hover:bg-slate-100 flex items-center px-3 py-2 transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="link">link</span>
+<span class="font-label-md text-label-md">Link Generator</span>
+</a>
+<a class="text-slate-600 hover:text-slate-900 hover:bg-slate-100 flex items-center px-3 py-2 transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="payments">payments</span>
+<span class="font-label-md text-label-md">Commissions</span>
+</a>
+<a class="text-slate-600 hover:text-slate-900 hover:bg-slate-100 flex items-center px-3 py-2 transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="group">group</span>
+<span class="font-label-md text-label-md">Referrals</span>
+</a>
+</nav>
+<div class="mt-auto space-y-1 pt-4 border-t border-slate-200">
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-2.5 rounded-lg mb-4 hover:opacity-90 transition-all">
+                Create New Link
+            </button>
+<a class="text-slate-600 hover:text-slate-900 hover:bg-slate-100 flex items-center px-3 py-2 rounded-md" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+<a class="text-slate-600 hover:text-slate-900 hover:bg-slate-100 flex items-center px-3 py-2 rounded-md" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="help">help</span>
+<span class="font-label-md text-label-md">Support</span>
+</a>
+</div>
+</aside>
+<!-- TopAppBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] z-40 bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-sm flex justify-between items-center px-8 h-16">
+<div class="flex items-center gap-8">
+<span class="text-xl font-black text-slate-900">PartnerPro</span>
+<nav class="hidden md:flex gap-6">
+<a class="font-label-md text-label-md text-indigo-600 border-b-2 border-indigo-600 h-16 flex items-center" href="#">Marketplace</a>
+<a class="font-label-md text-label-md text-slate-500 hover:text-indigo-500 h-16 flex items-center transition-all" href="#">Guidelines</a>
+<a class="font-label-md text-label-md text-slate-500 hover:text-indigo-500 h-16 flex items-center transition-all" href="#">Resources</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative flex items-center bg-surface-container rounded-full px-4 py-1.5 border border-outline-variant">
+<span class="material-symbols-outlined text-slate-400 text-lg mr-2" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-48" placeholder="Хайх..." type="text"/>
+</div>
+<button class="bg-secondary-container text-white px-4 py-2 rounded-full text-label-md font-label-md hover:bg-secondary transition-colors">
+                Withdraw Funds
+            </button>
+<div class="flex items-center gap-2 border-l pl-4 border-slate-200">
+<span class="material-symbols-outlined text-slate-600 cursor-pointer p-1 hover:bg-slate-100 rounded-full" data-icon="notifications">notifications</span>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-slate-200">
+<img alt="Manager profile" class="w-full h-full object-cover" data-alt="professional portrait of a modern digital designer in a creative studio setting with soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFI6HZyTV-Kti4WDhHtZYfrASRVvj929vYKef0aPD168rcPn4rGwe48v7NcW0-c0pcwakoRoNfqdjok4KYdHvr0C7OXC6gQbpdUzB8jDHEBVqNEld1vVEou3CQIGvaJZY0y-WqmsT-shOzRAmEaIdbz5oDdqAcnGOjJ9ZIqexrGtftGU09x203D3QEJ-4KJ6nGuJbWWaqcGNxgW-r51nR5Yu_Grlt-QgmFyIitEdXQslnr2h4t7UJ12b0VeT20lVGWhq37SxsRd1k"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="ml-64 pt-24 pb-12 px-8 min-h-screen">
+<div class="max-w-container-max mx-auto">
+<!-- Header Section -->
+<div class="flex justify-between items-end mb-8">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-primary mb-1">Дизайнерын Маркетинг ба Урамшууллын Төв</h1>
+<p class="text-on-surface-variant font-body-md">Тавтай морилно уу, өнөөдрийн гүйцэтгэлээ шалгана уу.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 bg-white border border-slate-200 px-4 py-2 rounded-xl text-label-md shadow-sm hover:shadow-md transition-all">
+<span class="material-symbols-outlined text-indigo-600" data-icon="calendar_today">calendar_today</span>
+                        Сүүлийн 30 хоног
+                    </button>
+<button class="flex items-center gap-2 bg-indigo-600 text-white px-4 py-2 rounded-xl text-label-md shadow-lg shadow-indigo-200 hover:bg-indigo-700 transition-all">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+                        Тайлан татах
+                    </button>
+</div>
+</div>
+<!-- Bento Grid Stats -->
+<div class="bento-grid mb-8">
+<!-- Main Earnings -->
+<div class="col-span-12 md:col-span-4 bg-primary text-on-primary p-8 rounded-3xl relative overflow-hidden flex flex-col justify-between shadow-xl">
+<div class="relative z-10">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-white/10 text-xs font-medium mb-4 backdrop-blur-sm">
+                            Нийт Олз
+                        </span>
+<div class="font-headline-xl text-headline-xl mb-1 tracking-tight">$12,480.00</div>
+<div class="flex items-center text-tertiary-fixed text-sm font-semibold">
+<span class="material-symbols-outlined mr-1" data-icon="trending_up">trending_up</span>
+                            +12.5% өнгөрсөн сараас
+                        </div>
+</div>
+<!-- Decorative background glow -->
+<div class="absolute -right-20 -top-20 w-64 h-64 bg-indigo-500/20 rounded-full blur-[80px]"></div>
+<div class="absolute -left-10 -bottom-10 w-48 h-48 bg-teal-500/10 rounded-full blur-[60px]"></div>
+</div>
+<!-- Conversion Rate Card -->
+<div class="col-span-12 md:col-span-4 bg-white p-8 rounded-3xl shadow-sm border border-slate-100 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-6">
+<span class="p-3 bg-secondary-fixed text-secondary-fixed-dim rounded-2xl">
+<span class="material-symbols-outlined text-secondary" data-icon="conversion_path">conversion_path</span>
+</span>
+<span class="text-tertiary-fixed-dim font-bold text-sm bg-tertiary-container px-2 py-1 rounded-lg">LIVE</span>
+</div>
+<div class="text-slate-500 font-label-md mb-1">Хөрвүүлэлтийн Хувь</div>
+<div class="font-headline-md text-headline-md text-primary">4.28%</div>
+</div>
+<div class="mt-4 flex gap-1 h-12 items-end">
+<div class="w-full bg-indigo-100 h-4 rounded-sm"></div>
+<div class="w-full bg-indigo-100 h-6 rounded-sm"></div>
+<div class="w-full bg-indigo-200 h-10 rounded-sm"></div>
+<div class="w-full bg-indigo-600 h-12 rounded-sm"></div>
+<div class="w-full bg-indigo-100 h-8 rounded-sm"></div>
+<div class="w-full bg-indigo-100 h-5 rounded-sm"></div>
+</div>
+</div>
+<!-- Clicks Chart Card -->
+<div class="col-span-12 md:col-span-4 bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
+<div class="flex justify-between items-center mb-6">
+<div>
+<div class="text-slate-500 font-label-md mb-1">Нийт Дарсан Тоо</div>
+<div class="font-headline-md text-headline-md text-primary">84,200</div>
+</div>
+<span class="text-emerald-600 font-semibold text-sm bg-emerald-50 px-3 py-1 rounded-full">+4.2%</span>
+</div>
+<div class="relative h-24 w-full">
+<!-- Simulated SVG Path -->
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 100 100">
+<path d="M0,80 Q20,20 40,60 T100,10" fill="none" stroke="#6366f1" stroke-linecap="round" stroke-width="3"></path>
+<path d="M0,80 Q20,20 40,60 T100,10 L100,100 L0,100 Z" fill="url(#grad1)" opacity="0.1"></path>
+<defs>
+<lineargradient id="grad1" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:rgb(99,102,241);stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:rgb(99,102,241);stop-opacity:0"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+</div>
+</div>
+<!-- Content Row 2: Generator & Sidebar -->
+<div class="grid grid-cols-12 gap-8">
+<!-- Link Generator Section -->
+<div class="col-span-12 lg:col-span-8">
+<div class="bg-white rounded-3xl shadow-sm border border-slate-100 p-8 h-full">
+<div class="flex justify-between items-center mb-8">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-1">Холбоос Үүсгэгч</h3>
+<p class="text-on-surface-variant font-label-md">Өөрийн хувийн холбоосыг үүсгэж, урамшууллаа аваарай.</p>
+</div>
+<span class="material-symbols-outlined text-indigo-600 text-3xl" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div class="space-y-6">
+<div class="space-y-2">
+<label class="text-label-md font-label-md text-primary pl-1">Бүтээгдэхүүний URL</label>
+<div class="flex gap-4">
+<div class="flex-1 relative">
+<input class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all text-sm outline-none" placeholder="https://partnerpro.com/market/designer-pack-01" type="text"/>
+</div>
+<button class="bg-primary text-white px-8 py-4 rounded-2xl font-bold hover:bg-primary-container transition-all active:scale-95 flex items-center gap-2 shadow-lg shadow-slate-200">
+                                        Үүсгэх
+                                    </button>
+</div>
+</div>
+<div class="pt-6">
+<h4 class="font-label-md text-label-md text-primary mb-4 flex items-center">
+<span class="material-symbols-outlined mr-2 text-indigo-600" data-icon="history">history</span>
+                                    Идэвхтэй Холбоосууд
+                                </h4>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-4 bg-slate-50 border border-slate-100 rounded-2xl hover:border-indigo-300 transition-all">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-indigo-600" data-icon="image">image</span>
+</div>
+<div>
+<div class="font-label-md text-primary">UI Kit Pro Promotion</div>
+<div class="text-xs text-slate-500">partnerpro.co/ref/829103</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="text-right mr-4">
+<div class="text-xs font-bold text-primary">1,240 дарсан</div>
+<div class="text-[10px] text-emerald-600">$420.00 олсон</div>
+</div>
+<button class="p-2 hover:bg-white rounded-lg transition-colors border border-transparent hover:border-slate-200">
+<span class="material-symbols-outlined text-slate-400" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+</div>
+<div class="flex items-center justify-between p-4 bg-slate-50 border border-slate-100 rounded-2xl hover:border-indigo-300 transition-all">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-indigo-600" data-icon="font_download">font_download</span>
+</div>
+<div>
+<div class="font-label-md text-primary">Typeface Bundle Campaign</div>
+<div class="text-xs text-slate-500">partnerpro.co/ref/331492</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="text-right mr-4">
+<div class="text-xs font-bold text-primary">890 дарсан</div>
+<div class="text-[10px] text-emerald-600">$185.50 олсон</div>
+</div>
+<button class="p-2 hover:bg-white rounded-lg transition-colors border border-transparent hover:border-slate-200">
+<span class="material-symbols-outlined text-slate-400" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Marketing Toolkit Sidebar -->
+<div class="col-span-12 lg:col-span-4 space-y-6">
+<div class="bg-surface-container rounded-3xl p-8 border border-outline-variant">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-indigo-600" data-icon="folder_special">folder_special</span>
+<h3 class="font-headline-md text-headline-md text-primary">Маркетингийн Багц</h3>
+</div>
+<div class="space-y-4">
+<!-- Asset Card 1 -->
+<div class="group bg-white p-4 rounded-2xl border border-slate-100 hover:shadow-lg transition-all duration-300 cursor-pointer">
+<div class="flex gap-4 items-center">
+<div class="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 bg-slate-100">
+<img alt="Instagram Templates" class="w-full h-full object-cover" data-alt="vibrant pink and orange instagram post templates for social media marketing displayed on a phone screen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoQEAS4Mu3LJ8QcbtWkA31CHCioQ46Dy888PV3lQVzOBqnRqXgnUKD9QT6in538BqrjrpT4o2ygrERCcEbEUkXh-GEmf0IWxTv_p7bcbRGtz3f_Ybj8lFBwLukohNnLPMQA6ZJjyb2_aZqkrRaKK4UVObeUhN-sm8ceEgIl8f9jvQ-wIkejvAYo53XEteu-B4LT10RtlXcYWUs6ZvnR6zBJG1nBNYp3_45QooZ38x-cdgf0Wv5METxSEb1lTnx5rWjQNxDoEwwI2E"/>
+</div>
+<div class="flex-1">
+<div class="font-label-md text-primary mb-1">Instagram Templates</div>
+<div class="text-xs text-slate-500 mb-2">12 өөр төрлийн загвар</div>
+<div class="flex justify-between items-center">
+<span class="text-[10px] bg-indigo-50 text-indigo-600 px-2 py-0.5 rounded-full">PSD, FIGMA</span>
+<span class="material-symbols-outlined text-indigo-600 text-lg group-hover:translate-y-1 transition-transform" data-icon="download">download</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Asset Card 2 -->
+<div class="group bg-white p-4 rounded-2xl border border-slate-100 hover:shadow-lg transition-all duration-300 cursor-pointer">
+<div class="flex gap-4 items-center">
+<div class="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 bg-slate-100">
+<img alt="Brand Banners" class="w-full h-full object-cover" data-alt="minimalist blue and white web banners for digital advertising with clean typography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcISzaGe0HZyGi4QsFEok0-dois1tTD-8_goHsvHIZTXq5JNZgTQuSlrlHkL-o3OBxYbJI6Tl-UpI_P731aKePr_F-WaaKhb0lZ5O-4CMMEoIvyThZPicopgweBPACn1eErkObQB9d9wlDtPiSvUPHca2VUC0miGvlF9PVGnB3EsLZ33h0gq5ci5WX4FbMS-x45o7P8dQ8QPi4xBVmxmjIC2gpev4P4-e-Nc1sJfywLGfFxHJ1iIZXbeRBvS_NWsebbyx8-qEQ15U"/>
+</div>
+<div class="flex-1">
+<div class="font-label-md text-primary mb-1">Brand Banners</div>
+<div class="text-xs text-slate-500 mb-2">8 хэмжээст сурталчилгаа</div>
+<div class="flex justify-between items-center">
+<span class="text-[10px] bg-indigo-50 text-indigo-600 px-2 py-0.5 rounded-full">JPG, PNG</span>
+<span class="material-symbols-outlined text-indigo-600 text-lg group-hover:translate-y-1 transition-transform" data-icon="download">download</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Asset Card 3 -->
+<div class="group bg-white p-4 rounded-2xl border border-slate-100 hover:shadow-lg transition-all duration-300 cursor-pointer">
+<div class="flex gap-4 items-center">
+<div class="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 bg-slate-100">
+<img alt="Logo Kit" class="w-full h-full object-cover" data-alt="collection of company logo variations in black and white on a clean light grey background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg6D5dFKMgX4k1QQ4QPeSJREfTiA0PQp_ZpQ5iK1b9CSLqtEorJhE_7OeVoafveH8p2F7aZeY-P8TyFUi4xkZoEeS_MrKT0OLoHMVNu_ZKtWJskJskEciYz2Cjs5WnMySJzEGrfWGvRU0lMVDdhxKoDrqF0iBe8qe_H9zlDWB25AURibthGVpjAeZmYeDgEHICvxwI9cfXuEbZfkuDL9ZQ0l9sIMUfgpZO49BdbpfTXJLFYjI9IO8RQjNRwMuMI8U2YtbUbnXOuoo"/>
+</div>
+<div class="flex-1">
+<div class="font-label-md text-primary mb-1">Brand Logo Assets</div>
+<div class="text-xs text-slate-500 mb-2">Вектор болон тунгалаг фон</div>
+<div class="flex justify-between items-center">
+<span class="text-[10px] bg-indigo-50 text-indigo-600 px-2 py-0.5 rounded-full">SVG, AI</span>
+<span class="material-symbols-outlined text-indigo-600 text-lg group-hover:translate-y-1 transition-transform" data-icon="download">download</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full mt-8 py-3 rounded-2xl border-2 border-dashed border-slate-300 text-slate-500 font-label-md hover:border-indigo-400 hover:text-indigo-600 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+                            Бүх файлыг үзэх
+                        </button>
+</div>
+<!-- Help Card -->
+<div class="bg-indigo-600 rounded-3xl p-8 text-white relative overflow-hidden">
+<div class="relative z-10">
+<h4 class="font-headline-md text-headline-md mb-2">Тусламж хэрэгтэй юу?</h4>
+<p class="text-indigo-100 text-sm mb-6">Бид танд маркетингийн стратеги болон борлуулалтаа нэмэгдүүлэхэд тусална.</p>
+<button class="bg-white text-indigo-600 px-6 py-2.5 rounded-xl text-label-md font-bold hover:bg-indigo-50 transition-colors">
+                                Зөвлөхтэй холбогдох
+                            </button>
+</div>
+<span class="material-symbols-outlined absolute -right-4 -bottom-4 text-9xl opacity-10" data-icon="support_agent">support_agent</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Notification FAB (Contextual) -->
+<div class="fixed bottom-8 right-8 z-50">
+<button class="w-14 h-14 bg-secondary-container text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-2xl" data-icon="chat" data-weight="fill" style="font-variation-settings: 'FILL' 1;">chat</span>
+</button>
+</div>
+<script src="assets/site.js"></script></body></html>

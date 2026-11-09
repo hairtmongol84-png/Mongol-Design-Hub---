@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Merchant Affiliate Settings | AffiliateHub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        /* Custom Slider Styling */
+        input[type='range']::-webkit-slider-runnable-track {
+            background: #d8e3fb;
+            height: 8px;
+            border-radius: 999px;
+        }
+        input[type='range']::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 20px;
+            width: 20px;
+            background: #091426;
+            border-radius: 50%;
+            margin-top: -6px;
+            cursor: pointer;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#783200",
+                        "on-primary-fixed": "#111c2d",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#fd761a",
+                        "primary-fixed": "#d8e3fb",
+                        "outline": "#75777d",
+                        "on-surface": "#0b1c30",
+                        "inverse-primary": "#bcc7de",
+                        "tertiary": "#001815",
+                        "tertiary-fixed": "#89f5e7",
+                        "surface": "#f8f9ff",
+                        "tertiary-fixed-dim": "#6bd8cb",
+                        "secondary-fixed-dim": "#ffb690",
+                        "on-primary-container": "#8590a6",
+                        "outline-variant": "#c5c6cd",
+                        "surface-container-highest": "#d3e4fe",
+                        "secondary": "#9d4300",
+                        "primary": "#091426",
+                        "on-tertiary-fixed": "#00201d",
+                        "surface-container-low": "#eff4ff",
+                        "primary-fixed-dim": "#bcc7de",
+                        "surface-variant": "#d3e4fe",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-dim": "#cbdbf5",
+                        "surface-tint": "#545f73",
+                        "background": "#f8f9ff",
+                        "surface-bright": "#f8f9ff",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#002f2a",
+                        "on-tertiary-fixed-variant": "#005049",
+                        "primary-container": "#1e293b",
+                        "on-secondary-fixed": "#341100",
+                        "error": "#ba1a1a",
+                        "on-surface-variant": "#45474c",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#dce9ff",
+                        "secondary-fixed": "#ffdbca",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#3c475a",
+                        "on-background": "#0b1c30",
+                        "inverse-surface": "#213145",
+                        "surface-container": "#e5eeff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#28a094",
+                        "on-secondary-container": "#5c2400"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "margin": "32px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-xl": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "label-md": ["14px", {"lineHeight": "1.4", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background font-body-md text-on-background min-h-screen flex">
+<!-- SideNavBar Component -->
+<aside class="h-screen w-64 border-r border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 flex flex-col p-4 space-y-2 sticky top-0">
+<div class="mb-8 px-2">
+<h1 class="text-lg font-black text-indigo-950 dark:text-white">Creator Studio</h1>
+<p class="text-xs text-slate-500 font-label-sm">Verified Designer</p>
+</div>
+<nav class="flex-1 space-y-1">
+<!-- Active State determined: Merchant Settings is the target page -->
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all rounded-lg font-body-md text-sm font-semibold tracking-wide" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                Overview
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all rounded-lg font-body-md text-sm font-semibold tracking-wide" href="#">
+<span class="material-symbols-outlined" data-icon="campaign">campaign</span>
+                Promotions
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all rounded-lg font-body-md text-sm font-semibold tracking-wide" href="#">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+                Assets
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all rounded-lg font-body-md text-sm font-semibold tracking-wide" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+                Earnings
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 bg-indigo-50 dark:bg-indigo-900/20 text-indigo-700 dark:text-indigo-300 rounded-lg font-body-md text-sm font-semibold tracking-wide" href="#">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+                Merchant Settings
+            </a>
+</nav>
+<div class="pt-4 mt-auto border-t border-slate-200 dark:border-slate-800">
+<button class="w-full flex items-center justify-center gap-2 bg-primary text-on-primary py-2.5 rounded-xl font-label-md hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="share">share</span>
+                Share Link
+            </button>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="flex-1 flex flex-col min-h-screen">
+<!-- TopAppBar Component -->
+<header class="bg-slate-50 dark:bg-slate-900 h-16 border-b border-slate-200 dark:border-slate-800 flex items-center px-6 sticky top-0 z-10">
+<div class="flex justify-between items-center w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tight text-indigo-900 dark:text-white">AffiliateHub</span>
+<nav class="hidden md:flex gap-6">
+<a class="text-slate-500 dark:text-slate-400 font-label-md hover:text-indigo-700 transition-colors" href="#">Dashboard</a>
+<a class="text-slate-500 dark:text-slate-400 font-label-md hover:text-indigo-700 transition-colors" href="#">Marketing Kits</a>
+<a class="text-slate-500 dark:text-slate-400 font-label-md hover:text-indigo-700 transition-colors" href="#">Reports</a>
+<a class="text-indigo-600 dark:text-indigo-400 border-b-2 border-indigo-600 pb-4 mt-4 font-label-md" href="#">Settings</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-slate-500 p-2 hover:bg-slate-100 rounded-full" data-icon="notifications">notifications</button>
+<button class="material-symbols-outlined text-slate-500 p-2 hover:bg-slate-100 rounded-full" data-icon="account_circle">account_circle</button>
+</div>
+</div>
+</header>
+<!-- Content Area -->
+<div class="flex-1 p-margin">
+<div class="max-w-7xl mx-auto">
+<header class="mb-gutter">
+<h2 class="font-headline-xl text-headline-xl text-primary mb-2">Merchant Affiliate Settings</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Configure your designer referral program and manage your creative network.</p>
+</header>
+<!-- Bento Grid Layout for Settings -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Commission Setup Card -->
+<section class="col-span-12 lg:col-span-5 bg-white dark:bg-slate-900 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 h-fit">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-full bg-indigo-50 dark:bg-indigo-900/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-indigo-600" data-icon="payments">payments</span>
+</div>
+<h3 class="font-headline-md text-headline-md">Commission Setup</h3>
+</div>
+<div class="space-y-8">
+<div>
+<div class="flex justify-between items-end mb-4">
+<label class="font-label-md text-on-surface">Global Commission Rate</label>
+<span class="text-3xl font-bold text-indigo-600">3.5%</span>
+</div>
+<input class="w-full h-2 bg-primary-fixed rounded-lg appearance-none cursor-pointer accent-primary" max="5" min="1" step="0.5" type="range" value="3.5"/>
+<div class="flex justify-between mt-2 text-xs text-slate-400 font-label-sm">
+<span>1%</span>
+<span>2%</span>
+<span>3%</span>
+<span>4%</span>
+<span>5%</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg border border-indigo-50">
+<p class="text-sm text-on-primary-fixed-variant leading-relaxed">
+                                    This percentage is applied to the total order value for every customer referred by an authorized designer.
+                                </p>
+</div>
+<button class="w-full bg-primary text-on-primary py-3 rounded-lg font-label-md hover:opacity-90 active:scale-95 transition-all">
+                                Update Commission Policy
+                            </button>
+</div>
+</section>
+<!-- Campaign Rules Card -->
+<section class="col-span-12 lg:col-span-7 bg-white dark:bg-slate-900 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-full bg-indigo-50 dark:bg-indigo-900/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-indigo-600" data-icon="rule">rule</span>
+</div>
+<h3 class="font-headline-md text-headline-md">Campaign Rules</h3>
+</div>
+<div class="space-y-6">
+<!-- Toggle Item -->
+<div class="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl hover:bg-slate-100 transition-colors">
+<div class="flex-1">
+<p class="font-label-md text-primary">Automatic Approval</p>
+<p class="text-xs text-slate-500">Instantly approve new designer applications</p>
+</div>
+<div class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-indigo-600"></div>
+</div>
+</div>
+<!-- Toggle Item -->
+<div class="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl hover:bg-slate-100 transition-colors">
+<div class="flex-1">
+<p class="font-label-md text-primary">Cookie Window</p>
+<p class="text-xs text-slate-500">Last-click attribution for 30 days</p>
+</div>
+<div class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-indigo-600"></div>
+</div>
+</div>
+<!-- Toggle Item -->
+<div class="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-800/50 rounded-xl hover:bg-slate-100 transition-colors">
+<div class="flex-1">
+<p class="font-label-md text-primary">Tiered Rewards</p>
+<p class="text-xs text-slate-500">Increase commission based on volume</p>
+</div>
+<div class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-indigo-600"></div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="font-label-sm text-slate-500">Payout Threshold</label>
+<input class="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-lg font-body-md text-sm p-3 ring-1 ring-slate-200 dark:ring-slate-700 focus:ring-2 focus:ring-indigo-500" type="text" value="$50.00"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-sm text-slate-500">Default Currency</label>
+<select class="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-lg font-body-md text-sm p-3 ring-1 ring-slate-200 dark:ring-slate-700 focus:ring-2 focus:ring-indigo-500">
+<option>USD ($)</option>
+<option>EUR (€)</option>
+<option>GBP (£)</option>
+</select>
+</div>
+</div>
+</div>
+</section>
+<!-- Affiliate List Table Section -->
+<section class="col-span-12 bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 overflow-hidden">
+<div class="p-6 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-indigo-50 dark:bg-indigo-900/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-indigo-600" data-icon="group">group</span>
+</div>
+<h3 class="font-headline-md text-headline-md">Active Affiliate Network</h3>
+</div>
+<div class="flex gap-2">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm" data-icon="search">search</span>
+<input class="pl-10 pr-4 py-2 bg-slate-50 dark:bg-slate-800 border-none rounded-full text-xs ring-1 ring-slate-200 dark:ring-slate-700 focus:ring-2 focus:ring-indigo-500 w-64" placeholder="Search designers..." type="text"/>
+</div>
+<button class="p-2 bg-slate-50 dark:bg-slate-800 rounded-full text-slate-500 hover:text-indigo-600 transition-colors">
+<span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead class="bg-slate-50 dark:bg-slate-800/50">
+<tr>
+<th class="px-6 py-4 font-label-md text-slate-500 border-b border-slate-100 dark:border-slate-800">Designer</th>
+<th class="px-6 py-4 font-label-md text-slate-500 border-b border-slate-100 dark:border-slate-800">Sales Generated</th>
+<th class="px-6 py-4 font-label-md text-slate-500 border-b border-slate-100 dark:border-slate-800">Revenue Contribution</th>
+<th class="px-6 py-4 font-label-md text-slate-500 border-b border-slate-100 dark:border-slate-800">Commission Paid</th>
+<th class="px-6 py-4 font-label-md text-slate-500 border-b border-slate-100 dark:border-slate-800 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-50 dark:divide-slate-800">
+<!-- Row 1 -->
+<tr class="hover:bg-indigo-50/30 dark:hover:bg-indigo-900/10 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<img alt="Profile" class="w-10 h-10 rounded-full object-cover" data-alt="professional portrait of a creative designer with glasses and warm smile in a brightly lit studio environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCykHzYOD-AB3Tjcp3pb8vwn3uznL16ZoYdsJ-oGMpkHuJcG5-gakrA6Z8MNZvEmvhrcT6PD-ZKF6Km_YoVQrG_yTtVQLVr4d2yy_Bv5hEW-EFJlAD7tiMqU138GzzTa6BUqfl49v2pcE92bQ8Vs8aPrBwqn1ZB9fgcJV-GvMp9SP6hlHrvGfF-2Hm4BJr3KScRAH1rMWbmTaJvY-_nVUqa5OXKuq2k-3AOmVqHCrrH6PBx0FRyYg-TcswehSniDWorrSuXdFB8aIE"/>
+<div>
+<p class="font-label-md text-primary">Elena Rodriguez</p>
+<p class="text-xs text-slate-400">Interior Specialist</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="font-body-md">142 orders</span>
+</td>
+<td class="px-6 py-4">
+<span class="font-body-md font-semibold text-primary">$12,450.00</span>
+</td>
+<td class="px-6 py-4">
+<span class="font-body-md">$435.75</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-indigo-600 hover:underline font-label-sm">View Details</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-indigo-50/30 dark:hover:bg-indigo-900/10 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<img alt="Profile" class="w-10 h-10 rounded-full object-cover" data-alt="headshot of a stylish male product designer with beard in a minimalist gray sweater against a white wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8dXBwLAkYwi36GBkhlugQj6DMxo__xAu5iCt0YP8YD0PUYNgiiy5RTA0xcURIHScWlwewQsad4UfDqqk4McswyQdHzv6qV693o0yEcujQ82z4blEU82adNlRs99Q5tIyNJD7qkXdl6QiUH_ixSlGXnUdHT8lXGDsoBilsq0GGyIFG3Vtb26ZTils2NO19ut3neEPzJUkQ6bufojR5SPWJm9KZB0YSHhAlZzrwte1Bzdtt94Ne9W1nFLnuHAgV3gIM1-WyrU0RsXs"/>
+<div>
+<p class="font-label-md text-primary">Marcus Thorne</p>
+<p class="text-xs text-slate-400">Minimalist Curator</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="font-body-md">89 orders</span>
+</td>
+<td class="px-6 py-4">
+<span class="font-body-md font-semibold text-primary">$8,120.50</span>
+</td>
+<td class="px-6 py-4">
+<span class="font-body-md">$284.22</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-indigo-600 hover:underline font-label-sm">View Details</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-indigo-50/30 dark:hover:bg-indigo-900/10 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<img alt="Profile" class="w-10 h-10 rounded-full object-cover" data-alt="young professional woman with curly hair looking confidently at the camera in a modern co-working space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBehJcON4a2g4R9JmRqmfiEs899JlnaLWE6hPK-eIMqU2hiOcrNk-ARUcCUgKj6OU-A37rfPdiitNFbAEvxDfIuRkrdiTScxSBdV8_jq9bSQq3dcfcS140WPYx42I_v0qkxG8JWE6kB1DEflG3iSWyvqzujBiFlmC2MnECau4lP-aPGxyWLRqRCuar_USnd0Kx0Cbq_U6ZgVioJdF6GtrMiAtWxz6peJrXmox0DtAuGNrQA0pX3NpEEWQraQJHl9h-s0kYoivQyLs"/>
+<div>
+<p class="font-label-md text-primary">Sarah Chen</p>
+<p class="text-xs text-slate-400">Trend Hunter</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="font-body-md">64 orders</span>
+</td>
+<td class="px-6 py-4">
+<span class="font-body-md font-semibold text-primary">$4,890.00</span>
+</td>
+<td class="px-6 py-4">
+<span class="font-body-md">$171.15</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-indigo-600 hover:underline font-label-sm">View Details</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-6 py-4 bg-slate-50 dark:bg-slate-800/50 flex items-center justify-between">
+<p class="text-xs text-slate-500">Showing 3 of 12 active designers</p>
+<div class="flex gap-2">
+<button class="px-3 py-1 bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded text-xs disabled:opacity-50" disabled="">Previous</button>
+<button class="px-3 py-1 bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded text-xs hover:bg-slate-50">Next</button>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<!-- Footer Component -->
+<footer class="w-full border-t mt-auto border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900">
+<div class="max-w-7xl mx-auto py-8 px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-xs text-slate-500 dark:text-slate-400 font-body-md">© 2024 Marketplace Affiliate Network. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="text-xs text-slate-500 hover:text-indigo-500 transition-all font-body-md" href="#">Terms of Service</a>
+<a class="text-xs text-slate-500 hover:text-indigo-500 transition-all font-body-md" href="#">Privacy Policy</a>
+<a class="text-xs text-slate-500 hover:text-indigo-500 transition-all font-body-md" href="#">Help Center</a>
+<a class="text-xs text-slate-500 hover:text-indigo-500 transition-all font-body-md" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+</main>
+<script src="assets/site.js"></script></body></html>

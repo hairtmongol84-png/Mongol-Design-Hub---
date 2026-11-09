@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nexus Market | Design Licensing Portal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#6bd8cb",
+                        "surface-container-high": "#dce9ff",
+                        "on-primary-container": "#8590a6",
+                        "tertiary-container": "#002f2a",
+                        "on-surface-variant": "#45474c",
+                        "primary-container": "#1e293b",
+                        "surface-variant": "#d3e4fe",
+                        "primary": "#091426",
+                        "on-secondary-container": "#5c2400",
+                        "tertiary": "#001815",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-primary-fixed": "#111c2d",
+                        "surface": "#f8f9ff",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#bcc7de",
+                        "surface-bright": "#f8f9ff",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#ffdbca",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#ffb690",
+                        "tertiary-fixed": "#89f5e7",
+                        "outline": "#75777d",
+                        "surface-dim": "#cbdbf5",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#fd761a",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#e5eeff",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#eaf1ff",
+                        "background": "#f8f9ff",
+                        "surface-tint": "#545f73",
+                        "primary-fixed": "#d8e3fb",
+                        "on-background": "#0b1c30",
+                        "secondary": "#9d4300",
+                        "on-secondary-fixed-variant": "#783200",
+                        "on-primary-fixed-variant": "#3c475a",
+                        "inverse-primary": "#bcc7de",
+                        "on-secondary-fixed": "#341100",
+                        "on-tertiary-fixed-variant": "#005049",
+                        "inverse-surface": "#213145",
+                        "outline-variant": "#c5c6cd",
+                        "on-tertiary-container": "#28a094",
+                        "surface-container-low": "#eff4ff",
+                        "on-tertiary-fixed": "#00201d",
+                        "on-surface": "#0b1c30"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "base": "8px",
+                        "margin": "32px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "headline-xl": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "1.4", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { background-color: #f8f9ff; color: #0b1c30; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #dce9ff; border-radius: 10px; }
+    </style>
+</head>
+<body class="font-body-md overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 border-b border-slate-200 bg-white shadow-sm h-16">
+<div class="flex items-center justify-between px-6 h-full max-w-[1280px] mx-auto">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tight text-slate-900">Nexus Market</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-indigo-600 border-b-2 border-indigo-600 pb-1 font-inter text-sm font-medium tracking-tight" href="#">Marketplace</a>
+<a class="text-slate-600 hover:text-indigo-500 font-inter text-sm font-medium tracking-tight transition-colors" href="#">Design Hub</a>
+<a class="text-slate-600 hover:text-indigo-500 font-inter text-sm font-medium tracking-tight transition-colors" href="#">My Assets</a>
+<a class="text-slate-600 hover:text-indigo-500 font-inter text-sm font-medium tracking-tight transition-colors" href="#">Analytics</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="bg-slate-50 border-slate-200 rounded-full pl-10 pr-4 py-1.5 text-sm w-64 focus:ring-2 focus:ring-indigo-500 border focus:outline-none transition-all" placeholder="Search designs..." type="text"/>
+</div>
+<button class="p-2 text-slate-600 hover:bg-slate-50 rounded-full transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-slate-600 hover:bg-slate-50 rounded-full transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+<div class="h-8 w-8 rounded-full overflow-hidden border border-slate-200">
+<img alt="User profile" data-alt="professional corporate headshot of a creative director in a neutral setting with soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZ4yfErJpNQTAYkoOfW8Rx0uXmbUI2ZDb8oAYdhxv0QuUMZ-wgtycqmEeF6sGitnpoM-86I42nq08v4sX1d2zh1NnhtYQ4qfV0cFBdATbPMbQrzswwY3cVPpXfjyuEmgckRHDFK3nHSMOHvibw40HYUbuKRYi4K8AGolG_jpaSLed1RHcUNTTjUtnCosRPgwxhSUX1ZK-ipBPsu1g1kyHgkqua4gkK0PfSMMMjmea0AEjXqJCXzFb21_lnxr4DBzBSJrGGJr-iCoo"/>
+</div>
+</div>
+</div>
+</header>
+<div class="flex pt-16 min-h-screen">
+<!-- Sidebar Navigation -->
+<aside class="fixed left-0 top-16 h-[calc(100vh-64px)] w-64 border-r bg-slate-50 flex flex-col py-6 px-4 hidden lg:flex">
+<div class="flex items-center gap-3 px-4 mb-8">
+<div class="h-10 w-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dataset</span>
+</div>
+<div>
+<h2 class="text-lg font-black text-slate-900 leading-tight">Indigo Nexus</h2>
+<p class="text-[10px] font-semibold text-slate-500 uppercase tracking-wider">Manufacturing Portal</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 text-slate-600 hover:bg-slate-200 px-4 py-2.5 rounded-lg transition-all duration-200 font-inter text-sm font-semibold" href="#">
+<span class="material-symbols-outlined">dashboard</span> Dashboard
+                </a>
+<a class="flex items-center gap-3 bg-indigo-50 text-indigo-700 px-4 py-2.5 rounded-lg transition-all duration-200 font-inter text-sm font-semibold" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">inventory_2</span> Product Catalog
+                </a>
+<a class="flex items-center gap-3 text-slate-600 hover:bg-slate-200 px-4 py-2.5 rounded-lg transition-all duration-200 font-inter text-sm font-semibold" href="#">
+<span class="material-symbols-outlined">verified_user</span> License Manager
+                </a>
+<a class="flex items-center gap-3 text-slate-600 hover:bg-slate-200 px-4 py-2.5 rounded-lg transition-all duration-200 font-inter text-sm font-semibold" href="#">
+<span class="material-symbols-outlined">shopping_bag</span> Orders
+                </a>
+<a class="flex items-center gap-3 text-slate-600 hover:bg-slate-200 px-4 py-2.5 rounded-lg transition-all duration-200 font-inter text-sm font-semibold" href="#">
+<span class="material-symbols-outlined">groups</span> Community
+                </a>
+</nav>
+<div class="mt-auto pt-6 border-t border-slate-200">
+<div class="bg-indigo-600 rounded-xl p-4 text-white shadow-lg shadow-indigo-100">
+<p class="text-xs font-bold mb-1 opacity-80">Seller Quota</p>
+<div class="flex items-end justify-between mb-2">
+<span class="text-xl font-bold">12/20</span>
+<span class="text-[10px] font-bold">Active Units</span>
+</div>
+<div class="w-full bg-indigo-400/30 h-1.5 rounded-full overflow-hidden">
+<div class="bg-white h-full w-[60%]"></div>
+</div>
+</div>
+<button class="mt-4 w-full bg-slate-900 text-white py-2.5 rounded-lg font-inter text-sm font-semibold hover:bg-slate-800 transition-colors active:scale-95">
+                    New Listing
+                </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 lg:ml-64 p-8 max-w-[1280px] mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
+<div>
+<h1 class="font-headline-xl text-headline-xl text-primary mb-2">Design Marketplace</h1>
+<p class="font-body-lg text-on-surface-variant max-w-2xl">Source high-resolution assets from world-class designers for your next production run.</p>
+</div>
+<div class="flex items-center gap-3 bg-white p-1 rounded-xl shadow-sm border border-slate-100">
+<button class="px-4 py-2 rounded-lg bg-indigo-50 text-indigo-700 font-label-md text-label-md">Standard</button>
+<button class="px-4 py-2 rounded-lg text-slate-500 hover:bg-slate-50 font-label-md text-label-md transition-colors">Exclusive</button>
+</div>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-4 gap-gutter">
+<!-- Main Grid Column -->
+<div class="xl:col-span-3 space-y-gutter">
+<!-- Featured Designers Bento Row -->
+<section>
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-headline-md text-headline-md text-primary">Top Featured Designers</h3>
+<a class="text-indigo-600 font-label-md text-label-md hover:underline" href="#">View All</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Designer 1 -->
+<div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow group">
+<div class="flex items-center gap-4 mb-4">
+<div class="h-12 w-12 rounded-full overflow-hidden border-2 border-indigo-50">
+<img alt="Elena Vance" data-alt="close-up portrait of a female digital artist with colorful studio lighting and artistic vibe" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsJt9-I06kQfuXouOmQkEdylJ_vP8FFFHTfjBueM20411gv8qivtntuCuN0L1IZpB-rkn2VwL3Nl9iyoH_gpq94pDlXXS3iQTvTTmBvKoI7Oz5IcvYGlZSfdcFbiyyAKu7LAZAsfyjtZPT8JNveI0-tlHIVFyXiWkBRH22_brvqGjoNl59YNqOgbi3Jh3oyOelK7d1qP7FUSgj6a37epcuw7Gl2__YWGI8NcF_oljaQVoIPdIuo2odMoRMWTyk8FmOh9QUALMsQe8"/>
+</div>
+<div>
+<h4 class="font-headline-md text-sm text-primary group-hover:text-indigo-600 transition-colors">Elena Vance</h4>
+<p class="text-xs text-slate-500 font-medium">Geometric Patterns</p>
+</div>
+</div>
+<div class="flex items-center justify-between text-xs font-semibold">
+<span class="text-emerald-600 bg-emerald-50 px-2 py-1 rounded">98% Royalty Score</span>
+<span class="text-slate-400">124 Licenses</span>
+</div>
+</div>
+<!-- Designer 2 -->
+<div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow group">
+<div class="flex items-center gap-4 mb-4">
+<div class="h-12 w-12 rounded-full overflow-hidden border-2 border-indigo-50">
+<img alt="Marcus Thorne" data-alt="portrait of a male graphic designer in a modern studio environment with soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNSyVvb-P0oLJVSgbz2DK9Z3j4Wh5kNqhDGkIaohkErSdYRuSCMhWnlLjalYhUxS88tG-vwo81E4mtILqm65NAwKRNTJ0_RR_I5g6g8V9Hx9PhdF5Fqe0ijlcoxA64JpFBj0OeghYQzzdJlUI-KQ3c88l1va4oqJVmw0nl8LhNQ_jMh_YoUU0QVuiIyiH0B22xq3MoZEHyHP1OxfDhpoGgeP0Y7S_2Dvymz71gJYQCXYhMihJIaBRMAfhpQIrEwg8uQk9loz9ctVM"/>
+</div>
+<div>
+<h4 class="font-headline-md text-sm text-primary group-hover:text-indigo-600 transition-colors">Marcus Thorne</h4>
+<p class="text-xs text-slate-500 font-medium">Abstract Illustrations</p>
+</div>
+</div>
+<div class="flex items-center justify-between text-xs font-semibold">
+<span class="text-emerald-600 bg-emerald-50 px-2 py-1 rounded">94% Royalty Score</span>
+<span class="text-slate-400">89 Licenses</span>
+</div>
+</div>
+<!-- Designer 3 -->
+<div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow group">
+<div class="flex items-center gap-4 mb-4">
+<div class="h-12 w-12 rounded-full overflow-hidden border-2 border-indigo-50">
+<img alt="Serafina Bloom" data-alt="smiling woman with creative professional aesthetic in a bright sunlit office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQ3ql-8Sc19inwohPv-X-GXndV75ItwWuInPt-7rkNbLxTvpKLKuCMDrtza5Kakeo2ueMjATScp4D3QlqN4slbVTJIGY7Va4o_b5c9UVAjmFSJmibU58lWSbc8S9TnrW3ocpZs5tqMCqUpTeEPUf3aOaLAyQBD778FT31eQ_-bY4nbg60jsPTy0kp3nXxFTj0nCndk-4L8kbQfyz_FslMH-ZnCPv0oJFgva7rg9G_p7rObwtLJNvD_bkkuGohdBD8RA5gubP9YcRA"/>
+</div>
+<div>
+<h4 class="font-headline-md text-sm text-primary group-hover:text-indigo-600 transition-colors">Serafina Bloom</h4>
+<p class="text-xs text-slate-500 font-medium">Minimalist Logos</p>
+</div>
+</div>
+<div class="flex items-center justify-between text-xs font-semibold">
+<span class="text-emerald-600 bg-emerald-50 px-2 py-1 rounded">100% Royalty Score</span>
+<span class="text-slate-400">210 Licenses</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Design Previews Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Card 1 -->
+<div class="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all group">
+<div class="relative aspect-video">
+<img class="w-full h-full object-cover" data-alt="vibrant 3D abstract fluid art with deep indigo and bright orange swirls and smooth textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArTtEkGt7Ol79N9fdE6sozPQStM2zWeRGmnmOkys-8egOa90fuGZ1iuYDTvtxYzdSJyFwmqUcxi-IbW-1jP66Fk0wpOTjepVb3Q08TpwalstTtiegYzKv4WUmdVinyqpSmGhJzR8yWFqGAVbTXYdusbvgn2H4yJ1_om6LAJU8ZnAoZXrSLIM59w5hJJBXtDdt9QGC1A2FlFL_l_AMONE75JXT6tokGN97vHhv6PJfvNbPYV7PjxsVhc64yxkBhPivlN6vUMCK7Wk8"/>
+<div class="absolute top-4 left-4">
+<span class="bg-secondary-container text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Standard</span>
+</div>
+<div class="absolute bottom-4 left-4 right-4 flex justify-between items-end opacity-0 group-hover:opacity-100 transition-opacity">
+<div class="bg-white/90 backdrop-blur-md p-3 rounded-xl flex items-center gap-3">
+<div class="text-center border-r border-slate-200 pr-3">
+<p class="text-[10px] text-slate-500 font-bold uppercase">Royalty</p>
+<p class="text-sm font-bold text-indigo-700">4.5%</p>
+</div>
+<div>
+<p class="text-[10px] text-slate-500 font-bold uppercase">Price</p>
+<p class="text-sm font-bold text-slate-900">$1,200</p>
+</div>
+</div>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-headline-md text-lg text-primary">Cybernetic Bloom Pattern</h3>
+<p class="text-sm text-slate-500">by Elena Vance</p>
+</div>
+<button class="text-slate-400 hover:text-secondary-container transition-colors">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 bg-indigo-600 text-white font-label-md py-3 rounded-xl hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-100 active:scale-95">License for Production</button>
+<button class="w-12 h-12 flex items-center justify-center border border-slate-200 rounded-xl text-slate-600 hover:bg-slate-50 transition-colors active:scale-95">
+<span class="material-symbols-outlined">analytics</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all group">
+<div class="relative aspect-video">
+<img class="w-full h-full object-cover" data-alt="minimalist abstract geometric composition with soft pastels and sharp clean lines for a modern logo style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnQ6bIxIi0MwqUByVy5BXseaK7nU-CA8YnmjWvRnIyZTMeEiwYT84Gk3OuazLTj4Sh8Ap78L6g1cNS_0yaHptnM6ymY5mKGed4fLbXSJXYDb-3Zb5TaQIrYm3rE2AdR6HZciZs94Vct7Ctkz64Qh8HCsxG75EyiFMrYY3XpJroy96bqb7CwrhBx8NzwKjTdgWMjcGBUe-izd2egAeh05xckRgXReez4fNHvAyL8Ceet6GORpbQsdP3CPQt6stY_GuCF7GbQHfApGc"/>
+<div class="absolute top-4 left-4">
+<span class="bg-tertiary-container text-tertiary-fixed font-bold text-[10px] px-2 py-1 rounded uppercase tracking-wider flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed animate-pulse"></span> Exclusive
+                                    </span>
+</div>
+<div class="absolute bottom-4 left-4 right-4 flex justify-between items-end opacity-0 group-hover:opacity-100 transition-opacity">
+<div class="bg-white/90 backdrop-blur-md p-3 rounded-xl flex items-center gap-3">
+<div class="text-center border-r border-slate-200 pr-3">
+<p class="text-[10px] text-slate-500 font-bold uppercase">Royalty</p>
+<p class="text-sm font-bold text-indigo-700">0.0%</p>
+</div>
+<div>
+<p class="text-[10px] text-slate-500 font-bold uppercase">Price</p>
+<p class="text-sm font-bold text-slate-900">$8,500</p>
+</div>
+</div>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-headline-md text-lg text-primary">Prism Edge Illustration</h3>
+<p class="text-sm text-slate-500">by Serafina Bloom</p>
+</div>
+<button class="text-slate-400 hover:text-secondary-container transition-colors">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 bg-indigo-600 text-white font-label-md py-3 rounded-xl hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-100 active:scale-95">License for Production</button>
+<button class="w-12 h-12 flex items-center justify-center border border-slate-200 rounded-xl text-slate-600 hover:bg-slate-50 transition-colors active:scale-95">
+<span class="material-symbols-outlined">analytics</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all group">
+<div class="relative aspect-video">
+<img class="w-full h-full object-cover" data-alt="dynamic monochrome abstract waves with strong contrast and ink-like texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwouLUhgP0Zisp8hejSdXKPv0YuuZsTFJYwQgyV0ZneP44sa7jA3VaceiOtiKDHoVvA6r493CBNy6pxIIBUbkdta04BOUdFEZ1abtRbGljNLEUe8ctwhrIVlMvF0UmrDUvc_IOlvuaNd_NmGRU_Kt32Ok-ac1A5AWTK4crMXHr6yaXgDhDwVvS6SiMqK4wBsIlz9YhqiWvf3TAvjathstA69hGeeXIRus_mEcnGHv0xa10mwkIXFSQXx_l79gIXgdGk4f5fWPopNc"/>
+<div class="absolute top-4 left-4">
+<span class="bg-secondary-container text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Standard</span>
+</div>
+<div class="absolute bottom-4 left-4 right-4 flex justify-between items-end opacity-0 group-hover:opacity-100 transition-opacity">
+<div class="bg-white/90 backdrop-blur-md p-3 rounded-xl flex items-center gap-3">
+<div class="text-center border-r border-slate-200 pr-3">
+<p class="text-[10px] text-slate-500 font-bold uppercase">Royalty</p>
+<p class="text-sm font-bold text-indigo-700">3.2%</p>
+</div>
+<div>
+<p class="text-[10px] text-slate-500 font-bold uppercase">Price</p>
+<p class="text-sm font-bold text-slate-900">$2,450</p>
+</div>
+</div>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-headline-md text-lg text-primary">Obsidian Flow Series</h3>
+<p class="text-sm text-slate-500">by Marcus Thorne</p>
+</div>
+<button class="text-slate-400 hover:text-secondary-container transition-colors">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 bg-indigo-600 text-white font-label-md py-3 rounded-xl hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-100 active:scale-95">License for Production</button>
+<button class="w-12 h-12 flex items-center justify-center border border-slate-200 rounded-xl text-slate-600 hover:bg-slate-50 transition-colors active:scale-95">
+<span class="material-symbols-outlined">analytics</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl transition-all group">
+<div class="relative aspect-video">
+<img class="w-full h-full object-cover" data-alt="high fashion textile print with bold botanical motifs and deep jewel tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcP4VDza7iWIpw3N1hevLV1Qtm5n_wcFROfBHDHTGPeb6GxQL9WBmu6p3b7Tj2OrmKRXIIIyIL4XH1JKs4yFdTJ3U1xSXBzxAk3dAeqmdCPfrk5f8E8hScckTVvT9K5Jg1up3ZpP1MoAlRlBcijeYBI_Mi0h8r9iSS3omZ7D5qNi45pGtSDUIyxenqGN31CZ224g1S3Zt9pn8F3feea51xE1fAUeOlenk0si3Rn-gM2PNpaugpFGRA8fGjhg15VVdtLhTIZHBCtXI"/>
+<div class="absolute top-4 left-4">
+<span class="bg-secondary-container text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider">Standard</span>
+</div>
+<div class="absolute bottom-4 left-4 right-4 flex justify-between items-end opacity-0 group-hover:opacity-100 transition-opacity">
+<div class="bg-white/90 backdrop-blur-md p-3 rounded-xl flex items-center gap-3">
+<div class="text-center border-r border-slate-200 pr-3">
+<p class="text-[10px] text-slate-500 font-bold uppercase">Royalty</p>
+<p class="text-sm font-bold text-indigo-700">5.0%</p>
+</div>
+<div>
+<p class="text-[10px] text-slate-500 font-bold uppercase">Price</p>
+<p class="text-sm font-bold text-slate-900">$3,100</p>
+</div>
+</div>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-headline-md text-lg text-primary">Urban Jungle Textiles</h3>
+<p class="text-sm text-slate-500">by Elena Vance</p>
+</div>
+<button class="text-slate-400 hover:text-secondary-container transition-colors">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+</div>
+<div class="flex gap-3">
+<button class="flex-1 bg-indigo-600 text-white font-label-md py-3 rounded-xl hover:bg-indigo-700 transition-colors shadow-lg shadow-indigo-100 active:scale-95">License for Production</button>
+<button class="w-12 h-12 flex items-center justify-center border border-slate-200 rounded-xl text-slate-600 hover:bg-slate-50 transition-colors active:scale-95">
+<span class="material-symbols-outlined">analytics</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Seller Sidebar Column -->
+<aside class="space-y-gutter">
+<!-- Purchased Licenses -->
+<div class="bg-white rounded-2xl border border-slate-100 p-6 shadow-sm">
+<h3 class="font-headline-md text-headline-md text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-indigo-600">verified</span>
+                            Purchased
+                        </h3>
+<div class="space-y-4">
+<div class="flex gap-3 items-center group cursor-pointer">
+<div class="h-12 w-12 rounded-lg bg-slate-100 flex-shrink-0 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="thumbnail of a modern artistic pattern in earthy tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDc9u2ZCw4gz14f63PYSZPvtk9K1NDZk7E4qbX99ch9AEwMUDYTvoVPJVUxa3EtUd3vWnP2KAm7aiU8PeQxXJK9gz3UcflJ3fS89ZwUzKUMhtieXeWyugWvzUfIULUem4nnGIE1cw3UbOBOJLa9H7rqJsv3Aua6fuvBXakSYLo5DlU6Ik5fBKcCR7-ZLVzzZ_MkMbcW_1euTPrGXYSHV9xJ1XEvEx6tfFpQtI7OL5RyV35AQrEPlKT1-eCdZB2TGSu6aRVXDNTp8lg"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-label-md text-sm truncate text-primary group-hover:text-indigo-600 transition-colors">Neo-Classic Mesh</p>
+<p class="text-xs text-slate-500">Standard License</p>
+</div>
+<span class="material-symbols-outlined text-slate-300">chevron_right</span>
+</div>
+<div class="flex gap-3 items-center group cursor-pointer">
+<div class="h-12 w-12 rounded-lg bg-slate-100 flex-shrink-0 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="thumbnail of a colorful abstract painting for digital use" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1CnuTI5HlNHVMHbeYv0X4pmrKqF6WqcRP4hSbqzYF3vvJsVzkE2PJ4C6LBOfbPiv9yN9ia5zineilpQffXjWTD_rYiGuLIeO_xHkfybELUjW9fOQ1zPWs7So-3P0oS4RktuA-nTmTASriO_ivkTlGFfz1k0xZdwcnKn5PMb0Ufo6CEDUEny6pa4PwEWOcjxf4nhe8X442Qevb6qSstMtz65qxXJ0t9ihOEq-uPhYTw7znQu6PYtNg31Hq4JHSNEw7dzrjzdm_GGU"/>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-label-md text-sm truncate text-primary group-hover:text-indigo-600 transition-colors">Solar Flare Concept</p>
+<p class="text-xs text-slate-500 font-bold text-tertiary-fixed-dim">Exclusive</p>
+</div>
+<span class="material-symbols-outlined text-slate-300">chevron_right</span>
+</div>
+</div>
+<button class="mt-6 w-full text-center text-sm font-semibold text-indigo-600 hover:text-indigo-800 transition-colors">Manage All Licenses</button>
+</div>
+<!-- Active Production -->
+<div class="bg-primary p-6 rounded-2xl text-white shadow-xl shadow-indigo-100/50">
+<h3 class="font-headline-md text-headline-md mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-fixed">factory</span>
+                            Production
+                        </h3>
+<div class="space-y-4">
+<div class="p-3 bg-white/5 rounded-xl border border-white/10">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Batch #9022</span>
+<span class="text-[10px] font-bold bg-tertiary text-tertiary-fixed px-2 py-0.5 rounded">Active</span>
+</div>
+<p class="text-sm font-bold mb-3">Geometric Quartz Series</p>
+<div class="flex items-center gap-2">
+<div class="flex-1 h-1 bg-white/10 rounded-full overflow-hidden">
+<div class="h-full w-3/4 bg-tertiary-fixed"></div>
+</div>
+<span class="text-[10px] font-bold">75%</span>
+</div>
+</div>
+<div class="p-3 bg-white/5 rounded-xl border border-white/10 opacity-60">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Batch #9025</span>
+<span class="text-[10px] font-bold bg-slate-700 text-slate-300 px-2 py-0.5 rounded">Queued</span>
+</div>
+<p class="text-sm font-bold">Midnight Orchid Wrap</p>
+</div>
+</div>
+<button class="mt-6 w-full py-2 bg-white text-primary rounded-lg text-sm font-bold hover:bg-slate-100 transition-colors">Full Report</button>
+</div>
+<!-- Market Insights -->
+<div class="bg-white rounded-2xl border border-slate-100 p-6 shadow-sm overflow-hidden relative">
+<div class="absolute top-0 right-0 p-4 opacity-5">
+<span class="material-symbols-outlined text-6xl">monitoring</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-1">Market Insight</h3>
+<p class="text-xs text-slate-500 mb-4">Trending styles for Q4</p>
+<ul class="space-y-2">
+<li class="flex items-center gap-2 text-sm font-medium text-slate-700">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span> Neumorphic Textures
+                            </li>
+<li class="flex items-center gap-2 text-sm font-medium text-slate-700">
+<span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span> Bio-Organic Shapes
+                            </li>
+<li class="flex items-center gap-2 text-sm font-medium text-slate-700">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim"></span> Cyber-Punk Minimalism
+                            </li>
+</ul>
+</div>
+</aside>
+</div>
+</main>
+</div>
+<!-- Mobile Bottom Navigation Shell -->
+<div class="md:hidden fixed bottom-0 w-full bg-white border-t border-slate-200 h-16 flex items-center justify-around px-4 z-50">
+<button class="flex flex-col items-center gap-1 text-indigo-600">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="text-[10px] font-bold">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">explore</span>
+<span class="text-[10px] font-bold">Market</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="text-[10px] font-bold">Orders</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="text-[10px] font-bold">Profile</span>
+</button>
+</div>
+<script src="assets/site.js"></script></body></html>

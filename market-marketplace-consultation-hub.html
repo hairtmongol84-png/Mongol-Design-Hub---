@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed-dim": "#6bd8cb",
+                    "surface-container-high": "#dce9ff",
+                    "on-primary-container": "#8590a6",
+                    "tertiary-container": "#002f2a",
+                    "on-surface-variant": "#45474c",
+                    "primary-container": "#1e293b",
+                    "surface-variant": "#d3e4fe",
+                    "primary": "#091426",
+                    "on-secondary-container": "#5c2400",
+                    "tertiary": "#001815",
+                    "surface-container-highest": "#d3e4fe",
+                    "on-primary-fixed": "#111c2d",
+                    "surface": "#f8f9ff",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed-dim": "#bcc7de",
+                    "surface-bright": "#f8f9ff",
+                    "on-error": "#ffffff",
+                    "secondary-fixed": "#ffdbca",
+                    "error": "#ba1a1a",
+                    "secondary-fixed-dim": "#ffb690",
+                    "tertiary-fixed": "#89f5e7",
+                    "outline": "#75777d",
+                    "surface-dim": "#cbdbf5",
+                    "on-primary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "secondary-container": "#fd761a",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container": "#e5eeff",
+                    "on-tertiary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "inverse-on-surface": "#eaf1ff",
+                    "background": "#f8f9ff",
+                    "surface-tint": "#545f73",
+                    "primary-fixed": "#d8e3fb",
+                    "on-background": "#0b1c30",
+                    "secondary": "#9d4300",
+                    "on-secondary-fixed-variant": "#783200",
+                    "on-primary-fixed-variant": "#3c475a",
+                    "inverse-primary": "#bcc7de",
+                    "on-secondary-fixed": "#341100",
+                    "on-tertiary-fixed-variant": "#005049",
+                    "inverse-surface": "#213145",
+                    "outline-variant": "#c5c6cd",
+                    "on-tertiary-container": "#28a094",
+                    "surface-container-low": "#eff4ff",
+                    "on-tertiary-fixed": "#00201d",
+                    "on-surface": "#0b1c30"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "base": "8px",
+                    "margin": "32px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-xl": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "headline-xl": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1.4", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .shadow-soft { box-shadow: 0 4px 20px -2px rgba(9, 20, 38, 0.05); }
+        .shadow-hover { box-shadow: 0 12px 30px -4px rgba(9, 20, 38, 0.12); }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #dce9ff; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface">
+<!-- TopNavBar Execution -->
+<nav class="bg-white dark:bg-slate-900 fixed top-0 w-full z-50 border-b border-slate-200 dark:border-slate-800 shadow-sm dark:shadow-none">
+<div class="flex items-center justify-between px-6 h-16 max-w-[1280px] mx-auto">
+<div class="flex items-center gap-8 flex-1">
+<span class="text-xl font-bold tracking-tight text-slate-900 dark:text-white whitespace-nowrap">Nexus Market</span>
+<!-- Search Bar (on_left mandate) -->
+<div class="hidden md:flex items-center bg-surface-container-low rounded-lg px-4 py-2 w-full max-w-md group focus-within:ring-2 ring-primary-container/10 transition-all">
+<span class="material-symbols-outlined text-outline mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 w-full text-label-md placeholder:text-outline-variant" placeholder="Search handcrafted treasures..." type="text"/>
+</div>
+</div>
+<div class="hidden md:flex items-center gap-6 mx-8 font-inter text-sm font-medium tracking-tight">
+<a class="text-indigo-600 dark:text-indigo-400 border-b-2 border-indigo-600 dark:border-indigo-400 pb-1" href="#">Marketplace</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-indigo-500 transition-colors" href="#">Design Hub</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-indigo-500 transition-colors" href="#">My Assets</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-indigo-500 transition-colors" href="#">Analytics</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors active:scale-95 duration-150 text-slate-600">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 rounded-full hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors active:scale-95 duration-150 text-slate-600">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+<div class="h-8 w-8 rounded-full overflow-hidden border border-surface-variant">
+<img alt="User profile" data-alt="close-up portrait of a professional male designer with a warm expression in a modern studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo_Do0dUGpTC-3QGmeFxzkkjl2K6v4I0brNwLQp7H_B_kiZr8Oh8P0dBDRKHdIkprbvF7u8HjF_o6ycAQpqm5DeFYzjpOXWeuqvH-QM6E9l6H0yyVoVZzxa8lK9-FwURPSYgcdodQZ2c_M6WSSwB67IzFjvJbcKWMOmNy-5VR24OrFf6AMUjFOBOy0hi9Qizz-6xgPUp6UWPNq-y0W6VOmZm6YgAl_6hCJAYKwcg2kZ4irlAswfqSZWhODznkA0CYUrQyq6Weq-uE"/>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Shell -->
+<div class="max-w-[1280px] mx-auto pt-24 pb-12 flex gap-gutter px-6">
+<!-- SideNavBar Execution (Adaptive as Sidebar) -->
+<aside class="hidden lg:flex flex-col w-64 shrink-0 bg-slate-50 dark:bg-slate-950 rounded-xl p-6 h-[calc(100vh-120px)] sticky top-24 border border-slate-100">
+<div class="mb-8">
+<h2 class="text-lg font-black text-slate-900 dark:text-white">Indigo Nexus</h2>
+<p class="text-label-sm text-outline">Manufacturing Portal</p>
+</div>
+<nav class="flex flex-col gap-1 font-inter text-sm font-semibold">
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-4 py-2.5 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">dashboard</span> Dashboard
+                </a>
+<a class="flex items-center gap-3 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 rounded-lg px-4 py-2.5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">inventory_2</span> Product Catalog
+                </a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-4 py-2.5 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">verified_user</span> License Manager
+                </a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-4 py-2.5 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">shopping_bag</span> Orders
+                </a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-4 py-2.5 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">groups</span> Community
+                </a>
+</nav>
+<button class="mt-auto bg-primary text-white font-label-md py-3 rounded-lg hover:shadow-lg transition-all active:scale-95">
+                New Listing
+            </button>
+</aside>
+<!-- Product Canvas -->
+<main class="flex-1">
+<!-- Categories Ribbon -->
+<div class="flex items-center gap-4 mb-8 overflow-x-auto pb-2 custom-scrollbar">
+<button class="bg-primary text-white px-5 py-2 rounded-full whitespace-nowrap text-label-md">All Products</button>
+<button class="bg-surface-container-low text-on-surface hover:bg-surface-container-high px-5 py-2 rounded-full whitespace-nowrap text-label-md transition-colors">Clothes</button>
+<button class="bg-surface-container-low text-on-surface hover:bg-surface-container-high px-5 py-2 rounded-full whitespace-nowrap text-label-md transition-colors">Wood</button>
+<button class="bg-surface-container-low text-on-surface hover:bg-surface-container-high px-5 py-2 rounded-full whitespace-nowrap text-label-md transition-colors">Glass</button>
+<button class="bg-surface-container-low text-on-surface hover:bg-surface-container-high px-5 py-2 rounded-full whitespace-nowrap text-label-md transition-colors">Metal</button>
+<button class="bg-surface-container-low text-on-surface hover:bg-surface-container-high px-5 py-2 rounded-full whitespace-nowrap text-label-md transition-colors">Gifts</button>
+</div>
+<!-- Hero Section / Consultation Banner -->
+<section class="relative bg-primary-container rounded-2xl overflow-hidden mb-12 min-h-[320px] flex items-center shadow-soft">
+<div class="absolute inset-0 opacity-40">
+<img class="w-full h-full object-cover" data-alt="sweeping landscape of the mongolian steppe with traditional white yurts under a dramatic cloudy sky at dusk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrlt6kwULAcJwf8Tw5ZhzL2G7agl8rw0GSLG78XvboHKDsCGL6ZndZiaVn3fc5igoBi6CKyf1bA35mf7mLudi_Ca_cOSe93uuGZouayeVefkJIx6rB3j880BTDYO1IJk-GFyChdNuszQyWiTE9u5CZYHvWbv_ucAXoe5dfrTUxrs7If6zCj_yNVgeZG2qpXb5siB9HZXSHj6cl_K-3TQeGUsfO_PL5dRkkjii1eELSmfvDtcealBSGKV7eVRQ3-E8gGd4Ll0hyo-0"/>
+</div>
+<div class="relative z-10 p-12 max-w-xl">
+<span class="inline-flex items-center px-3 py-1 bg-tertiary-fixed-dim text-tertiary rounded-full text-label-sm mb-4">
+<span class="w-2 h-2 rounded-full bg-tertiary mr-2 animate-pulse"></span>
+                        Expert Consultation Available
+                    </span>
+<h1 class="font-headline-xl text-white mb-4">Not sure what to tender?</h1>
+<p class="font-body-lg text-on-primary-container mb-8">Get a Design Consultation from our master artisans to create your perfect custom masterpiece.</p>
+<button class="bg-secondary-container text-on-secondary-fixed font-label-md px-8 py-4 rounded-xl hover:scale-105 transition-transform flex items-center gap-3">
+<span class="material-symbols-outlined">forum</span>
+                        Start a chat with experts
+                    </button>
+</div>
+</section>
+<!-- Products Section -->
+<div class="flex items-center justify-between mb-6">
+<h2 class="font-headline-lg text-primary">Ready-made Products</h2>
+<div class="flex items-center gap-2 text-label-md text-outline">
+<span>Sort by:</span>
+<button class="flex items-center text-primary font-bold">Newest <span class="material-symbols-outlined text-sm ml-1">expand_more</span></button>
+</div>
+</div>
+<!-- Bento-style Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+<!-- Product Card 1 -->
+<div class="group bg-white rounded-2xl shadow-soft hover:shadow-hover transition-all border border-slate-100 overflow-hidden">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="traditional mongolian deel clothing with intricate gold embroidery and vibrant blue silk fabric on a minimalist background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVDwLmOHFj6dUA8G197fu3J-i8Vnahnidr6c2nRNno3bjvDSp2feK9wOtnLqML0XDr9m-51Dwz3ftbgal9NPHXFCHlrTK94ZHNzmuduXa8y5jSB3KM_HmbSDbg-QkFMzxw6r9_exTJeb81SYhacAxv5S0gkZ2GIOqKtpeFNq1yEed7AeaGwo5pf2Wi5K9vOWrzXBoGC0kfZEACX3_8xtxJ_W2AZDLzVR-jnHK7FopxMARSEtq9skb-SBoenMuxdRWT3dVHXKz7lN0"/>
+<span class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-lg text-label-sm font-bold shadow-sm">Clothes</span>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-primary mb-1">Silk Royal Deel</h3>
+<p class="text-label-sm text-outline mb-4">Hand-stitched ceremonial attire</p>
+<div class="flex items-baseline gap-2 mb-6">
+<span class="text-headline-md text-secondary">$1,250</span>
+<span class="text-label-sm text-outline-variant line-through">$1,500</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<button class="bg-primary text-white py-3 rounded-lg font-label-md hover:bg-primary-container transition-colors">Buy Now</button>
+<button class="border border-outline-variant text-on-surface py-3 rounded-lg font-label-md hover:bg-surface-container-low transition-colors">Ask for Custom</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group bg-white rounded-2xl shadow-soft hover:shadow-hover transition-all border border-slate-100 overflow-hidden">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="hand-carved wooden bowl with traditional mongolian patterns and polished dark grain texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuULwSvp48Dabn5pNZHCq_XEW-QHdIpLZRyT6uLu4oll1Utaqn5UAibsCXmKeOzVVJu5FEevpF5tUECveqnIVpEQan-gwcQxQOUSX4ZYKyvwQ5wBTtPuw5KikNMviJJ9BblqjJIr9fwho3zE8igYNwTjGzX_Cz6p8sw1fvaW7vJ9OW6bQ_ZVNyF6oScv4xnxaypHa29b9Ou5LT25aNN4-2_mTnNiIsJodmmTW5CQ9ycyd4kgQbeYI9MTiEtHM3tgWM0_xNnX0mf1s"/>
+<span class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-lg text-label-sm font-bold shadow-sm">Wood</span>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-primary mb-1">Juniper Serving Set</h3>
+<p class="text-label-sm text-outline mb-4">Sustainably sourced dark wood</p>
+<div class="flex items-baseline gap-2 mb-6">
+<span class="text-headline-md text-secondary">$340</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<button class="bg-primary text-white py-3 rounded-lg font-label-md hover:bg-primary-container transition-colors">Buy Now</button>
+<button class="border border-outline-variant text-on-surface py-3 rounded-lg font-label-md hover:bg-surface-container-low transition-colors">Ask for Custom</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group bg-white rounded-2xl shadow-soft hover:shadow-hover transition-all border border-slate-100 overflow-hidden">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="intricately etched glassware with traditional decorative motifs and elegant curved silhouette on a soft indigo gradient background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOZZE2RRnCWQwsh52QfsnbnamyfmLPklATr2rQemphvCsOp6fK2H7clM7bRBIwgqQxBy858AkCGESzT5PO4MElw8gbevqz4cbCneJeBxLj-dMSlQ_7AXIv47IfkbqGIo87g2BVhYVQnC2gk9T4cITVTYZR4whv6s2o--BCMTXl2yZLfaiaspyxabpxs8ap7ZlaDw5jp7fQnWCTk9moToR_Zv8jvRd0efRAiConugvLgffGJJMYmLykDNomaocw8kCmdnAXrlb8IgY"/>
+<span class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-lg text-label-sm font-bold shadow-sm">Glass</span>
+<div class="absolute top-4 right-4 bg-tertiary-fixed text-tertiary px-3 py-1 rounded-lg text-label-sm font-bold shadow-sm flex items-center">
+<span class="material-symbols-outlined text-[14px] mr-1" style="font-variation-settings: 'FILL' 1;">bolt</span>
+                            Hot Deal
+                        </div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-primary mb-1">Etched Nomad Flask</h3>
+<p class="text-label-sm text-outline mb-4">Reinforced decorative glass</p>
+<div class="flex items-baseline gap-2 mb-6">
+<span class="text-headline-md text-secondary">$185</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<button class="bg-primary text-white py-3 rounded-lg font-label-md hover:bg-primary-container transition-colors">Buy Now</button>
+<button class="border border-outline-variant text-on-surface py-3 rounded-lg font-label-md hover:bg-surface-container-low transition-colors">Ask for Custom</button>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group bg-white rounded-2xl shadow-soft hover:shadow-hover transition-all border border-slate-100 overflow-hidden">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="ornate hand-forged silver plate with traditional mongolian nomadic engravings and polished metallic sheen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD865Tmg5d7PmhtO4fkBYG5bIuqmOMZJI_vrMBHzG5JNXaGqWpXbsZpKFM6uGlldolgDP_ihGQtUrj53bO5N44Orro0dgxO-F9RQZMnlj5lwGR5rsXsQFHhdboM8AbzgIgl5EOibkiIFdTjRk2V514EP7ZH5QCcwWdOVF3QqSBrYmWzi7Q8PbFx7lGyVdtluNWeoQ2gY13LZt1myCyuoHs59sb6NTxrHmfXoFoKtFeg-PDg2MzBc-ErWZKkAYiImGUZa1IQzuDhyuI"/>
+<span class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-lg text-label-sm font-bold shadow-sm">Metal</span>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-primary mb-1">Silver Engraved Plate</h3>
+<p class="text-label-sm text-outline mb-4">925 Sterling silver heirloom</p>
+<div class="flex items-baseline gap-2 mb-6">
+<span class="text-headline-md text-secondary">$890</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<button class="bg-primary text-white py-3 rounded-lg font-label-md hover:bg-primary-container transition-colors">Buy Now</button>
+<button class="border border-outline-variant text-on-surface py-3 rounded-lg font-label-md hover:bg-surface-container-low transition-colors">Ask for Custom</button>
+</div>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="group bg-white rounded-2xl shadow-soft hover:shadow-hover transition-all border border-slate-100 overflow-hidden">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="modern mongolian leather wallet with embossed geometric patterns and sturdy indigo stitching" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_aB_EN-IgB3DTaakuc-M3Bn20FMQLnLGARlRxE1sDEBvVJO37vZca9vi38XF5KzhSVQ14vHE4Xn1KsehrPcVzIjlzaOaInHSgcoSoGgi-kDesXFQQxQ80QluFyVlrH6OFzBtnVqirdIaFkyl3auocp3gY_CXHr92Atcvln_d6sMFT_DtbVKqURRy7XiZV3noteulo1LuBmywJy82h29rLJLV4dI5_BBndizSwTmB51bKJMmT8zjNNcuZfA91clPYbJEvNeSFkDNk"/>
+<span class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-lg text-label-sm font-bold shadow-sm">Gifts</span>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-primary mb-1">Nomadic Wallet</h3>
+<p class="text-label-sm text-outline mb-4">Genuine bison leather</p>
+<div class="flex items-baseline gap-2 mb-6">
+<span class="text-headline-md text-secondary">$120</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<button class="bg-primary text-white py-3 rounded-lg font-label-md hover:bg-primary-container transition-colors">Buy Now</button>
+<button class="border border-outline-variant text-on-surface py-3 rounded-lg font-label-md hover:bg-surface-container-low transition-colors">Ask for Custom</button>
+</div>
+</div>
+</div>
+<!-- Product Card 6 -->
+<div class="group bg-white rounded-2xl shadow-soft hover:shadow-hover transition-all border border-slate-100 overflow-hidden">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="ornamental mongolian sword handle with brass details and turquoise gemstone inlays on dark wooden surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpKbgRsmom_ncbVzY2JBOwKmVWfIBavCHi7nQ_bVpS_SNdGsdjdqd7OC8_LahjbOjVDS3Kq3RWejVTf7-Qg0oWfoGLkykJCdU8_29RJWqJ--Ar1OLXuL-sLSYm1iNWyE-M5JXbGityr8R5wQS87K2yONM1LMxxjWRw_btOAuAWO9rO1e4LAIYsz-0fGE8439HNQvYcZaN7HNRt2SI13xNyKd6tKrwFsjBxcJqhN_Jn3RYGSPvUktull1HOnUxSxeYVDLgt6k6fW98"/>
+<span class="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-lg text-label-sm font-bold shadow-sm">Metal</span>
+</div>
+<div class="p-6">
+<h3 class="font-headline-md text-primary mb-1">Brass Steppe Dagger</h3>
+<p class="text-label-sm text-outline mb-4">Decorative blade with gem inlay</p>
+<div class="flex items-baseline gap-2 mb-6">
+<span class="text-headline-md text-secondary">$450</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<button class="bg-primary text-white py-3 rounded-lg font-label-md hover:bg-primary-container transition-colors">Buy Now</button>
+<button class="border border-outline-variant text-on-surface py-3 rounded-lg font-label-md hover:bg-surface-container-low transition-colors">Ask for Custom</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Floating Action Button for Support -->
+<button class="fixed bottom-8 right-8 bg-secondary-container text-on-secondary-fixed w-16 h-16 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all flex items-center justify-center z-40">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">support_agent</span>
+</button>
+<script src="assets/site.js"></script></body></html>

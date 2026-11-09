@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html lang="mn"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Төслийн чат ба Баталгаажуулалт</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-low": "#eff4ff",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#c5c6cd",
+                        "primary": "#091426",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#d3e4fe",
+                        "secondary": "#9d4300",
+                        "primary-fixed-dim": "#bcc7de",
+                        "tertiary-fixed": "#89f5e7",
+                        "on-primary-container": "#8590a6",
+                        "on-tertiary-fixed": "#00201d",
+                        "tertiary": "#001815",
+                        "surface-bright": "#f8f9ff",
+                        "on-tertiary-container": "#28a094",
+                        "surface": "#f8f9ff",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#fd761a",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-tertiary-fixed-variant": "#005049",
+                        "on-secondary-fixed": "#341100",
+                        "inverse-surface": "#213145",
+                        "secondary-fixed": "#ffdbca",
+                        "inverse-on-surface": "#eaf1ff",
+                        "primary-container": "#1e293b",
+                        "on-primary-fixed": "#111c2d",
+                        "background": "#f8f9ff",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#dce9ff",
+                        "on-primary-fixed-variant": "#3c475a",
+                        "primary-fixed": "#d8e3fb",
+                        "tertiary-fixed-dim": "#6bd8cb",
+                        "on-background": "#0b1c30",
+                        "inverse-primary": "#bcc7de",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#545f73",
+                        "on-secondary-fixed-variant": "#783200",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#ffb690",
+                        "outline": "#75777d",
+                        "on-surface-variant": "#45474c",
+                        "on-secondary-container": "#5c2400",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#002f2a",
+                        "surface-dim": "#cbdbf5",
+                        "on-surface": "#0b1c30",
+                        "surface-container": "#e5eeff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "gutter": "24px",
+                        "margin": "32px",
+                        "container-max": "1280px",
+                        "base": "8px"
+                    },
+                    fontFamily: {
+                        "headline-xl": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    fontSize: {
+                        "headline-xl": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md h-screen flex flex-col overflow-hidden">
+<!-- TopAppBar -->
+<header class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md text-indigo-900 dark:text-indigo-400 font-['Inter'] antialiased tracking-tight docked full-width top-0 border-b z-50 border-slate-200 dark:border-slate-800 shadow-sm flex justify-between items-center w-full px-6 py-3 max-w-[1280px] mx-auto shrink-0">
+<div class="flex items-center gap-6">
+<span class="text-2xl font-black tracking-tighter text-indigo-900 dark:text-white">CraftFlow</span>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none">search</span>
+<input class="pl-10 pr-4 py-2 bg-slate-100 dark:bg-slate-800 border-none rounded-full text-sm focus:ring-2 focus:ring-indigo-500 outline-none w-64 transition-all focus:w-80" placeholder="Хайх..." type="text"/>
+</div>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-indigo-600 dark:hover:text-indigo-300 transition-colors duration-200 hover:bg-slate-50 dark:hover:bg-slate-800 px-3 py-2 rounded-md active:scale-95 transition-transform duration-150" href="#">Browse</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-indigo-600 dark:hover:text-indigo-300 transition-colors duration-200 hover:bg-slate-50 dark:hover:bg-slate-800 px-3 py-2 rounded-md active:scale-95 transition-transform duration-150" href="#">Auctions</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-indigo-600 dark:hover:text-indigo-300 transition-colors duration-200 hover:bg-slate-50 dark:hover:bg-slate-800 px-3 py-2 rounded-md active:scale-95 transition-transform duration-150" href="#">Mockups</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-indigo-600 dark:hover:text-indigo-300 transition-colors duration-200 hover:bg-slate-50 dark:hover:bg-slate-800 px-3 py-2 rounded-md active:scale-95 transition-transform duration-150" href="#">Tenders</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full"></span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors">
+<span class="material-symbols-outlined">chat</span>
+</button>
+<button class="hidden md:flex bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg font-medium text-sm transition-colors active:scale-95 duration-150 shadow-sm">
+                Create Project
+            </button>
+<img alt="User avatar" class="w-8 h-8 rounded-full border-2 border-slate-200 dark:border-slate-700 object-cover cursor-pointer" data-alt="professional headshot of a smiling man in a business casual shirt with a blurred office background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBPKhrmD2Y8WI_eWWwzB3T-dlXOQ-mKQkehfGt_lSHPX8SL5HZ4MZWpbTwqTyW4PEbyzpvddnIEyUpJ1ZkjbbT7oGa_NPL8obAUJNIBBXVStvvw5fdNF7wRq-1n-LSQoZSniWaankpyuwW2Ej-KkIt8kryj1OUUWLTYDyXSaWu8MVBBxWgFoNbFjuD_u5Qw1bLqcnWNpavoJ0rZfKo2KOJ-Pdo-WSQFwfs3J8316M35qJJzloohGotWUP28XMXp6Hvkt1y6O23Lg8"/>
+</div>
+</header>
+<div class="flex flex-1 overflow-hidden">
+<!-- SideNavBar -->
+<aside class="bg-slate-50 dark:bg-slate-950 text-indigo-900 dark:text-indigo-400 font-['Inter'] text-sm font-medium docked left-0 h-full w-64 border-r border-slate-200 dark:border-slate-800 flat no shadows fixed left-0 top-16 h-[calc(100vh-64px)] flex flex-col p-4 space-y-2 shrink-0 z-40 hidden md:flex">
+<div class="flex items-center gap-3 px-2 py-4 mb-4">
+<div class="w-10 h-10 rounded-lg bg-indigo-100 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-indigo-600">store</span>
+</div>
+<div>
+<h2 class="font-bold text-slate-900 dark:text-white leading-tight">Creative Hub</h2>
+<p class="text-xs text-slate-500">Verified Marketplace</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1 overflow-y-auto">
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-4 py-2.5 rounded-lg hover:bg-slate-200/50 dark:hover:bg-slate-800/50 hover:text-indigo-600 dark:hover:text-indigo-300 duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                    Dashboard
+                </a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-4 py-2.5 rounded-lg hover:bg-slate-200/50 dark:hover:bg-slate-800/50 hover:text-indigo-600 dark:hover:text-indigo-300 duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+                    My Tenders
+                </a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-4 py-2.5 rounded-lg hover:bg-slate-200/50 dark:hover:bg-slate-800/50 hover:text-indigo-600 dark:hover:text-indigo-300 duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">gavel</span>
+                    Live Bids
+                </a>
+<a class="flex items-center gap-3 bg-indigo-50 dark:bg-indigo-900/20 text-indigo-700 dark:text-indigo-300 rounded-lg px-4 py-2.5 shadow-sm duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined fill">forum</span>
+                    Escrow Chat
+                </a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-4 py-2.5 rounded-lg hover:bg-slate-200/50 dark:hover:bg-slate-800/50 hover:text-indigo-600 dark:hover:text-indigo-300 duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">view_in_ar</span>
+                    3D Previews
+                </a>
+</nav>
+<div class="mt-auto pt-4 border-t border-slate-200 dark:border-slate-800 space-y-1">
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-4 py-2.5 rounded-lg hover:bg-slate-200/50 dark:hover:bg-slate-800/50 hover:text-indigo-600 dark:hover:text-indigo-300 duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">settings</span>
+                    Settings
+                </a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-4 py-2.5 rounded-lg hover:bg-slate-200/50 dark:hover:bg-slate-800/50 hover:text-indigo-600 dark:hover:text-indigo-300 duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">help_outline</span>
+                    Support
+                </a>
+<button class="w-full mt-4 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg font-medium text-sm transition-colors active:scale-95 duration-150 shadow-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span>
+                    Post Tender
+                </button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col md:pl-64 h-[calc(100vh-64px)] bg-surface">
+<!-- Chat Container -->
+<div class="flex-1 flex p-6 gap-6 max-w-[1280px] mx-auto w-full h-full">
+<!-- Chat Area -->
+<div class="flex-1 flex flex-col bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(9,20,38,0.05)] border border-outline-variant/30 overflow-hidden">
+<!-- Chat Header (Project Info) -->
+<div class="p-6 border-b border-outline-variant/30 bg-white">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-primary mb-1">Лого болон Брэндбүүк дизайн</h1>
+<p class="text-body-md font-body-md text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+                                    Эцсийн хугацаа: 2024.11.15
+                                </p>
+</div>
+<div class="text-right">
+<div class="text-headline-md font-headline-md text-primary">₮1,200,000</div>
+<span class="inline-flex items-center gap-1 bg-surface-container-low text-primary px-2.5 py-1 rounded-full text-label-sm font-label-sm mt-1 border border-outline-variant/50">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>
+                                    Дундын дансанд байршсан
+                                </span>
+</div>
+</div>
+</div>
+<!-- Chat Messages -->
+<div class="flex-1 overflow-y-auto p-6 space-y-6 bg-surface-bright">
+<!-- Seller Message -->
+<div class="flex gap-4">
+<img alt="Seller" class="w-10 h-10 rounded-full object-cover shrink-0" data-alt="professional portrait of an asian woman graphic designer smiling in a creative studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZLt5otRNvGnersf5cq7BQcit3fuNbG2ee2ZmYetgv8g5yQlq2HGrQO7_HsxzRlT-7QpnwqDOPtSpff84OfsuVc3-uyCRRCYelHr4ITABzoP9iKbVQEch7acOZjJbcy3wrpj_VKN1Mz5B2XBrf8Jl1LW4_SfW5Qfuja4D9ietmZ4kqxA2Oa0TKWDusXUC9oTpAbrtZuHIjhzSHp76GE3lHCJc3hV-6Ji6lqS3on-okaKqVCDk3q9fTDeO2dgoUQBBrq0hHoFCTJ8o"/>
+<div class="max-w-[80%]">
+<div class="flex items-baseline gap-2 mb-1">
+<span class="font-label-md text-label-md text-primary">Анужин Э.</span>
+<span class="text-[11px] text-on-surface-variant">10:42 AM</span>
+</div>
+<div class="bg-white border border-outline-variant/30 rounded-2xl rounded-tl-none p-4 shadow-sm text-body-md font-body-md text-on-surface">
+<p>Сайн байна уу? Логоны эхний 3 хувилбарыг хавсралтаар илгээлээ. Үзээд саналаа хэлээрэй.</p>
+<!-- File Attachment -->
+<div class="mt-3 flex items-center gap-3 p-3 bg-surface-container-low rounded-lg border border-outline-variant/20">
+<div class="w-10 h-10 bg-error-container text-on-error-container rounded flex items-center justify-center">
+<span class="material-symbols-outlined">picture_as_pdf</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-label-sm text-label-sm text-primary truncate">Logo_Concepts_v1.pdf</p>
+<p class="text-[11px] text-on-surface-variant">2.4 MB</p>
+</div>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">download</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Buyer Message -->
+<div class="flex gap-4 flex-row-reverse">
+<img alt="Buyer" class="w-10 h-10 rounded-full object-cover shrink-0" data-alt="professional headshot of a smiling man in a business casual shirt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGD2j38A78iAk3yFG-jg4GYlOOrZ-nmxJFHHbgwJDeqTLGKHZm70scDgrU2-G5SqUbLbAL9srBMle4znOjPdEcE9rDup_pV_npKrtov6H7kBaT2bYdsPyrnugNEd1hv1kr44HzCO5CeydLc4F3pkrZGiSa8tq4YKW9Nup0xpr1vp-UuZ0EbOrboIWpkMRNk5cLCb7EOVJAaF3ctKU3KDOjXOvAB5oJm_-uvT9Ga1GCdZwteAIhE-VAlQLfiDSb5E_66gd7tDYSEhY"/>
+<div class="max-w-[80%]">
+<div class="flex items-baseline gap-2 mb-1 flex-row-reverse">
+<span class="font-label-md text-label-md text-primary">Төгөлдөр Б. (Та)</span>
+<span class="text-[11px] text-on-surface-variant">11:15 AM</span>
+</div>
+<div class="bg-primary-container text-on-primary-container rounded-2xl rounded-tr-none p-4 shadow-sm text-body-md font-body-md">
+<p class="text-white">Сайн, баярлалаа. 2 дахь хувилбар их таалагдлаа. Тэр хувилбарын өнгийг жаахан тодруулаад үзэж болох уу?</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Chat Input -->
+<div class="p-4 bg-white border-t border-outline-variant/30">
+<div class="flex items-end gap-2 bg-surface-bright border border-outline-variant/50 rounded-xl p-2 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors shrink-0">
+<span class="material-symbols-outlined">attach_file</span>
+</button>
+<textarea class="flex-1 bg-transparent border-none focus:ring-0 resize-none py-2 text-body-md font-body-md min-h-[40px] max-h-[120px] outline-none placeholder-on-surface-variant/50" placeholder="Зурвас бичих..." rows="1"></textarea>
+<button class="p-2 bg-primary text-on-primary rounded-lg hover:bg-inverse-surface transition-colors shrink-0">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Sidebar (Trust & Escrow) -->
+<div class="w-80 flex flex-col gap-6 shrink-0 hidden lg:flex">
+<!-- Seller Info Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(9,20,38,0.05)] border border-outline-variant/30 p-6">
+<div class="text-center mb-6">
+<img alt="Seller Profile" class="w-20 h-20 rounded-full mx-auto mb-3 object-cover shadow-sm" data-alt="professional portrait of an asian woman graphic designer smiling in a creative studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTKjqh4C25BROWYsZvnPAGroEjoMesHFHsl8m47W-NkxnSLfPgStIR8LuMh7Oho3985AdNlhjFpEHqjFMk_TZpQ0XmkcHa7PxnsIFJuqSegrhgmOSamhi4ByD_A2uCVjLbZfsUY8ojzRslgTt1kVuh6o60MK2hw6CjCOqKqtf8G183Vq0zOJHPi3WSxisWXsqMdM6kUzwSUyGUtwYDYFZcfINehuSsAhPshSfEBGOpGx8yMyqdxntKzm3THyoZX6cce6SmLqMqGWU"/>
+<h3 class="font-headline-md text-headline-md text-primary">Анужин Э.</h3>
+<p class="text-body-md font-body-md text-on-surface-variant">Ахлах График Дизайнер</p>
+<div class="flex items-center justify-center gap-1 mt-2 text-secondary-container">
+<span class="material-symbols-outlined fill text-[18px]">star</span>
+<span class="font-label-md text-label-md text-primary">4.9</span>
+<span class="text-on-surface-variant text-[13px]">(124 үнэлгээ)</span>
+</div>
+</div>
+<!-- Trust Badges -->
+<div class="space-y-3 border-t border-outline-variant/30 pt-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-primary">Баталгаажсан хэрэглэгч</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed-dim/20 text-on-tertiary-fixed-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">timer</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-primary">Хурдан шуурхай</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-fixed-dim/30 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">workspace_premium</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-primary">Өндөр чанар</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Escrow Actions Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(9,20,38,0.05)] border border-outline-variant/30 p-6 flex-1 flex flex-col">
+<h3 class="font-headline-md text-headline-md text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined">lock</span>
+                            Төлбөрийн баталгаа
+                        </h3>
+<p class="text-body-md font-body-md text-on-surface-variant mb-6">
+                            Төлбөр дундын дансанд аюулгүй байршиж байгаа бөгөөд таныг ажлыг хүлээж авсны дараа шилжигдэнэ.
+                        </p>
+<div class="mt-auto space-y-3">
+<button class="w-full bg-secondary-container hover:bg-secondary text-white font-label-md text-label-md py-3 rounded-lg shadow-sm transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">check_circle</span>
+                                Ажил хүлээж авах
+                            </button>
+<button class="w-full bg-white border border-outline-variant hover:bg-surface-container-low text-primary font-label-md text-label-md py-3 rounded-lg transition-colors">
+                                Маргаан үүсгэх
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<script src="assets/site.js"></script></body></html>

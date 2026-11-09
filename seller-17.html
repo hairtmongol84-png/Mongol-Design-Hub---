@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html class="light" lang="mn"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Seller Product Catalog - Marketplace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-high": "#dce9ff",
+                        "error-container": "#ffdad6",
+                        "primary-fixed-dim": "#bcc7de",
+                        "inverse-primary": "#bcc7de",
+                        "surface-variant": "#d3e4fe",
+                        "secondary-fixed": "#ffdbca",
+                        "outline-variant": "#c5c6cd",
+                        "primary-fixed": "#d8e3fb",
+                        "primary-container": "#1e293b",
+                        "surface": "#f8f9ff",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#6bd8cb",
+                        "surface-container": "#e5eeff",
+                        "on-secondary-fixed-variant": "#783200",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-dim": "#cbdbf5",
+                        "inverse-surface": "#213145",
+                        "on-tertiary-container": "#28a094",
+                        "tertiary-container": "#002f2a",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#89f5e7",
+                        "tertiary": "#001815",
+                        "secondary-fixed-dim": "#ffb690",
+                        "on-tertiary-fixed": "#00201d",
+                        "primary": "#091426",
+                        "background": "#f8f9ff",
+                        "on-primary-container": "#8590a6",
+                        "on-secondary-fixed": "#341100",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#5c2400",
+                        "surface-tint": "#545f73",
+                        "surface-bright": "#f8f9ff",
+                        "on-surface": "#0b1c30",
+                        "on-primary-fixed-variant": "#3c475a",
+                        "outline": "#75777d",
+                        "on-background": "#0b1c30",
+                        "surface-container-highest": "#d3e4fe",
+                        "surface-container-low": "#eff4ff",
+                        "on-tertiary-fixed-variant": "#005049",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#111c2d",
+                        "secondary-container": "#fd761a",
+                        "secondary": "#9d4300",
+                        "on-surface-variant": "#45474c",
+                        "error": "#ba1a1a"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "base": "8px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "margin": "32px"
+                    },
+                    fontFamily: {
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-xl": ["Inter"]
+                    },
+                    fontSize: {
+                        "headline-lg": ["32px", { lineHeight: "1.2", fontWeight: "700" }],
+                        "body-md": ["16px", { lineHeight: "1.5", fontWeight: "400" }],
+                        "label-sm": ["12px", { lineHeight: "1.4", fontWeight: "500" }],
+                        "label-md": ["14px", { lineHeight: "1.4", fontWeight: "600" }],
+                        "headline-md": ["24px", { lineHeight: "1.3", fontWeight: "600" }],
+                        "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+                        "headline-xl": ["40px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md h-screen overflow-hidden flex">
+<!-- SideNavBar (Shared Component) -->
+<nav class="hidden md:flex flex-col fixed left-0 top-0 h-full p-4 gap-4 w-64 border-r border-slate-200 bg-slate-50 z-30 font-inter text-sm leading-6">
+<!-- Header -->
+<div class="flex items-center gap-3 px-2 py-4 mt-14">
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden shrink-0">
+<img alt="Store Logo" class="w-full h-full object-cover" data-alt="minimalist modern craft studio logo, lettermark with subtle geometric shapes, dark indigo on light background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDt5gHjOjBZYLPGi_r4rSBZFslqgN_LvEr1LQJrb-KGw6Bh8D-cuaBWELYpMND_JRM3pMw8_8inhuJu9Ol1juhdbiwsleZfhop-yxFW7YCL4vXR55cC4XlpqVjalmLonV7CI1Yuz9XhdRdignomvcQ2sZfz9wLgbdWx01Quiyl9kT1T17H93lrCAwLia9fAi6H_nc__jBRJqBEUPZ-CNTvgvT-fu7zWbVZZGISPcNBOQJuZ_Bwf2loEYESJwJLXrD5nCtU0KzDD8MU"/>
+</div>
+<div>
+<h2 class="text-lg font-black text-slate-900 tracking-tight leading-tight">Master Craft Studio</h2>
+<p class="text-slate-500 text-xs mt-0.5">Verified Merchant</p>
+</div>
+</div>
+<!-- CTA -->
+<div class="px-2 mb-2">
+<button class="w-full py-2.5 px-4 bg-primary text-on-primary rounded-lg font-label-md text-label-md hover:bg-on-surface transition-colors flex items-center justify-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                Add New Listing
+            </button>
+</div>
+<!-- Main Navigation Tabs -->
+<div class="flex-1 flex flex-col gap-1 overflow-y-auto">
+<!-- Dashboard -->
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+<!-- Product Catalog (Active) -->
+<a class="flex items-center gap-3 px-3 py-2 bg-white text-indigo-600 shadow-sm ring-1 ring-slate-200 rounded-lg active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined fill">inventory_2</span>
+<span class="font-semibold">Product Catalog</span>
+</a>
+<!-- Orders -->
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+                Orders
+            </a>
+<!-- Identity Verification -->
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">verified_user</span>
+                Identity Verification
+            </a>
+<!-- Shop Analytics -->
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">monitoring</span>
+                Shop Analytics
+            </a>
+</div>
+<!-- Footer Navigation Tabs -->
+<div class="pt-4 border-t border-slate-200 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">settings</span>
+                Settings
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">logout</span>
+                Sign Out
+            </a>
+</div>
+</nav>
+<!-- TopAppBar (Shared Component) -->
+<header class="fixed top-0 left-0 w-full z-40 flex justify-between items-center px-6 py-3 bg-white/95 backdrop-blur-sm border-b border-slate-200 shadow-sm font-inter text-sm font-medium">
+<div class="flex items-center gap-4 pl-0 md:pl-64 transition-all duration-300">
+<!-- Mobile Menu Toggle (Hidden on desktop) -->
+<button class="md:hidden p-1 text-slate-500 hover:bg-slate-50 rounded transition-all">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="text-xl font-bold tracking-tight text-slate-900">Artisan Ledger</h1>
+</div>
+<div class="flex items-center gap-2">
+<!-- Search Bar placeholder area -->
+<div class="hidden sm:flex items-center bg-surface-container-low border border-slate-200 rounded-full px-3 py-1.5 mr-2 focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all">
+<span class="material-symbols-outlined text-slate-400 text-[18px] mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 p-0 text-sm w-48 font-body-md text-on-surface outline-none" placeholder="Хайх..." type="text"/>
+</div>
+<button class="p-2 text-slate-500 hover:bg-slate-50 hover:text-indigo-600 rounded-full transition-all active:scale-95 duration-150 relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 bg-secondary-container rounded-full border border-white"></span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-50 hover:text-indigo-600 rounded-full transition-all active:scale-95 duration-150">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<div class="w-8 h-8 rounded-full ml-2 overflow-hidden border border-slate-200 shrink-0 cursor-pointer hover:shadow-sm transition-all">
+<img alt="Seller Profile Avatar" class="w-full h-full object-cover" data-alt="professional headshot of asian man in modern office, well lit, wearing casual dark blazer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAP1xfzTvGWsZ1CRyKqjWuWqw9zKbTsArV2LAbErdaQVjTf1ieyrXYl12oW7HstFvefVW-NLzMbtSbFKq3do5i6YtNvN9baWuqgs3nxdsyBM0ON4VRA-Sd4hxzg8RHPye5LBzl-O1tcYa-9RYADCQtmSg4H3uoYT40yWdBaQ-Oq2cOqaZt43jZTCBQDAMhU8c6ibeMnyOv6TCZ87Z3NJn3sttIePXzfGtdcooeJ8TFuGeM0ZyyQ8qDInc33nIrDG9p3T-G_wOK8Jdk"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 ml-0 md:ml-64 mt-[60px] h-[calc(100vh-60px)] overflow-y-auto bg-surface p-6 md:p-gutter">
+<div class="max-w-[container-max] mx-auto">
+<!-- Page Header -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Бүтээгдэхүүний каталог</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Таны дэлгүүрийн бүх бараа бүтээгдэхүүний удирдлага.</p>
+</div>
+<div class="flex gap-3">
+<button class="px-4 py-2 border border-outline-variant text-on-surface bg-surface-container-lowest rounded-lg font-label-md text-label-md hover:bg-surface-container-low transition-colors shadow-sm">
+                        Экспортлох
+                    </button>
+<button class="px-4 py-2 bg-secondary-container text-on-secondary-container rounded-lg font-label-md text-label-md hover:brightness-95 transition-all shadow-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+                        Шинэ бүтээгдэхүүн нэмэх
+                    </button>
+</div>
+</div>
+<!-- Filter & Search Strip -->
+<div class="bg-surface-container-lowest p-2 rounded-xl shadow-sm border border-outline-variant/30 mb-6 flex flex-wrap gap-2 items-center justify-between">
+<div class="flex gap-2 overflow-x-auto pb-1 sm:pb-0 hide-scrollbar">
+<button class="px-4 py-1.5 bg-primary-container text-on-primary-container rounded-full font-label-md text-label-md whitespace-nowrap">Бүгд (124)</button>
+<button class="px-4 py-1.5 bg-transparent hover:bg-surface-container text-on-surface-variant rounded-full font-label-md text-label-md transition-colors whitespace-nowrap border border-transparent hover:border-outline-variant/50">Идэвхтэй (98)</button>
+<button class="px-4 py-1.5 bg-transparent hover:bg-surface-container text-on-surface-variant rounded-full font-label-md text-label-md transition-colors whitespace-nowrap border border-transparent hover:border-outline-variant/50">Ноорог (12)</button>
+<button class="px-4 py-1.5 bg-transparent hover:bg-surface-container text-on-surface-variant rounded-full font-label-md text-label-md transition-colors whitespace-nowrap border border-transparent hover:border-outline-variant/50">Дууссан (14)</button>
+</div>
+<div class="flex items-center gap-2 pl-2 border-l border-outline-variant/30">
+<button class="p-1.5 text-on-surface-variant hover:bg-surface-container rounded-md transition-colors">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:bg-surface-container rounded-md transition-colors">
+<span class="material-symbols-outlined">grid_view</span>
+</button>
+</div>
+</div>
+<!-- Product Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<!-- Product Card 1: Traditional Wood Carving -->
+<article class="bg-surface-container-lowest rounded-[16px] shadow-[0_4px_12px_rgba(9,20,38,0.05)] hover:shadow-[0_12px_24px_rgba(9,20,38,0.08)] border border-outline-variant/20 overflow-hidden transition-all duration-300 group flex flex-col">
+<div class="relative h-48 bg-surface-container-high overflow-hidden">
+<img alt="Wood Carving" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="close up of intricate traditional mongolian wood carving patterns on dark polished timber, studio lighting highlighting deep shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPJ46uYjTaSKxhh8vEeqgKMjW95OytMXRu35jkW3qW30zrJTz0XORSRJCfYwpM2nOJ2220-ffHkUjoeGd1tovri9-ih3yL8ET_2WK73MjPlM1IIDh9mJYXwgbERSsVrqpyfDADIqhh20h1K2Z_nHD7WqhYUFPNzQ1jHpMYR1A9NeXzA3mSxfdhG4VhQvwIwh6HENBAYKpAu5y7Pcz03uNWinV9hyhI9WJzkVc70E8wzy_sY-fPxomQ81SNMZPVAmdbGB5GoUPqw-s"/>
+<div class="absolute top-3 left-3 px-2 py-1 bg-surface-container-lowest/90 backdrop-blur-sm rounded-md font-label-sm text-label-sm text-on-surface border border-outline-variant/20">
+                            Модон сийлбэр
+                        </div>
+<div class="absolute top-3 right-3 flex gap-1">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse" title="Live"></span>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-label-md text-label-md text-on-surface line-clamp-2">Үндэсний хээтэй авдарны нүүр</h3>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-primary font-semibold mt-auto">₮ 450,000</p>
+<div class="flex justify-between items-center mt-4 pt-4 border-t border-outline-variant/20">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">inventory_2</span>
+                                Үлдэгдэл: 3
+                            </span>
+<span class="font-label-sm text-label-sm text-tertiary-container bg-tertiary-fixed px-2 py-0.5 rounded-full">Идэвхтэй</span>
+</div>
+</div>
+</article>
+<!-- Product Card 2: Metal Engraving -->
+<article class="bg-surface-container-lowest rounded-[16px] shadow-[0_4px_12px_rgba(9,20,38,0.05)] hover:shadow-[0_12px_24px_rgba(9,20,38,0.08)] border border-outline-variant/20 overflow-hidden transition-all duration-300 group flex flex-col">
+<div class="relative h-48 bg-surface-container-high overflow-hidden">
+<img alt="Metal Engraving" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="sparks flying from macro view of CNC laser engraving machine cutting detailed geometric pattern into dark brushed steel plate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBftlygCOhIMy3jF-zXAgWD1TuEkEzh8u0Db4iNsrECqqZr77s0f9z7fQtcpb8K34c9T58uDh3VkfhQIDB9-68racpb-OM_8vy3dN6wP18AO7Aqem7UzugaszL_mIO_Cwq8_Y_F_Y4uKPdseOnpVIniOAg9GyN3ooOmS4Pul0P9ZsEFnQ2IDC6lvvfwIr7ilS_wL9y3eAt80230b9snsT6QEWVCmb6ukZIf4yz3b88zd4U1O_Ivh3zkX7N1TmP-HMjEmb2OwHeurs4"/>
+<div class="absolute top-3 left-3 px-2 py-1 bg-surface-container-lowest/90 backdrop-blur-sm rounded-md font-label-sm text-label-sm text-on-surface border border-outline-variant/20">
+                            Төмөр сийлбэр
+                        </div>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-label-md text-label-md text-on-surface line-clamp-2">Зэс цутгамал, лазер сийлбэртэй дурсгалын зоос</h3>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-primary font-semibold mt-auto">₮ 85,000</p>
+<div class="flex justify-between items-center mt-4 pt-4 border-t border-outline-variant/20">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">inventory_2</span>
+                                Үлдэгдэл: 45
+                            </span>
+<span class="font-label-sm text-label-sm text-tertiary-container bg-tertiary-fixed px-2 py-0.5 rounded-full">Идэвхтэй</span>
+</div>
+</div>
+</article>
+<!-- Product Card 3: Standard Apparel -->
+<article class="bg-surface-container-lowest rounded-[16px] shadow-[0_4px_12px_rgba(9,20,38,0.05)] hover:shadow-[0_12px_24px_rgba(9,20,38,0.08)] border border-outline-variant/20 overflow-hidden transition-all duration-300 group flex flex-col">
+<div class="relative h-48 bg-surface-container-high overflow-hidden">
+<img alt="Apparel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="minimalist flat lay of premium white organic cotton t-shirt with subtle embroidered logo on clean light gray background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcaeCar6zx5tNzcrdwHcq9XGmvZnCWWu4eXYv-5oaKMpAO0BBLc9C1yOsRr15wLoIeH6N1O80cfgNLwoDrmg1HFueqs-_tbkAUw-S2I8SfUhR_UMh85Lb9bwurHD4wIM_BrGNwnddE8IyIbIkNIaUH0K__vsHWuVEM8fSTm2Qc6E9wxv8r7HSbnZmu7tYmCGqoE5-oVG5aPORnBCfZJDeIMZF5W0N6hSfriVapnoJnWTlSXO86Gf8bw6Kk4B2R4Zgu9QE_HtzGdJI"/>
+<div class="absolute top-3 left-3 px-2 py-1 bg-surface-container-lowest/90 backdrop-blur-sm rounded-md font-label-sm text-label-sm text-on-surface border border-outline-variant/20">
+                            Хувцас
+                        </div>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-label-md text-label-md text-on-surface line-clamp-2">Байгальд ээлтэй органик хөвөн даавуун цамц</h3>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-primary font-semibold mt-auto">₮ 65,000</p>
+<div class="flex justify-between items-center mt-4 pt-4 border-t border-outline-variant/20">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">inventory_2</span>
+                                Үлдэгдэл: 120
+                            </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded-full border border-outline-variant/30">Ноорог</span>
+</div>
+</div>
+</article>
+<!-- Product Card 4: Corporate Gifts -->
+<article class="bg-surface-container-lowest rounded-[16px] shadow-[0_4px_12px_rgba(9,20,38,0.05)] hover:shadow-[0_12px_24px_rgba(9,20,38,0.08)] border border-outline-variant/20 overflow-hidden transition-all duration-300 group flex flex-col">
+<div class="relative h-48 bg-surface-container-high overflow-hidden flex items-center justify-center bg-gradient-to-br from-surface-container to-surface-variant">
+<img alt="Corporate Gifts" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="elegant arrangement of premium corporate gifts including leather bound notebook metallic pen and business card holder on dark slate surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaWx2-pQCEGf5YD6jvn0ugJcrAKj-CKxlZ89LesM4CiTuOMwa2YeLVGl6s7ZS_WuC3DAHf8FCBbHaP6PraNih-j8wS9KidgUwIPVGFLYqk6EcH8MoESIfxlnDFTg4uW_jOfoggLAtbHF_7mWMzss1GdY8P0e-I9JQVOwQww_bdr7u8BwpCRQ22DO-O26J99tnVqWJrUx39U2YRR0M-dNHfgrvyO1pN52nZStcXjlA4ld5thkqj3PFSZFJIOUaOtXy0Zq_5zSlKMbA"/>
+<div class="absolute top-3 left-3 px-2 py-1 bg-surface-container-lowest/90 backdrop-blur-sm rounded-md font-label-sm text-label-sm text-on-surface border border-outline-variant/20">
+                            Бэлэг дурсгал
+                        </div>
+</div>
+<div class="p-4 flex flex-col flex-1">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-label-md text-label-md text-on-surface line-clamp-2">Байгууллагын VIP бэлгийн багц (Арьсан дэвтэр, үзэг)</h3>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-primary font-semibold mt-auto">₮ 120,000</p>
+<div class="flex justify-between items-center mt-4 pt-4 border-t border-outline-variant/20">
+<span class="font-label-sm text-label-sm text-error flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+                                Дууссан
+                            </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded-full border border-outline-variant/30">Идэвхгүй</span>
+</div>
+</div>
+</article>
+</div>
+</div>
+</main>
+<script src="assets/site.js"></script></body></html>

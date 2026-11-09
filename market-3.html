@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+<html class="light" lang="mn"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .chart-bar { transition: width 1s ease-in-out; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "secondary": "#9d4300",
+                        "surface-variant": "#d3e4fe",
+                        "primary": "#091426",
+                        "outline-variant": "#c5c6cd",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#eff4ff",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-tertiary-fixed-variant": "#005049",
+                        "surface": "#f8f9ff",
+                        "surface-bright": "#f8f9ff",
+                        "on-tertiary-container": "#28a094",
+                        "secondary-container": "#fd761a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#00201d",
+                        "on-primary-container": "#8590a6",
+                        "tertiary": "#001815",
+                        "tertiary-fixed": "#89f5e7",
+                        "primary-fixed-dim": "#bcc7de",
+                        "primary-fixed": "#d8e3fb",
+                        "tertiary-fixed-dim": "#6bd8cb",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#111c2d",
+                        "background": "#f8f9ff",
+                        "surface-container-high": "#dce9ff",
+                        "on-primary-fixed-variant": "#3c475a",
+                        "inverse-on-surface": "#eaf1ff",
+                        "secondary-fixed": "#ffdbca",
+                        "primary-container": "#1e293b",
+                        "on-secondary-fixed": "#341100",
+                        "inverse-surface": "#213145",
+                        "surface-container": "#e5eeff",
+                        "on-surface": "#0b1c30",
+                        "on-surface-variant": "#45474c",
+                        "secondary-fixed-dim": "#ffb690",
+                        "outline": "#75777d",
+                        "tertiary-container": "#002f2a",
+                        "surface-dim": "#cbdbf5",
+                        "on-secondary-container": "#5c2400",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#0b1c30",
+                        "inverse-primary": "#bcc7de",
+                        "surface-tint": "#545f73",
+                        "on-secondary-fixed-variant": "#783200",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "margin": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-xl": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "label-md": ["14px", {"lineHeight": "1.4", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background font-body-md text-on-background">
+<!-- Top Navigation Shell -->
+<nav class="sticky top-0 z-50 flex h-16 w-full items-center justify-between px-6 bg-white dark:bg-slate-900 shadow-sm border-b border-slate-200">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tight text-indigo-900 dark:text-indigo-100">Mongol Design Hub</span>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-indigo-700 dark:text-indigo-300 font-bold font-inter text-sm transition-colors" href="#">Overview</a>
+<a class="text-slate-500 dark:text-slate-400 font-inter text-sm hover:bg-slate-50 transition-colors" href="#">Auctions</a>
+<a class="text-slate-500 dark:text-slate-400 font-inter text-sm hover:bg-slate-50 transition-colors" href="#">Inventory</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-primary-container p-2 hover:bg-slate-50 rounded-full cursor-pointer">notifications</span>
+<span class="material-symbols-outlined text-on-primary-container p-2 hover:bg-slate-50 rounded-full cursor-pointer">help_outline</span>
+<div class="h-8 w-8 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border border-outline-variant">
+<img alt="Platform Owner Profile" data-alt="professional male portrait with neutral background and corporate attire for platform admin avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaeGs2lecaXhizo0AzCQ8gUS6ZWH5QvBHIGzk-B5ctbVd96hmsBCp1onFIYKAjBXupC8twyEeDuiVeqXwgkOj_8_6jBYzMbhA6KzPMoI4e1-Eib2Wf4GmczaXMzWo3btIhn-rBXktPK_cBywbnAT8YDpOsUSQjI4NmHzpPDUS7M35Nv-4cntSuje1lWwwy8PBRL15BDgKSGnXiS46prCoqAqP0UZQlZBf_Kai9uT5NcUZ06LRT-kG644ULKL01tpLPpDH_eGRUtBQ"/>
+</div>
+</div>
+</nav>
+<div class="flex min-h-screen">
+<!-- Sidebar Shell -->
+<aside class="hidden md:flex flex-col fixed left-0 top-16 h-[calc(100vh-64px)] w-64 py-6 bg-slate-50 dark:bg-slate-950 border-r border-slate-200">
+<div class="px-6 mb-8">
+<h2 class="text-lg font-black text-indigo-900 dark:text-indigo-400">Admin Console</h2>
+<p class="text-label-sm text-slate-500">Strategic Overview</p>
+</div>
+<nav class="flex-1 space-y-1">
+<div class="flex items-center gap-3 px-4 py-3 text-indigo-700 dark:text-indigo-300 bg-indigo-50 dark:bg-indigo-900/20 border-r-4 border-indigo-700 dark:border-indigo-500">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-inter text-sm font-medium">Overview</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-300 hover:bg-slate-100 cursor-pointer transition-all">
+<span class="material-symbols-outlined">gavel</span>
+<span class="font-inter text-sm font-medium">Auctions</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-300 hover:bg-slate-100 cursor-pointer transition-all">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-inter text-sm font-medium">Inventory</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-300 hover:bg-slate-100 cursor-pointer transition-all">
+<span class="material-symbols-outlined">group</span>
+<span class="font-inter text-sm font-medium">Platform Users</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-300 hover:bg-slate-100 cursor-pointer transition-all">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-inter text-sm font-medium">Financials</span>
+</div>
+</nav>
+<div class="px-4 mt-auto space-y-1">
+<button class="w-full mb-4 py-2 px-4 bg-indigo-900 text-white dark:bg-indigo-600 rounded-lg font-label-md hover:opacity-90 active:scale-[0.98] transition-transform">
+                    Generate Report
+                </button>
+<div class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:text-indigo-600 hover:bg-slate-100 rounded-lg cursor-pointer transition-all">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-inter text-sm font-medium">Settings</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:text-error rounded-lg cursor-pointer transition-all">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-inter text-sm font-medium">Log Out</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 p-8 max-w-[1280px] mx-auto">
+<!-- Header Section -->
+<header class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface mb-2">Төсвийн нарийвчилсан төлөвлөгөө</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Mongol Design Hub-ийн нийт хөрөнгө оруулалт болон зардлын нарийвчилсан задлан шинжилгээ.</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="bg-on-tertiary-container/10 text-on-tertiary-container px-4 py-2 rounded-full flex items-center gap-2 font-label-md">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">circle</span>
+                        Live Dashboard
+                    </div>
+</div>
+</header>
+<!-- Key Metrics Grid -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+<!-- Total Budget Card -->
+<div class="col-span-1 md:col-span-2 bg-white p-6 rounded-xl shadow-sm border border-slate-100 flex flex-col justify-between">
+<div>
+<p class="font-label-md text-on-surface-variant mb-1">Нийт Төсөв</p>
+<h2 class="font-headline-xl text-headline-xl text-primary">45,000,000 MNT</h2>
+</div>
+<div class="mt-4 flex items-center gap-2 text-on-tertiary-container">
+<span class="material-symbols-outlined">trending_up</span>
+<span class="font-label-sm">Батлагдсан санхүүжилт 100%</span>
+</div>
+</div>
+<!-- ROI Timeline Card -->
+<div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+<span class="material-symbols-outlined text-secondary mb-3">schedule</span>
+<p class="font-label-md text-on-surface-variant mb-1">ROI Хугацаа</p>
+<h2 class="font-headline-md text-headline-md text-on-surface">12-18 Сар</h2>
+<p class="text-label-sm text-slate-500 mt-2">Хүлээгдэж буй өгөөж</p>
+</div>
+<!-- Status Card -->
+<div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+<span class="material-symbols-outlined text-on-tertiary-container mb-3">verified</span>
+<p class="font-label-md text-on-surface-variant mb-1">Төлөв</p>
+<h2 class="font-headline-md text-headline-md text-on-surface">Идэвхтэй</h2>
+<p class="text-label-sm text-slate-500 mt-2">Төлөвлөлт батлагдсан</p>
+</div>
+</div>
+<!-- Main Dashboard Layout (Asymmetric/Bento) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-8">
+<!-- Visual Breakdown Chart (6 cols) -->
+<div class="lg:col-span-7 bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col h-full">
+<h3 class="font-headline-md text-headline-md mb-8">Зардлын бүтцийн график</h3>
+<div class="space-y-8 flex-1 flex flex-col justify-center">
+<!-- Bar 1: Development -->
+<div class="space-y-2">
+<div class="flex justify-between items-end">
+<span class="font-label-md text-on-surface">Хөгжүүлэлт (Development)</span>
+<span class="font-headline-md text-primary">55%</span>
+</div>
+<div class="h-4 w-full bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full chart-bar" style="width: 55%"></div>
+</div>
+<p class="text-label-sm text-slate-500 text-right">24,750,000 MNT</p>
+</div>
+<!-- Bar 2: Marketing -->
+<div class="space-y-2">
+<div class="flex justify-between items-end">
+<span class="font-label-md text-on-surface">Маркетинг (Marketing)</span>
+<span class="font-headline-md text-secondary">30%</span>
+</div>
+<div class="h-4 w-full bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container rounded-full chart-bar" style="width: 30%"></div>
+</div>
+<p class="text-label-sm text-slate-500 text-right">13,500,000 MNT</p>
+</div>
+<!-- Bar 3: Operations -->
+<div class="space-y-2">
+<div class="flex justify-between items-end">
+<span class="font-label-md text-on-surface">Үйл ажиллагаа (Operations)</span>
+<span class="font-headline-md text-on-tertiary-container">15%</span>
+</div>
+<div class="h-4 w-full bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-on-tertiary-container rounded-full chart-bar" style="width: 15%"></div>
+</div>
+<p class="text-label-sm text-slate-500 text-right">6,750,000 MNT</p>
+</div>
+</div>
+</div>
+<!-- Strategic Summary (5 cols) -->
+<div class="lg:col-span-5 flex flex-col gap-6">
+<div class="bg-indigo-900 text-white p-8 rounded-2xl shadow-xl">
+<h3 class="font-headline-md text-headline-md mb-4 text-primary-fixed">Стратегийн зорилт</h3>
+<p class="font-body-md text-primary-fixed-dim mb-6">Дизайн хабын экосистемийг бүрдүүлснээр дотоодын зах зээлд тэргүүлэх боломжийг бий болгоно.</p>
+<div class="space-y-4">
+<div class="flex gap-4 items-start">
+<span class="material-symbols-outlined text-secondary-fixed">bolt</span>
+<div>
+<p class="font-label-md">Хурдасгуур</p>
+<p class="text-label-sm text-primary-fixed-dim">MVP хувилбарыг 3 сарын дотор гаргах</p>
+</div>
+</div>
+<div class="flex gap-4 items-start">
+<span class="material-symbols-outlined text-secondary-fixed">insights</span>
+<div>
+<p class="font-label-md">Өсөлт</p>
+<p class="text-label-sm text-primary-fixed-dim">Сар бүр 15% хэрэглэгчийн өсөлт</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex-1">
+<h4 class="font-label-md text-on-surface mb-4">ROI Хөгжлийн Үе Шат</h4>
+<div class="relative pl-6 border-l-2 border-slate-200 space-y-6">
+<div class="relative">
+<div class="absolute -left-[31px] top-1 h-3 w-3 rounded-full bg-primary border-4 border-white shadow-sm"></div>
+<p class="font-label-md text-primary">0-6 Сар</p>
+<p class="text-label-sm text-slate-500">Системийн хөгжүүлэлт, анхны зах зээлийн нэвтрэлт</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[31px] top-1 h-3 w-3 rounded-full bg-slate-300 border-4 border-white shadow-sm"></div>
+<p class="font-label-md text-on-surface">6-12 Сар</p>
+<p class="text-label-sm text-slate-500">Маркетингийн идэвхжүүлэлт, орлого бүрдүүлэлт</p>
+</div>
+<div class="relative">
+<div class="absolute -left-[31px] top-1 h-3 w-3 rounded-full bg-slate-300 border-4 border-white shadow-sm"></div>
+<p class="font-label-md text-on-surface">12-18 Сар</p>
+<p class="text-label-sm text-slate-500">Хөрөнгө оруулалтын өгөөж, ашигтай ажиллагаа</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Detailed Data Table Section -->
+<section class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden mb-8">
+<div class="p-6 border-b border-slate-100 flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md">Зардлын дэлгэрэнгүй хүснэгт</h3>
+<button class="flex items-center gap-2 px-4 py-2 border border-slate-200 rounded-lg text-label-md hover:bg-slate-50 transition-colors">
+<span class="material-symbols-outlined text-sm">download</span>
+                        Татах (CSV)
+                    </button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50">
+<th class="px-6 py-4 font-label-md text-on-surface-variant border-b border-slate-100">Ангилал</th>
+<th class="px-6 py-4 font-label-md text-on-surface-variant border-b border-slate-100">Зардлын төрөл</th>
+<th class="px-6 py-4 font-label-md text-on-surface-variant border-b border-slate-100">Хувь</th>
+<th class="px-6 py-4 font-label-md text-on-surface-variant border-b border-slate-100 text-right">Дүн (MNT)</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100">
+<tr>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<span class="font-body-md font-medium">Хөгжүүлэлт</span>
+</div>
+</td>
+<td class="px-6 py-4 text-on-surface-variant">Front-end, Back-end, Cloud Infrastructure</td>
+<td class="px-6 py-4">55%</td>
+<td class="px-6 py-4 text-right font-medium">24,750,000</td>
+</tr>
+<tr>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-secondary-container"></div>
+<span class="font-body-md font-medium">Маркетинг</span>
+</div>
+</td>
+<td class="px-6 py-4 text-on-surface-variant">Social Media, Content Production, Events</td>
+<td class="px-6 py-4">30%</td>
+<td class="px-6 py-4 text-right font-medium">13,500,000</td>
+</tr>
+<tr>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-on-tertiary-container"></div>
+<span class="font-body-md font-medium">Үйл ажиллагаа</span>
+</div>
+</td>
+<td class="px-6 py-4 text-on-surface-variant">Office Rent, Salaries, Legal Fees</td>
+<td class="px-6 py-4">15%</td>
+<td class="px-6 py-4 text-right font-medium">6,750,000</td>
+</tr>
+</tbody>
+<tfoot>
+<tr class="bg-indigo-50/50">
+<td class="px-6 py-4 font-headline-md text-primary text-right" colspan="3">Нийт дүн:</td>
+<td class="px-6 py-4 font-headline-md text-primary text-right">45,000,000 MNT</td>
+</tr>
+</tfoot>
+</table>
+</div>
+</section>
+<!-- Bottom Illustration Section -->
+<div class="relative h-64 rounded-3xl overflow-hidden shadow-lg mb-8">
+<img alt="Financial abstract visualization" class="w-full h-full object-cover" data-alt="modern abstract 3D visualization of financial data charts and nodes with soft indigo and orange ambient lighting and depth of field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7T5jyC3guLEkGTbNOnXEVwWWOxZVRC_01D3HoCEAxJnEcBOB2HdLHaduJnyqTniUCYmisQ9uObxbmFPrEmk1hV_9d_VGgL20Ffm-dtnu8_MuonnXq1uoMjY2vFVpJIDKdgQwMVjrvT6SCQvw5QBNLfUIbOOIn822XA1fBfO0MFBgXj9b0x98RisS1xNQ62oSWOXSRfWgXBoMFOdMqAY1IGv2BC7Sn2kQJNisqynRAF6aLz19rDDPqICm84wUtWWB-3MmtV2UcpZ8"/>
+<div class="absolute inset-0 bg-gradient-to-r from-primary/80 to-transparent flex items-center px-12">
+<div class="max-w-md">
+<h3 class="font-headline-lg text-headline-lg text-white mb-2">Санхүүгийн Тогтвортой Байдал</h3>
+<p class="text-white/80 font-body-md">Монгол Дизайн Хабын ирээдүйг хамтдаа бүтээж буй танд баярлалаа. Бид үр ашигтай төлөвлөлтийг эрхэмлэн ажиллаж байна.</p>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Mobile Navigation Shell -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-white border-t border-slate-200 flex items-center justify-around z-50">
+<div class="flex flex-col items-center text-indigo-700">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-medium">Overview</span>
+</div>
+<div class="flex flex-col items-center text-slate-500">
+<span class="material-symbols-outlined">gavel</span>
+<span class="text-[10px] font-medium">Auctions</span>
+</div>
+<div class="flex flex-col items-center text-slate-500">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-[10px] font-medium">Inventory</span>
+</div>
+<div class="flex flex-col items-center text-slate-500">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-[10px] font-medium">Finance</span>
+</div>
+<div class="flex flex-col items-center text-slate-500">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium">Settings</span>
+</div>
+</nav>
+<!-- Contextual FAB (Only on Dashboard Home) -->
+<button class="fixed bottom-20 md:bottom-8 right-8 h-14 w-14 rounded-full bg-secondary-container text-white shadow-xl flex items-center justify-center active:scale-95 transition-transform hover:shadow-2xl z-40">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">add</span>
+</button>
+<script src="assets/site.js"></script></body></html>

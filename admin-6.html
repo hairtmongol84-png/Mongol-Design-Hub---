@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<html lang="mn"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Аюулгүй байдал ба Үйлдлийн бүртгэл</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary": "#001815",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container": "#e5eeff",
+                      "error-container": "#ffdad6",
+                      "on-primary-container": "#8590a6",
+                      "error": "#ba1a1a",
+                      "secondary-fixed-dim": "#ffb690",
+                      "on-secondary": "#ffffff",
+                      "background": "#f8f9ff",
+                      "on-surface": "#0b1c30",
+                      "on-tertiary-fixed-variant": "#005049",
+                      "tertiary-fixed-dim": "#6bd8cb",
+                      "surface-container-low": "#eff4ff",
+                      "secondary-container": "#fd761a",
+                      "surface-container-highest": "#d3e4fe",
+                      "on-tertiary-fixed": "#00201d",
+                      "on-primary-fixed": "#111c2d",
+                      "outline": "#75777d",
+                      "surface-container-high": "#dce9ff",
+                      "secondary": "#9d4300",
+                      "secondary-fixed": "#ffdbca",
+                      "on-tertiary-container": "#28a094",
+                      "surface-variant": "#d3e4fe",
+                      "on-error-container": "#93000a",
+                      "inverse-on-surface": "#eaf1ff",
+                      "tertiary-container": "#002f2a",
+                      "primary-container": "#1e293b",
+                      "on-tertiary": "#ffffff",
+                      "primary-fixed": "#d8e3fb",
+                      "surface-tint": "#545f73",
+                      "surface": "#f8f9ff",
+                      "on-secondary-fixed-variant": "#783200",
+                      "outline-variant": "#c5c6cd",
+                      "surface-dim": "#cbdbf5",
+                      "tertiary-fixed": "#89f5e7",
+                      "primary": "#091426",
+                      "on-primary": "#ffffff",
+                      "on-secondary-fixed": "#341100",
+                      "surface-bright": "#f8f9ff",
+                      "on-primary-fixed-variant": "#3c475a",
+                      "primary-fixed-dim": "#bcc7de",
+                      "on-secondary-container": "#5c2400",
+                      "on-surface-variant": "#45474c",
+                      "on-background": "#0b1c30",
+                      "inverse-primary": "#bcc7de",
+                      "on-error": "#ffffff",
+                      "inverse-surface": "#213145"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "container-max": "1280px",
+                      "base": "8px",
+                      "margin": "32px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "headline-xl": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-xl": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-background flex min-h-screen antialiased">
+<nav class="bg-slate-50 dark:bg-slate-950 text-indigo-900 dark:text-indigo-400 text-sm font-medium font-['Inter'] h-screen w-64 border-r border-slate-200 dark:border-slate-800 flat no shadows fixed left-0 top-0 bottom-0 flex flex-col pt-16 z-40 hidden md:flex">
+<div class="px-6 pb-8">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-slate-200 overflow-hidden">
+<img alt="Admin User" class="w-full h-full object-cover" data-alt="professional headshot of an administrator in modern office setting with soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_qJ1jAFzrmuB4jFpR3qiFWCsHO-oP-0Y2Z3Xmvpa5UBfSpVHe1Jj7ZDQgILclcEbBOLOCp77Pk-dyndPk41K8CBj57XqSYLQlbrrRb5eFC6WXP5SOywzMMRcvqDbPGWMWdA4KR1lE1Tc6MmWdiVaKSjN-VQ1l6eb-ohDmynvtX2ZyzZktCiWU_ZuhNvFgcO4GrYHGhSvty18UUFFxK54xjy2iXP90FY6V51VUJRHM587hSv28X-XF8pfJy5oVDsSL2AWliQWKNZI"/>
+</div>
+<div>
+<div class="font-bold text-slate-900">Admin Portal</div>
+<div class="text-xs text-slate-500">System Overview</div>
+</div>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto py-4 flex flex-col gap-1">
+<a class="text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 hover:pl-2 transition-all duration-200 cursor-pointer active:opacity-80 flex items-center gap-3 px-6 py-3" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+<a class="text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 hover:pl-2 transition-all duration-200 cursor-pointer active:opacity-80 flex items-center gap-3 px-6 py-3" href="#">
+<span class="material-symbols-outlined">shopping_bag</span>
+                Orders
+            </a>
+<a class="text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 hover:pl-2 transition-all duration-200 cursor-pointer active:opacity-80 flex items-center gap-3 px-6 py-3" href="#">
+<span class="material-symbols-outlined">gavel</span>
+                Disputes
+            </a>
+<a class="text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 hover:pl-2 transition-all duration-200 cursor-pointer active:opacity-80 flex items-center gap-3 px-6 py-3" href="#">
+<span class="material-symbols-outlined">help_center</span>
+                Help Center
+            </a>
+<a class="bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 border-r-4 border-indigo-600 hover:pl-2 transition-all duration-200 cursor-pointer active:opacity-80 flex items-center gap-3 px-6 py-3" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">shield_person</span>
+                Security Audit
+            </a>
+<a class="text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 hover:pl-2 transition-all duration-200 cursor-pointer active:opacity-80 flex items-center gap-3 px-6 py-3" href="#">
+<span class="material-symbols-outlined">analytics</span>
+                Analytics
+            </a>
+</div>
+<div class="p-6">
+<button class="w-full bg-indigo-600 text-white rounded-lg py-2 text-sm font-semibold hover:bg-indigo-700 transition-colors">
+                Generate Report
+            </button>
+</div>
+<div class="border-t border-slate-200 dark:border-slate-800 py-4 flex flex-col gap-1">
+<a class="text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 hover:pl-2 transition-all duration-200 cursor-pointer active:opacity-80 flex items-center gap-3 px-6 py-3" href="#">
+<span class="material-symbols-outlined">logout</span>
+                Logout
+            </a>
+<a class="text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 hover:pl-2 transition-all duration-200 cursor-pointer active:opacity-80 flex items-center gap-3 px-6 py-3" href="#">
+<span class="material-symbols-outlined">chat_bubble_outline</span>
+                Feedback
+            </a>
+</div>
+</nav>
+<div class="flex-1 md:ml-64 flex flex-col min-h-screen">
+<header class="bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 font-['Inter'] antialiased docked full-width top-0 border-b border-slate-200 dark:border-slate-800 shadow-sm sticky top-0 z-50 flex h-16 items-center justify-between px-6 w-full">
+<div class="flex items-center gap-4">
+<span class="text-xl font-bold tracking-tight text-indigo-900 dark:text-indigo-400">Mongol Design Hub</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+<input class="pl-9 pr-4 py-1.5 bg-slate-100 dark:bg-slate-800 border-none rounded-full text-sm focus:ring-2 focus:ring-indigo-500 w-64 text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors" placeholder="Search..." type="text"/>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-full text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors active:scale-95 duration-150 flex items-center justify-center">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 rounded-full text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors active:scale-95 duration-150 flex items-center justify-center">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<button class="p-2 rounded-full text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors active:scale-95 duration-150 flex items-center justify-center">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+<div class="flex items-center gap-3 border-l border-slate-200 dark:border-slate-700 pl-6">
+<button class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Support</button>
+<button class="bg-indigo-600 text-white px-4 py-1.5 rounded-lg text-sm font-semibold hover:bg-indigo-700 transition-colors active:scale-95 duration-150">New Ticket</button>
+<div class="w-8 h-8 rounded-full bg-slate-200 overflow-hidden ml-2 cursor-pointer">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="professional headshot of an administrator in modern office setting with soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBo4TGYZP-OPHM-pCor8k9I9Z4hPK7PvcxGYhWw1kicV8R6lp6blk43HmSYYFBDrx5IDJVYoTnMsEOjE047Ton_LhBxln1-w7fI_A9JbsOrMAwdqxajfPkQjEWGpbsKbOgUUXVFZ_ZJoV741c9LoEOdjYun-Lltiww7tJ9vCunToxvcCPPnMdJ6a4HNSKQVjz-9A3ZnO5TB3_e4qjYlqclU4NM6qfEl5lOhoyAIyRdPG6L9uaHuWeUKnbQclp93TOXBV_rLNKUuezg"/>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 p-margin w-full max-w-container-max mx-auto">
+<div class="mb-gutter flex items-center justify-between">
+<div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface mb-2">Аюулгүй байдал ба Үйлдлийн бүртгэл</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Системийн хяналт болон хэрэглэгчийн үйлдлийн түүх.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-gutter">
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-surface-variant flex items-center justify-between">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Системийн төлөв</p>
+<p class="font-headline-md text-headline-md text-on-surface">Хэвийн</p>
+</div>
+<div class="w-12 h-12 rounded-full bg-tertiary-fixed-dim/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary-container animate-pulse">check_circle</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-surface-variant flex items-center justify-between">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Амжилттай нэвтрэлт (24ц)</p>
+<p class="font-headline-md text-headline-md text-on-surface">8,432</p>
+</div>
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">login</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-surface-variant flex items-center justify-between">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1">Сэжигтэй үйлдэл</p>
+<p class="font-headline-md text-headline-md text-error">12</p>
+</div>
+<div class="w-12 h-12 rounded-full bg-error-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-error-container">warning</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-surface-variant overflow-hidden">
+<div class="p-4 border-b border-surface-variant bg-surface flex flex-wrap gap-4 items-center justify-between">
+<div class="flex gap-4">
+<div class="flex flex-col">
+<label class="font-label-sm text-label-sm text-on-surface-variant mb-1">Хэрэглэгчийн үүрэг</label>
+<select class="bg-surface-container-lowest border border-outline rounded-lg font-body-md text-body-md text-on-surface px-3 py-2 focus:border-primary focus:ring-1 focus:ring-primary outline-none">
+<option>Бүх үүрэг</option>
+<option>Админ</option>
+<option>Худалдагч</option>
+<option>Худалдан авагч</option>
+</select>
+</div>
+<div class="flex flex-col">
+<label class="font-label-sm text-label-sm text-on-surface-variant mb-1">Үйлдлийн төрөл</label>
+<select class="bg-surface-container-lowest border border-outline rounded-lg font-body-md text-body-md text-on-surface px-3 py-2 focus:border-primary focus:ring-1 focus:ring-primary outline-none">
+<option>Бүх үйлдэл</option>
+<option>Үнэ өөрчилсөн</option>
+<option>Хэрэглэгч баталгаажсан</option>
+<option>Төлбөр хийгдсэн</option>
+</select>
+</div>
+</div>
+<button class="bg-surface-container border border-outline-variant font-label-md text-label-md text-on-surface px-4 py-2 rounded-lg hover:bg-surface-container-high transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                        Экспорт
+                    </button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface font-label-md text-label-md text-on-surface-variant border-b border-surface-variant">
+<th class="p-4 font-semibold">Хэрэглэгчийн ID</th>
+<th class="p-4 font-semibold">Үйлдэл</th>
+<th class="p-4 font-semibold">Хугацаа</th>
+<th class="p-4 font-semibold">IP Хаяг</th>
+<th class="p-4 font-semibold">Байршил</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md text-on-surface">
+<tr class="border-b border-surface-variant hover:bg-surface transition-colors">
+<td class="p-4 font-medium">USR-99281</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1.5 bg-secondary-container/10 text-secondary px-2.5 py-1 rounded-full font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">sell</span>
+                                        Үнэ өөрчилсөн
+                                    </span>
+</td>
+<td class="p-4 text-on-surface-variant">2023-10-24 14:32:01</td>
+<td class="p-4 font-mono text-sm">192.168.1.105</td>
+<td class="p-4">Улаанбаатар, Монгол</td>
+</tr>
+<tr class="border-b border-surface-variant hover:bg-surface transition-colors">
+<td class="p-4 font-medium">USR-84729</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1.5 bg-tertiary-fixed/20 text-on-tertiary-container px-2.5 py-1 rounded-full font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">verified_user</span>
+                                        Хэрэглэгч баталгаажсан
+                                    </span>
+</td>
+<td class="p-4 text-on-surface-variant">2023-10-24 13:15:44</td>
+<td class="p-4 font-mono text-sm">203.0.113.42</td>
+<td class="p-4">Дархан, Монгол</td>
+</tr>
+<tr class="border-b border-surface-variant hover:bg-surface transition-colors">
+<td class="p-4 font-medium">SYS-AUTO</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1.5 bg-primary-fixed/50 text-on-primary-fixed px-2.5 py-1 rounded-full font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">payments</span>
+                                        Төлбөр хийгдсэн
+                                    </span>
+</td>
+<td class="p-4 text-on-surface-variant">2023-10-24 12:00:00</td>
+<td class="p-4 font-mono text-sm">10.0.0.1 (Internal)</td>
+<td class="p-4">Сервер</td>
+</tr>
+<tr class="border-b border-surface-variant hover:bg-surface transition-colors">
+<td class="p-4 font-medium">USR-10293</td>
+<td class="p-4">
+<span class="inline-flex items-center gap-1.5 bg-secondary-container/10 text-secondary px-2.5 py-1 rounded-full font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">sell</span>
+                                        Үнэ өөрчилсөн
+                                    </span>
+</td>
+<td class="p-4 text-on-surface-variant">2023-10-24 11:45:22</td>
+<td class="p-4 font-mono text-sm">198.51.100.14</td>
+<td class="p-4">Сөүл, Өмнөд Солонгос</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-4 bg-surface border-t border-surface-variant flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Нийт: 1,248 бичлэг</span>
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 flex items-center justify-center rounded border border-outline-variant hover:bg-surface-container disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<span class="px-2">1 / 125</span>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-outline-variant hover:bg-surface-container">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+```<script src="assets/site.js"></script></body></html>

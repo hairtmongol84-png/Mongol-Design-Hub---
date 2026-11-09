@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html lang="mn"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Хүргэлтийн тохиргоо - Nexus Logistics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-error": "#ffffff",
+                        "surface-dim": "#cbdbf5",
+                        "on-primary-fixed-variant": "#3c475a",
+                        "surface-bright": "#f8f9ff",
+                        "surface-tint": "#545f73",
+                        "surface-container": "#e5eeff",
+                        "tertiary": "#001815",
+                        "outline-variant": "#c5c6cd",
+                        "on-surface-variant": "#45474c",
+                        "surface-container-low": "#eff4ff",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#75777d",
+                        "surface-container-high": "#dce9ff",
+                        "on-secondary-fixed-variant": "#783200",
+                        "on-error-container": "#93000a",
+                        "on-background": "#0b1c30",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#bcc7de",
+                        "surface": "#f8f9ff",
+                        "background": "#f8f9ff",
+                        "secondary-fixed-dim": "#ffb690",
+                        "secondary-fixed": "#ffdbca",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed-dim": "#6bd8cb",
+                        "tertiary-container": "#002f2a",
+                        "primary-fixed": "#d8e3fb",
+                        "on-tertiary-fixed-variant": "#005049",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#0b1c30",
+                        "tertiary-fixed": "#89f5e7",
+                        "inverse-surface": "#213145",
+                        "secondary": "#9d4300",
+                        "primary": "#091426",
+                        "secondary-container": "#fd761a",
+                        "primary-container": "#1e293b",
+                        "on-tertiary-fixed": "#00201d",
+                        "on-secondary-container": "#5c2400",
+                        "on-primary-fixed": "#111c2d",
+                        "on-primary-container": "#8590a6",
+                        "primary-fixed-dim": "#bcc7de",
+                        "on-tertiary-container": "#28a094",
+                        "on-secondary-fixed": "#341100",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-variant": "#d3e4fe",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#d3e4fe"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    fontFamily: {
+                        "label-md": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    fontSize: {
+                        "label-md": ["14px", { lineHeight: "1.4", fontWeight: "600" }],
+                        "headline-xl": ["40px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "body-md": ["16px", { lineHeight: "1.5", fontWeight: "400" }],
+                        "headline-md": ["24px", { lineHeight: "1.3", fontWeight: "600" }],
+                        "headline-lg": ["32px", { lineHeight: "1.2", fontWeight: "700" }],
+                        "label-sm": ["12px", { lineHeight: "1.4", fontWeight: "500" }],
+                        "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .ambient-shadow-sm { box-shadow: 0 2px 4px rgba(9, 20, 38, 0.05); }
+        .ambient-shadow-md { box-shadow: 0 4px 12px rgba(9, 20, 38, 0.08); }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 font-['Inter'] antialiased docked full-width top-0 z-50 border-b border-slate-200 dark:border-slate-800 shadow-sm flex justify-between items-center px-6 h-16 w-full max-w-[1280px] mx-auto">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors p-2 rounded-full">menu</span>
+<div class="text-xl font-bold tracking-tight text-indigo-900 dark:text-indigo-400">Nexus Logistics</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-full hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-slate-600 dark:text-slate-400 cursor-pointer active:opacity-80 transition-opacity">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 rounded-full hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-slate-600 dark:text-slate-400 cursor-pointer active:opacity-80 transition-opacity">
+<span class="material-symbols-outlined">help</span>
+</button>
+<button class="p-2 rounded-full hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-slate-600 dark:text-slate-400 cursor-pointer active:opacity-80 transition-opacity">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="ml-4 h-8 w-8 rounded-full bg-surface-dim overflow-hidden ml-2 border border-outline-variant">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="Close-up professional headshot of a smiling young man in a clean studio setting with soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcAWM2tL8Uaa4BidVmzHkSL5iebaeVGpor5PjzLxbqs5t8AlcbtEjFXU0dHS0XZFGDERO-VE-P2rB8mRx_ID3LruP7YkjdntcmHbpFCy9ghxfcjOJBjzcoFu2SydhQpxnlLVV4AjORJ8xZkA84kK_5EB7hTkoYxI0JoxKzp2Ddhsi2cl0RiqO1g6GEoInigrqBPD_iYfC3Qo9ooq3aTL9pG0rmVXJAPcgi7_NQA2ZEifdF2v4YVY7RvyuSQ7vkwQZpgdwT0waiWiM"/>
+</div>
+</div>
+</header>
+<div class="flex max-w-[1280px] mx-auto w-full">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col h-screen w-64 border-r border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 fixed left-0 top-16 pt-6 pb-24 z-40 overflow-y-auto">
+<div class="px-6 mb-8 flex items-center gap-3">
+<div class="h-10 w-10 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600">
+<span class="material-symbols-outlined font-bold">local_shipping</span>
+</div>
+<div>
+<h2 class="text-lg font-black text-slate-900 dark:text-white leading-tight">Logistics Hub</h2>
+<p class="text-xs text-slate-500 font-medium">Nexus Marketplace</p>
+</div>
+</div>
+<nav class="flex-1 px-4 space-y-1 font-['Inter'] text-sm font-medium">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800/50 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                    Dashboard
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800/50 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+                    Active Orders
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800/50 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">handshake</span>
+                    Shipping Partners
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-indigo-50 dark:bg-indigo-900/20 text-indigo-700 dark:text-indigo-300 border-r-4 border-indigo-600 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">map</span>
+                    Delivery Zones
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800/50 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">payments</span>
+                    Rate Tables
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800/50 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">location_searching</span>
+                    Live Tracking
+                </a>
+</nav>
+<div class="px-4 mt-auto">
+<button class="w-full py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-sm font-semibold transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span>
+                     Add New Partner
+                 </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-64 p-6 md:p-8 bg-background min-h-screen">
+<div class="max-w-5xl mx-auto space-y-8">
+<!-- Header -->
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-background mb-2">Хүргэлтийн тохиргоо</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Бараа хүргэх нөхцөл, түншүүд болон үнийн тарифаа удирдах.</p>
+</div>
+<!-- Fulfillment Mode Toggle -->
+<div class="bg-surface-container-lowest rounded-xl p-6 ambient-shadow-sm border border-outline-variant">
+<h2 class="font-headline-md text-headline-md text-on-background mb-6">Хүргэлтийн хэлбэр</h2>
+<div class="grid md:grid-cols-2 gap-4">
+<label class="relative cursor-pointer">
+<input checked="" class="peer sr-only" name="fulfillment_mode" type="radio"/>
+<div class="h-full p-4 border-2 rounded-lg border-primary bg-surface-container-low peer-checked:border-primary peer-checked:bg-primary-fixed transition-all">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary mt-1">storefront</span>
+<div>
+<div class="font-label-md text-label-md text-on-background mb-1">Худалдаачин өөрөө хүргэх</div>
+<div class="font-body-md text-body-md text-on-surface-variant text-sm">Та өөрийн унаагаар эсвэл гэрээт компаниар хүргэнэ.</div>
+</div>
+</div>
+</div>
+</label>
+<label class="relative cursor-pointer">
+<input class="peer sr-only" name="fulfillment_mode" type="radio"/>
+<div class="h-full p-4 border-2 rounded-lg border-outline-variant bg-surface-container-lowest peer-checked:border-primary peer-checked:bg-primary-fixed transition-all hover:bg-surface-container-low">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-on-surface-variant mt-1">api</span>
+<div>
+<div class="font-label-md text-label-md text-on-background mb-1">Платформ интеграци</div>
+<div class="font-body-md text-body-md text-on-surface-variant text-sm">Системтэй холбогдсон шуудангийн үйлчилгээ ашиглах.</div>
+</div>
+</div>
+</div>
+</label>
+</div>
+</div>
+<!-- API Connections Bento -->
+<div class="grid md:grid-cols-3 gap-6">
+<div class="md:col-span-2 bg-surface-container-lowest rounded-xl p-6 ambient-shadow-sm border border-outline-variant flex flex-col justify-between">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-background mb-2">Олон улсын шуудан холбох</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">DHL, Mongol Post зэрэг үйлчилгээнүүдийн API-г холбож автомат тооцоолол хийнэ үү.</p>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-4 border border-outline-variant rounded-lg bg-surface-bright">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-[#FFCC00] rounded-md flex items-center justify-center font-bold text-red-600">DHL</div>
+<div>
+<div class="font-label-md text-label-md text-on-background">DHL Express</div>
+<div class="font-label-sm text-label-sm text-error">Холбогдоогүй</div>
+</div>
+</div>
+<button class="px-4 py-2 border border-outline rounded-lg font-label-md text-label-md text-on-background hover:bg-surface-container-low transition-colors">Холбох</button>
+</div>
+<div class="flex items-center justify-between p-4 border border-outline-variant rounded-lg bg-surface-bright">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-blue-600 rounded-md flex items-center justify-center font-bold text-white text-xs text-center leading-none">Монгол<br/>Шуудан</div>
+<div>
+<div class="font-label-md text-label-md text-on-background">Монгол Шуудан</div>
+<div class="font-label-sm text-label-sm text-on-tertiary-container">Холбогдсон</div>
+</div>
+</div>
+<button class="px-4 py-2 border border-outline rounded-lg font-label-md text-label-md text-on-background hover:bg-surface-container-low transition-colors">Тохируулах</button>
+</div>
+</div>
+</div>
+<div class="bg-primary rounded-xl p-6 ambient-shadow-md text-on-primary flex flex-col justify-center items-center text-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80')] bg-cover bg-center" data-alt="Stacked cardboard boxes in a bright, modern logistics warehouse"></div>
+<span class="material-symbols-outlined text-4xl mb-4 relative z-10 text-secondary-fixed">support_agent</span>
+<h3 class="font-headline-md text-headline-md mb-2 relative z-10">Тусламж хэрэгтэй юу?</h3>
+<p class="font-body-md text-body-md text-primary-fixed-dim mb-6 relative z-10">Хүргэлтийн API холбоход манай инженерүүд туслах болно.</p>
+<button class="bg-secondary-container hover:bg-secondary text-on-secondary-container font-label-md text-label-md px-6 py-2 rounded-lg transition-colors relative z-10 w-full">Холбогдох</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+<script src="assets/site.js"></script></body></html>

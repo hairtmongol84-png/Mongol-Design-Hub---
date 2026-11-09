@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mongol Design Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "outline-variant": "#c5c6cd",
+                      "surface-bright": "#f7f9fb",
+                      "tertiary-fixed": "#d3e4fe",
+                      "on-tertiary-fixed-variant": "#38485d",
+                      "surface-variant": "#e0e3e5",
+                      "inverse-on-surface": "#eff1f3",
+                      "on-primary-container": "#8590a6",
+                      "secondary-container": "#fed65b",
+                      "surface-container-low": "#f2f4f6",
+                      "surface": "#f7f9fb",
+                      "on-tertiary-container": "#8191a9",
+                      "surface-container-high": "#e6e8ea",
+                      "on-surface-variant": "#45474c",
+                      "on-secondary": "#ffffff",
+                      "primary-container": "#1e293b",
+                      "surface-container": "#eceef0",
+                      "secondary-fixed-dim": "#e9c349",
+                      "on-background": "#191c1e",
+                      "tertiary": "#041528",
+                      "on-tertiary-fixed": "#0b1c30",
+                      "on-error": "#ffffff",
+                      "on-surface": "#191c1e",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-highest": "#e0e3e5",
+                      "primary-fixed-dim": "#bcc7de",
+                      "tertiary-fixed-dim": "#b7c8e1",
+                      "outline": "#75777d",
+                      "surface-dim": "#d8dadc",
+                      "primary": "#091426",
+                      "on-primary": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "error": "#ba1a1a",
+                      "on-secondary-fixed": "#241a00",
+                      "on-primary-fixed-variant": "#3c475a",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary-fixed-variant": "#574500",
+                      "secondary": "#735c00",
+                      "primary-fixed": "#d8e3fb",
+                      "inverse-primary": "#bcc7de",
+                      "on-error-container": "#93000a",
+                      "tertiary-container": "#1a2a3e",
+                      "on-secondary-container": "#745c00",
+                      "background": "#f7f9fb",
+                      "secondary-fixed": "#ffe088",
+                      "inverse-surface": "#2d3133",
+                      "on-primary-fixed": "#111c2d",
+                      "surface-tint": "#545f73"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "margin-desktop": "64px",
+                      "unit": "8px",
+                      "margin-mobile": "20px",
+                      "container-max": "1440px"
+              },
+              "fontFamily": {
+                      "label-caps": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.0",
+                                      "letterSpacing": "0.08em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased pt-16">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-gutter max-w-container-max mx-auto h-16 bg-surface-container-lowest border-b border-outline-variant">
+<div class="flex items-center gap-6">
+<a class="font-headline-md text-headline-md font-bold text-primary" href="#">Mongol Design Hub</a>
+<nav class="hidden md:flex gap-4">
+<a class="text-primary font-semibold border-b-2 border-primary pb-1" href="#">Marketplace</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Designers</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Licensing</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Compliance</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-on-surface-variant font-label-caps text-label-caps">Language: EN</span>
+<button class="text-on-surface-variant hover:bg-surface-container-low p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-container-low p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main>
+<!-- Hero Section -->
+<section class="relative h-[819px] min-h-[600px] flex items-center justify-center bg-surface-container-highest">
+<div class="absolute inset-0 z-0">
+<img alt="Hero Background" class="w-full h-full object-cover opacity-60" data-alt="A wide, ultra-high-resolution photograph of a pristine, modern manufacturing facility integrated with natural elements. The scene features raw Mongolian cashmere being carefully inspected under bright, even, daylight-balanced studio lighting. The setting feels luxurious, professional, and tectonic, conveying high-end global manufacturing. Subtle details of wood, glass, and metal are visible in the sophisticated background architecture. The overall aesthetic is corporate modern with a minimalist influence, emphasizing high-end materials." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_ZXXdMJvATnKx9URvB7pGmlhatIdzgqZ3b3smoUZEo8rKk3ENUeZzpB3--t1GmEGU5acN2SlYCdWCvTTFFdliupC_Nlikb6u96xtB6ePB4xTybY_jCflx7CKwMNyfe6ckAdmgYLPkn9oiQQPwval78zSp3XM3ztDJLXGEEcUbWyYKNkH6aTqXqpT5CWUfI05s27DtXZSsAr0vW4-IJDprKA4WdhkSzuJ3pdu_Y6KX3wja_K8THFV0G_X0YFTjH91FFnwbYAREzn0"/>
+</div>
+<div class="relative z-10 text-center max-w-4xl px-gutter mx-auto">
+<h1 class="font-display-lg text-display-lg text-primary mb-6 drop-shadow-sm">Монгол Дизайн:<br/>Уламжлалт Ур Ухаан, Орчин Үеийн Үйлдвэрлэл</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-2xl mx-auto">Bridging traditional Mongolian craftsmanship with high-tech global manufacturing. Discover the finest 'White Gold' cashmere, precision metalwork, and sustainable timber solutions.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-DEFAULT font-label-caps text-label-caps hover:bg-tertiary transition-colors">Submit Tender (Buyer)</button>
+<button class="border border-outline bg-surface-container-lowest text-primary px-8 py-4 rounded-DEFAULT font-label-caps text-label-caps hover:bg-surface-container-low transition-colors">Upload Design (Creator)</button>
+<button class="border border-secondary text-secondary px-8 py-4 rounded-DEFAULT font-label-caps text-label-caps hover:bg-secondary-container transition-colors">Open Store (Vendor)</button>
+</div>
+</div>
+</section>
+<!-- Featured Materials Bento Grid -->
+<section class="py-20 px-gutter max-w-container-max mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-12 text-center">Featured Materials &amp; Manufacturing</h2>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Large Feature: Cashmere -->
+<div class="md:col-span-8 group relative rounded-lg overflow-hidden border border-outline-variant bg-surface-bright h-[400px]">
+<img alt="Premium Cashmere" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="An extreme macro, high-resolution photograph of raw, un-dyed Mongolian white cashmere fibers. The texture is incredibly soft, light, and airy, illuminated by bright, diffused white lighting that highlights the microscopic quality of the material. The aesthetic is clean, luxurious, and editorial, sitting seamlessly within a corporate modern, high-end manufacturing context. The background is a stark, minimal bright white surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUD0uH2UndkCHDQ8avczACyYDFFYpRKDcfjldSfYQmvvK6aiG9k7CTloQCgQQ55umqqOhlXwqI8L_a54uW9L4bsjxmhyZakA0YAuMoNKxqldDYqcfiZAsyKnIKQeow5DZ-AT0uraGISjl-Sn0JNoh2ov_7TiLvUkn7Cn8kPfrzuJBhTDF0ZBjuNADHn5DhsRP2DxfoFm7XNv5EsiJfwXITerMpIsstS1We_wx0qWmROASpMafDP21QLunU5IGJVicl6pWljRUhozE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full">
+<span class="inline-block px-3 py-1 bg-surface-bright text-on-surface font-label-caps text-label-caps rounded mb-3">White Gold Collection</span>
+<h3 class="font-headline-md text-headline-md text-on-primary mb-2">Premium Bayankhongor Cashmere</h3>
+<p class="font-body-md text-body-md text-surface-container-high max-w-xl">Grade A, 14-micron sustainable fibers sourced directly from cooperative nomadic herders. Suitable for luxury textile manufacturing.</p>
+</div>
+</div>
+<!-- Small Feature: Wood -->
+<div class="md:col-span-4 group relative rounded-lg overflow-hidden border border-outline-variant bg-surface-bright h-[400px]">
+<img alt="Siberian Larch" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A detailed, close-up photograph of precisely milled Siberian Larch timber stacked neatly in a modern workshop. The wood grain is rich, warm, and highly textured, contrasting with the clean, tectonic lines of the industrial setting. The lighting is crisp, daylight-balanced, highlighting the high-quality finish and structural integrity of the material. The overall feel is authoritative, bespoke, and grounded in professional craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCypfHAvJk9Oezl3EHdxlTNilby3XP6rK3DT0YZ4KQf-m6IprwIigOy0wgqlX21_1Ojd7yJYm0drcV4Jiazj67YEfA9-qFurRTObM3FgCaIu0_3vYWNDMDN8FniM9cip-CPyQ_18D3nVxaFv8eS3eXAWrBKebHRiG7K1O439gyZNUlbRv1fRTV1vQ7hBeWROhe7PNIXeNNBUfbpDmN_BgQzzQNxK_VRTqmo9JqCQYGzSCExvsT848ufhsmN-Q2c3xN2yD7D-xA46Zc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full">
+<span class="inline-block px-3 py-1 bg-surface-bright text-on-surface font-label-caps text-label-caps rounded mb-3">Structural Timber</span>
+<h3 class="font-headline-md text-headline-md text-on-primary">Siberian Larch</h3>
+</div>
+</div>
+<!-- Small Feature: Metal -->
+<div class="md:col-span-6 group relative rounded-lg overflow-hidden border border-outline-variant bg-surface-bright h-[300px]">
+<img alt="Precision Metal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A high-resolution image showcasing a precision CNC-machined metal component resting on a pristine, minimalist surface. The metal is polished, reflecting clean, high-key studio lighting that emphasizes its exact tolerances and sleek design. The background is a muted, sophisticated gray (Surface-Muted), conveying an atmosphere of high-tech manufacturing, reliability, and institutional-grade engineering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7imLhOJ4Bd9sQxNlv0gL0rRCe0QkQgd8m7sJww-RbZmEJ5_b5NzgmIXmnZdHQvf9GK0yNg9kHyq2rlCgVqxDvwZp_1w1D97weWfEze2CEl8C9H7jFdswtF0QEAcfqdnsz0luf77f59tY-1bWCSzRPBEFWgqBec0xmPeoZIWwvVACKYoFLXVpEtDkcNcobaVJ646Rue348-G0ovJj1D60s2XFXgur9Lul73HyU89PiNbuFfdQ_XXKWxPnZSS4PWtl5OAAMnpe7EzA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full">
+<span class="inline-block px-3 py-1 bg-surface-bright text-on-surface font-label-caps text-label-caps rounded mb-3">Precision Manufacturing</span>
+<h3 class="font-headline-md text-headline-md text-on-primary">CNC Machined Alloys</h3>
+</div>
+</div>
+<!-- Small Feature: Glass -->
+<div class="md:col-span-6 group relative rounded-lg overflow-hidden border border-outline-variant bg-surface-bright h-[300px]">
+<img alt="Architectural Glass" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A striking architectural photograph focusing on a flawless, heavy-pane glass panel being installed or inspected. The lighting is bright and modern, creating sharp reflections and demonstrating the clarity and high-end finish of the material. The setting is a clean, tectonic industrial space, aligning with a corporate, sophisticated brand identity that values integrity and premium materials." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCB6CmO4KJcZysZwUjdtolvOwDrhE9DWANr8QWqEDzrbQAo-NQ3kUPwQP_qTw4tkbP49lPmbzHnt1090KKefRtPpMWT3qe0ZqtBSxwhq3DSTxdDUdngQqT19JBsfPbxERRt_M9KvUD1U97t2hZ38XMZh4b0m6iRiNxmU8wyY70TKW7WLUMcTom6OwuGm2kddGr9Wq5aW95NmNTQf6UZZ-8lS1zOnRPr8gM1FZ3LI0hl0w7cxjfptGMkugG1rDBkJe6p8BxZDcO5fZA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full">
+<span class="inline-block px-3 py-1 bg-surface-bright text-on-surface font-label-caps text-label-caps rounded mb-3">Architectural Elements</span>
+<h3 class="font-headline-md text-headline-md text-on-primary">Tempered Silica Glass</h3>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-gutter flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto gap-8 bg-primary">
+<div class="flex items-center gap-4">
+<span class="font-headline-md text-headline-md font-bold text-on-primary">Mongol Design Hub</span>
+</div>
+<nav class="flex flex-wrap justify-center gap-6">
+<a class="font-body-md text-body-md text-on-primary-container hover:text-on-primary transition-all hover:underline" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-primary-container hover:text-on-primary transition-all hover:underline" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-primary-container hover:text-on-primary transition-all hover:underline" href="#">Export Compliance</a>
+<a class="font-body-md text-body-md text-on-primary-container hover:text-on-primary transition-all hover:underline" href="#">Vendor Agreement</a>
+<a class="font-body-md text-body-md text-on-primary-container hover:text-on-primary transition-all hover:underline" href="#">Contact Us</a>
+</nav>
+<div class="font-body-md text-body-md text-on-primary-container text-center md:text-right">
+            © 2024 Mongol Design Hub. All Rights Reserved.
+        </div>
+</footer>
+<script src="assets/site.js"></script></body></html>

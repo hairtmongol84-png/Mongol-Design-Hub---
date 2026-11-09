@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Global Dashboard - Mongol Design Hub</title>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline-variant": "#c5c6cd",
+                    "surface-bright": "#f7f9fb",
+                    "tertiary-fixed": "#d3e4fe",
+                    "on-tertiary-fixed-variant": "#38485d",
+                    "surface-variant": "#e0e3e5",
+                    "inverse-on-surface": "#eff1f3",
+                    "on-primary-container": "#8590a6",
+                    "secondary-container": "#fed65b",
+                    "surface-container-low": "#f2f4f6",
+                    "surface": "#f7f9fb",
+                    "on-tertiary-container": "#8191a9",
+                    "surface-container-high": "#e6e8ea",
+                    "on-surface-variant": "#45474c",
+                    "on-secondary": "#ffffff",
+                    "primary-container": "#1e293b",
+                    "surface-container": "#eceef0",
+                    "secondary-fixed-dim": "#e9c349",
+                    "on-background": "#191c1e",
+                    "tertiary": "#041528",
+                    "on-tertiary-fixed": "#0b1c30",
+                    "on-error": "#ffffff",
+                    "on-surface": "#191c1e",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-highest": "#e0e3e5",
+                    "primary-fixed-dim": "#bcc7de",
+                    "tertiary-fixed-dim": "#b7c8e1",
+                    "outline": "#75777d",
+                    "surface-dim": "#d8dadc",
+                    "primary": "#091426",
+                    "on-primary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed": "#241a00",
+                    "on-primary-fixed-variant": "#3c475a",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed-variant": "#574500",
+                    "secondary": "#735c00",
+                    "primary-fixed": "#d8e3fb",
+                    "inverse-primary": "#bcc7de",
+                    "on-error-container": "#93000a",
+                    "tertiary-container": "#1a2a3e",
+                    "on-secondary-container": "#745c00",
+                    "background": "#f7f9fb",
+                    "secondary-fixed": "#ffe088",
+                    "inverse-surface": "#2d3133",
+                    "on-primary-fixed": "#111c2d",
+                    "surface-tint": "#545f73"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "margin-desktop": "64px",
+                    "unit": "8px",
+                    "margin-mobile": "20px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "label-caps": [
+                            "Inter"
+                    ],
+                    "headline-lg-mobile": [
+                            "Inter"
+                    ],
+                    "headline-lg": [
+                            "Inter"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "body-md": [
+                            "Inter"
+                    ],
+                    "headline-md": [
+                            "Inter"
+                    ],
+                    "display-lg": [
+                            "Inter"
+                    ]
+            },
+            "fontSize": {
+                    "label-caps": [
+                            "12px",
+                            {
+                                    "lineHeight": "1.0",
+                                    "letterSpacing": "0.08em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "28px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.5",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ]
+            }
+        },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased min-h-screen flex flex-col">
+<!-- TopNavBar (Shared Component) -->
+<header class="fixed top-0 w-full z-50 bg-surface-container-lowest border-b border-outline-variant">
+<div class="flex justify-between items-center px-gutter max-w-container-max mx-auto h-16">
+<!-- Brand -->
+<div class="flex items-center gap-4">
+<span class="font-headline-md text-headline-md font-bold text-primary">Mongol Design Hub</span>
+</div>
+<!-- Navigation Links (Web) -->
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-on-surface-variant hover:text-primary font-body-md text-body-md transition-colors" href="#">Marketplace</a>
+<a class="text-on-surface-variant hover:text-primary font-body-md text-body-md transition-colors" href="#">Designers</a>
+<a class="text-on-surface-variant hover:text-primary font-body-md text-body-md transition-colors" href="#">Licensing</a>
+<a class="text-on-surface-variant hover:text-primary font-body-md text-body-md transition-colors" href="#">Compliance</a>
+</nav>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-4">
+<span class="text-on-surface-variant font-body-md text-body-md hidden sm:block">Language: EN</span>
+<button class="text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center h-10 w-10 rounded-full hover:bg-surface-container-low" data-icon="notifications">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center h-10 w-10 rounded-full hover:bg-surface-container-low" data-icon="account_circle">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<div class="flex flex-1 pt-16">
+<!-- SideNavBar (Shared Component) -->
+<aside class="hidden lg:flex flex-col h-[calc(100vh-4rem)] fixed left-0 top-16 w-64 p-4 border-r border-outline-variant bg-surface-container-low z-40 overflow-y-auto">
+<!-- Profile Header -->
+<div class="flex items-center gap-4 mb-8 p-2">
+<img alt="Vendor Profile Image" class="w-12 h-12 rounded-full border border-outline-variant object-cover" data-alt="A professional headshot of a corporate vendor account manager. The individual has a composed, authoritative expression, dressed in a sleek charcoal blazer over a crisp white shirt. The background is a minimalist, softly lit office environment with neutral tones. High-resolution photography, corporate aesthetic, well-lit." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnIHEhxXnnruAFf4Qp5x0pTKx72Q5XRzwvkcfyGd1SymFEnn1pswIQuBOG2kQZ9sazVI4cEJz-hWSyqmwhYQ2cr628Nn1AFIE9hWSm765A2WLHlfxzx4t-ZcQEmOM0FwBL53W58Z48lULxVZJ4YUZK7T8C8WvibLkyDp3f2hfCq7_qxGTdVRlKBvzxDPjJkXIu8vSg9sFutb7-0x7paTWsKIRP8Y06evvqclT0Gwmzc03SLLm84leKE_gXegpmnJkimtuYDTuZ-v8"/>
+<div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-primary leading-tight">Vendor Dashboard</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-1">Premium Export Account</p>
+</div>
+</div>
+<!-- CTA -->
+<button class="w-full bg-primary text-on-primary rounded-xl py-3 px-4 font-label-caps text-label-caps flex items-center justify-center gap-2 mb-6 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined" style="font-size: 18px;">add</span>
+                New Listing
+            </button>
+<!-- Navigation Tabs -->
+<nav class="flex-1 space-y-1">
+<!-- Active Tab: Dashboard -->
+<a class="flex items-center gap-3 bg-primary-container text-on-primary-container rounded-lg px-4 py-2 font-label-caps text-label-caps transition-all opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                    Dashboard
+                </a>
+<!-- Inactive Tabs -->
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-variant rounded-lg font-label-caps text-label-caps transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+                    Inventory
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-variant rounded-lg font-label-caps text-label-caps transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+                    Orders
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-variant rounded-lg font-label-caps text-label-caps transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="gavel">gavel</span>
+                    Compliance
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-variant rounded-lg font-label-caps text-label-caps transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+                    Analytics
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-variant rounded-lg font-label-caps text-label-caps transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                    Settings
+                </a>
+</nav>
+<!-- Footer Tabs -->
+<div class="mt-auto pt-6 border-t border-outline-variant space-y-1">
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-variant rounded-lg font-label-caps text-label-caps transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+                    Support
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-2 hover:bg-surface-variant rounded-lg font-label-caps text-label-caps transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                    Sign Out
+                </a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 lg:ml-64 w-full">
+<div class="max-w-container-max mx-auto px-gutter py-margin-desktop space-y-8">
+<!-- Regional Compliance Alert Banner -->
+<div class="bg-error-container border border-error rounded-xl p-4 flex items-start gap-4 shadow-sm">
+<span class="material-symbols-outlined fill text-error mt-0.5" data-icon="warning">warning</span>
+<div class="flex-1">
+<h4 class="font-headline-md text-headline-md text-on-error-container mb-1">Urgent: Regional Compliance Updates</h4>
+<p class="font-body-md text-body-md text-on-error-container opacity-90">New export licensing requirements for the RU region take effect in 14 days. Please review your pending shipments to ensure compliance and avoid customs delays.</p>
+</div>
+<button class="px-4 py-2 bg-error text-on-error rounded-lg font-label-caps text-label-caps hover:opacity-90 transition-opacity whitespace-nowrap">
+                        Review Documents
+                    </button>
+</div>
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h1 class="font-display-lg text-display-lg text-on-background tracking-tight">Global Overview</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2">Real-time performance and logistics for your verified vendor account.</p>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-3 border border-outline-variant text-on-surface rounded-xl font-label-caps text-label-caps hover:bg-surface-container-low transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-size: 18px;">download</span>
+                            Export Data
+                        </button>
+</div>
+</div>
+<!-- Key Metrics Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-unit">
+<!-- Metric: USD Revenue -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 flex flex-col justify-between h-40">
+<div class="flex justify-between items-start">
+<span class="font-label-caps text-label-caps text-on-surface-variant">YTD Revenue (USD)</span>
+<span class="material-symbols-outlined text-secondary" style="font-size: 20px;">payments</span>
+</div>
+<div>
+<div class="font-display-lg text-headline-lg font-bold text-on-background">$1.24M</div>
+<div class="font-label-caps text-label-caps text-secondary mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined" style="font-size: 14px;">trending_up</span>
+                                +12.4% vs last quarter
+                            </div>
+</div>
+</div>
+<!-- Metric: MNT Revenue -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 flex flex-col justify-between h-40">
+<div class="flex justify-between items-start">
+<span class="font-label-caps text-label-caps text-on-surface-variant">YTD Revenue (MNT)</span>
+<span class="material-symbols-outlined text-outline" style="font-size: 20px;">account_balance</span>
+</div>
+<div>
+<div class="font-display-lg text-headline-lg font-bold text-on-background">₮4.2B</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant mt-2 flex items-center gap-1">
+                                Converted at current rate
+                            </div>
+</div>
+</div>
+<!-- Metric: Active Shipments -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 flex flex-col justify-between h-40">
+<div class="flex justify-between items-start">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Active Int'l Shipments</span>
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">local_shipping</span>
+</div>
+<div>
+<div class="font-display-lg text-headline-lg font-bold text-on-background">142</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant mt-2 flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                                12 requiring attention
+                            </div>
+</div>
+</div>
+<!-- Metric: Translation Pipeline -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 flex flex-col justify-between h-40">
+<div class="flex justify-between items-start">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Localization Pipeline</span>
+<span class="material-symbols-outlined text-outline" style="font-size: 20px;">translate</span>
+</div>
+<div>
+<div class="font-display-lg text-headline-lg font-bold text-on-background">85%</div>
+<div class="w-full bg-surface-variant rounded-full h-1.5 mt-3 mb-2">
+<div class="bg-primary h-1.5 rounded-full" style="width: 85%"></div>
+</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant flex justify-between">
+<span>Completed</span>
+<span>15 pending</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Data Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-unit">
+<!-- Left Column: Active Shipments (Spans 2 columns) -->
+<div class="lg:col-span-2 bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col">
+<div class="p-6 border-b border-outline-variant flex justify-between items-center">
+<h2 class="font-headline-md text-headline-md text-on-background">Active International Shipments</h2>
+<button class="text-primary font-label-caps text-label-caps hover:underline">View All</button>
+</div>
+<div class="overflow-x-auto flex-1">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-bright border-b border-outline-variant">
+<th class="p-4 font-label-caps text-label-caps text-on-surface-variant">Order ID</th>
+<th class="p-4 font-label-caps text-label-caps text-on-surface-variant">Destination</th>
+<th class="p-4 font-label-caps text-label-caps text-on-surface-variant">Value</th>
+<th class="p-4 font-label-caps text-label-caps text-on-surface-variant">Status</th>
+<th class="p-4 font-label-caps text-label-caps text-on-surface-variant">ETA</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md">
+<tr class="border-b border-surface-variant hover:bg-surface-bright transition-colors">
+<td class="p-4 font-semibold text-primary">#ORD-9921</td>
+<td class="p-4 text-on-surface">Beijing, CN</td>
+<td class="p-4 text-on-surface">$12,450</td>
+<td class="p-4">
+<span class="inline-flex items-center px-2.5 py-1 rounded-DEFAULT bg-surface-container text-on-surface-variant font-label-caps text-label-caps">
+                                                In Transit
+                                            </span>
+</td>
+<td class="p-4 text-on-surface-variant">Oct 12, 2024</td>
+</tr>
+<tr class="border-b border-surface-variant hover:bg-surface-bright transition-colors">
+<td class="p-4 font-semibold text-primary">#ORD-9918</td>
+<td class="p-4 text-on-surface">Moscow, RU</td>
+<td class="p-4 text-on-surface">$8,200</td>
+<td class="p-4">
+<span class="inline-flex items-center px-2.5 py-1 rounded-DEFAULT bg-error-container text-error font-label-caps text-label-caps">
+                                                Customs Hold
+                                            </span>
+</td>
+<td class="p-4 text-error">Pending</td>
+</tr>
+<tr class="border-b border-surface-variant hover:bg-surface-bright transition-colors">
+<td class="p-4 font-semibold text-primary">#ORD-9905</td>
+<td class="p-4 text-on-surface">New York, US</td>
+<td class="p-4 text-on-surface">$24,100</td>
+<td class="p-4">
+<span class="inline-flex items-center px-2.5 py-1 rounded-DEFAULT bg-surface-container text-on-surface-variant font-label-caps text-label-caps">
+                                                Departed Origin
+                                            </span>
+</td>
+<td class="p-4 text-on-surface-variant">Oct 15, 2024</td>
+</tr>
+<tr class="border-b border-surface-variant hover:bg-surface-bright transition-colors">
+<td class="p-4 font-semibold text-primary">#ORD-9899</td>
+<td class="p-4 text-on-surface">Ulaanbaatar, MN</td>
+<td class="p-4 text-on-surface">$3,500</td>
+<td class="p-4">
+<span class="inline-flex items-center px-2.5 py-1 rounded-DEFAULT bg-surface-container-high text-primary font-label-caps text-label-caps border border-primary">
+                                                Delivered
+                                            </span>
+</td>
+<td class="p-4 text-on-surface-variant">Oct 08, 2024</td>
+</tr>
+<tr class="hover:bg-surface-bright transition-colors">
+<td class="p-4 font-semibold text-primary">#ORD-9882</td>
+<td class="p-4 text-on-surface">Shanghai, CN</td>
+<td class="p-4 text-on-surface">$15,750</td>
+<td class="p-4">
+<span class="inline-flex items-center px-2.5 py-1 rounded-DEFAULT bg-surface-container text-on-surface-variant font-label-caps text-label-caps">
+                                                In Transit
+                                            </span>
+</td>
+<td class="p-4 text-on-surface-variant">Oct 14, 2024</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Right Column: Distribution & Translation (Spans 1 column) -->
+<div class="flex flex-col gap-unit">
+<!-- Regional Sales Distribution -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6">
+<h2 class="font-headline-md text-headline-md text-on-background mb-6">Regional Sales</h2>
+<div class="space-y-5">
+<!-- Region Item -->
+<div>
+<div class="flex justify-between items-end mb-1">
+<span class="font-body-md text-body-md text-on-background">China (CN)</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">42%</span>
+</div>
+<div class="w-full bg-surface-variant h-2 rounded-full">
+<div class="bg-primary h-2 rounded-full" style="width: 42%"></div>
+</div>
+</div>
+<!-- Region Item -->
+<div>
+<div class="flex justify-between items-end mb-1">
+<span class="font-body-md text-body-md text-on-background">United States (US)</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">28%</span>
+</div>
+<div class="w-full bg-surface-variant h-2 rounded-full">
+<div class="bg-primary h-2 rounded-full opacity-80" style="width: 28%"></div>
+</div>
+</div>
+<!-- Region Item -->
+<div>
+<div class="flex justify-between items-end mb-1">
+<span class="font-body-md text-body-md text-on-background">Mongolia (MN)</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">18%</span>
+</div>
+<div class="w-full bg-surface-variant h-2 rounded-full">
+<div class="bg-primary h-2 rounded-full opacity-60" style="width: 18%"></div>
+</div>
+</div>
+<!-- Region Item -->
+<div>
+<div class="flex justify-between items-end mb-1">
+<span class="font-body-md text-body-md text-on-background">Russia (RU)</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">12%</span>
+</div>
+<div class="w-full bg-surface-variant h-2 rounded-full">
+<div class="bg-primary h-2 rounded-full opacity-40" style="width: 12%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Translation Pipeline Widget -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 flex-1">
+<div class="flex justify-between items-center mb-6">
+<h2 class="font-headline-md text-headline-md text-on-background">Translation Pipeline</h2>
+<button class="text-outline hover:text-primary transition-colors" data-icon="more_horiz">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<div class="space-y-4">
+<!-- Pipeline Item -->
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-size: 16px;">pending_actions</span>
+</div>
+<div class="flex-1">
+<p class="font-body-md text-body-md text-on-background line-clamp-1">Premium Cashmere Throw - AW24</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="font-label-caps text-label-caps text-secondary">In Progress</span>
+<span class="text-outline text-xs">•</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">EN → RU</span>
+</div>
+</div>
+</div>
+<!-- Pipeline Item -->
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-on-surface-variant" style="font-size: 16px;">hourglass_empty</span>
+</div>
+<div class="flex-1">
+<p class="font-body-md text-body-md text-on-background line-clamp-1">Nomadic Wool Blend Overcoat</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="font-label-caps text-label-caps text-outline">Queued</span>
+<span class="text-outline text-xs">•</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">EN → CN</span>
+</div>
+</div>
+</div>
+<!-- Pipeline Item -->
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-primary" style="font-size: 16px;">check_circle</span>
+</div>
+<div class="flex-1">
+<p class="font-body-md text-body-md text-on-background line-clamp-1">Artisan Leather Tote Bag</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Completed</span>
+<span class="text-outline text-xs">•</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">MN → EN</span>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full mt-6 py-2 border border-outline-variant text-on-surface-variant rounded-lg font-label-caps text-label-caps hover:bg-surface-container-low transition-colors">
+                                View Full Pipeline
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer (Shared Component) -->
+<footer class="w-full py-12 px-gutter flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto gap-8 bg-primary text-on-primary mt-12">
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="font-headline-md text-headline-md font-bold text-on-primary">Mongol Design Hub</span>
+<span class="font-body-md text-body-md text-on-primary-container">© 2024 Mongol Design Hub. All Rights Reserved.</span>
+</div>
+<nav class="flex flex-wrap justify-center md:justify-end gap-6">
+<a class="text-on-primary-container hover:text-on-primary font-body-md text-body-md hover:underline transition-all" href="#">Privacy Policy</a>
+<a class="text-on-primary-container hover:text-on-primary font-body-md text-body-md hover:underline transition-all" href="#">Terms of Service</a>
+<a class="text-on-primary-container hover:text-on-primary font-body-md text-body-md hover:underline transition-all" href="#">Export Compliance</a>
+<a class="text-on-primary-container hover:text-on-primary font-body-md text-body-md hover:underline transition-all" href="#">Vendor Agreement</a>
+<a class="text-on-primary-container hover:text-on-primary font-body-md text-body-md hover:underline transition-all" href="#">Contact Us</a>
+</nav>
+</footer>
+</main>
+</div>
+<script src="assets/site.js"></script></body></html>

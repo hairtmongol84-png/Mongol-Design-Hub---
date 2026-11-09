@@ -1,0 +1,846 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-tint":"#545f73","secondary-fixed":"#ffe088","primary-container":"#1e293b","on-primary-fixed-variant":"#3c475a","inverse-on-surface":"#eff1f3","outline":"#75777d","secondary":"#735c00","on-tertiary-container":"#8191a9","surface-variant":"#e0e3e5","outline-variant":"#c5c6cd","tertiary-fixed":"#d3e4fe","on-error":"#ffffff","primary":"#091426","on-surface":"#191c1e","on-primary-fixed":"#111c2d","background":"#f7f9fb","primary-fixed-dim":"#bcc7de","inverse-primary":"#bcc7de","on-secondary-fixed-variant":"#574500","error":"#ba1a1a","on-secondary-fixed":"#241a00","error-container":"#ffdad6","on-error-container":"#93000a","on-secondary":"#ffffff","on-background":"#191c1e","on-secondary-container":"#745c00","inverse-surface":"#2d3133","surface-container-highest":"#e0e3e5","surface-container":"#eceef0","surface-container-high":"#e6e8ea","on-tertiary-fixed":"#0b1c30","tertiary-fixed-dim":"#b7c8e1","surface-bright":"#f7f9fb","on-primary-container":"#8590a6","surface-dim":"#d8dadc","on-tertiary-fixed-variant":"#38485d","secondary-fixed-dim":"#e9c349","primary-fixed":"#d8e3fb","surface-container-low":"#f2f4f6","secondary-container":"#fed65b","tertiary-container":"#1a2a3e","on-surface-variant":"#45474c","surface-container-lowest":"#ffffff","surface":"#f7f9fb","on-primary":"#ffffff","tertiary":"#041528","on-tertiary":"#ffffff"},borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},spacing:{"margin-desktop":"64px",unit:"8px","margin-mobile":"20px","container-max":"1440px",gutter:"24px"},fontFamily:{"display-lg":["Inter"],"headline-md":["Inter"],"body-lg":["Inter"],"label-caps":["Inter"],"headline-lg":["Inter"],"body-md":["Inter"],"headline-lg-mobile":["Inter"]},fontSize:{"display-lg":["48px",{lineHeight:"1.1",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-md":["24px",{lineHeight:"1.3",fontWeight:"600"}],"body-lg":["18px",{lineHeight:"1.6",fontWeight:"400"}],"label-caps":["12px",{lineHeight:"1.0",letterSpacing:"0.08em",fontWeight:"600"}],"headline-lg":["32px",{lineHeight:"1.2",fontWeight:"600"}],"body-md":["16px",{lineHeight:"1.5",fontWeight:"400"}],"headline-lg-mobile":["28px",{lineHeight:"1.2",fontWeight:"600"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 flex items-center px-6 gap-3 bg-surface-container-lowest"><div class="w-8 h-8 rounded bg-primary flex items-center justify-center text-on-primary font-headline-md text-headline-md">M</div><div class="flex flex-col"><span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Mongol Design Hub</span><span class="font-body-md text-body-md font-semibold text-primary">AI Ad Studio</span></div></div><div class="px-6 py-3"><div class="flex items-center justify-between px-3 py-2 bg-surface-container-low rounded"><span class="font-label-caps text-label-caps text-on-surface-variant">WORKSPACE</span><span class="font-label-caps text-label-caps text-secondary font-bold">PRO TIER</span></div></div><nav class="flex flex-col gap-1 px-4 mt-2" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded"><a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="campaigns-and-ad-manager" href="#"><span class="material-symbols-outlined text-[20px]">campaign</span><span class="">Campaigns &amp; Ad Manager</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="ai-creative-generator" href="#"><span class="material-symbols-outlined text-[20px]">auto_awesome</span><span class="">AI Creative Generator</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="audience-and-smart-targeting" href="#"><span class="material-symbols-outlined text-[20px]">group_add</span><span class="">Audience &amp; Smart Targeting</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="pixel-and-conversion-tracking" href="#"><span class="material-symbols-outlined text-[20px]">ads_click</span><span class="">Pixel &amp; Conversion Tracking</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="budget-and-automated-bidding" href="#"><span class="material-symbols-outlined text-[20px]">account_balance_wallet</span><span class="">Budget &amp; Automated Bidding</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="analytics-and-roas-insights" href="#"><span class="material-symbols-outlined text-[20px]">query_stats</span><span class="">Analytics &amp; ROAS Insights</span></a></nav></div><div class="p-4 flex flex-col gap-1"><div class="px-3 py-2 mb-2 bg-surface-container-low rounded flex items-center justify-between"><div class="flex flex-col"><span class="font-label-caps text-label-caps text-on-surface-variant">ACTIVE ENGINE</span><span class="font-label-caps text-label-caps text-on-surface font-semibold">Nexus AI v4.2</span></div><span class="w-2 h-2 rounded-full bg-secondary"></span></div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded"><a class="flex items-center gap-3 px-3 py-2 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="ad-policy-and-compliance" href="#"><span class="material-symbols-outlined text-[20px]">verified_user</span><span class="">Ad Policy &amp; Compliance</span></a><a class="flex items-center gap-3 px-3 py-2 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="help-and-documentation" href="#"><span class="material-symbols-outlined text-[20px]">help_center</span><span class="">Help &amp; Support</span></a></nav></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-8 flex items-center justify-between"><div class="flex items-center gap-3"><span class="font-label-caps text-label-caps text-on-surface-variant">GROWTH SUITE</span><span class="material-symbols-outlined text-outline text-[16px]">chevron_right</span><span class="font-body-md text-body-md text-on-surface font-medium">Global Campaigns</span></div><div class="flex items-center gap-5"><div class="flex items-center gap-3 px-3 py-1.5 bg-surface-container-low rounded"><span class="material-symbols-outlined text-secondary text-[18px]">toll</span><div class="flex items-center gap-1.5"><span class="font-label-caps text-label-caps text-on-surface-variant">CREDITS:</span><span class="font-label-caps text-label-caps font-bold text-on-surface">$2,450.00</span></div></div><div class="flex items-center gap-1 bg-surface-container-low px-2 py-1 rounded"><button class="font-label-caps text-label-caps px-2 py-0.5 rounded bg-surface-container-lowest text-primary shadow-[0_1px_4px_rgba(0,0,0,0.04)] font-bold" type="button">EN</button><button class="font-label-caps text-label-caps px-2 py-0.5 rounded text-on-surface-variant hover:text-on-surface transition-colors font-medium" type="button">MN</button></div><button class="w-8 h-8 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all relative" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="w-full pt-16 bg-surface"><div class="flex flex-col w-full">
+<div class="px-8 py-6 flex flex-col gap-6 max-w-[1440px] mx-auto w-full">
+<!-- AI COPILOT RECOMMENDATION BANNER -->
+<div class="relative overflow-hidden rounded-xl bg-gradient-to-r from-primary via-tertiary to-primary-container p-6 shadow-md text-on-primary">
+<div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-lg bg-secondary-container/20 flex items-center justify-center shrink-0 shadow-inner">
+<span class="material-symbols-outlined text-secondary-fixed text-[26px]">smart_toy</span>
+</div>
+<div class="flex flex-col gap-1 max-w-3xl">
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps uppercase tracking-wider text-secondary-fixed bg-secondary-container/20 px-2 py-0.5 rounded">Autonomous Engine Active</span>
+<span class="font-label-caps text-label-caps text-on-tertiary-container">• Nexus AI v4.2 Optimizer</span>
+</div>
+<p class="font-body-md text-body-md text-surface-bright leading-relaxed">
+<span class="font-semibold text-secondary-fixed">3 High-Converting Campaigns Active</span> (Avg. <strong class="text-surface-bright">4.60x ROAS</strong>). AI detected high weekend intent in Western Europe: increase <em class="not-italic text-secondary-fixed font-medium">Tier 1 US/DE Yak Wool Blanket</em> budget by <strong class="text-surface-bright">+$15.00/day</strong> to capture estimated <strong class="text-surface-bright">+38% conversion surge</strong>.
+            <div class="mt-2 pt-2 border-t border-surface-container-high/20 flex flex-wrap items-center gap-3 text-secondary-fixed text-[12px] font-label-caps"><span class="flex items-center gap-1 font-bold"><span class="material-symbols-outlined text-[16px]">monetization_on</span>Платформын өгөөж:</span><span class="">Борлуулагчийн зарын төсөв нэмэгдэхэд вэбсайт 12% суурь маржин + 3% амжилтын шимтгэл автоматаар хүлээн авна (+$5.85/өдөр цэвэр ашиг).</span></div></p>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0 self-end lg:self-center">
+<button class="px-4 py-2 rounded bg-surface-container-highest/20 hover:bg-surface-container-highest/30 text-surface-bright font-label-caps text-label-caps transition-all" type="button">
+            Review Impact
+          </button>
+<button class="px-5 py-2.5 rounded bg-secondary-container hover:bg-secondary-fixed text-on-secondary-container font-label-caps text-label-caps font-bold transition-all shadow-md flex items-center gap-2" id="applyAiBoostBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+<span class="">Apply AI Boost (+$15/d)</span>
+</button>
+</div>
+</div>
+<div class="absolute -right-16 -top-16 w-64 h-64 bg-secondary-fixed/5 rounded-full blur-3xl pointer-events-none"></div>
+</div>
+<!-- QUICK KPI METRIC CARDS -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Spend Card -->
+<div class="rounded-xl bg-surface-container-lowest p-5 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Total Ad Spend</span>
+<span class="w-8 h-8 rounded bg-surface-container-low flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+</span>
+</div>
+<div class="my-3">
+<div class="font-headline-md text-headline-md font-bold text-primary tracking-tight">$1,420.00</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant mt-0.5">₮4,970,000 MNT Equivalent</div>
+</div>
+<div class="flex items-center gap-2 pt-2 bg-surface-container-low/50 px-2 py-1 rounded">
+<span class="material-symbols-outlined text-[16px] text-secondary">trending_flat</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Within $1,500 monthly limit</span>
+</div>
+</div>
+<!-- Attributed GMV & ROAS Card -->
+<div class="rounded-xl bg-surface-container-lowest p-5 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Attributed GMV</span>
+<span class="px-2 py-0.5 rounded bg-secondary-container/40 text-on-secondary-container font-label-caps text-label-caps font-bold">4.80x ROAS</span>
+</div>
+<div class="my-3">
+<div class="font-headline-md text-headline-md font-bold text-primary tracking-tight">$6,816.00</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant mt-0.5">₮23,856,000 MNT Verified</div>
+</div>
+<div class="flex items-center gap-2 pt-2 bg-surface-container-low/50 px-2 py-1 rounded">
+<span class="material-symbols-outlined text-[16px] text-secondary font-bold">arrow_upward</span>
+<span class="font-label-caps text-label-caps text-secondary font-bold">+18.4% vs previous 7d</span>
+</div>
+</div>
+<!-- Orders & CPA Card -->
+<div class="rounded-xl bg-surface-container-lowest p-5 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Escrow Funded Orders</span>
+<span class="w-8 h-8 rounded bg-surface-container-low flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</span>
+</div>
+<div class="my-3">
+<div class="font-headline-md text-headline-md font-bold text-primary tracking-tight">214 Orders</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant mt-0.5">Blended CPA: $6.63 / order</div>
+</div>
+<div class="flex items-center gap-2 pt-2 bg-surface-container-low/50 px-2 py-1 rounded">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified_user</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">100% CN23 Escrow Secured</span>
+</div>
+</div>
+<!-- AI Optimization Score Card -->
+<div class="rounded-xl bg-surface-container-lowest p-5 shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">AI Health Score</span>
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+</div>
+<div class="flex items-center justify-between my-2">
+<div>
+<div class="font-headline-md text-headline-md font-bold text-primary tracking-tight">96<span class="text-outline text-headline-sm">/100</span></div>
+<div class="font-label-caps text-label-caps text-secondary font-semibold">Optimal Bidding Active</div>
+</div>
+<!-- Mini SVG Progress Donut -->
+<svg class="w-12 h-12 shrink-0 transform -rotate-90" viewBox="0 0 36 36">
+<path class="text-surface-container-high" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-secondary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="96, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+</div>
+<div class="flex items-center gap-2 pt-2 bg-surface-container-low/50 px-2 py-1 rounded">
+<span class="material-symbols-outlined text-[16px] text-primary">auto_fix_high</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">4 safeguards active</span>
+</div>
+</div>
+</div><div class="rounded-xl bg-surface-container-low border border-surface-container-high/40 p-5 shadow-sm flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-5"><div class="flex items-start gap-4"><div class="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-secondary text-[26px]">account_balance</span></div><div class="flex flex-col"><div class="flex items-center gap-2"><span class="font-headline-md text-headline-md font-bold text-primary">$423.38</span><span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-caps text-label-caps font-bold">+29.8% Маржин</span></div><div class="flex items-center gap-2 mt-0.5"><span class="font-label-caps text-label-caps font-bold text-secondary uppercase">Платформын Цэвэр Орлого</span><span class="font-label-caps text-label-caps text-on-surface-variant">(Platform Net Earnings from Ad Engine)</span></div><span class="font-label-caps text-label-caps text-outline mt-0.5">₮1,481,830 MNT цэвэр ашиг системд шууд хуримтлагдсан</span></div></div><div class="grid grid-cols-1 sm:grid-cols-3 gap-3 flex-1 lg:max-w-3xl"><div class="p-3 rounded-lg bg-surface-container-lowest shadow-xs flex flex-col justify-between"><div class="flex items-center justify-between text-on-surface-variant font-label-caps text-label-caps"><span class="">Ad Spend Platform Markup</span><span class="font-bold text-primary">12%</span></div><div class="font-headline-md text-headline-md font-bold text-primary mt-1">$170.40</div><span class="text-[11px] font-label-caps text-secondary font-medium mt-0.5">$1,420 зарын зардлын маржин</span></div><div class="p-3 rounded-lg bg-surface-container-lowest shadow-xs flex flex-col justify-between"><div class="flex items-center justify-between text-on-surface-variant font-label-caps text-label-caps"><span class="">AI Token &amp; Render Margin</span><span class="font-bold text-secondary">Cloud AI</span></div><div class="font-headline-md text-headline-md font-bold text-primary mt-1">$48.50</div><span class="text-[11px] font-label-caps text-outline mt-0.5">GPT-4o Vision &amp; 5K assets</span></div><div class="p-3 rounded-lg bg-surface-container-lowest shadow-xs flex flex-col justify-between"><div class="flex items-center justify-between text-on-surface-variant font-label-caps text-label-caps"><span class="">Performance Success Fee</span><span class="font-bold text-secondary">3% GMV</span></div><div class="font-headline-md text-headline-md font-bold text-primary mt-1">$204.48</div><span class="text-[11px] font-label-caps text-secondary font-semibold mt-0.5">$6,816 борлуулалтын шимтгэл</span></div></div></div>
+<!-- META ADS MANAGER STYLE CAMPAIGN TABLE SECTION -->
+<div class="rounded-xl bg-surface-container-lowest shadow-sm flex flex-col overflow-hidden">
+<!-- Top Level Tabs & Actions -->
+<div class="p-4 bg-surface-container-lowest flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<!-- Sub-tabs -->
+<div class="flex items-center gap-1 bg-surface-container-low p-1 rounded-lg">
+<button class="tab-btn px-4 py-2 rounded font-label-caps text-label-caps bg-surface-container-lowest text-primary font-bold shadow-sm transition-all flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[16px]">folder_copy</span>
+<span class="">Campaigns (4)</span>
+</button>
+<button class="tab-btn px-4 py-2 rounded font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-all flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[16px]">layers</span>
+<span class="">Ad Sets (11)</span>
+</button>
+<button class="tab-btn px-4 py-2 rounded font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface transition-all flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[16px]">image</span>
+<span class="">Creatives (28)</span>
+</button>
+</div>
+<!-- Quick Top Action Buttons -->
+<div class="flex flex-wrap items-center gap-2">
+<button class="px-3 py-2 rounded bg-surface-container-low hover:bg-surface-container-high text-on-surface font-label-caps text-label-caps flex items-center gap-1.5 transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+<span class="">Duplicate</span>
+</button>
+<button class="px-3 py-2 rounded bg-surface-container-low hover:bg-surface-container-high text-on-surface font-label-caps text-label-caps flex items-center gap-1.5 transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">science</span>
+<span class="">A/B Creative Test</span>
+</button>
+<button class="px-3 py-2 rounded bg-surface-container-low hover:bg-surface-container-high text-on-surface font-label-caps text-label-caps flex items-center gap-1.5 transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">download</span>
+<span class="">Export CSV</span>
+</button>
+<button class="px-4 py-2 rounded bg-primary hover:bg-primary-container text-on-primary font-label-caps text-label-caps font-bold flex items-center gap-2 shadow-sm transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span class="">+ Create AI Campaign</span>
+</button>
+</div>
+</div>
+<!-- Filters & Search Toolbar -->
+<div class="px-4 py-3 bg-surface-container-low/70 flex flex-wrap items-center justify-between gap-3">
+<div class="flex flex-wrap items-center gap-3 flex-1">
+<!-- Search input -->
+<div class="relative min-w-[240px] max-w-xs">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-on-surface-variant text-[18px]">search</span>
+<input class="w-full pl-9 pr-3 py-1.5 text-body-md font-body-md bg-surface-container-lowest rounded text-on-surface placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Search campaigns, SKUs..." type="text">
+</div>
+<!-- Status Dropdown Filter -->
+<div class="flex items-center gap-1 bg-surface-container-lowest px-3 py-1.5 rounded shadow-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Status:</span>
+<select class="bg-transparent font-label-caps text-label-caps text-on-surface font-semibold focus:outline-none cursor-pointer">
+<option>All Statuses</option>
+<option selected="">Active Only</option>
+<option>In Learning</option>
+<option>Paused</option>
+</select>
+</div>
+<!-- Objective Filter -->
+<div class="flex items-center gap-1 bg-surface-container-lowest px-3 py-1.5 rounded shadow-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Objective:</span>
+<select class="bg-transparent font-label-caps text-label-caps text-on-surface font-semibold focus:outline-none cursor-pointer">
+<option>All Objectives</option>
+<option selected="">Sales (0% VAT Export)</option>
+<option>B2B Tender Leads</option>
+<option>Luxury Brand Reach</option>
+</select>
+</div>
+</div>
+<!-- Date Range Filter -->
+<div class="flex items-center gap-2 bg-surface-container-lowest px-3 py-1.5 rounded shadow-xs">
+<span class="material-symbols-outlined text-on-surface-variant text-[16px]">calendar_today</span>
+<span class="font-label-caps text-label-caps font-semibold text-on-surface">Last 7 Days (Today: Apr 18)</span>
+<span class="material-symbols-outlined text-outline text-[16px]">arrow_drop_down</span>
+</div>
+</div>
+<!-- High-Density Data Table -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left text-body-md font-body-md border-collapse">
+<thead>
+<tr class="bg-surface-container-high/40 text-on-surface-variant font-label-caps text-label-caps uppercase tracking-wider">
+<th class="py-3 px-4 w-12 text-center">On</th>
+<th class="py-3 px-4 min-w-[280px]">Campaign Name &amp; Asset</th>
+<th class="py-3 px-4 min-w-[180px]">Delivery Status</th>
+<th class="py-3 px-4 text-right min-w-[100px]">Budget</th>
+<th class="py-3 px-4 text-right min-w-[120px]">Results</th>
+<th class="py-3 px-4 text-right min-w-[100px]">Reach</th>
+<th class="py-3 px-4 text-right min-w-[100px]">Impressions</th>
+<th class="py-3 px-4 text-right min-w-[90px]">Cost / Res.</th>
+<th class="py-3 px-4 text-right min-w-[100px]">Spend</th>
+<th class="py-3 px-4 text-right min-w-[90px]">ROAS</th><th class="py-3 px-4 text-right min-w-[120px] text-secondary font-bold">Platform Profit</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high/30">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3 px-4 text-center">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox">
+<div class="w-9 h-5 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-secondary"></div>
+</label>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-surface-container-high overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Close up weave of organic dark brown Mongolian yak wool blanket with rich tactile raw texture in studio light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzoD_RLgyFYFKNz-7wwLTuT0NDwm04o25mgQsy6rG18cTdBLgVrQrL_5UpGNo9iwOIq8O-9rw2T1e1wKdcKLFL4jF8iJ8kF63RbBfyFHvmBK9g2toz7YcydPt5fdxUOevk9rd-VUq9R6OQjuWsAZo4cIsRvmHSFPHuomrsotC-6wve_cvuM3ZOneKPp5UfaH3H0rrBhPNLK09ur9KUWBkzkLf1zFHbscqFdUmKEGs">
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md font-semibold text-primary truncate hover:underline cursor-pointer">Tier 1 US/DE — Yak Wool Luxury Throw</span>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-caps text-label-caps">
+<span class="">OBJ: 0% VAT Checkout</span>
+<span class="">•</span>
+<span class="text-secondary font-bold">Nexus AI Bid</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-caps text-label-caps font-semibold text-on-surface">Active (AI Learning Done)</span>
+</div>
+</td>
+<td class="py-3 px-4 text-right font-label-caps text-label-caps text-on-surface font-semibold">$45.00/day</td>
+<td class="py-3 px-4 text-right">
+<div class="font-body-md text-body-md font-bold text-primary">128 Orders</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">Escrow Funded</div>
+</td>
+<td class="py-3 px-4 text-right font-body-md text-body-md text-on-surface">34,190</td>
+<td class="py-3 px-4 text-right font-body-md text-body-md text-on-surface">62,800</td>
+<td class="py-3 px-4 text-right font-label-caps text-label-caps text-on-surface font-semibold">$5.62</td>
+<td class="py-3 px-4 text-right font-body-md text-body-md text-on-surface font-medium">$720.00</td>
+<td class="py-3 px-4 text-right">
+<span class="px-2 py-0.5 rounded bg-secondary-container/30 text-on-secondary-container font-label-caps text-label-caps font-bold">5.20x</span>
+</td><td class="py-3 px-4 text-right"><div class="font-label-caps text-label-caps font-bold text-primary">+$198.80</div><div class="text-[11px] font-label-caps text-secondary">$86.40 + 3% GMV</div></td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3 px-4 text-center">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox">
+<div class="w-9 h-5 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-secondary"></div>
+</label>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-surface-container-high overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Ultra fine white organic goat cashmere scarf styled on clean granite block with natural directional sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA01qJOl87Tz3Onpyc6O-aPSpXX1fuSvzSRU8ezpKiu42yIHzwAArE2BkWWt2KV4wBCwlHuns0W4sMHpoNZcmF2u4-JnZlv8t4-T0fq8rT8h1j0ToSdxxuBMEzHkIc5sNp6_pVzl1uQ-ebJiIRhGXtuK4g-e5TceAijCO0XQyhC_KoXhnLiNIR7HjeseDPLeLbYQdxNehVFJ9PCIwtXeB9nqY2lJM7dg1K5bMDFvGo">
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md font-semibold text-primary truncate hover:underline cursor-pointer">Global B2B — Raw White Cashmere Lot 108</span>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-caps text-label-caps">
+<span class="">OBJ: Custom Tender Bids</span>
+<span class="">•</span>
+<span class="">Targeting Italy / UK</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed-dim"></span>
+<span class="font-label-caps text-label-caps font-semibold text-on-surface">Learning (32/50 conv)</span>
+</div>
+</td>
+<td class="py-3 px-4 text-right font-label-caps text-label-caps text-on-surface font-semibold">$30.00/day</td>
+<td class="py-3 px-4 text-right">
+<div class="font-body-md text-body-md font-bold text-primary">54 Bids</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">Verified Mills</div>
+</td>
+<td class="py-3 px-4 text-right font-body-md text-body-md text-on-surface">18,400</td>
+<td class="py-3 px-4 text-right font-body-md text-body-md text-on-surface">31,210</td>
+<td class="py-3 px-4 text-right font-label-caps text-label-caps text-on-surface font-semibold">$8.33</td>
+<td class="py-3 px-4 text-right font-body-md text-body-md text-on-surface font-medium">$450.00</td>
+<td class="py-3 px-4 text-right">
+<span class="px-2 py-0.5 rounded bg-secondary-container/30 text-on-secondary-container font-label-caps text-label-caps font-bold">4.40x</span>
+</td><td class="py-3 px-4 text-right"><div class="font-label-caps text-label-caps font-bold text-primary">+$113.40</div><div class="text-[11px] font-label-caps text-secondary">$54.00 + 3% GMV</div></td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3 px-4 text-center">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox">
+<div class="w-9 h-5 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-secondary"></div>
+</label>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-surface-container-high overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Traditional handcrafted Mongolian leather saddle bag with intricate brass clasps on natural steppes background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiasfXy_rCIKC8QJdpHi82zhKYPjWyWBDG4hdCEjSQntyqMR0HA2vWiSoYzD7s8mktmHbLe6R2LQdCi5xtoY0lJmc7WNpEhjkCiFXQZLe7-xaO795bXteCPjnN7gUDoTNt9qMbY2XLHNLpFcRbN3Y9LoOhqKqewBFBxsWdZVWN2pBqfbuuNNGNo-Uh6at2vCAJVuSJzbOXR2IOHklczlNiFZIqK7g6YIiUmuZFfEE">
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md font-semibold text-primary truncate hover:underline cursor-pointer">APAC JP/KR — Artisan Steppe Leather Goods</span>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-caps text-label-caps">
+<span class="">OBJ: Direct Retail Sales</span>
+<span class="">•</span>
+<span class="">Lookalike 2%</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-caps text-label-caps font-semibold text-on-surface">Active (AI Learning Done)</span>
+</div>
+</td>
+<td class="py-3 px-4 text-right font-label-caps text-label-caps text-on-surface font-semibold">$20.00/day</td>
+<td class="py-3 px-4 text-right">
+<div class="font-body-md text-body-md font-bold text-primary">32 Orders</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">Escrow Funded</div>
+</td>
+<td class="py-3 px-4 text-right font-body-md text-body-md text-on-surface">12,650</td>
+<td class="py-3 px-4 text-right font-body-md text-body-md text-on-surface">22,040</td>
+<td class="py-3 px-4 text-right font-label-caps text-label-caps text-on-surface font-semibold">$7.81</td>
+<td class="py-3 px-4 text-right font-body-md text-body-md text-on-surface font-medium">$250.00</td>
+<td class="py-3 px-4 text-right">
+<span class="px-2 py-0.5 rounded bg-secondary-container/30 text-on-secondary-container font-label-caps text-label-caps font-bold">3.90x</span>
+</td><td class="py-3 px-4 text-right"><div class="font-label-caps text-label-caps font-bold text-primary">+$62.68</div><div class="text-[11px] font-label-caps text-secondary">$30.00 + 3% GMV</div></td>
+</tr>
+<!-- Row 4 (Paused) -->
+<tr class="hover:bg-surface-container-low/60 transition-colors opacity-75">
+<td class="py-3 px-4 text-center">
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox">
+<div class="w-9 h-5 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-secondary"></div>
+</label>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-surface-container-high overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Traditional nomad wool felt carpet with geometric blue cloud motif on wood floor in minimalist showroom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBL-3FSeHs2KDjIEczxX9wnWi9TFxqz_zSAGLo4mChmM7rX0BoAdvJNu9940Jp7ZhqARgrCrS9K0DUsZbG-8HnbcIVeELbM8RaheqBRirPWxcyZSrsubV5rxWXVswOoJYMzDmy9Kb-UAw-tw_qLnUWy2LXFlNrGqMec2WciUAK6CifP9cyQSWgBAi_7zrseXm2MrLihgh699H8bk99UfySE8Um1R3VslyZoUEA6lcU">
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md font-semibold text-primary truncate hover:underline cursor-pointer">Nomad Felt Rugs — Scandinavian Winter Push</span>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-caps text-label-caps">
+<span class="">OBJ: Brand Catalog Sales</span>
+<span class="">•</span>
+<span class="">Season Ended</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+<span class="font-label-caps text-label-caps font-semibold text-on-surface-variant">Paused by ROAS Guard</span>
+</div>
+</td>
+<td class="py-3 px-4 text-right font-label-caps text-label-caps text-on-surface-variant">$0.00/day</td>
+<td class="py-3 px-4 text-right">
+<div class="font-body-md text-body-md font-bold text-on-surface-variant">0 Orders</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">—</div>
+</td>
+<td class="py-3 px-4 text-right font-body-md text-body-md text-on-surface-variant">0</td>
+<td class="py-3 px-4 text-right font-body-md text-body-md text-on-surface-variant">0</td>
+<td class="py-3 px-4 text-right font-label-caps text-label-caps text-on-surface-variant">—</td>
+<td class="py-3 px-4 text-right font-body-md text-body-md text-on-surface-variant font-medium">$0.00</td>
+<td class="py-3 px-4 text-right">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps font-bold">2.8x (Halted)</span>
+</td><td class="py-3 px-4 text-right"><div class="font-label-caps text-label-caps font-bold text-outline">$0.00</div><div class="text-[11px] font-label-caps text-outline">Зогсоосон</div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer Summary -->
+<div class="p-3 bg-surface-container-low flex items-center justify-between font-label-caps text-label-caps text-on-surface-variant">
+<div class="">Showing 4 of 4 active campaigns • Currency in USD (₮ pegged auto-settled)</div>
+<div class="flex items-center gap-4">
+<span class="">Total Spend: <strong class="text-on-surface">$1,420.00</strong></span>
+<span class="">Avg ROAS: <strong class="text-secondary font-bold">4.80x</strong></span>
+<span class="pl-3 border-l border-surface-container-high">Платформын Цэвэр Ашиг: <strong class="text-primary font-bold">+$423.38</strong> (29.8%)</span></div>
+</div>
+</div>
+<!-- SPLIT PANEL: AI CREATIVE PLAYGROUND & LIVE AD PREVIEW -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- LEFT SIDE: AI Creative Engine (7 Cols) -->
+<div class="lg:col-span-7 rounded-xl bg-surface-container-lowest p-6 shadow-sm flex flex-col gap-6">
+<div class="flex items-center justify-between pb-2 border-b border-surface-container-high/40">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[24px]">auto_awesome</span>
+<h2 class="font-headline-md text-headline-md font-bold text-primary">AI Creative Studio &amp; Copy Engine</h2>
+</div>
+<span class="px-2 py-1 rounded bg-secondary-container/30 text-on-secondary-container font-label-caps text-label-caps font-bold">
+            GPT-4o Vision Fine-Tuned
+          </span>
+</div>
+<!-- Target Product Selector with 5000px badge -->
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps uppercase text-on-surface-variant">Target Manufacturing SKU / Master Listing</label>
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded bg-surface-container-high overflow-hidden shrink-0 shadow-xs">
+<img class="w-full h-full object-cover" data-alt="Microscopic tactile texture showing 100 percent natural yak down fibers in earthy charcoal tone with certification tag" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVaZ2mEtllfOvmpHw3ghovx9t0cub_pENXY3BNH397y0e6eUpnDcGViwcNdUmP1u935FfPcJ5YeY_f8gBS_dIGGlxGYbeJE4A0uES2RRDxbD_ViNrkwV1jQ9wrgBDQo3UeAOGq5pu3lm2p1ruOf4KconEm86G0LZmZP13-_-fJ68SuosXwAfXEIjDVojczJ7fdWKkKSQcWxR0k6xiqHJNh78LG9pC48gZREiykfRk">
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-bold text-primary">100% Organic Mongolian Yak Wool Blanket</span>
+<div class="flex items-center gap-2 font-label-caps text-label-caps text-on-surface-variant">
+<span class="text-secondary font-semibold">SKU: MNG-YAK-2024-EX</span>
+<span class="">•</span>
+<span class="">Origin: Arkhangai Highlands</span>
+<span class="">•</span>
+<span class="bg-surface-container-lowest px-1.5 py-0.2 rounded font-bold text-primary">5000px Verified Asset</span>
+</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline">unfold_more</span>
+</div>
+</div>
+<!-- Multi-Language Pill Selectors -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<label class="font-label-caps text-label-caps uppercase text-on-surface-variant">Target Locale / Language Engine</label>
+<span class="font-label-caps text-label-caps text-secondary font-semibold">Auto-Translates Compliance &amp; VAT Docs</span>
+</div>
+<div class="flex flex-wrap items-center gap-2" id="localePillGroup">
+<button class="locale-btn px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container-high font-label-caps text-label-caps text-on-surface transition-all flex items-center gap-1.5" type="button">
+<span class="">🇲🇳</span>
+<span class="">Монгол (MN)</span>
+</button>
+<button class="locale-btn px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-caps text-label-caps font-bold transition-all flex items-center gap-1.5 shadow-sm" type="button">
+<span class="">🇺🇸</span>
+<span class="">English (US / Global)</span>
+</button>
+<button class="locale-btn px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container-high font-label-caps text-label-caps text-on-surface transition-all flex items-center gap-1.5" type="button">
+<span class="">🇩🇪</span>
+<span class="">Deutsch (DE / DACH)</span>
+</button>
+<button class="locale-btn px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container-high font-label-caps text-label-caps text-on-surface transition-all flex items-center gap-1.5" type="button">
+<span class="">🇯🇵</span>
+<span class="">日本語 (JP)</span>
+</button>
+<button class="locale-btn px-3 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container-high font-label-caps text-label-caps text-on-surface transition-all flex items-center gap-1.5" type="button">
+<span class="">🇰🇷</span>
+<span class="">한국어 (KR)</span>
+</button>
+</div>
+</div>
+<!-- Tone Selection -->
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps uppercase text-on-surface-variant">Editorial Copy Tone</label>
+<div class="grid grid-cols-3 gap-2">
+<button class="tone-btn p-3 rounded-lg bg-primary-container text-surface-bright font-label-caps text-label-caps text-left transition-all" type="button">
+<div class="font-bold">Luxury &amp; Heritage</div>
+<div class="text-on-primary-container font-normal text-[11px] mt-0.5">High-society tactile storytelling</div>
+</button>
+<button class="tone-btn p-3 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container-high font-label-caps text-label-caps text-left transition-all" type="button">
+<div class="font-bold">Seasonal Surge</div>
+<div class="text-on-surface-variant font-normal text-[11px] mt-0.5">Limited wool clips, fast export</div>
+</button>
+<button class="tone-btn p-3 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container-high font-label-caps text-label-caps text-left transition-all" type="button">
+<div class="font-bold">Eco &amp; Traceable</div>
+<div class="text-on-surface-variant font-normal text-[11px] mt-0.5">Zero chemical dyes, nomadic care</div>
+</button>
+</div>
+</div>
+<!-- AI Generated Text Fields with Regenerate Micro-action -->
+<div class="flex flex-col gap-4 bg-surface-container-low/50 p-4 rounded-xl">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-primary font-bold uppercase">Dynamic Ad Copy Composition</span>
+<button class="text-secondary hover:text-on-secondary-container font-label-caps text-label-caps flex items-center gap-1 transition-colors" id="regenerateCopyBtn" type="button">
+<span class="material-symbols-outlined text-[16px]">refresh</span>
+<span class="">Regenerate Variant</span>
+</button>
+</div>
+<!-- Primary Text -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-caps text-label-caps text-on-surface-variant">Primary Text</label>
+<textarea class="w-full p-3 rounded bg-surface-container-lowest text-body-md font-body-md text-on-surface focus:outline-none focus:ring-1 focus:ring-primary shadow-xs leading-relaxed" id="adPrimaryInput" rows="3">Woven in the Mongolian sub-zero steppes. 30% warmer than standard sheep wool, ultra-breathable, and strictly unbleached. Order direct from nomad-certified cooperatives with zero export VAT.</textarea>
+</div>
+<!-- Headline & CTA Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-caps text-label-caps text-on-surface-variant">Headline</label>
+<input class="w-full px-3 py-2 rounded bg-surface-container-lowest text-body-md font-body-md font-semibold text-on-surface focus:outline-none focus:ring-1 focus:ring-primary shadow-xs" id="adHeadlineInput" type="text" value="Authentic Steppe Yak Wool — 0% VAT Global Delivery">
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-caps text-label-caps text-on-surface-variant">Call To Action (CTA)</label>
+<select class="w-full px-3 py-2 rounded bg-surface-container-lowest text-body-md font-body-md font-semibold text-on-surface focus:outline-none focus:ring-1 focus:ring-primary shadow-xs cursor-pointer" id="adCtaInput">
+<option selected="">Shop Now at 0% VAT</option>
+<option>Order Custom Tender</option>
+<option>Request Fabric Sample</option>
+<option>Explore Co-op Heritage</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Audience Matcher Preset -->
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">target</span>
+<span class="font-label-caps text-label-caps font-bold text-on-surface uppercase">AI Audience Matcher Preset</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-lowest font-label-caps text-label-caps text-secondary font-bold">Lookalike 1% Meta AI</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+<div class="p-3 rounded bg-surface-container-lowest shadow-xs flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Target Geographies</span>
+<span class="font-body-md text-body-md font-bold text-primary mt-1">USA, Germany, UK</span>
+<span class="font-label-caps text-label-caps text-outline text-[11px]">Metropolitan High-Income</span>
+</div>
+<div class="p-3 rounded bg-surface-container-lowest shadow-xs flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Estimated Audience</span>
+<span class="font-body-md text-body-md font-bold text-primary mt-1">1,400,000 People</span>
+<span class="font-label-caps text-label-caps text-secondary text-[11px] font-semibold">High affinity for Eco-Luxury</span>
+</div>
+<div class="p-3 rounded bg-surface-container-lowest shadow-xs flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Seed Source</span>
+<span class="font-body-md text-body-md font-bold text-primary mt-1">Past Cashmere Buyers</span>
+<span class="font-label-caps text-label-caps text-outline text-[11px]">Pixel-verified GMV &gt; $250</span>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT SIDE: Live Interactive Facebook / Instagram Ad Mockup (5 Cols) -->
+<div class="lg:col-span-5 flex flex-col gap-4">
+<!-- Preview Device Format Controller -->
+<div class="flex items-center justify-between bg-surface-container-lowest p-2 rounded-xl shadow-sm">
+<div class="flex items-center gap-1">
+<button class="format-btn px-3 py-1.5 rounded font-label-caps text-label-caps bg-primary text-on-primary font-bold flex items-center gap-1.5 transition-all" id="viewDesktop" type="button">
+<span class="material-symbols-outlined text-[16px]">desktop_windows</span>
+<span class="">Feed 1:1</span>
+</button>
+<button class="format-btn px-3 py-1.5 rounded font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface flex items-center gap-1.5 transition-all" id="viewReels" type="button">
+<span class="material-symbols-outlined text-[16px]">stay_current_portrait</span>
+<span class="">Reels 9:16</span>
+</button>
+<button class="format-btn px-3 py-1.5 rounded font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface flex items-center gap-1.5 transition-all" id="viewCarousel" type="button">
+<span class="material-symbols-outlined text-[16px]">view_carousel</span>
+<span class="">Carousel</span>
+</button>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant text-[13px] px-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-caps text-label-caps">Pixel Linked</span>
+</div>
+</div>
+<!-- Realistic Meta Ad Card Container -->
+<div class="rounded-xl bg-surface-container-lowest shadow-md overflow-hidden transition-all duration-300" id="mockupCard">
+<!-- Meta Header -->
+<div class="p-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary font-headline-md text-headline-md shrink-0 shadow-inner">
+                M
+              </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="font-body-md text-body-md font-bold text-primary">Mongol Design Hub</span>
+<span class="material-symbols-outlined text-secondary text-[16px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="flex items-center gap-1 text-outline font-label-caps text-label-caps">
+<span class="">Sponsored</span>
+<span class="">•</span>
+<span class="material-symbols-outlined text-[12px]">public</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2 text-outline">
+<span class="material-symbols-outlined text-[20px] cursor-pointer">more_horiz</span>
+</div>
+</div>
+<!-- Ad Primary Text Field in Mockup -->
+<div class="px-4 pb-3">
+<p class="font-body-md text-body-md text-on-surface leading-snug" id="previewPrimaryText">
+              Woven in the Mongolian sub-zero steppes. 30% warmer than standard sheep wool, ultra-breathable, and strictly unbleached. Order direct from nomad-certified cooperatives with zero export VAT.
+            </p>
+</div>
+<!-- Dynamic Product Image with 0% VAT Badge -->
+<div class="relative w-full aspect-square bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="High luxury shot of heavy knit dark chocolate brown Mongolian yak wool throw draped on minimalist oak chair in sunlit Scandinavian loft" id="previewMedia" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPntdALhxfbQtvbgapVSc-qaZ_8p2wv-vEQAnfQxIJxJCdtqmNz3YndsTn1-U9KNlYhvGNs4gUUIvX6sDeEFoErjJGdr1U5G2sq25lNz180-DzU3n1IgPbuYL4RoC2Oudi7UYbUH_sszs2z75hGCGft9CZ1jWBmyL1NG8gGna4ZsFYNqxF10DQHEvYiZJdAN_aRSS3WAACKlfIUSa6WePYMeEi9sCKJ08jEBBbmnk">
+<!-- Superimposed Cross-border export badge -->
+<div class="absolute top-3 left-3 bg-primary/90 backdrop-blur-md px-3 py-1.5 rounded flex items-center gap-2 text-surface-bright shadow-md">
+<span class="material-symbols-outlined text-secondary-fixed text-[16px]">verified_user</span>
+<span class="font-label-caps text-label-caps font-bold tracking-wide">0% VAT &amp; CN23 CUSTOMS INCLUDED</span>
+</div>
+<!-- Authentic Nomad Certified Tag -->
+<div class="absolute bottom-3 right-3 bg-surface-container-lowest/90 backdrop-blur-md px-2.5 py-1 rounded text-primary font-label-caps text-label-caps font-bold shadow-sm">
+              Batch #MNG-8891 • 5000px Verified
+            </div>
+</div>
+<!-- Ad Action Footer (Meta Style) -->
+<div class="p-4 bg-surface-container-low flex items-center justify-between gap-3">
+<div class="flex flex-col min-w-0">
+<span class="font-label-caps text-label-caps text-outline uppercase truncate">mongoldesignhub.com/yak-blanket</span>
+<span class="font-body-md text-body-md font-bold text-primary truncate" id="previewHeadline">Authentic Steppe Yak Wool — 0% VAT Global Delivery</span>
+</div>
+<button class="shrink-0 px-5 py-2.5 rounded bg-primary hover:bg-primary-container text-on-primary font-label-caps text-label-caps font-bold transition-all shadow-sm" id="previewCtaButton" type="button">
+              Shop Now at 0% VAT
+            </button>
+</div>
+<!-- Social Engagement Mockup -->
+<div class="px-4 py-3 border-t border-surface-container-high/30 flex items-center justify-between text-outline font-label-caps text-label-caps">
+<div class="flex items-center gap-2">
+<div class="flex -space-x-1">
+<span class="w-5 h-5 rounded-full bg-secondary flex items-center justify-center text-white text-[10px]">
+<span class="material-symbols-outlined text-[12px]">thumb_up</span>
+</span>
+<span class="w-5 h-5 rounded-full bg-error flex items-center justify-center text-white text-[10px]">
+<span class="material-symbols-outlined text-[12px]">favorite</span>
+</span>
+</div>
+<span class="text-on-surface-variant font-medium">842 likes</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="">96 comments</span>
+<span class="">•</span>
+<span class="">143 shares</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- AI BIDDING & ROAS SAFEGUARD CONTROLS SECTION -->
+<div class="rounded-xl bg-surface-container-lowest p-6 shadow-sm flex flex-col gap-6">
+<div class="flex items-center justify-between pb-3 border-b border-surface-container-high/40">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[24px]">shield</span>
+<h2 class="font-headline-md text-headline-md font-bold text-primary">Autonomous ROAS Safeguards &amp; Bidding Protection</h2>
+</div>
+<span class="font-label-caps text-label-caps text-secondary font-semibold flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+          Safeguards Armed &amp; Monitoring Meta Graph API
+        </span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Safeguard 1: Target ROAS Threshold Slider -->
+<div class="flex flex-col gap-4 p-5 rounded-xl bg-surface-container-low">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-bold text-primary">Minimum ROAS Floor Safeguard</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant mt-0.5">Automatically halts ad set if attribution dips below threshold for 48h</span>
+</div>
+<div class="text-right">
+<span class="font-headline-md text-headline-md font-bold text-secondary" id="roasDisplayVal">3.5x</span>
+<span class="font-label-caps text-label-caps text-outline block">TARGET FLOOR</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<input class="w-full h-2 bg-surface-container-high rounded-lg appearance-none cursor-pointer accent-secondary" id="roasSlider" max="6.0" min="2.0" step="0.1" type="range" value="3.5">
+<div class="flex justify-between font-label-caps text-label-caps text-outline">
+<span class="">2.0x (Aggressive Reach)</span>
+<span class="">3.5x (Safe Balance)</span>
+<span class="">5.0x (High Profit Margin)</span>
+</div>
+</div>
+<div class="p-3 rounded bg-surface-container-lowest flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px]">info</span>
+<p class="font-label-caps text-label-caps text-on-surface-variant leading-tight">
+              Currently, 3 campaigns satisfy this policy. 1 Scandinavian felt rug campaign was automatically halted on Apr 14 when its 48h rolling ROAS dropped to 2.8x.
+            </p>
+</div>
+</div>
+<!-- Safeguard 2: Smart Budget Reallocation Engine -->
+<div class="flex flex-col justify-between p-5 rounded-xl bg-surface-container-low">
+<div class="flex items-start justify-between gap-4">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-body-md text-body-md font-bold text-primary">Dynamic Multi-Region Capital Rebalancer</span>
+<span class="px-2 py-0.2 rounded bg-secondary-container/40 text-on-secondary-container font-label-caps text-label-caps font-bold">PRO</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 leading-snug">
+                Autonomously shifts up to 25% of unspent daily budget from low-conversion time windows to highest-performing countries (e.g. US West Coast evening surge).
+              </p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0 mt-1">
+<input checked="" class="sr-only peer" id="smartRebalanceToggle" type="checkbox">
+<div class="w-11 h-6 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+</label>
+</div>
+<!-- Distribution Visualization -->
+<div class="mt-4 pt-4 border-t border-surface-container-high/40 flex flex-col gap-2">
+<div class="flex justify-between font-label-caps text-label-caps text-on-surface-variant">
+<span class="">Dynamic Allocation: USA (54%)</span>
+<span class="">Germany (28%)</span>
+<span class="">UK/Nordics (18%)</span>
+</div>
+<div class="w-full h-3 bg-surface-container-high rounded-full overflow-hidden flex">
+<div class="h-full bg-primary" style="width: 54%"></div>
+<div class="h-full bg-secondary" style="width: 28%"></div>
+<div class="h-full bg-surface-tint" style="width: 18%"></div>
+</div>
+<div class="flex items-center justify-between text-[11px] font-label-caps text-outline mt-1">
+<span class="">Next algorithm reassessment in: 14 mins</span>
+<span class="text-secondary font-semibold">Saved $142 in off-peak bids today</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Dynamic Ad Copy & Interaction Controller
+  const adPrimaryInput = document.getElementById('adPrimaryInput');
+  const adHeadlineInput = document.getElementById('adHeadlineInput');
+  const adCtaInput = document.getElementById('adCtaInput');
+  
+  const previewPrimaryText = document.getElementById('previewPrimaryText');
+  const previewHeadline = document.getElementById('previewHeadline');
+  const previewCtaButton = document.getElementById('previewCtaButton');
+  
+  // Two-way bindings for Live Preview
+  if (adPrimaryInput && previewPrimaryText) {
+    adPrimaryInput.addEventListener('input', (e) => {
+      previewPrimaryText.textContent = e.target.value;
+    });
+  }
+
+  if (adHeadlineInput && previewHeadline) {
+    adHeadlineInput.addEventListener('input', (e) => {
+      previewHeadline.textContent = e.target.value;
+    });
+  }
+
+  if (adCtaInput && previewCtaButton) {
+    adCtaInput.addEventListener('change', (e) => {
+      previewCtaButton.textContent = e.target.value;
+    });
+  }
+
+  // ROAS Slider Live Output
+  const roasSlider = document.getElementById('roasSlider');
+  const roasDisplayVal = document.getElementById('roasDisplayVal');
+  if (roasSlider && roasDisplayVal) {
+    roasSlider.addEventListener('input', (e) => {
+      roasDisplayVal.textContent = parseFloat(e.target.value).toFixed(1) + 'x';
+    });
+  }
+
+  // AI 1-Click Boost Banner micro-action
+  const applyAiBoostBtn = document.getElementById('applyAiBoostBtn');
+  if (applyAiBoostBtn) {
+    applyAiBoostBtn.addEventListener('click', () => {
+      applyAiBoostBtn.innerHTML = '<span class="material-symbols-outlined text-[18px]">check_circle</span><span>Boost Applied (+$15/d)</span>';
+      applyAiBoostBtn.classList.remove('bg-secondary-container');
+      applyAiBoostBtn.classList.add('bg-primary', 'text-on-primary');
+      setTimeout(() => {
+        applyAiBoostBtn.disabled = true;
+      }, 300);
+    });
+  }
+
+  // Locale Pill selector switching
+  const localeButtons = document.querySelectorAll('.locale-btn');
+  const localeCopies = {
+    'Монгол (MN)': {
+      primary: 'Монголын онгон дагшин бэлчээрийн сарлагийн хөөвөр. Ноолуураас 30% дулаан, химийн будаггүй цэвэр экологийн бүтээгдэхүүн. Хил дамнасан экспорт, НӨАТ-гүй шууд хүргэлт.',
+      headline: 'Органик Сарлагийн Хөөвөр Хөнжил — Дэлхийн Шууд Хүргэлт'
+    },
+    'English (US / Global)': {
+      primary: 'Woven in the Mongolian sub-zero steppes. 30% warmer than standard sheep wool, ultra-breathable, and strictly unbleached. Order direct from nomad-certified cooperatives with zero export VAT.',
+      headline: 'Authentic Steppe Yak Wool — 0% VAT Global Delivery'
+    },
+    'Deutsch (DE / DACH)': {
+      primary: 'Gewebt in den mongolischen Steppen. 30% wärmer als herkömmliche Schafwolle, ungefärbt und atmungsaktiv. Bestellen Sie direkt von bio-zertifizierten Kooperativen ohne Exportsteuer.',
+      headline: 'Echte Mongolische Yakwolle — 0% MwSt. Direktversand'
+    },
+    '日本語 (JP)': {
+      primary: 'モンゴルの大自然で育まれたヤクウール100%。羊毛より30%暖かく、染色無しの極上ブランケット。工房直送、輸出関税免税サポート。',
+      headline: 'モンゴル産最高級ヤクウール毛布 — 免税直送'
+    },
+    '한국어 (KR)': {
+      primary: '몽골 고원 유목민의 전통 야크 울 100%. 일반 양모보다 30% 뛰어난 보온성과 무염색 천연 섬유. 수출 부가세 0% 직배송 보장.',
+      headline: '몽골산 프리미엄 야크 울 블랭킷 — 0% 부가세 직배송'
+    }
+  };
+
+  localeButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      localeButtons.forEach(b => {
+        b.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm', 'font-bold');
+        b.classList.add('bg-surface-container-low', 'text-on-surface');
+      });
+      btn.classList.remove('bg-surface-container-low', 'text-on-surface');
+      btn.classList.add('bg-primary', 'text-on-primary', 'shadow-sm', 'font-bold');
+
+      const localeKey = btn.innerText.trim();
+      for (const [key, data] of Object.entries(localeCopies)) {
+        if (localeKey.includes(key.split(' ')[0])) {
+          adPrimaryInput.value = data.primary;
+          previewPrimaryText.textContent = data.primary;
+          adHeadlineInput.value = data.headline;
+          previewHeadline.textContent = data.headline;
+          break;
+        }
+      }
+    });
+  });
+
+  // Regenerate Copy Micro-action
+  const regenerateCopyBtn = document.getElementById('regenerateCopyBtn');
+  if (regenerateCopyBtn) {
+    const variations = [
+      {
+        primary: "Engineered by nature for extreme -40°C winters. Ultra-plush Mongolian yak down with full blockchain traceability. Certified zero VAT for international freight.",
+        headline: "Nomadic Heritage Yak Wool Throw — Verified Provenance"
+      },
+      {
+        primary: "Experience the unblemished warmth of Central Asian highland wool. Sustainable, ethical nomad harvest with 0% export tariffs. Direct-from-maker guarantee.",
+        headline: "Master-Grade Yak Blanket — Direct from Mongolian Makers"
+      }
+    ];
+    let vIdx = 0;
+    regenerateCopyBtn.addEventListener('click', () => {
+      const v = variations[vIdx % variations.length];
+      adPrimaryInput.value = v.primary;
+      previewPrimaryText.textContent = v.primary;
+      adHeadlineInput.value = v.headline;
+      previewHeadline.textContent = v.headline;
+      vIdx++;
+    });
+  }
+
+  // Device Format Preview Toggles
+  const formatButtons = document.querySelectorAll('.format-btn');
+  const previewMedia = document.getElementById('previewMedia');
+  const mockupCard = document.getElementById('mockupCard');
+
+  formatButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      formatButtons.forEach(b => {
+        b.classList.remove('bg-primary', 'text-on-primary', 'font-bold');
+        b.classList.add('text-on-surface-variant');
+      });
+      btn.classList.add('bg-primary', 'text-on-primary', 'font-bold');
+      btn.classList.remove('text-on-surface-variant');
+
+      if (btn.id === 'viewReels') {
+        previewMedia.parentElement.classList.remove('aspect-square');
+        previewMedia.parentElement.classList.add('aspect-[9/14]');
+      } else {
+        previewMedia.parentElement.classList.remove('aspect-[9/14]');
+        previewMedia.parentElement.classList.add('aspect-square');
+      }
+    });
+  });
+</script></main></div>
+
+<script src="assets/site.js"></script></body></html>

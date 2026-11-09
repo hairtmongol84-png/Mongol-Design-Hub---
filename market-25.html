@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html lang="mn"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Захиалгын явц - Mongol Design Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error": "#ffffff",
+                    "surface-dim": "#cbdbf5",
+                    "on-primary-fixed-variant": "#3c475a",
+                    "surface-bright": "#f8f9ff",
+                    "surface-tint": "#545f73",
+                    "surface-container": "#e5eeff",
+                    "tertiary": "#001815",
+                    "outline-variant": "#c5c6cd",
+                    "on-surface-variant": "#45474c",
+                    "surface-container-low": "#eff4ff",
+                    "on-tertiary": "#ffffff",
+                    "outline": "#75777d",
+                    "surface-container-high": "#dce9ff",
+                    "on-secondary-fixed-variant": "#783200",
+                    "on-error-container": "#93000a",
+                    "on-background": "#0b1c30",
+                    "error": "#ba1a1a",
+                    "inverse-primary": "#bcc7de",
+                    "surface": "#f8f9ff",
+                    "background": "#f8f9ff",
+                    "secondary-fixed-dim": "#ffb690",
+                    "secondary-fixed": "#ffdbca",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed-dim": "#6bd8cb",
+                    "tertiary-container": "#002f2a",
+                    "primary-fixed": "#d8e3fb",
+                    "on-tertiary-fixed-variant": "#005049",
+                    "on-secondary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "on-surface": "#0b1c30",
+                    "tertiary-fixed": "#89f5e7",
+                    "inverse-surface": "#213145",
+                    "secondary": "#9d4300",
+                    "primary": "#091426",
+                    "secondary-container": "#fd761a",
+                    "primary-container": "#1e293b",
+                    "on-tertiary-fixed": "#00201d",
+                    "on-secondary-container": "#5c2400",
+                    "on-primary-fixed": "#111c2d",
+                    "on-primary-container": "#8590a6",
+                    "primary-fixed-dim": "#bcc7de",
+                    "on-tertiary-container": "#28a094",
+                    "on-secondary-fixed": "#341100",
+                    "inverse-on-surface": "#eaf1ff",
+                    "surface-variant": "#d3e4fe",
+                    "error-container": "#ffdad6",
+                    "surface-container-highest": "#d3e4fe"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1280px",
+                    "margin": "32px",
+                    "gutter": "24px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "label-md": ["Inter"],
+                    "headline-xl": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "headline-xl": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface surface-container-lowest text-on-surface font-label-md full-width top-0 z-50 border-b border-outline-variant/30 shadow-sm flex justify-between items-center px-6 h-16 w-full max-w-[1280px] mx-auto">
+<div class="flex items-center gap-4">
+<span class="text-xl font-bold tracking-tight text-primary">Nexus Logistics</span>
+</div>
+<nav class="hidden md:flex gap-6 items-center">
+<!-- Order tracking is not a top-level nav destination, so hiding generic links here to prioritize the linear flow -->
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:bg-surface-variant/50 transition-colors cursor-pointer active:opacity-80 p-2 rounded-full">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-variant/50 transition-colors cursor-pointer active:opacity-80 p-2 rounded-full">
+<span class="material-symbols-outlined">help</span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-variant/50 transition-colors cursor-pointer active:opacity-80 p-2 rounded-full">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<img alt="User Profile Avatar" class="w-8 h-8 rounded-full border border-outline-variant cursor-pointer active:opacity-80 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVr7dL33rwD3DZYLN45bagikl4zHHa3oUGmDMwDbf6YIlxDtEXCO8lFpujLl1u69zYjCHhQOjNXU_rzLVNOf4bT6OoE0r4nBgag1xkYcKt4teHL_A3AoRuVHlsxPdGTQW28hJbOIDETuJ-NVUEVoSR_cwkzja0_GtoscYaBU5y6T2Qhzic7CvECyg4P_QK9a_C1SazTG-qAsz16Zoi7x4CcX9oodt_CVphVPW1dpmF8nQRMHD4euWhmEko6RmwWqOQRdHiveZL9l4"/>
+</div>
+</header>
+<div class="flex flex-1 overflow-hidden">
+<!-- SideNavBar (Suppressed due to linear/task-focused nature of order tracking) -->
+<!-- Suppressing SideNav for transactional/tracking view -->
+<!-- Main Content Canvas -->
+<main class="flex-1 overflow-y-auto w-full max-w-[1280px] mx-auto p-6 md:p-8 lg:p-margin">
+<div class="mb-8">
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors font-label-md mb-4">
+<span class="material-symbols-outlined text-sm">arrow_back</span>
+                    Буцах
+                </button>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-primary mb-2">Захиалгын явц</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Захиалга: #MDH-2023-84729</p>
+</div>
+<div class="flex items-center gap-2 bg-secondary-container/10 px-4 py-2 rounded-full">
+<span class="w-2.5 h-2.5 bg-secondary rounded-full animate-pulse"></span>
+<span class="font-label-md text-label-md text-secondary">Хүргэлтэнд гарсан</span>
+</div>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Column: Map & Delivery Info -->
+<div class="lg:col-span-8 flex flex-col gap-gutter">
+<!-- Map Visualization Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/30 overflow-hidden flex flex-col">
+<div class="h-64 md:h-96 w-full bg-surface-dim relative" data-alt="clean minimalist map visualization of Ulaanbaatar city with tracking route overlay" data-location="Ulaanbaatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD53ikTp29gOvfIqBdVY_M2CoaOoJQ098x70qwniP0-V2QFRmHXGFcnFiOOp7SonWpK5FybC5paDD--3Fhb5zyYgiW_4tvZVVtHw8jKbpwIaj7bwjdMHWu850fB-_VFOD7vSsshJYGo143me_gh6V4NMqRZV9SlxpBwie_T34uQG4LOblS97PrMEbou1y5imt2vt_DB24seo5z-vy38XopwhftZD-LcgWa5SztIGwQPbJOkF0t9F4jQ8MOoy3AqZIPdLv5zYJ9XFuE'); background-size: cover; background-position: center;">
+<!-- Overlay gradient -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
+<!-- Tracking Pin -->
+<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+<div class="relative flex items-center justify-center">
+<div class="absolute w-12 h-12 bg-secondary/20 rounded-full animate-ping"></div>
+<div class="w-10 h-10 bg-surface-container-lowest rounded-full shadow-md flex items-center justify-center z-10 text-secondary">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">local_shipping</span>
+</div>
+</div>
+</div>
+</div>
+<div class="p-6 bg-surface-container-lowest z-10 border-t border-outline-variant/30">
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Хүргэлтийн мэдээлэл</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<p class="font-label-sm text-label-sm text-outline mb-1">Хүргэлтийн арга</p>
+<p class="font-body-md text-body-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-outline-variant">deployed_code</span>
+                                        Платформ нэгдсэн хүргэлт (DHL)
+                                    </p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-outline mb-1">Хяналтын дугаар</p>
+<div class="flex items-center gap-2">
+<p class="font-body-md text-body-md text-on-surface font-mono">DHL-9876543210</p>
+<button class="text-primary hover:text-secondary transition-colors" title="Хуулах">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Courier Info Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/30 p-6 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<img alt="Courier Driver Profile" class="w-14 h-14 rounded-full object-cover border-2 border-surface-container-high" data-alt="portrait of a professional male delivery driver smiling wearing a uniform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6oDEFgq70TsTlIpw8VUqDl59ruxAaUAnKWUn-MtGsyKOCjFTQEDFuQ9RqJBr1vEKIX13p-yACfCxWG2uzKEg2Fq6YbPgR3rdyJEdi2WMoHhzS3lGUFKtCmAIRYFSDYSTV5G4umRQmzddElkuu36js9l5Wwhx8xLMvZpt0EAa9qlD1trbIq6PzVLtD9bpYumYUFHLusQ3UvbSY5hApoFVgCDpFMqJ6_DD-izVjnQoI75Xt3_ggVwneutcZJWK231P2sMnp7zzoDh0"/>
+<div>
+<p class="font-label-sm text-label-sm text-outline mb-0.5">Хүргэгч</p>
+<p class="font-headline-md text-headline-md text-primary text-lg">Бат-Эрдэнэ Т.</p>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined">call</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined">chat</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Right Column: Vertical Timeline -->
+<div class="lg:col-span-4">
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/30 p-6 sticky top-24">
+<h3 class="font-headline-md text-headline-md text-primary mb-6">Захиалгын төлөв</h3>
+<div class="relative">
+<!-- Vertical Line -->
+<div class="absolute left-[19px] top-4 bottom-8 w-0.5 bg-surface-container-high"></div>
+<ul class="space-y-6">
+<!-- Step 1: Delivered (Pending) -->
+<li class="relative flex gap-4 items-start">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest border-2 border-outline-variant flex flex-shrink-0 items-center justify-center z-10 text-outline-variant">
+<span class="material-symbols-outlined text-sm">home</span>
+</div>
+<div class="pt-2">
+<p class="font-label-md text-label-md text-on-surface-variant">Хүргэгдсэн</p>
+<p class="font-label-sm text-label-sm text-outline mt-1">Хүлээгдэж байна</p>
+</div>
+</li>
+<!-- Step 2: Shipped (Active) -->
+<li class="relative flex gap-4 items-start">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex flex-shrink-0 items-center justify-center z-10 text-on-secondary-container shadow-md">
+<span class="material-symbols-outlined text-sm" data-weight="fill" style="font-variation-settings: 'FILL' 1;">local_shipping</span>
+</div>
+<div class="pt-2">
+<p class="font-label-md text-label-md text-primary">Хүргэлтэнд гарсан</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">2023.10.25 - 14:30</p>
+</div>
+</li>
+<!-- Step 3: In Production (Completed) -->
+<li class="relative flex gap-4 items-start">
+<div class="w-10 h-10 rounded-full bg-primary flex flex-shrink-0 items-center justify-center z-10 text-on-primary">
+<span class="material-symbols-outlined text-sm" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div class="pt-2">
+<p class="font-label-md text-label-md text-primary">Үйлдвэрлэгдэж дууссан</p>
+<p class="font-label-sm text-label-sm text-outline mt-1">2023.10.24 - 09:15</p>
+</div>
+</li>
+<!-- Step 4: Paid (Completed) -->
+<li class="relative flex gap-4 items-start">
+<div class="w-10 h-10 rounded-full bg-primary flex flex-shrink-0 items-center justify-center z-10 text-on-primary">
+<span class="material-symbols-outlined text-sm" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div class="pt-2">
+<p class="font-label-md text-label-md text-primary">Төлбөр төлөгдсөн</p>
+<p class="font-label-sm text-label-sm text-outline mt-1">2023.10.20 - 18:45</p>
+</div>
+</li>
+<!-- Step 5: Order Placed (Completed) -->
+<li class="relative flex gap-4 items-start">
+<div class="w-10 h-10 rounded-full bg-primary flex flex-shrink-0 items-center justify-center z-10 text-on-primary">
+<span class="material-symbols-outlined text-sm" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div class="pt-2">
+<p class="font-label-md text-label-md text-primary">Захиалга баталгаажсан</p>
+<p class="font-label-sm text-label-sm text-outline mt-1">2023.10.20 - 18:42</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<script src="assets/site.js"></script></body></html>

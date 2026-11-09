@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin Vendor Management - Mongol Design Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#545f73",
+                        "surface-container-low": "#eff4ff",
+                        "inverse-surface": "#213145",
+                        "on-tertiary-fixed-variant": "#005049",
+                        "surface": "#f8f9ff",
+                        "on-secondary-fixed": "#341100",
+                        "primary-container": "#1e293b",
+                        "surface-dim": "#cbdbf5",
+                        "secondary-container": "#fd761a",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#d8e3fb",
+                        "on-surface": "#0b1c30",
+                        "primary-fixed-dim": "#bcc7de",
+                        "outline-variant": "#c5c6cd",
+                        "on-background": "#0b1c30",
+                        "background": "#f8f9ff",
+                        "on-surface-variant": "#45474c",
+                        "surface-container": "#e5eeff",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "secondary": "#9d4300",
+                        "secondary-fixed": "#ffdbca",
+                        "on-tertiary-fixed": "#00201d",
+                        "on-primary-fixed-variant": "#3c475a",
+                        "on-secondary-fixed-variant": "#783200",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#002f2a",
+                        "on-primary-container": "#8590a6",
+                        "tertiary-fixed-dim": "#6bd8cb",
+                        "on-secondary-container": "#5c2400",
+                        "surface-variant": "#d3e4fe",
+                        "secondary-fixed-dim": "#ffb690",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#bcc7de",
+                        "primary": "#091426",
+                        "on-primary-fixed": "#111c2d",
+                        "surface-bright": "#f8f9ff",
+                        "on-tertiary-container": "#28a094",
+                        "tertiary": "#001815",
+                        "outline": "#75777d",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#89f5e7",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#dce9ff",
+                        "surface-container-highest": "#d3e4fe",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "headline-md": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased">
+<!-- SideNavBar Shell -->
+<aside class="h-screen w-64 fixed left-0 top-0 border-r border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 z-50 flex flex-col py-6">
+<div class="px-6 mb-8">
+<h1 class="text-lg font-bold text-slate-900 dark:text-white">Admin Panel</h1>
+<p class="text-xs text-slate-500 font-medium">Management Suite</p>
+</div>
+<nav class="flex-1 space-y-1 px-3">
+<!-- Dashboard (Inactive) -->
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 transition-all font-inter text-sm font-medium rounded-lg" href="#">
+<span class="material-symbols-outlined text-xl">dashboard</span>
+<span>Dashboard</span>
+</a>
+<!-- Vendor Verification (Active State) -->
+<a class="flex items-center gap-3 px-3 py-2 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 border-r-4 border-indigo-600 transition-all font-inter text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-xl">verified_user</span>
+<span>Vendor Verification</span>
+</a>
+<!-- Store Performance -->
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 transition-all font-inter text-sm font-medium rounded-lg" href="#">
+<span class="material-symbols-outlined text-xl">monitoring</span>
+<span>Store Performance</span>
+</a>
+<!-- Payouts -->
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 transition-all font-inter text-sm font-medium rounded-lg" href="#">
+<span class="material-symbols-outlined text-xl">payments</span>
+<span>Payouts</span>
+</a>
+<!-- Categories -->
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 transition-all font-inter text-sm font-medium rounded-lg" href="#">
+<span class="material-symbols-outlined text-xl">category</span>
+<span>Categories</span>
+</a>
+<!-- Settings -->
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 transition-all font-inter text-sm font-medium rounded-lg" href="#">
+<span class="material-symbols-outlined text-xl">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+<div class="px-6 mb-6">
+<button class="w-full bg-secondary-container text-white py-2.5 rounded-xl font-label-md shadow-md hover:opacity-90 transition-all">
+                Add New Vendor
+            </button>
+</div>
+<div class="mt-auto px-3 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:text-slate-800 font-inter text-xs font-medium" href="#">
+<span class="material-symbols-outlined text-lg">help</span>
+<span>Help Center</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-500 hover:text-slate-800 font-inter text-xs font-medium" href="#">
+<span class="material-symbols-outlined text-lg">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 min-h-screen">
+<!-- Top Header for Context -->
+<header class="h-16 px-8 flex items-center justify-between bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 sticky top-0 z-40">
+<h2 class="text-headline-md font-headline-md text-on-surface">Vendor Management</h2>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+</button>
+<div class="h-8 w-8 rounded-full overflow-hidden border border-outline-variant">
+<img alt="Admin" class="h-full w-full object-cover" data-alt="professional portrait of a senior system administrator in a high-tech corporate office environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLn40t6GuWmyeWKi9yRejfAJ1vm5RigiJXFz2FEz44DUnLmFZAvR8z1psL4HR-Lumz4qVTp5CSIJXwr6k9prjyJOVqJy_2VKuc9d1C5nI4d-J9yMizVd-UxHbmw3fhXJBzzpsQ22rXZ2_-mBIC2EKokbkxQA0uFD3axm6KR8mamru_S6wjfVsbBBcg9bnDECw-7TIuQ2rUUh3v6t4qOMiQihpOF2Cp27nRqKwfCUAGi3w_24_7gM8wzQmeE5KhO6CLU1PNiu7ZYyY"/>
+</div>
+</div>
+</header>
+<div class="p-8 max-w-7xl mx-auto">
+<!-- Stats Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-slate-100 flex items-center justify-between">
+<div>
+<p class="text-label-sm text-on-surface-variant mb-1">Total Vendors</p>
+<h3 class="text-headline-lg font-headline-lg text-on-surface">1,284</h3>
+<p class="text-xs text-secondary mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">trending_up</span> +12% from last month
+                        </p>
+</div>
+<div class="h-12 w-12 rounded-full bg-primary-container/10 flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-2xl">store</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-slate-100 flex items-center justify-between">
+<div>
+<p class="text-label-sm text-on-surface-variant mb-1">Pending Approvals</p>
+<h3 class="text-headline-lg font-headline-lg text-secondary">42</h3>
+<p class="text-xs text-on-surface-variant mt-2">Requires KYC review</p>
+</div>
+<div class="h-12 w-12 rounded-full bg-secondary-container/10 flex items-center justify-center text-secondary-container">
+<span class="material-symbols-outlined text-2xl">pending_actions</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-slate-100 flex items-center justify-between">
+<div>
+<p class="text-label-sm text-on-surface-variant mb-1">Total Marketplace Revenue</p>
+<h3 class="text-headline-lg font-headline-lg text-on-surface">₮ 4.2M</h3>
+<p class="text-xs text-on-tertiary-container mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">payments</span> Admin commission total
+                        </p>
+</div>
+<div class="h-12 w-12 rounded-full bg-tertiary-container/10 flex items-center justify-center text-on-tertiary-container">
+<span class="material-symbols-outlined text-2xl">account_balance_wallet</span>
+</div>
+</div>
+</section>
+<!-- Filters & Actions -->
+<section class="flex flex-col md:flex-row gap-4 items-center justify-between mb-6">
+<div class="relative w-full md:w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-lowest border-outline-variant rounded-lg focus:ring-2 focus:ring-primary-container focus:border-transparent text-body-md font-body-md" placeholder="Search by vendor name, ID, or email..." type="text"/>
+</div>
+<div class="flex gap-3 w-full md:w-auto">
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-container text-on-surface rounded-lg font-label-md hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-lg">filter_list</span> Filters
+                    </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary-container text-white rounded-lg font-label-md hover:opacity-90 transition-all">
+<span class="material-symbols-outlined text-lg">download</span> Export CSV
+                    </button>
+</div>
+</section>
+<!-- Vendors Table Container -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead class="bg-slate-50 dark:bg-slate-900 border-b border-slate-200">
+<tr>
+<th class="px-6 py-4 font-label-md text-on-surface-variant text-xs">Vendor Name</th>
+<th class="px-6 py-4 font-label-md text-on-surface-variant text-xs">Type</th>
+<th class="px-6 py-4 font-label-md text-on-surface-variant text-xs">Status</th>
+<th class="px-6 py-4 font-label-md text-on-surface-variant text-xs">Listings</th>
+<th class="px-6 py-4 font-label-md text-on-surface-variant text-xs">Total Sales</th>
+<th class="px-6 py-4 font-label-md text-on-surface-variant text-xs">Quality Score</th>
+<th class="px-6 py-4 font-label-md text-on-surface-variant text-xs text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100">
+<!-- Vendor Row 1 -->
+<tr class="hover:bg-slate-50/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-lg overflow-hidden bg-slate-100">
+<img alt="Vendor" class="h-full w-full object-cover" data-alt="close-up of artisan handcrafted ceramic pottery on a clean minimalist studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAQ7M-Kiq-MDhb5AUdDLETgbX5xN0JXaq1wXY68tA0y6OZHo3t22GC4YvKGu3r57h9plAp58oV0R8OMsUb-IRcn4vOynHa0S73k6z04vqYw0x5iIVl2zgYxpJlYoCPylYH3qrC_9Un2cLJPvTM5WBQP9T3AzM3fiXnVd3qj2_Sz9E4hfAfOCRlvJZ-HQTd2SujCmlYLU5ay_Ez-4kck6jM14qb_2lIGOK2I_SaahZoW1GmLXjeNvzJjb8YQoqHd_GGNYK8BWBCfmE"/>
+</div>
+<div>
+<p class="font-label-md text-on-surface">Ulaanbaatar Ceramics</p>
+<p class="text-xs text-on-surface-variant">ub_ceramics@shop.mn</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-body-md font-body-md text-on-surface-variant">Entity</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-700">
+<span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span> Verified
+                                </span>
+</td>
+<td class="px-6 py-4 text-body-md font-body-md text-on-surface">142</td>
+<td class="px-6 py-4 text-body-md font-body-md text-on-surface font-semibold">₮ 82,500,000</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-16 bg-slate-200 h-1.5 rounded-full overflow-hidden">
+<div class="bg-on-tertiary-container h-full w-[95%]"></div>
+</div>
+<span class="text-xs font-semibold text-on-tertiary-container">4.9</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="p-2 text-on-surface-variant hover:text-primary-container transition-colors" title="Manage Store">
+<span class="material-symbols-outlined text-lg">storefront</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary-container transition-colors" title="Edit Commission">
+<span class="material-symbols-outlined text-lg">percent</span>
+</button>
+<button class="px-3 py-1.5 bg-primary-container text-white rounded-lg text-xs font-label-md hover:opacity-90">
+                                        Manage
+                                    </button>
+</div>
+</td>
+</tr>
+<!-- Vendor Row 2 (Pending) -->
+<tr class="hover:bg-slate-50/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-lg overflow-hidden bg-slate-100">
+<img alt="Vendor" class="h-full w-full object-cover" data-alt="detailed close-up of traditional Mongolian cashmere fabric texture in soft cream and gray tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBH51nMTIe5tTVx1phaYlicr4av_YPX8jjewXJNon9uLeAMGFyOSmDijMJX-ZHy6m1nnoBu_OA9CmD1X-e5agsj0-9gTwBM9RlMie8yYMHPdFit30DlGFLsJBV7-ICEkut24APzvVaIVhqzAogO1YkXxUewxArEONkFybvk1sos8z19HBo8QU0PM0C9cRfmcgkFdLxwqF3nZm5PR9Q3qF_QHfkJ6OnYYlJA1_mOrV0u54gRvAJMpoAoQ1zxiOXbv1Q84FUC9Wtuos"/>
+</div>
+<div>
+<p class="font-label-md text-on-surface">Gobi Weavers Co.</p>
+<p class="text-xs text-on-surface-variant">contact@gobiweavers.com</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-body-md font-body-md text-on-surface-variant">Individual</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-100 text-amber-700">
+<span class="h-1.5 w-1.5 rounded-full bg-amber-500"></span> Pending
+                                </span>
+</td>
+<td class="px-6 py-4 text-body-md font-body-md text-on-surface">0</td>
+<td class="px-6 py-4 text-body-md font-body-md text-on-surface">₮ 0</td>
+<td class="px-6 py-4">
+<span class="text-xs text-on-surface-variant italic">New Vendor</span>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="px-3 py-1.5 bg-secondary-container text-white rounded-lg text-xs font-label-md hover:opacity-90">
+                                        Review KYC
+                                    </button>
+</div>
+</td>
+</tr>
+<!-- Vendor Row 3 -->
+<tr class="hover:bg-slate-50/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-lg overflow-hidden bg-slate-100">
+<img alt="Vendor" class="h-full w-full object-cover" data-alt="professional photography of luxury traditional Mongolian jewelry set with silver and turquoise stones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8YOCwCv6wcbEY6NTPrjqO657-MH5qDyAT18oHB43IsZnRfGAhDT9N2s_lm0mTEvRDD4GMrCm6GyWhLT96m2cpSCCqQNF79mwkuazJo60v7ohTqNzQ6pvesGotv17H1vH0VXr8J4AU_E7GhMsbwJDHxhx1WIaU4Hn8y_B5EBgdoj6G3nfGtARyZ2eOUSmvKWlUf5z0Jmzs8940NoL8JK7wTTe13uGk2xajJTpSxzjJcPkAWOdk54Kev0zuDPtYcDqhnXkuGKzSTWM"/>
+</div>
+<div>
+<p class="font-label-md text-on-surface">Altansukh Silver</p>
+<p class="text-xs text-on-surface-variant">silver_craft@gmail.com</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-body-md font-body-md text-on-surface-variant">Individual</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-700">
+<span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span> Verified
+                                </span>
+</td>
+<td class="px-6 py-4 text-body-md font-body-md text-on-surface">54</td>
+<td class="px-6 py-4 text-body-md font-body-md text-on-surface font-semibold">₮ 12,400,000</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<div class="w-16 bg-slate-200 h-1.5 rounded-full overflow-hidden">
+<div class="bg-on-tertiary-container h-full w-[82%]"></div>
+</div>
+<span class="text-xs font-semibold text-on-tertiary-container">4.1</span>
+</div>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="p-2 text-on-surface-variant hover:text-primary-container transition-colors" title="Manage Store">
+<span class="material-symbols-outlined text-lg">storefront</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary-container transition-colors" title="Edit Commission">
+<span class="material-symbols-outlined text-lg">percent</span>
+</button>
+<button class="px-3 py-1.5 bg-primary-container text-white rounded-lg text-xs font-label-md hover:opacity-90">
+                                        Manage
+                                    </button>
+</div>
+</td>
+</tr>
+<!-- Vendor Row 4 (Rejected) -->
+<tr class="hover:bg-slate-50/50 transition-colors">
+<td class="px-6 py-4 opacity-75">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-lg overflow-hidden bg-slate-100 grayscale">
+<img alt="Vendor" class="h-full w-full object-cover" data-alt="overhead shot of wooden furniture components and tools on a rustic carpenter's workbench" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXXYGxIzkQsxJtDbQav1asjxruGL7sLu3J_D7Glnku2urdILeW-f1SWrErC4FEcIatGKgzhIj_ixM_cFKUPc7fhoaq3B6tBN_VxN2g4PxbjxDD445ZUZSQdvYXMFc2IvJ54I6Od6ZXnxNESB0ql57iO4yw2R2hnQoVyrHU5AN4FklwYEsT49_JHaMga4kyTYOhd_GHJHF9mpY5R7Opakksqz3gcKuY2dm8COhAcJml48hBnrydmRzqzbBHZFfpUrWB6ocAkF7CTbQ"/>
+</div>
+<div>
+<p class="font-label-md text-on-surface">Nomadic Woodworks</p>
+<p class="text-xs text-on-surface-variant">rejected@domain.mn</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-body-md font-body-md text-on-surface-variant opacity-75">Entity</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-red-100 text-red-700">
+<span class="h-1.5 w-1.5 rounded-full bg-red-500"></span> Rejected
+                                </span>
+</td>
+<td class="px-6 py-4 text-body-md font-body-md text-on-surface opacity-75">0</td>
+<td class="px-6 py-4 text-body-md font-body-md text-on-surface opacity-75">₮ 0</td>
+<td class="px-6 py-4">
+<span class="text-xs text-error font-semibold">Failed Verification</span>
+</td>
+<td class="px-6 py-4 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="px-3 py-1.5 bg-slate-100 text-on-surface-variant rounded-lg text-xs font-label-md hover:bg-slate-200">
+                                        View Log
+                                    </button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- Pagination -->
+<div class="px-6 py-4 bg-slate-50 border-t border-slate-200 flex items-center justify-between">
+<p class="text-xs text-on-surface-variant">Showing 1 to 4 of 1,284 vendors</p>
+<div class="flex gap-2">
+<button class="px-3 py-1 border border-outline-variant rounded bg-white text-xs font-label-md disabled:opacity-50" disabled="">Previous</button>
+<button class="px-3 py-1 border border-outline-variant rounded bg-white text-xs font-label-md text-primary-container">1</button>
+<button class="px-3 py-1 border border-outline-variant rounded bg-white text-xs font-label-md">2</button>
+<button class="px-3 py-1 border border-outline-variant rounded bg-white text-xs font-label-md">3</button>
+<button class="px-3 py-1 border border-outline-variant rounded bg-white text-xs font-label-md">Next</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Shell -->
+<footer class="ml-64 w-full py-12 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 mt-auto">
+<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-inter text-xs text-slate-500">© 2024 Mongol Design Hub. Empowering local craftsmanship.</p>
+<div class="flex gap-6">
+<a class="font-inter text-xs text-slate-500 hover:text-slate-800 transition-colors" href="#">Privacy Policy</a>
+<a class="font-inter text-xs text-slate-500 hover:text-slate-800 transition-colors" href="#">Terms of Service</a>
+<a class="font-inter text-xs text-slate-500 hover:text-slate-800 transition-colors" href="#">Vendor Handbook</a>
+<a class="font-inter text-xs text-slate-500 hover:text-slate-800 transition-colors" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+<script src="assets/site.js"></script></body></html>

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Legal Hub | Indigo Nexus</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#002f2a",
+                        "on-surface-variant": "#45474c",
+                        "tertiary-fixed-dim": "#6bd8cb",
+                        "surface-container-high": "#dce9ff",
+                        "on-primary-container": "#8590a6",
+                        "surface-variant": "#d3e4fe",
+                        "primary": "#091426",
+                        "on-secondary-container": "#5c2400",
+                        "tertiary": "#001815",
+                        "primary-container": "#1e293b",
+                        "on-primary-fixed": "#111c2d",
+                        "surface-container-highest": "#d3e4fe",
+                        "surface": "#f8f9ff",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#bcc7de",
+                        "secondary-fixed": "#ffdbca",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#ffb690",
+                        "surface-bright": "#f8f9ff",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#cbdbf5",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#89f5e7",
+                        "outline": "#75777d",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#fd761a",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#e5eeff",
+                        "background": "#f8f9ff",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#eaf1ff",
+                        "secondary": "#9d4300",
+                        "on-secondary-fixed-variant": "#783200",
+                        "on-primary-fixed-variant": "#3c475a",
+                        "surface-tint": "#545f73",
+                        "primary-fixed": "#d8e3fb",
+                        "on-background": "#0b1c30",
+                        "inverse-primary": "#bcc7de",
+                        "on-secondary-fixed": "#341100",
+                        "on-tertiary-fixed-variant": "#005049",
+                        "on-tertiary-container": "#28a094",
+                        "inverse-surface": "#213145",
+                        "outline-variant": "#c5c6cd",
+                        "surface-container-low": "#eff4ff",
+                        "on-tertiary-fixed": "#00201d",
+                        "on-surface": "#0b1c30"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "margin": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "headline-xl": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md">
+<!-- TopAppBar -->
+<header class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 shadow-sm sticky top-0 z-50">
+<div class="flex justify-between items-center px-6 py-3 w-full max-w-[1280px] mx-auto">
+<div class="text-xl font-bold tracking-tighter text-indigo-900 dark:text-indigo-50">Indigo Nexus</div>
+<nav class="hidden md:flex items-center space-x-8 font-['Inter'] text-sm tracking-tight">
+<a class="text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-300 transition-colors" href="#">Dashboard</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-300 transition-colors" href="#">Compliance</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-300 transition-colors" href="#">E-Barimt</a>
+<a class="text-indigo-700 dark:text-indigo-400 border-b-2 border-indigo-700 dark:border-indigo-400 pb-1" href="#">Legal Hub</a>
+</nav>
+<div class="flex items-center space-x-4">
+<button class="p-2 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full transition-all">
+<span class="material-symbols-outlined text-slate-600">notifications</span>
+</button>
+<button class="p-2 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full transition-all">
+<span class="material-symbols-outlined text-slate-600">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<div class="flex max-w-[1280px] mx-auto min-h-screen">
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col h-screen sticky top-[64px] left-0 p-4 bg-slate-50 dark:bg-slate-950 w-64 border-r border-slate-100 dark:border-slate-900">
+<div class="mb-8 px-2">
+<div class="flex items-center space-x-3 mb-2">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-white">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+<div>
+<h2 class="text-sm font-black text-indigo-900 dark:text-indigo-50">Vendor Portal</h2>
+<p class="text-[10px] text-slate-500 uppercase tracking-wider">Verified Manufacturer</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1 font-['Inter'] text-sm font-medium">
+<a class="flex items-center space-x-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 hover:translate-x-1 transition-transform duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Overview</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 hover:translate-x-1 transition-transform duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span>Vendor Profile</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 hover:translate-x-1 transition-transform duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span>Inventory</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 hover:translate-x-1 transition-transform duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span>Contracts</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 bg-white dark:bg-slate-800 text-indigo-700 dark:text-indigo-400 shadow-sm border-r-4 border-indigo-600 rounded-l-none rounded-r-lg" href="#">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+<span>Compliance</span>
+</a>
+</nav>
+<div class="pt-4 border-t border-slate-200 dark:border-slate-800 space-y-1 font-['Inter'] text-sm font-medium">
+<a class="flex items-center space-x-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span>Help Center</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 p-8 overflow-y-auto">
+<!-- Hero Header -->
+<div class="mb-12">
+<div class="inline-flex items-center space-x-2 px-3 py-1 bg-surface-container rounded-full text-indigo-700 text-label-sm mb-4">
+<span class="material-symbols-outlined text-[16px]">gavel</span>
+<span>Regulatory Framework 2024</span>
+</div>
+<h1 class="font-headline-xl text-primary mb-4">Legal &amp; Compliance Hub</h1>
+<p class="text-on-surface-variant font-body-lg max-w-2xl">
+                    Manage your tax responsibilities, review platform terms, and ensure your vendor status remains in good standing within the Mongol Design Hub ecosystem.
+                </p>
+</div>
+<!-- Bento Grid Content -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Separation of Liability Section (Prominent) -->
+<div class="md:col-span-12 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700 overflow-hidden">
+<div class="bg-indigo-900 text-white p-6 flex items-center justify-between">
+<div>
+<h2 class="font-headline-md mb-1">Separation of Liability</h2>
+<p class="text-indigo-200 text-sm">Clear boundaries of responsibility for platform and vendors.</p>
+</div>
+<span class="material-symbols-outlined text-[40px] opacity-40">balance</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2">
+<!-- Platform Responsibilities -->
+<div class="p-8 border-b md:border-b-0 md:border-r border-slate-100 dark:border-slate-700">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-full bg-indigo-100 dark:bg-indigo-900/40 flex items-center justify-center">
+<span class="material-symbols-outlined text-indigo-600">hub</span>
+</div>
+<h3 class="font-label-md text-primary">Indigo Nexus Responsibilities</h3>
+</div>
+<ul class="space-y-4">
+<li class="flex items-start gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-green-500 text-[20px]">check_circle</span>
+<span>Providing the digital infrastructure for vendor-to-client transactions.</span>
+</li>
+<li class="flex items-start gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-green-500 text-[20px]">check_circle</span>
+<span>Maintaining secure data storage and E-Barimt API integrations.</span>
+</li>
+<li class="flex items-start gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-green-500 text-[20px]">check_circle</span>
+<span>Issuing monthly platform usage fee invoices to vendors.</span>
+</li>
+</ul>
+</div>
+<!-- Vendor Responsibilities -->
+<div class="p-8 bg-slate-50/30 dark:bg-slate-900/20">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">person_pin</span>
+</div>
+<h3 class="font-label-md text-primary">Vendor Responsibilities</h3>
+</div>
+<ul class="space-y-4">
+<li class="flex items-start gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-[20px]">error_outline</span>
+<span>Accuracy of tax filings, social insurance, and professional licensing.</span>
+</li>
+<li class="flex items-start gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-[20px]">error_outline</span>
+<span>Quality, safety, and legal compliance of all products sold.</span>
+</li>
+<li class="flex items-start gap-3 text-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-[20px]">error_outline</span>
+<span>Direct fulfillment of liability claims arising from vendor activity.</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="p-6 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-100 dark:border-slate-700">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-indigo-600">info</span>
+<p class="text-[13px] text-on-surface-variant italic">
+<strong>Legal Clause:</strong> Indigo Nexus acts as a facilitator and marketplace service provider. The Platform is not a party to the independent contract formed between Vendors and their customers.
+                            </p>
+</div>
+</div>
+</div>
+<!-- Tax Responsibilities & Why They Help Business -->
+<div class="md:col-span-8 bg-white dark:bg-slate-800 p-8 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h3 class="font-headline-md text-primary mb-2">Tax Responsibilities</h3>
+<p class="text-on-surface-variant">Navigating the Mongolian Tax System as a Creative Vendor.</p>
+</div>
+<div class="p-3 bg-indigo-50 dark:bg-indigo-900/30 rounded-lg">
+<span class="material-symbols-outlined text-indigo-600">account_balance</span>
+</div>
+</div>
+<!-- Educational Section: Why paying taxes helps -->
+<div class="mb-8 p-5 bg-teal-50 dark:bg-teal-900/20 rounded-xl border border-teal-100 dark:border-teal-900/40">
+<h4 class="font-label-md text-teal-800 dark:text-teal-400 flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined">trending_up</span>
+                            Why Formal Tax Compliance Helps Your Business Grow
+                        </h4>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="text-xs text-teal-900/70 dark:text-teal-300/70">
+<p class="font-bold mb-1">Access to Capital</p>
+<p>Consistent tax history is the #1 requirement for SME business loans and government grants in Mongolia.</p>
+</div>
+<div class="text-xs text-teal-900/70 dark:text-teal-300/70">
+<p class="font-bold mb-1">Corporate B2B Ready</p>
+<p>Major corporate clients require VAT (НӨАТ) receipts. Being compliant opens doors to high-value contracts.</p>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<div class="p-4 bg-surface-container-low rounded-lg border-l-4 border-secondary">
+<h4 class="font-label-md text-primary mb-1">VAT (НӨАТ) Compliance</h4>
+<p class="text-sm text-on-surface-variant">
+                                Vendors exceeding the 50 million MNT annual revenue threshold must register for VAT. Ensure your E-Barimt integration is active for all transactions.
+                            </p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="border border-slate-100 dark:border-slate-700 p-4 rounded-lg">
+<h5 class="font-label-md text-indigo-700 mb-2">Taxes in Mongolia</h5>
+<ul class="text-sm space-y-2 text-on-surface-variant">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                                        Personal Income Tax (10%)
+                                    </li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                                        Social Insurance contributions
+                                    </li>
+</ul>
+</div>
+<div class="border border-slate-100 dark:border-slate-700 p-4 rounded-lg">
+<h5 class="font-label-md text-indigo-700 mb-2">Tax Exemption Clause</h5>
+<p class="text-[12px] italic text-on-surface-variant leading-relaxed">
+                                    "Монгол Улсын Татварын ерөнхий хуулийн дагуу жижиг, дунд үйлдвэрлэл эрхлэгчид тодорхой нөхцөлд татварын хөнгөлөлт эдлэх эрхтэй."
+                                </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Notification Center -->
+<div class="md:col-span-4 bg-primary text-white p-8 rounded-xl shadow-lg relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-[120px]">campaign</span>
+</div>
+<h3 class="font-headline-md mb-6 relative z-10">Legal Notices</h3>
+<div class="space-y-4 relative z-10">
+<div class="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/10">
+<div class="flex justify-between items-start mb-1">
+<span class="text-[10px] font-bold uppercase tracking-widest text-indigo-300">New Policy</span>
+<span class="text-[10px] text-white/60">2h ago</span>
+</div>
+<p class="text-sm font-medium">Update to Marketplace Terms of Service</p>
+</div>
+<div class="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/10">
+<div class="flex justify-between items-start mb-1">
+<span class="text-[10px] font-bold uppercase tracking-widest text-teal-300">Compliance</span>
+<span class="text-[10px] text-white/60">Yesterday</span>
+</div>
+<p class="text-sm font-medium">Annual Tax Statement Available</p>
+</div>
+<div class="bg-white/10 backdrop-blur-sm p-4 rounded-lg border border-white/10 opacity-50">
+<div class="flex justify-between items-start mb-1">
+<span class="text-[10px] font-bold uppercase tracking-widest text-white/40">Archive</span>
+<span class="text-[10px] text-white/40">Mar 12</span>
+</div>
+<p class="text-sm font-medium">Vendor Verification Success</p>
+</div>
+</div>
+<button class="mt-8 w-full py-3 text-sm font-bold border border-white/30 rounded-lg hover:bg-white hover:text-primary transition-all">
+                        View All History
+                    </button>
+</div>
+<!-- Liability & Contractor Status -->
+<div class="md:col-span-6 bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+<h3 class="font-headline-md text-primary mb-6">Status &amp; Liability</h3>
+<div class="space-y-6">
+<div>
+<h4 class="font-label-md text-primary flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-secondary">person_search</span>
+                                Independent Contractor Status
+                            </h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                                By joining Mongol Design Hub, you acknowledge you are an <strong>Independent Professional</strong>. You are responsible for your own tools, schedule, and professional insurance.
+                            </p>
+<p class="text-[12px] text-on-surface-variant mt-3 p-3 bg-slate-50 dark:bg-slate-900 rounded border border-slate-100 dark:border-slate-800">
+                                "Нийлүүлэгч нь Indigo Nexus-ийн ажилтан биш бөгөөд бие даасан гүйцэтгэгч байдлаар үйл ажиллагаа явуулна."
+                            </p>
+</div>
+<hr class="border-slate-100"/>
+<div>
+<h4 class="font-label-md text-primary flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-secondary">security</span>
+                                Liability Waiver
+                            </h4>
+<p class="text-[13px] text-on-surface-variant bg-slate-50 p-4 rounded-lg italic">
+                                "Нийлүүлэгч нь өөрийн бүтээгдэхүүн, үйлчилгээний чанар, аюулгүй байдлыг бүрэн хариуцах бөгөөд платформын зүгээс гуравдагч этгээдэд учирсан хохирлыг хариуцахгүй болохыг анхаарна уу."
+                            </p>
+</div>
+</div>
+</div>
+<!-- Resources Area -->
+<div class="md:col-span-6 bg-white dark:bg-slate-800 p-8 rounded-xl shadow-sm border border-slate-100 dark:border-slate-700">
+<h3 class="font-headline-md text-primary mb-6">Resource Library</h3>
+<div class="space-y-4">
+<div class="group flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-900 rounded-lg hover:bg-indigo-50 dark:hover:bg-indigo-900/20 cursor-pointer transition-all">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center bg-white dark:bg-slate-800 rounded shadow-sm">
+<span class="material-symbols-outlined text-red-500">picture_as_pdf</span>
+</div>
+<div>
+<p class="font-label-md text-primary">Vendor Tax Guide 2024</p>
+<p class="text-[12px] text-on-surface-variant">PDF • 2.4 MB • Updated Jan 2024</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-indigo-600">download</span>
+</div>
+<div class="group flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-900 rounded-lg hover:bg-indigo-50 dark:hover:bg-indigo-900/20 cursor-pointer transition-all">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center bg-white dark:bg-slate-800 rounded shadow-sm">
+<span class="material-symbols-outlined text-blue-500">description</span>
+</div>
+<div>
+<p class="font-label-md text-primary">Official Terms of Service</p>
+<p class="text-[12px] text-on-surface-variant">DOCX • 1.1 MB • Legal Version 4.2</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-indigo-600">download</span>
+</div>
+<div class="group flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-900 rounded-lg hover:bg-indigo-50 dark:hover:bg-indigo-900/20 cursor-pointer transition-all">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 flex items-center justify-center bg-white dark:bg-slate-800 rounded shadow-sm">
+<span class="material-symbols-outlined text-amber-500">contract</span>
+</div>
+<div>
+<p class="font-label-md text-primary">Master Service Agreement</p>
+<p class="text-[12px] text-on-surface-variant">PDF • 3.8 MB • Standard Form</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-indigo-600">download</span>
+</div>
+</div>
+</div>
+<!-- Policy Clause Highlight -->
+<div class="md:col-span-12 bg-indigo-50/50 dark:bg-slate-900/50 p-6 rounded-xl border border-indigo-100 dark:border-indigo-900/50">
+<div class="flex flex-col md:flex-row items-center gap-6">
+<div class="w-full md:w-1/3">
+<img alt="Legal Gavel" class="rounded-lg shadow-md w-full h-40 object-cover" data-alt="Close-up of a wooden legal gavel resting on a desk with a warm, professional library background in soft focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0RczvEauEqXMdPu9e7XXKqVyV2m9MUgEsGYiOqYdhVXrthnkqL0T6hXTgefe7FXv526i66CY34ILRoHEtOvegd66RtuS5F6ELEo0pMyxY_uDhCEFM4kGRTvSHSl6OOQG5xNXmeQuwLaXGMFCoaLCITWE7aE_pIcRIDRwAYyb-hqMAoAYxPeO1xH9nz4-4cSHd1B9iGgcJsqgo4Q4nS3rxywo6NwNtTWfLL_ON32ahv3rdU4rzwt3f35eTjAVQPipNFHsWnMGw_8Q"/>
+</div>
+<div class="w-full md:w-2/3">
+<h4 class="font-label-md text-indigo-900 dark:text-indigo-200 mb-2">Notice Policy Awareness</h4>
+<p class="text-sm text-slate-700 dark:text-slate-300 mb-4 leading-relaxed">
+                                "Аливаа хууль эрх зүйн мэдэгдлийг бүртгэлтэй имэйл хаягаар илгээснээс хойш ажлын 3 хоногийн дотор хүлээн авсанд тооцно. Хэрэглэгч нь өөрийн мэдээллийг үнэн зөв байлгах үүрэгтэй."
+                            </p>
+<div class="flex gap-4">
+<button class="px-4 py-2 bg-primary text-white text-sm font-bold rounded-lg hover:bg-slate-800 transition-all">Acknowledge Policy</button>
+<button class="px-4 py-2 text-primary dark:text-indigo-300 text-sm font-bold border border-primary/20 rounded-lg">Read Full Document</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Footer -->
+<footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+<div class="w-full py-8 px-6 mt-auto flex flex-col md:flex-row justify-between items-center max-w-[1280px] mx-auto">
+<div class="font-['Inter'] text-xs uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-4 md:mb-0">
+                © 2024 Indigo Nexus Mongolian Design. All rights reserved.
+            </div>
+<div class="flex flex-wrap justify-center gap-8 font-['Inter'] text-xs uppercase tracking-widest">
+<a class="text-slate-400 dark:text-slate-500 hover:text-indigo-500 dark:hover:text-indigo-300 transition-colors" href="#">Terms of Service</a>
+<a class="text-indigo-700 dark:text-indigo-400 font-bold" href="#">Legal Hub</a>
+<a class="text-slate-400 dark:text-slate-500 hover:text-indigo-500 dark:hover:text-indigo-300 transition-colors" href="#">Privacy Policy</a>
+<a class="text-slate-400 dark:text-slate-500 hover:text-indigo-500 dark:hover:text-indigo-300 transition-colors" href="#">Vendor Guidelines</a>
+</div>
+</div>
+</footer>
+<script src="assets/site.js"></script></body></html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html lang="mn"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Indigo Nexus Seller - Storefront Content</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#001815",
+                    "on-secondary-fixed": "#341100",
+                    "on-primary-fixed": "#111c2d",
+                    "surface-container-low": "#eff4ff",
+                    "background": "#f8f9ff",
+                    "on-secondary-fixed-variant": "#783200",
+                    "surface": "#f8f9ff",
+                    "on-primary": "#ffffff",
+                    "secondary": "#9d4300",
+                    "surface-tint": "#545f73",
+                    "outline": "#75777d",
+                    "on-tertiary-fixed-variant": "#005049",
+                    "surface-container": "#e5eeff",
+                    "surface-dim": "#cbdbf5",
+                    "on-tertiary-container": "#28a094",
+                    "secondary-fixed": "#ffdbca",
+                    "on-primary-container": "#8590a6",
+                    "surface-variant": "#d3e4fe",
+                    "tertiary-fixed": "#89f5e7",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface-variant": "#45474c",
+                    "on-primary-fixed-variant": "#3c475a",
+                    "inverse-on-surface": "#eaf1ff",
+                    "tertiary-container": "#002f2a",
+                    "secondary-container": "#fd761a",
+                    "on-surface": "#0b1c30",
+                    "primary": "#091426",
+                    "primary-fixed": "#d8e3fb",
+                    "primary-container": "#1e293b",
+                    "on-error-container": "#93000a",
+                    "surface-container-high": "#dce9ff",
+                    "outline-variant": "#c5c6cd",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "inverse-surface": "#213145",
+                    "on-secondary-container": "#5c2400",
+                    "inverse-primary": "#bcc7de",
+                    "tertiary-fixed-dim": "#6bd8cb",
+                    "secondary-fixed-dim": "#ffb690",
+                    "primary-fixed-dim": "#bcc7de",
+                    "on-tertiary-fixed": "#00201d",
+                    "on-error": "#ffffff",
+                    "surface-bright": "#f8f9ff",
+                    "surface-container-highest": "#d3e4fe",
+                    "on-background": "#0b1c30"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "margin": "32px",
+                    "gutter": "24px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-xl": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Inter"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background">
+<!-- TopNavBar (Shared Component) -->
+<header class="fixed top-0 right-0 left-0 z-50 flex justify-between items-center h-16 px-6 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 shadow-sm font-['Inter'] antialiased">
+<div class="text-xl font-black tracking-tight text-indigo-900 dark:text-indigo-100">
+            Indigo Nexus Seller
+        </div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center bg-surface-container px-3 py-1.5 rounded-lg">
+<span class="material-symbols-outlined text-outline">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-label-md ml-2" placeholder="Хайх..." type="text"/>
+</div>
+<div class="flex items-center gap-3">
+<button class="p-2 text-slate-500 hover:bg-slate-50 rounded-full transition-all duration-200">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-50 rounded-full transition-all duration-200">
+<span class="material-symbols-outlined">help</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container ml-2">
+<img alt="Merchant Profile Avatar" class="w-full h-full object-cover" data-alt="close-up portrait of a professional businessman in a navy blue suit with soft office lighting background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBY6muip_uQqVFNW_fvLln_xzb1S1sALAebFFajLLTpeBSnadPK9kAlXLzrFTdAdE3WXNbM7Hb0YNsqN45T9uAAjEQjyosVkrkN2Rgxqz31N-dq_f45YpiV8F0SBURZXkMG-pwwBb8fMtEaSuYghz2zbfbJi63RD2O9lE18qWVEqW9NvcbIvD_3Ke6rMsGNoIlhDWf7qlcUzcN7XB4F0t5crdP-tE5XO4f0IF_H2CtIPebh1zZbVAwOrY5SRJeIZcCfZVLhQEFYl0A"/>
+</div>
+</div>
+</div>
+</header>
+<div class="flex pt-16">
+<!-- SideNavBar (Shared Component) -->
+<aside class="fixed left-0 top-16 bottom-0 w-64 flex flex-col py-6 bg-slate-50 dark:bg-slate-950 border-r border-slate-200 dark:border-slate-800 font-['Inter'] text-sm font-medium overflow-y-auto">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-3 mb-1">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary">storefront</span>
+</div>
+<div>
+<div class="text-lg font-bold text-indigo-900 dark:text-indigo-100 leading-tight">Main Storefront</div>
+<div class="text-[11px] text-slate-500 uppercase tracking-wider">Verified Merchant</div>
+</div>
+</div>
+</div>
+<nav class="flex-1 px-3 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 hover:text-indigo-600 transition-colors duration-150" href="#">
+<span class="material-symbols-outlined">dashboard</span> Dashboard
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 hover:text-indigo-600 transition-colors duration-150" href="#">
+<span class="material-symbols-outlined">inventory_2</span> Product Catalog
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 hover:text-indigo-600 transition-colors duration-150" href="#">
+<span class="material-symbols-outlined">shopping_cart</span> Orders
+                </a>
+<!-- Storefront Content is ACTIVE -->
+<a class="flex items-center gap-3 px-4 py-3 text-indigo-700 dark:text-indigo-300 bg-indigo-100/50 dark:bg-indigo-900/30 border-r-4 border-indigo-600 transition-colors duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">format_paint</span> Storefront Content
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 hover:text-indigo-600 transition-colors duration-150" href="#">
+<span class="material-symbols-outlined">settings</span> Settings
+                </a>
+</nav>
+<div class="mt-auto px-4 pb-4">
+<button class="w-full py-3 px-4 bg-indigo-600 text-white rounded-xl text-label-md hover:bg-indigo-700 transition-colors mb-6 shadow-md shadow-indigo-200">
+                    Upgrade Plan
+                </button>
+<div class="space-y-1">
+<a class="flex items-center gap-3 px-4 py-2 text-slate-500 hover:text-indigo-600 transition-colors" href="#">
+<span class="material-symbols-outlined">contact_support</span> Support
+                    </a>
+<a class="flex items-center gap-3 px-4 py-2 text-slate-500 hover:text-error transition-colors" href="#">
+<span class="material-symbols-outlined">logout</span> Sign Out
+                    </a>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 flex-1 p-8 max-w-[1280px] mx-auto">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-2">Дэлгүүрийн агуулга удирдах</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Таны дэлгүүр худалдан авагчдад хэрхэн харагдахыг эндээс тохируулна уу.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-5 py-2.5 bg-surface-container text-primary font-label-md text-label-md rounded-xl hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined">visibility</span> Урьдчилан харах
+                    </button>
+<button class="flex items-center gap-2 px-6 py-2.5 bg-secondary-container text-white font-label-md text-label-md rounded-xl hover:bg-secondary transition-colors shadow-lg shadow-orange-100">
+<span class="material-symbols-outlined">publish</span> Хадгалах &amp; Нийтлэх
+                    </button>
+</div>
+</div>
+<!-- Dashboard Grid -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Section 1: Shop Visuals (Banner & Logo) -->
+<div class="col-span-12 bg-white rounded-2xl shadow-sm overflow-hidden border border-slate-100">
+<div class="p-6 border-b border-slate-50">
+<h2 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-indigo-600">image</span> Дэлгүүрийн өнгө төрх
+                        </h2>
+</div>
+<div class="p-8">
+<div class="relative group cursor-pointer h-64 rounded-xl overflow-hidden bg-slate-100 mb-12">
+<img alt="Store Banner" class="w-full h-full object-cover" data-alt="deep blue abstract background with smooth gradients and professional textures for a corporate branding banner" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQ8vkVEnW9wsJaHP04yDYYP2VxPxD1DT-B70WOm1tcyMsQ95h5bgPpgy9x3qeiJ1vb6EDcF8qXpNv8Zem4yCXI9VOVY9Dzxa9JFOG113Ghr1-7ILovw7BAHNchRt2vUjs0qeOWOUcHabSKxrZMHtHOdCySAVqZ4nOOk8epJCjMZvmrmEUdFAB4mcrgpsfqaFXVI_In81oSGPlFzWY55bUFksYiBx61wslnmrfKCERI0_HYcYsnG8cXqKU3_J7ddYf9jBCEcMtdOO0"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+<div class="bg-white px-4 py-2 rounded-lg flex items-center gap-2 font-label-md">
+<span class="material-symbols-outlined">edit</span> Баннер шинэчлэх
+                                </div>
+</div>
+<!-- Logo Upload Overlap -->
+<div class="absolute -bottom-6 left-8">
+<div class="relative group/logo w-32 h-32 rounded-2xl border-4 border-white shadow-xl overflow-hidden bg-white">
+<img alt="Shop Logo" class="w-full h-full object-cover" data-alt="minimalist modern geometric shop logo on white background with clean sharp lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7NzSMo3UNKAonjQxmJ-w2_GSYsyq23SwG6Kz2syBM5t8dZLyZnAX1iH2e_cJdg8K9pkuvDLGSoIApM8Lpk5LPRXOt9SuwFNMOQaRoCV4pPyQA3muZc10Ar8q8OoVcnxxj2RPeuOlIZSu-nsDjKTo7Ptj5PhOEE4uFrSdgt_gN_KAC8-hfdexU2aXSOGk9gmT4_P7QJ8xgAsGZYLrNvxjYRYy4kjLaE0Ocs3ERThaCEi4tpzz0DeEFkvBOMFV6EgXPol5JsPUJlck"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover/logo:opacity-100 flex items-center justify-center transition-opacity">
+<span class="material-symbols-outlined text-white">photo_camera</span>
+</div>
+</div>
+</div>
+</div>
+<div class="ml-44">
+<p class="font-label-md text-label-md text-on-surface-variant mb-1">Зөвлөмж</p>
+<p class="text-sm text-slate-500">Баннер: 1920x480px, Лого: 512x512px (PNG эсвэл JPG)</p>
+</div>
+</div>
+</div>
+<!-- Section 2: About Shop & Social Links -->
+<div class="col-span-12 lg:col-span-8 grid gap-gutter">
+<!-- About Shop -->
+<div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6">
+<div class="flex justify-between items-center mb-4">
+<h2 class="font-headline-md text-headline-md text-on-surface">Дэлгүүрийн тухай</h2>
+<span class="text-xs text-slate-400 font-label-sm">500 тэмдэгт үлдсэн</span>
+</div>
+<div class="space-y-4">
+<div class="flex gap-2 mb-2">
+<button class="p-2 hover:bg-slate-50 rounded"><span class="material-symbols-outlined text-sm">format_bold</span></button>
+<button class="p-2 hover:bg-slate-50 rounded"><span class="material-symbols-outlined text-sm">format_italic</span></button>
+<button class="p-2 hover:bg-slate-50 rounded"><span class="material-symbols-outlined text-sm">format_list_bulleted</span></button>
+<div class="w-px h-6 bg-slate-200 mx-2"></div>
+<button class="p-2 hover:bg-slate-50 rounded"><span class="material-symbols-outlined text-sm">link</span></button>
+</div>
+<textarea class="w-full rounded-xl border-outline-variant focus:border-indigo-600 focus:ring-1 focus:ring-indigo-600 bg-background/50 p-4 font-body-md text-body-md" placeholder="Та өөрийн дэлгүүрийн түүх болон үнэт зүйлсийг энд бичнэ үү..." rows="6">Манай дэлгүүр нь Монголын шилдэг гар урчуудын бүтээлийг дэлхийн зах зээлд гаргах зорилготой Indigo Nexus платформын албан ёсны борлуулагч юм.</textarea>
+</div>
+</div>
+<!-- Featured Products Selection -->
+<div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6">
+<div class="flex justify-between items-center mb-6">
+<h2 class="font-headline-md text-headline-md text-on-surface">Онцлох бүтээгдэхүүн</h2>
+<button class="text-indigo-600 font-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">add_circle</span> Нэмэх
+                            </button>
+</div>
+<div class="grid grid-cols-3 gap-4">
+<div class="group relative bg-slate-50 rounded-xl p-3 border-2 border-dashed border-slate-200 hover:border-indigo-300 transition-all">
+<div class="aspect-square rounded-lg overflow-hidden bg-white mb-3">
+<img alt="Product" class="w-full h-full object-cover" data-alt="minimal white high-tech watch on clean background with soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAtruzfqBYTvfqWY1y6rdYBH-zXIPX7tgSmmL2IVACqrQQ-z1symK3h8XkziT1Q6-4k7uWc3Jjkqu6z8c4sty06p_t5OQ97bNJ9QWqjALwB35wNnChCutF2rWYIO8_rPM-CyxbdERqDFCHhWrdZdAK0-3GkfoeBAOJU9-p9bHlHkbXcLSpjr2qSAB0oATJR4McfMDtmuwOwaoAUnyVi_riARbk0BqN5vtX801akTFIZiQxdwdsjpDPSzzn7-vW0b6sGyuUK5NTnAU"/>
+</div>
+<p class="font-label-md text-label-md truncate">Ухаалаг цаг v2</p>
+<p class="text-indigo-600 font-bold">120,000₮</p>
+<button class="absolute top-2 right-2 bg-white/90 p-1.5 rounded-full shadow-sm opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-error text-sm">close</span>
+</button>
+</div>
+<div class="group relative bg-slate-50 rounded-xl p-3 border-2 border-dashed border-slate-200 hover:border-indigo-300 transition-all">
+<div class="aspect-square rounded-lg overflow-hidden bg-white mb-3">
+<img alt="Product" class="w-full h-full object-cover" data-alt="professional high-fidelity studio headphones on wood texture surface with warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBL1gRHQWRfHS0r6ODj6YoVWiGcJJoywCrthvoLFViTCgcmFe4JJ57rr_st6hu6QYrAA_bO9Y1TQwK2Q1eSqsMVh5YXgieMjMU5hF05I7naz2-ziasnSoKyD9NaC0k7Yy43ej8Ep3eJk-Ozaf75RII7091p2TyUS_T5frxhZzCqFuGVWn6o8ui1n0Kpek0H62ZjZ4IOT2h9IS2B0uWoRpaisCJ0la7nc7lKR8fO4QlH52pEN-Rt-TQHBJgGqLNC85ZPC2Cwlk8LCEI"/>
+</div>
+<p class="font-label-md text-label-md truncate">Студи чихэвч</p>
+<p class="text-indigo-600 font-bold">450,000₮</p>
+<button class="absolute top-2 right-2 bg-white/90 p-1.5 rounded-full shadow-sm opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-error text-sm">close</span>
+</button>
+</div>
+<div class="border-2 border-dashed border-slate-200 rounded-xl flex flex-col items-center justify-center text-slate-400 hover:bg-slate-50 transition-colors cursor-pointer p-4 text-center">
+<span class="material-symbols-outlined text-3xl mb-2">add_photo_alternate</span>
+<span class="text-xs font-label-md">Бүтээгдэхүүн сонгох</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 3: Social Links Manager (Right Column) -->
+<div class="col-span-12 lg:col-span-4 flex flex-col gap-gutter">
+<div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6">Олон нийтийн суваг</h2>
+<div class="space-y-4">
+<div>
+<label class="font-label-md text-label-md block mb-1.5">Facebook</label>
+<div class="flex items-center bg-surface-container rounded-xl px-3 border border-transparent focus-within:border-indigo-600 transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant text-lg">public</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full py-2.5" type="text" value="facebook.com/my-shop"/>
+</div>
+</div>
+<div>
+<label class="font-label-md text-label-md block mb-1.5">Instagram</label>
+<div class="flex items-center bg-surface-container rounded-xl px-3 border border-transparent focus-within:border-indigo-600 transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant text-lg">photo_camera</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full py-2.5" placeholder="@username" type="text"/>
+</div>
+</div>
+<div>
+<label class="font-label-md text-label-md block mb-1.5">Вэбсайт</label>
+<div class="flex items-center bg-surface-container rounded-xl px-3 border border-transparent focus-within:border-indigo-600 transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant text-lg">language</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-full py-2.5" placeholder="https://" type="text"/>
+</div>
+</div>
+<button class="w-full py-3 mt-2 border-2 border-dashed border-slate-200 rounded-xl text-slate-500 font-label-md hover:bg-slate-50 transition-colors">
+                                + Суваг нэмэх
+                            </button>
+</div>
+</div>
+<!-- Live Status Widget -->
+<div class="bg-indigo-900 rounded-2xl p-6 text-white relative overflow-hidden">
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-4">
+<span class="w-2 h-2 bg-teal-400 rounded-full animate-pulse"></span>
+<span class="text-xs font-bold uppercase tracking-widest text-teal-400">Шууд төлөв</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2">Таны дэлгүүр идэвхтэй байна</h3>
+<p class="text-sm text-indigo-200 mb-6 leading-relaxed">Сүүлийн 24 цагийн дотор 1,240 хүн таны дэлгүүрээр зочиллоо.</p>
+<div class="flex justify-between items-center py-3 border-t border-indigo-800">
+<span class="text-xs text-indigo-300">Нийт борлуулалт</span>
+<span class="font-bold text-lg">24.8M ₮</span>
+</div>
+</div>
+<!-- Abstract Background Decoration -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-indigo-800/30 rounded-full -mr-16 -mt-16 blur-3xl"></div>
+<div class="absolute bottom-0 left-0 w-32 h-32 bg-indigo-500/10 rounded-full -ml-16 -mb-16 blur-3xl"></div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<script src="assets/site.js"></script></body></html>

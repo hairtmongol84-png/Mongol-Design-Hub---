@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html lang="mn"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Дэлгүүрийн Урамшууллын Тохиргоо - PartnerPro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#cbdbf5",
+                        "surface": "#f8f9ff",
+                        "on-secondary-fixed-variant": "#783200",
+                        "outline-variant": "#c5c6cd",
+                        "on-secondary-fixed": "#341100",
+                        "tertiary-fixed": "#89f5e7",
+                        "primary": "#091426",
+                        "on-primary": "#ffffff",
+                        "tertiary-container": "#002f2a",
+                        "inverse-on-surface": "#eaf1ff",
+                        "primary-fixed": "#d8e3fb",
+                        "surface-tint": "#545f73",
+                        "primary-container": "#1e293b",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed-dim": "#bcc7de",
+                        "on-secondary-container": "#5c2400",
+                        "on-surface-variant": "#45474c",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#213145",
+                        "on-background": "#0b1c30",
+                        "inverse-primary": "#bcc7de",
+                        "surface-bright": "#f8f9ff",
+                        "on-primary-fixed-variant": "#3c475a",
+                        "on-surface": "#0b1c30",
+                        "on-tertiary-fixed-variant": "#005049",
+                        "tertiary-fixed-dim": "#6bd8cb",
+                        "surface-container-low": "#eff4ff",
+                        "secondary-container": "#fd761a",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#ffb690",
+                        "tertiary": "#001815",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#e5eeff",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#8590a6",
+                        "background": "#f8f9ff",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#ffdbca",
+                        "on-tertiary-container": "#28a094",
+                        "secondary": "#9d4300",
+                        "surface-variant": "#d3e4fe",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-tertiary-fixed": "#00201d",
+                        "on-primary-fixed": "#111c2d",
+                        "surface-container-high": "#dce9ff",
+                        "outline": "#75777d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "margin": "32px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "label-sm": ["12px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "label-md": ["14px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #f8f9ff;
+        }
+        .custom-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #9d4300;
+            cursor: pointer;
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface">
+<!-- SideNavBar Shell -->
+<aside class="h-screen w-64 border-r fixed left-0 top-0 bg-slate-50 border-slate-200 flex flex-col p-4 z-[60]">
+<div class="mb-8 px-2">
+<span class="text-lg font-bold text-slate-900 tracking-tight">Marketplace Dashboard</span>
+<p class="text-xs text-slate-500 font-inter">Affiliate Portal</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:bg-slate-100 transition-colors rounded-md group" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="font-inter text-sm">Overview</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:bg-slate-100 transition-colors rounded-md group" href="#">
+<span class="material-symbols-outlined text-[20px]">monitoring</span>
+<span class="font-inter text-sm">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:bg-slate-100 transition-colors rounded-md group" href="#">
+<span class="material-symbols-outlined text-[20px]">link</span>
+<span class="font-inter text-sm">Link Generator</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:bg-slate-100 transition-colors rounded-md group" href="#">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+<span class="font-inter text-sm">Commissions</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:bg-slate-100 transition-colors rounded-md group" href="#">
+<span class="material-symbols-outlined text-[20px]">group</span>
+<span class="font-inter text-sm">Referrals</span>
+</a>
+</nav>
+<div class="pt-4 mt-4 border-t border-slate-200 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 bg-slate-200 text-slate-900 font-semibold rounded-md" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="font-inter text-sm">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 hover:bg-slate-100 transition-colors rounded-md group" href="#">
+<span class="material-symbols-outlined text-[20px]">help</span>
+<span class="font-inter text-sm">Support</span>
+</a>
+</div>
+<button class="mt-4 w-full bg-primary text-white py-2 rounded-lg font-label-md flex items-center justify-center gap-2 active:scale-95 duration-150 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add</span>
+            Create New Link
+        </button>
+</aside>
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-sm h-16 flex justify-between items-center px-8">
+<div class="flex items-center gap-8">
+<span class="text-xl font-black text-slate-900">PartnerPro</span>
+<nav class="hidden md:flex gap-6">
+<a class="text-slate-500 hover:text-indigo-500 font-inter text-sm font-medium transition-all" href="#">Marketplace</a>
+<a class="text-slate-500 hover:text-indigo-500 font-inter text-sm font-medium transition-all" href="#">Guidelines</a>
+<a class="text-slate-500 hover:text-indigo-500 font-inter text-sm font-medium transition-all" href="#">Resources</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-indigo-600 font-inter text-sm font-medium hover:text-indigo-500 transition-all">Withdraw Funds</button>
+<div class="flex items-center gap-4 text-slate-500">
+<button class="hover:text-indigo-500 transition-all"><span class="material-symbols-outlined">notifications</span></button>
+<div class="h-8 w-8 rounded-full overflow-hidden border border-slate-200">
+<img alt="Manager profile" class="w-full h-full object-cover" data-alt="professional portrait of a business executive in a modern office with soft bokeh background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfV4jnj7Iz00PIYzajt88O5j9eHwXWrqMTtlwrlYOBYgamLFWrAyKpd2XXnmxbL40_EJQRMUizpX2OnfYqnsF5kvOx9KIuHhoXT_aJpcXGu9NyeDEW_ORu3_Mb9gJgnlkJjsByHqoAqKRc-CVWWGPhTP2XfPajajfRG9GxePodGfP2iKFIHxC6_32OPahnjELBvhK1qruQVFnvAxB3ZWyOuNSMoWTgxtCCMbBmUU4j9eyq3jCTF9eVIomGFKtZh0mzXalokSLOucg"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-24 pb-12 px-8 max-w-container-max mx-auto">
+<header class="mb-10">
+<h1 class="font-headline-lg text-primary mb-2">Дэлгүүрийн Урамшууллын Тохиргоо</h1>
+<p class="text-on-surface-variant font-body-md">Affiliate program configuration and management for your digital storefront.</p>
+</header>
+<!-- Settings Bento Grid -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- Global Commission Card -->
+<div class="col-span-12 lg:col-span-5 bg-white p-8 rounded-xl shadow-[0_4px_20px_rgba(9,20,38,0.05)] border border-surface-container">
+<div class="flex items-center gap-4 mb-8">
+<div class="h-12 w-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[28px]">percent</span>
+</div>
+<div>
+<h2 class="font-headline-md text-primary">Global Commission Rate</h2>
+<p class="text-label-sm text-on-surface-variant">Set the default percentage for all affiliates</p>
+</div>
+</div>
+<div class="space-y-6">
+<div class="flex justify-between items-end">
+<span class="text-label-md text-on-surface">Rate Percentage</span>
+<span class="text-headline-xl text-secondary">3.5%</span>
+</div>
+<input class="w-full h-2 bg-surface-container rounded-lg appearance-none cursor-pointer custom-slider" max="5" min="1" step="0.1" type="range" value="3.5"/>
+<div class="flex justify-between text-label-sm text-outline">
+<span>1.0%</span>
+<span>2.5%</span>
+<span>5.0%</span>
+</div>
+</div>
+<div class="mt-8 pt-8 border-t border-surface-container flex items-center justify-between">
+<div>
+<h3 class="font-label-md text-primary">Automatic Approval</h3>
+<p class="text-label-sm text-on-surface-variant">Instantly approve new affiliate applications</p>
+</div>
+<button class="relative inline-flex h-6 w-11 items-center rounded-full bg-secondary-container">
+<span class="inline-block h-4 w-4 translate-x-6 transform rounded-full bg-white transition"></span>
+</button>
+</div>
+</div>
+<!-- Program Summary Card -->
+<div class="col-span-12 lg:col-span-7 grid grid-cols-2 gap-gutter">
+<div class="col-span-1 bg-surface-container-low p-6 rounded-xl border border-surface-container">
+<p class="text-label-sm text-on-surface-variant mb-2">Total Affiliates</p>
+<div class="flex items-center justify-between">
+<span class="text-headline-lg text-primary">124</span>
+<span class="text-on-tertiary-container bg-tertiary-fixed-dim/20 px-2 py-1 rounded text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">trending_up</span> +12%
+                        </span>
+</div>
+</div>
+<div class="col-span-1 bg-surface-container-low p-6 rounded-xl border border-surface-container">
+<p class="text-label-sm text-on-surface-variant mb-2">Total Sales (MTNT)</p>
+<div class="flex items-center justify-between">
+<span class="text-headline-lg text-primary">48.2M</span>
+<span class="text-on-tertiary-container bg-tertiary-fixed-dim/20 px-2 py-1 rounded text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">trending_up</span> +8%
+                        </span>
+</div>
+</div>
+<div class="col-span-2 bg-primary text-white p-6 rounded-xl relative overflow-hidden group">
+<div class="relative z-10">
+<h3 class="font-headline-md mb-2">Platform Performance</h3>
+<p class="text-on-primary-container text-body-md mb-6 max-w-md">Your affiliate network is performing 20% better than the industry average this quarter.</p>
+<button class="bg-secondary-container text-white px-6 py-2 rounded-lg font-label-md active:scale-95 transition-all">Download Report</button>
+</div>
+<div class="absolute right-[-20px] bottom-[-20px] opacity-10 rotate-12 group-hover:rotate-0 transition-transform duration-500">
+<span class="material-symbols-outlined text-[200px]" style="font-variation-settings: 'FILL' 1;">stars</span>
+</div>
+</div>
+</div>
+<!-- Active Affiliate Network Table -->
+<div class="col-span-12 bg-white rounded-xl shadow-[0_4px_20px_rgba(9,20,38,0.05)] border border-surface-container overflow-hidden mt-4">
+<div class="px-8 py-6 border-b border-surface-container flex justify-between items-center">
+<h2 class="font-headline-md text-primary">Active Affiliate Network</h2>
+<div class="flex gap-4">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span>
+<input class="pl-10 pr-4 py-2 border border-outline-variant rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 w-64" placeholder="Search designers..." type="text"/>
+</div>
+<button class="flex items-center gap-2 border border-outline-variant px-4 py-2 rounded-lg text-sm font-label-md hover:bg-slate-50">
+<span class="material-symbols-outlined text-[18px]">filter_list</span> Filter
+                        </button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container-lowest text-on-surface-variant font-label-md uppercase text-[11px] tracking-wider">
+<tr>
+<th class="px-8 py-4">Designer Name</th>
+<th class="px-8 py-4">Status</th>
+<th class="px-8 py-4">Sales Generated</th>
+<th class="px-8 py-4">Commission Paid</th>
+<th class="px-8 py-4">Current Rate</th>
+<th class="px-8 py-4 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-bold text-xs overflow-hidden">
+<img alt="Avatar" class="w-full h-full object-cover" data-alt="close up portrait of a young female designer in a creative studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJp-ULRihcKOVVmFdDKLT2Fuxvhn5GR91yuJqX8sbYMs1iA9rQnvZnhEwljwQdCOOEQgCkD5GEhiENw5AWuY6_VlBnWAcXgU2OCGkqe1G-R9qwlWfLTxj93dqZ7HGNUJVJ_n3pBgueIJ7sO0GG04NeQLKyQwzX89tQPlUb8OsRNtsAmgbd9a1D02lvUywQPQX3sKwhitrfIkb2aiyEwrT01Nm18KiFfe3Qv7A7sfFQkGAXXH4lKIL7lD3pp05XtydR4iylU0JwzX0"/>
+</div>
+<div>
+<p class="font-label-md text-primary">Bolormaa Erdenet</p>
+<p class="text-xs text-on-surface-variant">UI/UX Specialist</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-5">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-bold bg-tertiary-fixed-dim/20 text-on-tertiary-container uppercase">
+<span class="h-1.5 w-1.5 rounded-full bg-on-tertiary-container animate-pulse"></span> Live
+                                    </span>
+</td>
+<td class="px-8 py-5 font-inter text-on-surface">₮12,450,000</td>
+<td class="px-8 py-5 font-inter text-on-surface">₮435,750</td>
+<td class="px-8 py-5 text-on-surface-variant">3.5%</td>
+<td class="px-8 py-5 text-right">
+<button class="p-2 hover:bg-surface-container rounded-lg text-outline">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-bold text-xs overflow-hidden">
+<img alt="Avatar" class="w-full h-full object-cover" data-alt="professional headshot of a smiling male creative professional with neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyZfOUCXPsNppQDC6NuAZgpaAfRIRrahfQaqRqWlA1dthJsaJBvyL2VWUpqVSghrWva71OZwGP3jdbOnVaKg29sdkMMX4GnLryM3wB1Mu1Fzhe5rf_JynrEPk-TRUKynnzw9u-loAHVZqXIyC9k-ScdCRKheue01hvquWHb20Lql1Fg4u2lmBTixHCQ44OFXyh_zVd6eNlGhKsvkLapHYazlW5mdvddG9TJymwls0R23hwpGgbTh8GUriDeIEgYFWPy8KbYALSsBM"/>
+</div>
+<div>
+<p class="font-label-md text-primary">Tamir Bat-Erdene</p>
+<p class="text-xs text-on-surface-variant">Graphic Artist</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-5">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-bold bg-tertiary-fixed-dim/20 text-on-tertiary-container uppercase">
+<span class="h-1.5 w-1.5 rounded-full bg-on-tertiary-container animate-pulse"></span> Live
+                                    </span>
+</td>
+<td class="px-8 py-5 font-inter text-on-surface">₮8,120,500</td>
+<td class="px-8 py-5 font-inter text-on-surface">₮284,217</td>
+<td class="px-8 py-5 text-on-surface-variant">3.5%</td>
+<td class="px-8 py-5 text-right">
+<button class="p-2 hover:bg-surface-container rounded-lg text-outline">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-bold text-xs overflow-hidden">
+<img alt="Avatar" class="w-full h-full object-cover" data-alt="close up portrait of a young man with glasses and creative aesthetic in a bright room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdJe0MPYtKkjj73xFVV8kJY7IAbDC0arg-jNDzEsc9HP3y5k95_JmjOawX_GXBhiqIFZErus261G4QeegkDmsOKKo3B1r9XCWmenADCtpAJoDnBrjwJhydBNTc6B25AtU-vH7c4tsZVqMY4WE4joMFdICfE2O3xRwoBRoX5Za0pISRKGB1nSNcvHeqxY3c0R3nqNKgC_O91WFkzzsYZUypstkQ1XSHKY_RzbNjOXp_XpB0SjV1BU2l8NdoaSOC-lzTuaGMDvAt3G4"/>
+</div>
+<div>
+<p class="font-label-md text-primary">Anand Galdan</p>
+<p class="text-xs text-on-surface-variant">Web Developer</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-5">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-bold bg-surface-container text-outline uppercase">
+<span class="h-1.5 w-1.5 rounded-full bg-outline"></span> Idle
+                                    </span>
+</td>
+<td class="px-8 py-5 font-inter text-on-surface">₮3,400,000</td>
+<td class="px-8 py-5 font-inter text-on-surface">₮119,000</td>
+<td class="px-8 py-5 text-on-surface-variant">3.5%</td>
+<td class="px-8 py-5 text-right">
+<button class="p-2 hover:bg-surface-container rounded-lg text-outline">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-8 py-4 bg-slate-50 border-t border-surface-container flex items-center justify-between text-label-sm text-on-surface-variant">
+<span>Showing 1-3 of 124 affiliates</span>
+<div class="flex gap-2">
+<button class="px-3 py-1 border border-outline-variant rounded hover:bg-white transition-colors">Prev</button>
+<button class="px-3 py-1 border border-outline-variant rounded bg-white font-bold text-primary shadow-sm">1</button>
+<button class="px-3 py-1 border border-outline-variant rounded hover:bg-white transition-colors">2</button>
+<button class="px-3 py-1 border border-outline-variant rounded hover:bg-white transition-colors">Next</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- FAB Suppression Rule Applied: No FAB on Settings Page -->
+<script src="assets/site.js"></script></body></html>

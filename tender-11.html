@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html lang="mn"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Тендер үүсгэх хэрэгсэл - CraftFlow</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#eff4ff",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#c5c6cd",
+                        "primary": "#091426",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#d3e4fe",
+                        "secondary": "#9d4300",
+                        "primary-fixed-dim": "#bcc7de",
+                        "tertiary-fixed": "#89f5e7",
+                        "on-primary-container": "#8590a6",
+                        "on-tertiary-fixed": "#00201d",
+                        "tertiary": "#001815",
+                        "surface-bright": "#f8f9ff",
+                        "on-tertiary-container": "#28a094",
+                        "surface": "#f8f9ff",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#fd761a",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-tertiary-fixed-variant": "#005049",
+                        "on-secondary-fixed": "#341100",
+                        "inverse-surface": "#213145",
+                        "secondary-fixed": "#ffdbca",
+                        "inverse-on-surface": "#eaf1ff",
+                        "primary-container": "#1e293b",
+                        "on-primary-fixed": "#111c2d",
+                        "background": "#f8f9ff",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#dce9ff",
+                        "on-primary-fixed-variant": "#3c475a",
+                        "primary-fixed": "#d8e3fb",
+                        "tertiary-fixed-dim": "#6bd8cb",
+                        "on-background": "#0b1c30",
+                        "inverse-primary": "#bcc7de",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#545f73",
+                        "on-secondary-fixed-variant": "#783200",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#ffb690",
+                        "outline": "#75777d",
+                        "on-surface-variant": "#45474c",
+                        "on-secondary-container": "#5c2400",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#002f2a",
+                        "surface-dim": "#cbdbf5",
+                        "on-surface": "#0b1c30",
+                        "surface-container": "#e5eeff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin": "32px",
+                        "container-max": "1280px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .material-symbols-fill { font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="docked full-width top-0 border-b z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-center w-full px-6 py-3 max-w-[1280px] mx-auto">
+<!-- Brand -->
+<div class="flex items-center gap-8">
+<a class="text-2xl font-black tracking-tighter text-indigo-900 dark:text-white font-['Inter'] antialiased tracking-tight" href="#">CraftFlow</a>
+<!-- Navigation -->
+<nav class="hidden md:flex items-center gap-1">
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-indigo-600 dark:hover:text-indigo-300 transition-colors duration-200 hover:bg-slate-50 dark:hover:bg-slate-800 active:scale-95 transition-transform duration-150 px-4 py-2 rounded-lg font-label-md text-label-md" href="#">Browse</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-indigo-600 dark:hover:text-indigo-300 transition-colors duration-200 hover:bg-slate-50 dark:hover:bg-slate-800 active:scale-95 transition-transform duration-150 px-4 py-2 rounded-lg font-label-md text-label-md" href="#">Auctions</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-indigo-600 dark:hover:text-indigo-300 transition-colors duration-200 hover:bg-slate-50 dark:hover:bg-slate-800 active:scale-95 transition-transform duration-150 px-4 py-2 rounded-lg font-label-md text-label-md" href="#">Mockups</a>
+<a class="text-indigo-600 dark:text-indigo-400 border-b-2 border-indigo-600 pb-1 active:scale-95 transition-transform duration-150 px-4 py-2 font-label-md text-label-md" href="#">Tenders</a>
+</nav>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 text-indigo-900 dark:text-indigo-400">
+<button class="p-2 rounded-full hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-200 active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 rounded-full hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-200 active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</button>
+<button class="p-2 rounded-full hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-200 active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined">chat</span>
+</button>
+</div>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-5 py-2.5 rounded-lg shadow-sm hover:shadow-md transition-all active:scale-95">
+                    Create Project
+                </button>
+<img alt="User avatar" class="w-10 h-10 rounded-full border-2 border-surface-container-lowest object-cover cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDp2q49njiGNb3fO7VAGl8IoZ8z8-mifDFiY4kU-BOzs87mCI2QOWo5PpqrCwv80lgsWS1uwGGJ2rzeKRhTGKZFit9ImKTnptXC1d9Q9hGGZzrnQ4lI1xAUJ0XfgArG55C4nPiOObCnMUcWoC7hnRKhJso8sgdKBThJ28uRmQSAjxgjrMbfxIxcawpU_tk6Zst0G9ZiMO_aYGoggH0J3mV3TWwlOb38pve8r6LlKXmblkzHa6oD_NIjoH40umMqEl6iKgIcVtyHECg"/>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-1 w-full max-w-container-max mx-auto px-6 py-12 flex flex-col gap-8">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-outline-variant/30 pb-6">
+<div>
+<h1 class="font-headline-xl text-headline-xl text-primary mb-2">Тендер үүсгэх хэрэгсэл</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">Бүтээгдэхүүнийхээ дизайныг оруулж, материалыг сонгон, нийлүүлэгчдээс үнийн санал авахад бэлтгэнэ үү.</p>
+</div>
+<div class="flex gap-3">
+<button class="px-5 py-2.5 rounded-lg font-label-md text-label-md border border-outline-variant text-on-surface hover:bg-surface-container-low transition-colors">Цуцлах</button>
+<button class="px-5 py-2.5 rounded-lg font-label-md text-label-md bg-secondary-container text-on-secondary-container shadow-sm hover:shadow-md transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">rocket_launch</span>
+                    Тендер зарлах
+                </button>
+</div>
+</div>
+<!-- Builder Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Left Column: Forms & Configuration (Bento Grid) -->
+<div class="lg:col-span-7 flex flex-col gap-6">
+<!-- Step 1: Upload (Prominent Bento Card) -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm border border-outline-variant/20 p-8 flex flex-col gap-4 relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary opacity-50"></div>
+<div class="flex items-center gap-3 mb-2">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-label-md text-label-md">1</div>
+<h2 class="font-headline-md text-headline-md text-primary">Дизайн оруулах</h2>
+</div>
+<div class="border-2 border-dashed border-outline-variant hover:border-primary bg-surface transition-colors duration-300 rounded-xl p-12 flex flex-col items-center justify-center text-center cursor-pointer group-hover:bg-surface-container-low">
+<span class="material-symbols-outlined text-5xl text-on-primary-container mb-4 group-hover:text-primary transition-colors">cloud_upload</span>
+<h3 class="font-label-md text-label-md text-primary mb-1">Файлаа энд чирж авчрах эсвэл сонгох</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">PNG, JPG, SVG формат (Дээд тал нь 50MB)</p>
+</div>
+</div>
+<!-- Step 2: Product Type -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm border border-outline-variant/20 p-8 flex flex-col gap-4">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-label-md text-label-md">2</div>
+<h2 class="font-headline-md text-headline-md text-primary">Бүтээгдэхүүний төрөл</h2>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+<!-- Type Items -->
+<button class="flex flex-col items-center justify-center gap-3 p-4 rounded-xl border-2 border-primary bg-primary/5 text-primary transition-all">
+<span class="material-symbols-outlined text-3xl">checkroom</span>
+<span class="font-label-md text-label-md">Цамц</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-3 p-4 rounded-xl border border-outline-variant/50 hover:border-primary/50 hover:bg-surface-container-low text-on-surface transition-all">
+<span class="material-symbols-outlined text-3xl">local_cafe</span>
+<span class="font-label-md text-label-md">Аяга</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-3 p-4 rounded-xl border border-outline-variant/50 hover:border-primary/50 hover:bg-surface-container-low text-on-surface transition-all">
+<span class="material-symbols-outlined text-3xl">liquor</span>
+<span class="font-label-md text-label-md">Шил</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-3 p-4 rounded-xl border border-outline-variant/50 hover:border-primary/50 hover:bg-surface-container-low text-on-surface transition-all">
+<span class="material-symbols-outlined text-3xl">forest</span>
+<span class="font-label-md text-label-md">Мод</span>
+</button>
+<button class="flex flex-col items-center justify-center gap-3 p-4 rounded-xl border border-outline-variant/50 hover:border-primary/50 hover:bg-surface-container-low text-on-surface transition-all">
+<span class="material-symbols-outlined text-3xl">precision_manufacturing</span>
+<span class="font-label-md text-label-md">Металл</span>
+</button>
+</div>
+</div>
+<!-- Step 3: Details (Bento Sub-grid) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Quantity -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm border border-outline-variant/20 p-6 flex flex-col gap-4">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-label-md text-label-md">3</div>
+<h2 class="font-label-md text-label-md text-primary text-lg">Тоо хэмжээ</h2>
+</div>
+<div class="flex-1 flex items-center">
+<input class="w-full bg-surface border border-outline-variant rounded-lg p-3 text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors font-body-md" type="number" value="100"/>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Бөөний захиалгад хөнгөлөлт тооцогдоно.</p>
+</div>
+<!-- Material Details -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm border border-outline-variant/20 p-6 flex flex-col gap-4">
+<div class="flex items-center gap-3 mb-2">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary font-label-md text-label-md">4</div>
+<h2 class="font-label-md text-label-md text-primary text-lg">Материал</h2>
+</div>
+<div class="flex-1 flex flex-col gap-3">
+<label class="flex items-center gap-3 p-3 rounded-lg border border-outline-variant/50 hover:bg-surface-container-low cursor-pointer transition-colors">
+<input checked="" class="w-4 h-4 text-primary focus:ring-primary border-outline" name="material" type="radio"/>
+<span class="font-body-md text-body-md">100% Хөвөн даавуу (Cotton)</span>
+</label>
+<label class="flex items-center gap-3 p-3 rounded-lg border border-outline-variant/50 hover:bg-surface-container-low cursor-pointer transition-colors">
+<input class="w-4 h-4 text-primary focus:ring-primary border-outline" name="material" type="radio"/>
+<span class="font-body-md text-body-md">Холимог (Polyester/Cotton)</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: AI Preview -->
+<div class="lg:col-span-5 sticky top-24 flex flex-col gap-6">
+<!-- Preview Card -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm border border-outline-variant/20 overflow-hidden flex flex-col">
+<div class="p-4 border-b border-outline-variant/20 flex justify-between items-center bg-surface/50">
+<h3 class="font-label-md text-label-md text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">magic_button</span>
+                            Урьдчилсан харагдац (AI Mockup)
+                        </h3>
+<span class="px-2 py-1 bg-tertiary-fixed text-on-tertiary-fixed rounded text-[10px] font-bold uppercase tracking-wider">Live Preview</span>
+</div>
+<!-- Image Area -->
+<div class="w-full aspect-square bg-surface-container-high relative flex items-center justify-center">
+<!-- Placeholder for uploaded design -->
+<div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMCwgMCwgMCwgMC4wNSkiLz48L3N2Zz4=')] opacity-50 pointer-events-none"></div>
+<div class="relative w-full h-full overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-tr from-surface-container-low to-surface-container-highest opacity-50"></div>
+<!-- Mockup Image representing a t-shirt on a clean background -->
+<div class="w-full h-full bg-slate-200" data-alt="clean minimalist white t-shirt floating on a light grey background with soft studio lighting and realistic fabric textures" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDAn-FvacLJiSjJWuC5in2NvkbYyahMk082JZgLugB8ZPIUn-_wQsnIGfNvEqPLwPyotxEs9jbQ4zmVxJPm9dplGNx0PbUggVvGU9YDhamRps3WoY6yaoY9JlBrrTHgq9EvC0ePNwbN-je5vRDA0t3IBZXt3xaMrf7-64J_twKMW8W68ecGciWOMIrlWa1gbAeciLhaVTt4hBU1GR-93nOk0U2nfzbOL3Uk7lZsvIsOBkjmPEVILvbXtMBqutF6wugH7lQ1wCxq4vo'); background-size: cover; background-position: center;"></div>
+<!-- Overlay design area representation -->
+<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 border-2 border-dashed border-primary/40 rounded-lg flex items-center justify-center bg-white/20 backdrop-blur-sm">
+<span class="font-label-sm text-label-sm text-primary/70 text-center">Дизайн энд<br/>байрлана</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Summary Card -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-sm border border-outline-variant/20 p-6">
+<h3 class="font-label-md text-label-md text-primary mb-4 border-b border-outline-variant/20 pb-2">Захиалгын хураангуй</h3>
+<ul class="flex flex-col gap-3 font-body-md text-body-md text-on-surface-variant">
+<li class="flex justify-between items-center">
+<span>Төрөл:</span>
+<span class="font-label-md text-primary">Цамц (Футболк)</span>
+</li>
+<li class="flex justify-between items-center">
+<span>Материал:</span>
+<span class="font-label-md text-primary">100% Хөвөн даавуу</span>
+</li>
+<li class="flex justify-between items-center">
+<span>Тоо хэмжээ:</span>
+<span class="font-label-md text-primary">100 ширхэг</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="full-width border-t mt-auto bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 flat">
+<div class="w-full py-8 px-6 flex flex-col md:flex-row justify-between items-center gap-4 max-w-[1280px] mx-auto">
+<span class="font-['Inter'] text-xs text-slate-500">© 2024 CraftFlow Creative Marketplace. All rights reserved.</span>
+<div class="text-sm font-bold text-slate-900 dark:text-white">CraftFlow</div>
+<nav class="flex flex-wrap gap-4 font-['Inter'] text-xs text-slate-500">
+<a class="text-slate-500 hover:text-indigo-600 transition-colors underline underline-offset-4" href="#">Privacy Policy</a>
+<a class="text-slate-500 hover:text-indigo-600 transition-colors underline underline-offset-4" href="#">Terms of Service</a>
+<a class="text-slate-500 hover:text-indigo-600 transition-colors underline underline-offset-4" href="#">Escrow Guarantee</a>
+<a class="text-slate-500 hover:text-indigo-600 transition-colors underline underline-offset-4" href="#">Material Guides</a>
+</nav>
+</div>
+</footer>
+<script src="assets/site.js"></script></body></html>

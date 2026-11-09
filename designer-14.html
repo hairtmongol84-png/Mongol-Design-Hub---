@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Growth &amp; Referral Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#0b1c30",
+                    "outline-variant": "#c5c6cd",
+                    "on-primary": "#ffffff",
+                    "surface-container-high": "#dce9ff",
+                    "primary-fixed-dim": "#bcc7de",
+                    "surface-dim": "#cbdbf5",
+                    "on-error": "#ffffff",
+                    "inverse-primary": "#bcc7de",
+                    "inverse-surface": "#213145",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-on-surface": "#eaf1ff",
+                    "background": "#f8f9ff",
+                    "surface": "#f8f9ff",
+                    "on-tertiary-container": "#28a094",
+                    "surface-bright": "#f8f9ff",
+                    "secondary-fixed": "#ffdbca",
+                    "on-tertiary-fixed-variant": "#005049",
+                    "surface-variant": "#d3e4fe",
+                    "tertiary-fixed": "#89f5e7",
+                    "on-primary-fixed": "#111c2d",
+                    "outline": "#75777d",
+                    "on-tertiary-fixed": "#00201d",
+                    "on-tertiary": "#ffffff",
+                    "surface-container": "#e5eeff",
+                    "secondary-container": "#fd761a",
+                    "surface-container-highest": "#d3e4fe",
+                    "error": "#ba1a1a",
+                    "primary": "#091426",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#ffb690",
+                    "primary-container": "#1e293b",
+                    "tertiary": "#001815",
+                    "surface-container-low": "#eff4ff",
+                    "on-surface-variant": "#45474c",
+                    "secondary": "#9d4300",
+                    "on-secondary-fixed-variant": "#783200",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed-dim": "#6bd8cb",
+                    "on-surface": "#0b1c30",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed": "#d8e3fb",
+                    "on-primary-container": "#8590a6",
+                    "on-secondary-container": "#5c2400",
+                    "on-secondary-fixed": "#341100",
+                    "surface-tint": "#545f73",
+                    "on-primary-fixed-variant": "#3c475a",
+                    "tertiary-container": "#002f2a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "container-max": "1280px",
+                    "margin": "32px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-xl": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "label-md": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-xl": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                    "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                    "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                    "label-sm": ["12px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                    "label-md": ["14px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                    "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                    "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased selection:bg-surface-variant selection:text-on-surface">
+<!-- TopNavBar -->
+<nav class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md text-indigo-600 dark:text-indigo-400 font-sans antialiased text-slate-900 dark:text-slate-100 fixed top-0 w-full z-50 border-b border-slate-200 dark:border-slate-800 shadow-sm active:scale-95 transition-transform duration-150">
+<div class="max-w-[1280px] mx-auto px-6 flex justify-between items-center h-16">
+<!-- Brand -->
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">hexagon</span>
+<span class="text-xl font-bold tracking-tight text-indigo-900 dark:text-indigo-50">FabricateHub</span>
+</div>
+<!-- Search (Implied by search_bar: on_left, simplified for layout) -->
+<div class="hidden md:flex flex-1 max-w-md mx-8 relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-10 pr-4 py-2 rounded-lg bg-surface-container-low border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary text-on-surface text-label-md font-label-md transition-colors" placeholder="Search marketplace..." type="text"/>
+</div>
+<!-- Navigation Links -->
+<ul class="hidden md:flex items-center gap-8 h-full">
+<li class="h-full flex items-center">
+<a class="text-slate-600 dark:text-slate-400 hover:text-indigo-500 dark:hover:text-indigo-300 transition-colors" href="#">Marketplace</a>
+</li>
+<li class="h-full flex items-center">
+<a class="text-slate-600 dark:text-slate-400 hover:text-indigo-500 dark:hover:text-indigo-300 transition-colors" href="#">Community</a>
+</li>
+<li class="h-full flex items-center">
+<a class="text-indigo-600 dark:text-indigo-400 border-b-2 border-indigo-600 pb-1 font-label-md text-label-md" href="#">Referrals</a>
+</li>
+<li class="h-full flex items-center">
+<a class="text-slate-600 dark:text-slate-400 hover:text-indigo-500 dark:hover:text-indigo-300 transition-colors" href="#">Analytics</a>
+</li>
+</ul>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex items-center gap-2 text-outline">
+<button class="p-2 hover:bg-surface-variant rounded-full transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 hover:bg-surface-variant rounded-full transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<button class="hidden lg:flex px-4 py-2 bg-primary text-on-primary rounded-lg font-label-md text-label-md hover:bg-primary-container transition-colors shadow-sm">
+                    Create Design
+                </button>
+<img alt="User profile" class="w-8 h-8 rounded-full border-2 border-surface object-cover" data-alt="Close-up portrait of a professional woman with soft studio lighting and neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWZAcfsm6hhBH3l6i0KtATg_sGgcstR_dFbIHG18Oj7jZ4HW74e4YNLcE2Ygs9b6d4PgFvqKv98_WlfKkle4lJJOfGKfwm3M05mCNsBYDKqJITmphFxKWnHiIwMnq1tACtPQoHOlJ_Wp-Ir5DSyYnxni48OhsuxAD9ZBRRwjSIbtWQ8qctIQ1QJAqaiMNbWe9pVa0umnw5VqBku8KdKzzBUDh5UQCcaSiYXlUUWGC1fktgPgBFT3uZtcGFQvZEjkZ2lDzbIgV_gwo"/>
+</div>
+</div>
+</nav>
+<div class="flex pt-16 min-h-screen">
+<!-- SideNavBar -->
+<aside class="bg-slate-50 dark:bg-slate-950 text-indigo-600 dark:text-indigo-400 text-sm font-medium Inter h-screen w-64 border-r border-slate-200 dark:border-slate-800 flat transition-all duration-200 ease-in-out fixed left-0 top-16 z-40 hidden md:flex flex-col">
+<div class="flex flex-col p-4 gap-2 flex-1 overflow-y-auto">
+<!-- Header -->
+<div class="p-4 mb-4 flex items-center gap-3 bg-surface-container rounded-xl">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined">palette</span>
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface">Creative Studio</div>
+<div class="font-label-sm text-label-sm text-outline">Pro Plan</div>
+</div>
+</div>
+<!-- Primary Tabs -->
+<nav class="flex flex-col gap-1">
+<a class="bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 rounded-lg flex items-center gap-3 px-3 py-2" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-lg flex items-center gap-3 px-3 py-2 transition-colors" href="#">
+<span class="material-symbols-outlined">precision_manufacturing</span>
+<span>Active Projects</span>
+</a>
+<a class="text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-lg flex items-center gap-3 px-3 py-2 transition-colors" href="#">
+<span class="material-symbols-outlined">factory</span>
+<span>Manufacturing</span>
+</a>
+<a class="text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-lg flex items-center gap-3 px-3 py-2 transition-colors" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span>Community</span>
+</a>
+<a class="text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-lg flex items-center gap-3 px-3 py-2 transition-colors" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span>Analytics</span>
+</a>
+</nav>
+<!-- CTA -->
+<div class="mt-auto pt-6 pb-2">
+<button class="w-full flex items-center justify-center gap-2 py-2.5 bg-surface-container-high hover:bg-surface-variant text-primary rounded-lg transition-colors border border-outline-variant font-label-md text-label-md">
+<span class="material-symbols-outlined text-base">person_add</span>
+                        Refer a Friend
+                    </button>
+</div>
+<!-- Footer Tabs -->
+<nav class="border-t border-slate-200 dark:border-slate-800 pt-4 flex flex-col gap-1">
+<a class="text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-lg flex items-center gap-3 px-3 py-2 transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+<a class="text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-lg flex items-center gap-3 px-3 py-2 transition-colors" href="#">
+<span class="material-symbols-outlined">help</span>
+<span>Support</span>
+</a>
+</nav>
+</div>
+</aside>
+<!-- Main Content Area (Canvas) -->
+<main class="flex-1 md:ml-64 p-6 lg:p-gutter max-w-container-max mx-auto w-full">
+<header class="mb-margin">
+<h1 class="font-headline-xl text-headline-xl text-on-surface mb-2">Growth &amp; Referrals</h1>
+<p class="font-body-lg text-body-lg text-outline">Manage your network, track rewards, and access marketing tools.</p>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Stat Tile: Invites -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0_4px_12px_rgba(9,20,38,0.05)] border border-surface-variant flex flex-col justify-between">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-md text-label-md text-on-surface-variant">Invites Sent</span>
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">send</span>
+</div>
+</div>
+<div>
+<div class="font-headline-xl text-headline-xl text-on-surface mb-1">1,248</div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-on-tertiary-container">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span>+12% this month</span>
+</div>
+</div>
+</div>
+<!-- Stat Tile: Successful Joins -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0_4px_12px_rgba(9,20,38,0.05)] border border-surface-variant flex flex-col justify-between">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-md text-label-md text-on-surface-variant">Successful Joins</span>
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">handshake</span>
+</div>
+</div>
+<div>
+<div class="font-headline-xl text-headline-xl text-on-surface mb-1">312</div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-outline">
+<span>25% conversion rate</span>
+</div>
+</div>
+</div>
+<!-- Stat Tile: Design Points (Primary Highlight) -->
+<div class="bg-primary text-on-primary rounded-xl p-6 shadow-[0_12px_24px_rgba(9,20,38,0.15)] flex flex-col justify-between relative overflow-hidden">
+<div class="absolute -right-8 -top-8 w-32 h-32 bg-primary-container rounded-full opacity-50 blur-2xl"></div>
+<div class="flex items-center justify-between mb-4 relative z-10">
+<span class="font-label-md text-label-md text-primary-fixed">Design Points Earned</span>
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-tertiary-fixed">
+<span class="material-symbols-outlined">stars</span>
+</div>
+</div>
+<div class="relative z-10">
+<div class="font-headline-xl text-headline-xl text-tertiary-fixed mb-1">15,400</div>
+<div class="font-label-sm text-label-sm text-primary-fixed-dim">
+                            Equivalent to $154 in manufacturing credits
+                        </div>
+</div>
+</div>
+<!-- Marketing Kit (Span 2 Cols) -->
+<div class="lg:col-span-2 bg-surface-container-lowest rounded-xl p-6 shadow-[0_4px_12px_rgba(9,20,38,0.05)] border border-surface-variant">
+<div class="flex items-center justify-between mb-6">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Marketing Kit</h2>
+<p class="font-body-md text-body-md text-outline mt-1">Pre-made assets to share your studio.</p>
+</div>
+<button class="px-4 py-2 border border-outline-variant rounded-lg font-label-md text-label-md hover:bg-surface-variant transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                            Download All
+                        </button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+<!-- Asset 1 -->
+<div class="group relative rounded-lg overflow-hidden border border-outline-variant bg-surface">
+<img alt="Social Template" class="w-full h-32 object-cover" data-alt="Minimalist abstract 3D geometric shapes in soft blue and orange hues, perfect for a modern design studio social media background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBE41rgyeDKB_sLhYPHL9j7YnLSjZayufAlQ2EItYmnBW1zGUPEumKvyxlGUI1hlzD4_PXktfiER4AtfYqFfatvdnrRT8MyRA0kqB-CYafEOmFk-Xik86LEUuJYzczGDdjJfMgm4n_Jslww7ylS36aSbvnMCR1AmVzyqLv7Km3KdA6l5abYXgK-5fib2bw03UdJsXjuWDy3Og31WUEL55dZ69_CPYAdoF-jOcGsGk08gKkQnkPAeZtuGUgyfRbphOtmkd-q-2XT73Q"/>
+<div class="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3 backdrop-blur-sm">
+<button class="w-10 h-10 rounded-full bg-surface text-primary flex items-center justify-center hover:scale-105 transition-transform"><span class="material-symbols-outlined">content_copy</span></button>
+<button class="w-10 h-10 rounded-full bg-surface text-primary flex items-center justify-center hover:scale-105 transition-transform"><span class="material-symbols-outlined">share</span></button>
+</div>
+<div class="p-3 border-t border-outline-variant">
+<div class="font-label-md text-label-md text-on-surface">Instagram Story</div>
+<div class="font-label-sm text-label-sm text-outline">1080x1920</div>
+</div>
+</div>
+<!-- Asset 2 -->
+<div class="group relative rounded-lg overflow-hidden border border-outline-variant bg-surface">
+<img alt="Banner Template" class="w-full h-32 object-cover" data-alt="High contrast black and white abstract fluid texture with a sleek premium feel for banner advertising" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-cILcR3mfQxyE0tNUkIFVWqU4IdjY0XnD4fVMR497NGxBNULGwTcq6XY_bZXziL9yLM6WH0G_NjeK1lsN1DMox2G7bJffqk59AElYCy05uY4Ap4GqCGc2NB1DU_a9w7qjxQZsQpLuS_ohMZaApuRL9U0qig42JhhWl7Vl9FiVDLtMFWy8JRM2ifModcDCUI046j7ALX6BaaxR8PXvnJ1JXSOGyYcog86OYDVGjlTR4b73N707w5vuBR1nynyrQT4t-8MrrZAaZEw"/>
+<div class="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3 backdrop-blur-sm">
+<button class="w-10 h-10 rounded-full bg-surface text-primary flex items-center justify-center hover:scale-105 transition-transform"><span class="material-symbols-outlined">content_copy</span></button>
+<button class="w-10 h-10 rounded-full bg-surface text-primary flex items-center justify-center hover:scale-105 transition-transform"><span class="material-symbols-outlined">share</span></button>
+</div>
+<div class="p-3 border-t border-outline-variant">
+<div class="font-label-md text-label-md text-on-surface">Twitter Banner</div>
+<div class="font-label-sm text-label-sm text-outline">1500x500</div>
+</div>
+</div>
+<!-- Asset 3 -->
+<div class="group relative rounded-lg overflow-hidden border border-outline-variant bg-surface">
+<div class="w-full h-32 bg-surface-container-high flex items-center justify-center p-4 text-center border-b border-outline-variant">
+<p class="font-body-md text-body-md text-on-surface-variant italic">"I just launched my new collection on FabricateHub! Join using my link..."</p>
+</div>
+<div class="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3 backdrop-blur-sm">
+<button class="w-10 h-10 rounded-full bg-surface text-primary flex items-center justify-center hover:scale-105 transition-transform"><span class="material-symbols-outlined">content_copy</span></button>
+</div>
+<div class="p-3">
+<div class="font-label-md text-label-md text-on-surface">Email Snippet</div>
+<div class="font-label-sm text-label-sm text-outline">Text Copy</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Social Achievements -->
+<div class="bg-surface-container rounded-xl p-6 shadow-[0_4px_12px_rgba(9,20,38,0.05)] border border-surface-variant">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6">Social Achievements</h2>
+<div class="space-y-4">
+<div class="flex items-center gap-4 p-3 bg-surface-container-lowest rounded-lg border border-outline-variant">
+<div class="w-12 h-12 rounded-full bg-[#FFF4E5] text-[#E68A00] flex items-center justify-center border-2 border-[#FFE0B2]">
+<span class="material-symbols-outlined fill text-[28px]">local_fire_department</span>
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface">Hot Streak</div>
+<div class="font-label-sm text-label-sm text-outline">5 referrals in 7 days</div>
+</div>
+</div>
+<div class="flex items-center gap-4 p-3 bg-surface-container-lowest rounded-lg border border-primary ring-1 ring-primary/20 relative overflow-hidden">
+<div class="absolute right-0 top-0 bottom-0 w-1 bg-primary"></div>
+<div class="w-12 h-12 rounded-full bg-primary-container text-tertiary-fixed flex items-center justify-center border-2 border-primary">
+<span class="material-symbols-outlined fill text-[28px]">social_leaderboard</span>
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface">Social Creator</div>
+<div class="font-label-sm text-label-sm text-outline">Top 5% of network</div>
+</div>
+</div>
+<div class="flex items-center gap-4 p-3 opacity-50 grayscale">
+<div class="w-12 h-12 rounded-full bg-surface-variant text-outline flex items-center justify-center border-2 border-outline-variant border-dashed">
+<span class="material-symbols-outlined text-[28px]">public</span>
+</div>
+<div>
+<div class="font-label-md text-label-md text-on-surface">Global Reach</div>
+<div class="font-label-sm text-label-sm text-outline">Refer 10 international users</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Future Roadmap -->
+<div class="lg:col-span-3 bg-surface-container-lowest rounded-xl p-6 shadow-[0_4px_12px_rgba(9,20,38,0.05)] border border-surface-variant mt-4">
+<div class="flex items-center justify-between mb-8">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Platform Roadmap</h2>
+<p class="font-body-md text-body-md text-outline mt-1">Upcoming features to supercharge your growth.</p>
+</div>
+<span class="px-3 py-1 bg-surface-container-high text-primary rounded-full font-label-sm text-label-sm border border-outline-variant">Q3 2024 Focus</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
+<!-- Connecting Line -->
+<div class="hidden md:block absolute top-1/2 left-8 right-8 h-px bg-outline-variant -translate-y-1/2 z-0"></div>
+<!-- Roadmap Item 1 -->
+<div class="relative z-10 flex gap-4 bg-surface p-4 rounded-lg border border-outline-variant shadow-sm">
+<div class="w-12 h-12 shrink-0 rounded-xl bg-surface-container flex items-center justify-center text-primary shadow-sm border border-white">
+<span class="material-symbols-outlined">app_shortcut</span>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<h3 class="font-label-md text-label-md text-on-surface">Mobile App (PWA)</h3>
+<span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Manage projects and referrals on the go with our new Progressive Web App experience.</p>
+</div>
+</div>
+<!-- Roadmap Item 2 -->
+<div class="relative z-10 flex gap-4 bg-surface p-4 rounded-lg border border-outline-variant shadow-sm">
+<div class="w-12 h-12 shrink-0 rounded-xl bg-[#FFF0E5] flex items-center justify-center text-[#D40511] shadow-sm border border-white">
+<span class="material-symbols-outlined">local_shipping</span>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<h3 class="font-label-md text-label-md text-on-surface">DHL Integration</h3>
+<span class="px-2 py-0.5 bg-surface-variant text-on-surface-variant rounded font-label-sm text-[10px]">In Beta</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Seamless international shipping rates and tracking directly inside your dashboard.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Footer -->
+<footer class="bg-white dark:bg-slate-900 text-indigo-600 dark:text-indigo-400 text-xs text-slate-500 dark:text-slate-400 w-full py-12 border-t border-slate-100 dark:border-slate-800 flat none relative z-50">
+<div class="max-w-[1280px] mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="md:col-span-1">
+<div class="text-lg font-black text-slate-900 dark:text-slate-100 mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">hexagon</span>
+                    FabricateHub
+                </div>
+<p>© 2024 FabricateHub. Precision in design, excellence in manufacturing.</p>
+</div>
+<div class="md:col-span-3 flex flex-wrap gap-x-8 gap-y-4 md:justify-end">
+<a class="text-slate-500 hover:text-indigo-500 underline transition-colors" href="#">About</a>
+<a class="text-slate-500 hover:text-indigo-500 underline transition-colors" href="#">Terms</a>
+<a class="text-slate-500 hover:text-indigo-500 underline transition-colors" href="#">Privacy</a>
+<a class="text-slate-500 hover:text-indigo-500 underline transition-colors" href="#">Careers</a>
+<a class="text-slate-500 hover:text-indigo-500 underline transition-colors" href="#">Contact</a>
+</div>
+</div>
+</footer>
+<script src="assets/site.js"></script></body></html>

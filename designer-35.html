@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AffiliateHub | Designer Promotion Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#783200",
+                        "on-primary-fixed": "#111c2d",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "secondary-container": "#fd761a",
+                        "primary-fixed": "#d8e3fb",
+                        "outline": "#75777d",
+                        "on-surface": "#0b1c30",
+                        "inverse-primary": "#bcc7de",
+                        "tertiary": "#001815",
+                        "tertiary-fixed": "#89f5e7",
+                        "surface": "#f8f9ff",
+                        "tertiary-fixed-dim": "#6bd8cb",
+                        "secondary-fixed-dim": "#ffb690",
+                        "on-primary-container": "#8590a6",
+                        "outline-variant": "#c5c6cd",
+                        "surface-container-highest": "#d3e4fe",
+                        "secondary": "#9d4300",
+                        "primary": "#091426",
+                        "on-tertiary-fixed": "#00201d",
+                        "surface-container-low": "#eff4ff",
+                        "primary-fixed-dim": "#bcc7de",
+                        "surface-variant": "#d3e4fe",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-dim": "#cbdbf5",
+                        "surface-tint": "#545f73",
+                        "background": "#f8f9ff",
+                        "surface-bright": "#f8f9ff",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#002f2a",
+                        "on-tertiary-fixed-variant": "#005049",
+                        "primary-container": "#1e293b",
+                        "on-secondary-fixed": "#341100",
+                        "error": "#ba1a1a",
+                        "on-surface-variant": "#45474c",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#dce9ff",
+                        "secondary-fixed": "#ffdbca",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#3c475a",
+                        "on-background": "#0b1c30",
+                        "inverse-surface": "#213145",
+                        "surface-container": "#e5eeff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#28a094",
+                        "on-secondary-container": "#5c2400"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "margin": "32px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-xl": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "label-md": ["14px", {"lineHeight": "1.4", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="hidden md:flex h-screen w-64 border-r border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 flex-col p-4 space-y-2 shrink-0 sticky top-0">
+<div class="px-2 py-4 mb-4">
+<h1 class="text-lg font-black text-indigo-950 dark:text-white">Creator Studio</h1>
+<p class="text-xs text-slate-500 font-medium tracking-wide">Verified Designer</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-semibold tracking-wide bg-indigo-50 dark:bg-indigo-900/20 text-indigo-700 dark:text-indigo-300 rounded-lg transition-all active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                Overview
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-semibold tracking-wide text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="campaign">campaign</span>
+                Promotions
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-semibold tracking-wide text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+                Assets
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-semibold tracking-wide text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+                Earnings
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-sm font-semibold tracking-wide text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+                Merchant Settings
+            </a>
+</nav>
+<div class="mt-auto pt-4 border-t border-slate-200 dark:border-slate-800">
+<button class="w-full flex items-center justify-center gap-2 px-4 py-2 bg-primary text-white rounded-lg text-label-md hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="share" style="font-size: 18px;">share</span>
+                Share Link
+            </button>
+</div>
+</aside>
+<div class="flex-1 flex flex-col min-w-0">
+<!-- TopNavBar -->
+<header class="fixed top-0 z-30 w-full md:w-[calc(100%-16rem)] bg-slate-50 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="flex justify-between items-center h-16 px-6 max-w-7xl mx-auto">
+<div class="text-xl font-bold tracking-tight text-indigo-900 dark:text-white md:hidden">AffiliateHub</div>
+<nav class="hidden md:flex items-center space-x-8 font-sans antialiased text-sm font-medium h-full">
+<a class="text-indigo-600 dark:text-indigo-400 border-b-2 border-indigo-600 pb-4 h-full flex items-center" href="#">Dashboard</a>
+<a class="text-slate-500 dark:text-slate-400 pb-4 h-full flex items-center hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors" href="#">Marketing Kits</a>
+<a class="text-slate-500 dark:text-slate-400 pb-4 h-full flex items-center hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors" href="#">Reports</a>
+<a class="text-slate-500 dark:text-slate-400 pb-4 h-full flex items-center hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors" href="#">Settings</a>
+</nav>
+<div class="flex items-center space-x-4">
+<button class="p-2 text-slate-500 hover:text-indigo-600 transition-colors active:opacity-80">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:text-indigo-600 transition-colors active:opacity-80">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="mt-16 p-6 max-w-7xl mx-auto w-full space-y-8">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h2 class="font-headline-xl text-headline-xl text-on-background">Promotion Hub</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Analyze performance and expand your influence.</p>
+</div>
+<div class="flex gap-3">
+<div class="flex items-center gap-2 px-3 py-1.5 bg-surface-container rounded-full text-label-md text-on-surface-variant">
+<span class="w-2 h-2 bg-on-tertiary-container rounded-full animate-pulse"></span>
+                        LIVE STATS
+                    </div>
+</div>
+</div>
+<!-- Earnings & Performance (Bento Style) -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="md:col-span-2 bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/30 flex flex-col justify-between hover:shadow-md transition-all">
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant mb-1 uppercase tracking-wider">Total Earnings</p>
+<h3 class="text-[48px] font-black text-primary leading-tight">$12,480.00</h3>
+</div>
+<div class="mt-6 flex items-center gap-4">
+<div class="flex-1">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Own Products</p>
+<div class="h-2 w-full bg-surface-container-high rounded-full mt-1 overflow-hidden">
+<div class="h-full bg-primary" style="width: 70%"></div>
+</div>
+<p class="font-label-sm text-label-sm mt-1">$8,736.00 (70%)</p>
+</div>
+<div class="flex-1">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Affiliate Rewards</p>
+<div class="h-2 w-full bg-surface-container-high rounded-full mt-1 overflow-hidden">
+<div class="h-full bg-secondary-container" style="width: 30%"></div>
+</div>
+<p class="font-label-sm text-label-sm mt-1">$3,744.00 (30%)</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/30 hover:shadow-md transition-all">
+<div class="flex items-center justify-between mb-4">
+<div class="p-2 bg-surface-container-low rounded-lg">
+<span class="material-symbols-outlined text-secondary" data-icon="ads_click">ads_click</span>
+</div>
+<span class="text-on-tertiary-container font-label-md text-label-md">+12%</span>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant">Click-through Rate</p>
+<h3 class="font-headline-md text-headline-md mt-1">4.28%</h3>
+<div class="mt-4 h-16 w-full flex items-end gap-1">
+<div class="flex-1 bg-surface-container-high rounded-t-sm h-[40%]"></div>
+<div class="flex-1 bg-surface-container-high rounded-t-sm h-[60%]"></div>
+<div class="flex-1 bg-surface-container-high rounded-t-sm h-[50%]"></div>
+<div class="flex-1 bg-surface-container-high rounded-t-sm h-[80%]"></div>
+<div class="flex-1 bg-primary rounded-t-sm h-[95%]"></div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/30 hover:shadow-md transition-all">
+<div class="flex items-center justify-between mb-4">
+<div class="p-2 bg-surface-container-low rounded-lg">
+<span class="material-symbols-outlined text-primary" data-icon="conversion_path">conversion_path</span>
+</div>
+<span class="text-on-tertiary-container font-label-md text-label-md">+2.5%</span>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant">Store Conversions</p>
+<h3 class="font-headline-md text-headline-md mt-1">1.82%</h3>
+<div class="mt-4 h-16 w-full flex items-end gap-1">
+<div class="flex-1 bg-surface-container-high rounded-t-sm h-[30%]"></div>
+<div class="flex-1 bg-surface-container-high rounded-t-sm h-[45%]"></div>
+<div class="flex-1 bg-surface-container-high rounded-t-sm h-[70%]"></div>
+<div class="flex-1 bg-surface-container-high rounded-t-sm h-[55%]"></div>
+<div class="flex-1 bg-secondary-container rounded-t-sm h-[90%]"></div>
+</div>
+</div>
+</section>
+<!-- Main Interactive Area -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- My Links & Saved Stores -->
+<div class="lg:col-span-2 space-y-8">
+<!-- My Links Section -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<h4 class="font-headline-md text-headline-md">My Referral Links</h4>
+<button class="text-primary hover:underline text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+                                Create Link
+                            </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/30 flex items-center gap-4">
+<div class="w-12 h-12 bg-primary-fixed-dim rounded-lg flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="person">person</span>
+</div>
+<div class="min-w-0 flex-1">
+<p class="font-label-md text-label-md truncate">Main Portfolio</p>
+<p class="text-xs text-on-surface-variant font-mono truncate">hub.design/alex-v/ref</p>
+</div>
+<button class="p-2 hover:bg-surface-container-low rounded-lg transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/30 flex items-center gap-4">
+<div class="w-12 h-12 bg-secondary-fixed rounded-lg flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary" data-icon="shopping_basket">shopping_basket</span>
+</div>
+<div class="min-w-0 flex-1">
+<p class="font-label-md text-label-md truncate">Winter Collection 24</p>
+<p class="text-xs text-on-surface-variant font-mono truncate">hub.design/winter-drop</p>
+</div>
+<button class="p-2 hover:bg-surface-container-low rounded-lg transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Saved Stores Section -->
+<section class="space-y-4">
+<h4 class="font-headline-md text-headline-md">Promoted Stores</h4>
+<div class="space-y-3">
+<!-- Store Item -->
+<div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 flex flex-wrap md:flex-nowrap items-center justify-between gap-6 group hover:border-primary/20 transition-all">
+<div class="flex items-center gap-4">
+<img alt="" class="w-14 h-14 rounded-full object-cover" data-alt="minimalist modern furniture store logo with clean typography on a white circular background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRY0FsHW4AIMBU8CQ2dXi0ae0s0JERXubxnKXD4F94vaTls1Rj9BbWAHqq-TrPdjdlWbwMvok4YILuR_M5buXfd33yKPyTUxyDzP1E0zi6Y0lVwUVVUQ-x4Tz7LMvRTTatkb56wkhP2lYrQuwONfRWQ89fphcSKoNaxTBEzw4sx2nAaUu8PBVC4iyO6UCQZSx-k45uRteOVaamR8ySENcI4cFhm5ymt2JQan6Po9iX9zP0Kc6_1MPGcad7Tl6RsPZoJH3BT4JUAGA"/>
+<div>
+<h5 class="font-label-md text-label-md">Nordic Nesting Co.</h5>
+<p class="text-xs text-on-surface-variant">Interior &amp; Furniture</p>
+</div>
+</div>
+<div class="flex items-center gap-8 text-center">
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-tighter">Commission</p>
+<p class="font-label-md text-label-md">15%</p>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-tighter">Conversions</p>
+<p class="font-label-md text-label-md">42</p>
+</div>
+</div>
+<div class="flex items-center gap-2 w-full md:w-auto">
+<div class="flex-1 md:w-48 bg-surface-container-low px-3 py-2 rounded-lg font-mono text-xs truncate">
+                                        nordic.store/aff/alex20
+                                    </div>
+<button class="bg-primary text-white p-2 rounded-lg hover:bg-primary-container transition-all">
+<span class="material-symbols-outlined" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+</div>
+<!-- Store Item -->
+<div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 flex flex-wrap md:flex-nowrap items-center justify-between gap-6 group hover:border-primary/20 transition-all">
+<div class="flex items-center gap-4">
+<img alt="" class="w-14 h-14 rounded-full object-cover" data-alt="high-end minimalist skincare brand logo with elegant sans-serif font on soft beige background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCi80gU_9nGXInedE9I8_QqHc1nGzAJK3RIL9af6RHNkvOj_UIHFwlw-JqyDwR08qCgMUWdRDwfHsG6F_vE3iv6p4ugU66vQFfdLKw5AY6DCn9TsIM1m4HACvPAtbTxKfMcsNz3d4R8D5AacEUnVmwJ91Pd_FDLFv7fpRHeoC19eoJt7OwKHMDzgzKVGiLLUksGMhwj1LetFZRS-p7Xd_6nmozuXQ1ef_ODW9aFh5EFSncmnQajaugDRKkvTFd_a6Y2V_80YgqDSUU"/>
+<div>
+<h5 class="font-label-md text-label-md">Ethereal Skin</h5>
+<p class="text-xs text-on-surface-variant">Beauty &amp; Wellness</p>
+</div>
+</div>
+<div class="flex items-center gap-8 text-center">
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-tighter">Commission</p>
+<p class="font-label-md text-label-md">20%</p>
+</div>
+<div>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-tighter">Conversions</p>
+<p class="font-label-md text-label-md">118</p>
+</div>
+</div>
+<div class="flex items-center gap-2 w-full md:w-auto">
+<div class="flex-1 md:w-48 bg-surface-container-low px-3 py-2 rounded-lg font-mono text-xs truncate">
+                                        ethereal.co/partner/alexv
+                                    </div>
+<button class="bg-primary text-white p-2 rounded-lg hover:bg-primary-container transition-all">
+<span class="material-symbols-outlined" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Promotion Kit Sidebar -->
+<aside class="space-y-6">
+<div class="bg-primary-container text-white p-6 rounded-2xl shadow-xl overflow-hidden relative">
+<!-- Background texture simulated with gradients -->
+<div class="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<h4 class="font-headline-md text-headline-md">Promotion Kit</h4>
+</div>
+<p class="font-body-md text-body-md text-slate-300 mb-6">Elevate your stories and posts with professionally designed assets.</p>
+<div class="space-y-4">
+<div class="bg-white/10 p-4 rounded-xl backdrop-blur-sm border border-white/10 group hover:bg-white/20 transition-all cursor-pointer">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="photo_library">photo_library</span>
+<span class="font-label-md text-label-md">Instagram Templates</span>
+</div>
+<span class="material-symbols-outlined" data-icon="download">download</span>
+</div>
+<p class="text-xs text-slate-400 mt-2">12 Story &amp; Feed variants (PSD/Figma)</p>
+</div>
+<div class="bg-white/10 p-4 rounded-xl backdrop-blur-sm border border-white/10 group hover:bg-white/20 transition-all cursor-pointer">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="brush">brush</span>
+<span class="font-label-md text-label-md">Brand Banners</span>
+</div>
+<span class="material-symbols-outlined" data-icon="download">download</span>
+</div>
+<p class="text-xs text-slate-400 mt-2">Horizontal &amp; Sidebar optimized ads</p>
+</div>
+<div class="bg-white/10 p-4 rounded-xl backdrop-blur-sm border border-white/10 group hover:bg-white/20 transition-all cursor-pointer">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="video_library">video_library</span>
+<span class="font-label-md text-label-md">Motion Assets</span>
+</div>
+<span class="material-symbols-outlined" data-icon="download">download</span>
+</div>
+<p class="text-xs text-slate-400 mt-2">Short loop videos for social reels</p>
+</div>
+</div>
+<button class="w-full mt-6 py-3 bg-white text-primary rounded-xl font-label-md text-label-md hover:shadow-lg active:scale-95 transition-all">
+                                Download Full Kit (420MB)
+                            </button>
+</div>
+</div>
+<div class="bg-surface-container-highest p-6 rounded-2xl border border-outline-variant/30">
+<h5 class="font-label-md text-label-md mb-4 uppercase tracking-widest text-on-surface-variant">Next Rewards Milestone</h5>
+<div class="flex items-end justify-between mb-2">
+<span class="font-headline-md text-headline-md text-primary">$15k</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">$2,520 to go</span>
+</div>
+<div class="w-full bg-surface-container-low h-3 rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container rounded-full" style="width: 82%"></div>
+</div>
+<p class="text-xs text-on-surface-variant mt-4">Unlocks: 25% Affiliate Bonus &amp; Premium Badging</p>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 mt-auto">
+<div class="max-w-7xl mx-auto py-8 px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="font-label-sm text-label-sm text-slate-500 dark:text-slate-400">
+                    © 2024 Marketplace Affiliate Network. All rights reserved.
+                </div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-label-sm text-label-sm text-slate-500 hover:text-indigo-500 transition-all" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-slate-500 hover:text-indigo-500 transition-all" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-slate-500 hover:text-indigo-500 transition-all" href="#">Help Center</a>
+<a class="font-label-sm text-label-sm text-slate-500 hover:text-indigo-500 transition-all" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+</div>
+<!-- Mobile Bottom NavBar -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 z-50 flex justify-around items-center h-16 px-4">
+<a class="flex flex-col items-center text-indigo-600" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-[10px] font-medium">Studio</span>
+</a>
+<a class="flex flex-col items-center text-slate-400" href="#">
+<span class="material-symbols-outlined" data-icon="campaign">campaign</span>
+<span class="text-[10px] font-medium">Promo</span>
+</a>
+<a class="flex flex-col items-center text-slate-400" href="#">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="text-[10px] font-medium">Kit</span>
+</a>
+<a class="flex flex-col items-center text-slate-400" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="text-[10px] font-medium">Earnings</span>
+</a>
+</nav>
+<script src="assets/site.js"></script></body></html>

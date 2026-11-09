@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<html lang="mn"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#89f5e7",
+                    "surface": "#f8f9ff",
+                    "tertiary": "#001815",
+                    "secondary-container": "#fd761a",
+                    "primary-fixed": "#d8e3fb",
+                    "outline": "#75777d",
+                    "on-surface": "#0b1c30",
+                    "inverse-primary": "#bcc7de",
+                    "on-primary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed": "#111c2d",
+                    "on-secondary-fixed-variant": "#783200",
+                    "surface-variant": "#d3e4fe",
+                    "surface-container-low": "#eff4ff",
+                    "primary-fixed-dim": "#bcc7de",
+                    "on-tertiary-fixed": "#00201d",
+                    "primary": "#091426",
+                    "surface-container-highest": "#d3e4fe",
+                    "secondary": "#9d4300",
+                    "secondary-fixed-dim": "#ffb690",
+                    "on-primary-container": "#8590a6",
+                    "outline-variant": "#c5c6cd",
+                    "tertiary-fixed-dim": "#6bd8cb",
+                    "on-error-container": "#93000a",
+                    "primary-container": "#1e293b",
+                    "on-secondary-fixed": "#341100",
+                    "error": "#ba1a1a",
+                    "on-surface-variant": "#45474c",
+                    "on-tertiary-fixed-variant": "#005049",
+                    "tertiary-container": "#002f2a",
+                    "surface-bright": "#f8f9ff",
+                    "on-tertiary": "#ffffff",
+                    "surface-dim": "#cbdbf5",
+                    "surface-tint": "#545f73",
+                    "background": "#f8f9ff",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-error": "#ffffff",
+                    "on-tertiary-container": "#28a094",
+                    "on-secondary-container": "#5c2400",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed-variant": "#3c475a",
+                    "on-background": "#0b1c30",
+                    "inverse-surface": "#213145",
+                    "surface-container": "#e5eeff",
+                    "on-secondary": "#ffffff",
+                    "surface-container-high": "#dce9ff",
+                    "secondary-fixed": "#ffdbca"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "container-max": "1280px",
+                    "margin": "32px",
+                    "base": "8px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-xl": ["Inter"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-xl": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<header class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 shadow-sm w-full sticky top-0 z-50 font-['Inter'] antialiased">
+<div class="flex justify-between items-center px-6 h-16 max-w-[1280px] mx-auto">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold text-indigo-900 dark:text-indigo-100">TenderPro</span>
+<nav class="hidden md:flex gap-6 items-center">
+<a class="text-slate-500 dark:text-slate-400 hover:text-indigo-500 transition-colors font-label-md" href="#">Dashboard</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-indigo-500 transition-colors font-label-md" href="#">Marketplace</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-indigo-500 transition-colors font-label-md" href="#">Reports</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-indigo-500 transition-colors font-label-md" href="#">Help</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all active:scale-95 duration-150">
+<span class="material-symbols-outlined text-slate-600">notifications</span>
+</button>
+<button class="p-2 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-all active:scale-95 duration-150">
+<span class="material-symbols-outlined text-slate-600">settings</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-primary-fixed flex items-center justify-center overflow-hidden border border-outline-variant">
+<img class="h-full w-full object-cover" data-alt="professional portrait of a senior procurement manager in a corporate office setting with soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgF_NN539V8HetJR0Py7O61hBCD4aCTed4IQwuTzEqJ7ijof4jbKL2d5_jY3kl5dP44sJUd0w2HMP2GlRTYwQ6D7LnnKPe_OLA37K8okKCj1qk2DCRRT1Dz1d3By9gULNcX4pv3Kig6Uj-snd1bZE3a0zsUUupy8LUxASQCBvn-jucxlPyh-lX5eUT0g4GG0H0D3fQcK_qF3cHK3BGAPvRhPQ6gIICocUlf3-2I-I_OP1IJN27j0oi9YQEPRhcws1ifQg4evjw424"/>
+</div>
+</div>
+</div>
+</header>
+<div class="flex max-w-[1280px] mx-auto">
+<aside class="w-64 h-[calc(100vh-64px)] sticky top-16 border-r border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 flex flex-col p-4 gap-2 font-['Inter'] text-sm font-medium">
+<div class="mb-6 px-3 py-4">
+<div class="flex items-center gap-3">
+<div class="h-10 w-10 bg-indigo-600 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white" data-weight="fill">business</span>
+</div>
+<div>
+<p class="font-bold text-on-surface">Project Office</p>
+<p class="text-[10px] uppercase tracking-wider text-slate-500">Enterprise Tier</p>
+</div>
+</div>
+</div>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 p-3 hover:translate-x-1 transition-transform hover:bg-indigo-50 dark:hover:bg-indigo-900/30 rounded-lg" href="#">
+<span class="material-symbols-outlined">assignment</span>
+<span>Active Tenders</span>
+</a>
+<a class="flex items-center gap-3 bg-white dark:bg-slate-900 text-indigo-700 dark:text-indigo-300 shadow-sm rounded-lg p-3" href="#">
+<span class="material-symbols-outlined" data-weight="fill">add_circle</span>
+<span>Create New</span>
+</a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 p-3 hover:translate-x-1 transition-transform hover:bg-indigo-50 dark:hover:bg-indigo-900/30 rounded-lg" href="#">
+<span class="material-symbols-outlined">edit_document</span>
+<span>Drafts</span>
+</a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 p-3 hover:translate-x-1 transition-transform hover:bg-indigo-50 dark:hover:bg-indigo-900/30 rounded-lg" href="#">
+<span class="material-symbols-outlined">group</span>
+<span>Contractors</span>
+</a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 p-3 hover:translate-x-1 transition-transform hover:bg-indigo-50 dark:hover:bg-indigo-900/30 rounded-lg" href="#">
+<span class="material-symbols-outlined">verified</span>
+<span>Quality Insights</span>
+</a>
+<div class="mt-auto pt-4 border-t border-slate-200">
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 p-3 hover:bg-indigo-50 rounded-lg" href="#">
+<span class="material-symbols-outlined">support_agent</span>
+<span>Account Support</span>
+</a>
+<a class="flex items-center gap-3 text-error p-3 hover:bg-error-container rounded-lg" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<main class="flex-1 p-8">
+<div class="grid grid-cols-12 gap-gutter">
+<div class="col-span-12 mb-8">
+<h1 class="font-headline-xl text-primary mb-2">Шинэ тендер үүсгэх</h1>
+<p class="font-body-lg text-on-surface-variant max-w-2xl">Өндөр чанарын стандартыг хангахын тулд өөрийн төслийн шаардлагыг нарийвчлан тодорхойлно уу.</p>
+</div>
+<div class="col-span-12 lg:col-span-8 space-y-8">
+<section class="bg-primary-container text-white p-6 rounded-xl shadow-md relative overflow-hidden">
+<div class="relative z-10">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-tertiary-fixed text-3xl">verified_user</span>
+<h2 class="font-headline-md">Чанарт суурилсан удирдамж</h2>
+</div>
+<p class="font-body-md text-slate-300 mb-6 max-w-2xl">
+                                Хамгийн хямд үнэ үргэлж хамгийн сайн сонголт байдаггүй. Чанартай материал, мэргэжлийн гүйцэтгэл нь урт хугацаанд зардлыг хэмнэж, эрсдэлийг бууруулдаг болохыг анхаарна уу.
+                            </p>
+<div class="grid grid-cols-3 gap-4">
+<div class="bg-white/10 p-4 rounded-lg backdrop-blur-sm border border-white/10">
+<span class="material-symbols-outlined text-tertiary-fixed mb-2">construction</span>
+<h4 class="font-label-md mb-1 text-white">Материал</h4>
+<p class="text-xs text-slate-400">Өндөр зэрэглэлийн материал нь эдэлгээг 30% нэмэгдүүлнэ.</p>
+</div>
+<div class="bg-white/10 p-4 rounded-lg backdrop-blur-sm border border-white/10">
+<span class="material-symbols-outlined text-tertiary-fixed mb-2">timer</span>
+<h4 class="font-label-md mb-1 text-white">Хугацаа</h4>
+<p class="text-xs text-slate-400">Бодит хугацаа нь алдаа гарах магадлалыг 50% бууруулна.</p>
+</div>
+<div class="bg-white/10 p-4 rounded-lg backdrop-blur-sm border border-white/10">
+<span class="material-symbols-outlined text-tertiary-fixed mb-2">engineering</span>
+<h4 class="font-label-md mb-1 text-white">Мэргэшил</h4>
+<p class="text-xs text-slate-400">Гэрчилгээжсэн ажилчид чанарын баталгаа болно.</p>
+</div>
+</div>
+</div>
+<div class="absolute top-0 right-0 w-64 h-64 bg-indigo-500/20 rounded-full -mr-20 -mt-20 blur-3xl"></div>
+</section>
+<div class="bg-white rounded-xl shadow-sm p-8 border border-slate-100">
+<form class="space-y-8">
+<div class="space-y-2">
+<label class="font-label-md text-on-surface">Тендерийн гарчиг</label>
+<input class="w-full border-outline-variant rounded-lg p-3 focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 outline-none transition-all" placeholder="Жишээ: Төв оффисын тавилгын нийлүүлэлт" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-on-surface">Тайлбар</label>
+<textarea class="w-full border-outline-variant rounded-lg p-3 focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 outline-none transition-all" placeholder="Төслийн зорилго, шаардлага болон тусгай нөхцөлийг бичнэ үү..." rows="4"></textarea>
+</div>
+<div class="grid grid-cols-2 gap-6">
+<div class="space-y-4">
+<label class="font-label-md text-on-surface">Үндсэн материал</label>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex items-center gap-3 p-3 border border-indigo-600 bg-indigo-50 text-indigo-700 rounded-lg transition-all font-label-md" type="button">
+<span class="material-symbols-outlined">forest</span> Мод
+                                        </button>
+<button class="flex items-center gap-3 p-3 border border-outline-variant hover:border-indigo-300 rounded-lg transition-all font-label-md text-on-surface-variant" type="button">
+<span class="material-symbols-outlined">texture</span> Арьс
+                                        </button>
+<button class="flex items-center gap-3 p-3 border border-outline-variant hover:border-indigo-300 rounded-lg transition-all font-label-md text-on-surface-variant" type="button">
+<span class="material-symbols-outlined">window</span> Шил
+                                        </button>
+<button class="flex items-center gap-3 p-3 border border-outline-variant hover:border-indigo-300 rounded-lg transition-all font-label-md text-on-surface-variant" type="button">
+<span class="material-symbols-outlined">iron</span> Металл
+                                        </button>
+</div>
+<p class="text-xs text-on-surface-variant italic flex items-start gap-2">
+<span class="material-symbols-outlined text-sm">info</span>
+                                        Мод болон арьсан материал нь өндөр чанарын боловсруулалт шаарддаг тул төсөвт нөлөөлнө.
+                                    </p>
+</div>
+<div class="space-y-4">
+<div class="space-y-2">
+<label class="font-label-md text-on-surface">Тоо ширхэг</label>
+<input class="w-full border-outline-variant rounded-lg p-3 focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 outline-none transition-all" placeholder="0" type="number"/>
+</div>
+<div class="space-y-2 relative group">
+<label class="font-label-md text-on-surface flex items-center gap-2">
+                                            Төсөв (Нэгж үнэ)
+                                            <span class="material-symbols-outlined text-sm text-secondary cursor-help">warning</span>
+</label>
+<input class="w-full border-outline-variant rounded-lg p-3 pr-10 focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 outline-none transition-all border-secondary/30" placeholder="₮ 0.00" type="text"/>
+<div class="absolute left-0 -bottom-16 w-full bg-secondary-container text-white p-3 rounded-lg text-xs shadow-lg opacity-0 group-focus-within:opacity-100 transition-opacity z-20">
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-base">error_outline</span>
+<p>Анхааруулга: Хэт бага төсөв тогтоох нь материалын чанар болон нийлүүлэлтийн хугацаанд сөргөөр нөлөөлж болзошгүй.</p>
+</div>
+<div class="absolute top-0 left-6 -mt-1 border-4 border-transparent border-b-secondary-container"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-on-surface">Техникийн баримт бичиг</label>
+<div class="border-2 border-dashed border-outline-variant rounded-xl p-10 flex flex-col items-center justify-center bg-surface-container-lowest hover:bg-indigo-50 hover:border-indigo-400 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-indigo-400 text-4xl mb-2">cloud_upload</span>
+<p class="font-label-md text-on-surface">Файл чирч оруулах эсвэл сонгох</p>
+<p class="text-xs text-on-surface-variant mt-1">PDF, DOCX, ZIP (Max 50MB)</p>
+</div>
+</div>
+</form>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-4">
+<div class="sticky top-24 space-y-6">
+<section class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+<div class="bg-indigo-50 p-4 border-b border-indigo-100">
+<h3 class="font-label-md text-indigo-900 flex items-center gap-2">
+<span class="material-symbols-outlined text-indigo-600">analytics</span>
+                                    Чанарын үнэлгээний тойм
+                                </h3>
+</div>
+<div class="p-6 space-y-6">
+<div class="flex flex-col items-center text-center py-4">
+<div class="relative mb-4">
+<svg class="w-32 h-32 transform -rotate-90">
+<circle class="text-slate-100" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-indigo-600" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-dasharray="364.42" stroke-dashoffset="72.88" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center rotate-90">
+<span class="text-3xl font-bold text-indigo-900">80%</span>
+<span class="text-[10px] uppercase font-bold text-slate-500">Tier: Gold</span>
+</div>
+</div>
+<h4 class="font-headline-md text-indigo-900">Өндөр чанар</h4>
+<p class="text-sm text-on-surface-variant mt-1">Таны оруулсан үзүүлэлтүүд зах зээлийн дээд зэрэглэлийн стандартад нийцэж байна.</p>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-center text-sm">
+<span class="text-on-surface-variant">Материалын эдэлгээ</span>
+<span class="font-bold text-indigo-600">Маш сайн</span>
+</div>
+<div class="w-full bg-slate-100 h-1.5 rounded-full">
+<div class="bg-indigo-500 h-1.5 rounded-full w-[90%]"></div>
+</div>
+<div class="flex justify-between items-center text-sm pt-2">
+<span class="text-on-surface-variant">Үнэ/Чанарын харьцаа</span>
+<span class="font-bold text-indigo-600">Боломжийн</span>
+</div>
+<div class="w-full bg-slate-100 h-1.5 rounded-full">
+<div class="bg-indigo-500 h-1.5 rounded-full w-[75%]"></div>
+</div>
+</div>
+<div class="bg-tertiary-container/10 p-4 rounded-lg border border-tertiary-container/20">
+<div class="flex gap-2 items-start">
+<span class="material-symbols-outlined text-on-tertiary-container">lightbulb</span>
+<div>
+<p class="text-xs font-bold text-on-tertiary-container">Зөвлөмж</p>
+<p class="text-xs text-on-tertiary-container leading-relaxed">Модон материалын гүйцэтгэл дээр ISO 9001 сертификат шаардвал чанар 15%-иар өсөх боломжтой.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="flex flex-col gap-3">
+<button class="w-full bg-indigo-600 text-white py-4 rounded-xl font-headline-md shadow-lg shadow-indigo-200 hover:bg-indigo-700 active:scale-95 transition-all">
+                                Тендер нийтлэх
+                            </button>
+<button class="w-full bg-white text-on-surface-variant border border-outline-variant py-3 rounded-xl font-label-md hover:bg-slate-50 transition-all">
+                                Ноорог болгон хадгалах
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<footer class="bg-white border-t border-slate-200 py-12 mt-12">
+<div class="max-w-[1280px] mx-auto px-6 grid grid-cols-4 gap-8">
+<div class="col-span-1">
+<span class="text-2xl font-bold text-indigo-900">TenderPro</span>
+<p class="text-sm text-slate-500 mt-4 leading-relaxed">
+                    Бид худалдан авагч болон нийлүүлэгчдийг чанар, итгэлцэл дээр суурилан холбодог хамгийн том платформ юм.
+                </p>
+</div>
+<div class="col-span-1 flex flex-col gap-4">
+<h5 class="font-bold text-indigo-900">Бүтээгдэхүүн</h5>
+<a class="text-sm text-slate-500 hover:text-indigo-600 transition-colors" href="#">Зах зээлийн тойм</a>
+<a class="text-sm text-slate-500 hover:text-indigo-600 transition-colors" href="#">Үнийн санал</a>
+<a class="text-sm text-slate-500 hover:text-indigo-600 transition-colors" href="#">Аналитик</a>
+</div>
+<div class="col-span-1 flex flex-col gap-4">
+<h5 class="font-bold text-indigo-900">Тусламж</h5>
+<a class="text-sm text-slate-500 hover:text-indigo-600 transition-colors" href="#">Зааварчилгаа</a>
+<a class="text-sm text-slate-500 hover:text-indigo-600 transition-colors" href="#">Аюулгүй ажиллагаа</a>
+<a class="text-sm text-slate-500 hover:text-indigo-600 transition-colors" href="#">Холбоо барих</a>
+</div>
+<div class="col-span-1 flex flex-col gap-4">
+<h5 class="font-bold text-indigo-900">Нийгмийн сүлжээ</h5>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-indigo-600 hover:bg-indigo-600 hover:text-white transition-all cursor-pointer">
+<span class="material-symbols-outlined text-lg">public</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-indigo-600 hover:bg-indigo-600 hover:text-white transition-all cursor-pointer">
+<span class="material-symbols-outlined text-lg">share</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-indigo-600 hover:bg-indigo-600 hover:text-white transition-all cursor-pointer">
+<span class="material-symbols-outlined text-lg">group</span>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-[1280px] mx-auto px-6 mt-12 pt-8 border-t border-slate-100 text-center text-sm text-slate-400">
+            © 2024 TenderPro LLC. Бүх эрх хуулиар хамгаалагдсан.
+        </div>
+</footer>
+<script src="assets/site.js"></script></body></html>

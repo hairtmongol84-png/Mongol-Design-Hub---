@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html lang="mn"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Биеийн байцаалт баталгаажуулах - Artisan Ledger</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#dce9ff",
+                        "error-container": "#ffdad6",
+                        "primary-fixed-dim": "#bcc7de",
+                        "inverse-primary": "#bcc7de",
+                        "surface-variant": "#d3e4fe",
+                        "secondary-fixed": "#ffdbca",
+                        "outline-variant": "#c5c6cd",
+                        "primary-fixed": "#d8e3fb",
+                        "primary-container": "#1e293b",
+                        "surface": "#f8f9ff",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#6bd8cb",
+                        "surface-container": "#e5eeff",
+                        "on-secondary-fixed-variant": "#783200",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-dim": "#cbdbf5",
+                        "inverse-surface": "#213145",
+                        "on-tertiary-container": "#28a094",
+                        "tertiary-container": "#002f2a",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#89f5e7",
+                        "tertiary": "#001815",
+                        "secondary-fixed-dim": "#ffb690",
+                        "on-tertiary-fixed": "#00201d",
+                        "primary": "#091426",
+                        "background": "#f8f9ff",
+                        "on-primary-container": "#8590a6",
+                        "on-secondary-fixed": "#341100",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#5c2400",
+                        "surface-tint": "#545f73",
+                        "surface-bright": "#f8f9ff",
+                        "on-surface": "#0b1c30",
+                        "on-primary-fixed-variant": "#3c475a",
+                        "outline": "#75777d",
+                        "on-background": "#0b1c30",
+                        "surface-container-highest": "#d3e4fe",
+                        "surface-container-low": "#eff4ff",
+                        "on-tertiary-fixed-variant": "#005049",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed": "#111c2d",
+                        "secondary-container": "#fd761a",
+                        "secondary": "#9d4300",
+                        "on-surface-variant": "#45474c",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "margin": "32px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-xl": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-xl": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .shadow-level-1 { box-shadow: 0 4px 12px rgba(9, 20, 38, 0.05); }
+        .shadow-level-2 { box-shadow: 0 12px 24px rgba(9, 20, 38, 0.08); }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md min-h-screen">
+<!-- TopAppBar -->
+<nav class="fixed top-0 left-0 w-full z-40 flex justify-between items-center px-6 py-3 bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm border-b border-slate-200 dark:border-slate-800 shadow-sm font-inter text-sm font-medium">
+<div class="flex items-center gap-4">
+<span class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">Artisan Ledger</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex gap-4">
+<button class="text-indigo-600 dark:text-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-indigo-600 transition-all active:scale-95 duration-150 p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-indigo-600 dark:text-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-indigo-600 transition-all active:scale-95 duration-150 p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+</div>
+<img alt="Seller Profile Avatar" class="w-8 h-8 rounded-full border border-outline-variant object-cover" data-alt="close-up portrait of a professional male artisan wearing a denim apron in a well-lit studio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhDCCyQlrGz5lq3KpJrsj0cTUGbOH6K8ubJpcnWOfz94t_31p3W1nWvUAsWDqkR7BjpMyaJpA6xWzMsKg_VyUuzPZ77lQ1vv3Nepe8ILgoc7vFuufPnNZs2AosyHpBwbW2XDDpACspVd29OKPcl3OauIih_96c1jL5C0P7uBP1dErW68l_UBpgNZDiiMrzFNN7q_FtTStJbGXrhCTWN4gI2ZkSlkQNK16pGoaxK7yd3kFyy8DQjK86wl0l95FpYObpmAxtiIl2vNw"/>
+</div>
+</nav>
+<!-- SideNavBar -->
+<aside class="hidden md:flex flex-col fixed left-0 top-0 h-full p-4 gap-4 bg-slate-50 dark:bg-slate-950 border-r border-slate-200 dark:border-slate-800 w-64 pt-20 font-inter text-sm leading-6 z-30">
+<div class="mb-6 px-2 flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center overflow-hidden shrink-0">
+<img alt="Store Logo" class="w-full h-full object-cover" data-alt="minimalist logo mockup on a natural wood surface with soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoOM1JkgJDuQesms9YzK9p9GX8MQcQPYsMSBGgBJv8hvCoNpjx58x0A_TAyN1bbsTybBkSgGl0gVNF82nA6LovOiAGEkLX8GPN6Qr05URqenDejRvyaDFIn1MM2ScLm-WYGF0Bc76RVteP5QlMgskSLFXYvVGVX-pi-jqsQsapm1Abgup5GJfJUSooEpAImVV05y2k7APgdPoPfZtjf1cyuBIyI_7p5vswpwNOOpsJAXhMusarFg0z_M-7u8TLXb1pErJJ6XjWQTg"/>
+</div>
+<div class="overflow-hidden">
+<div class="text-lg font-black text-slate-900 dark:text-white truncate">Master Craft Studio</div>
+<div class="text-on-surface-variant font-label-sm text-label-sm truncate">Verified Merchant</div>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-2.5 px-4 rounded-lg hover:bg-inverse-surface transition-colors mb-2 flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add</span> Add New Listing
+        </button>
+<nav class="flex-1 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span> Dashboard
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">inventory_2</span> Product Catalog
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">shopping_cart</span> Orders
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 bg-white dark:bg-slate-900 text-indigo-600 dark:text-indigo-400 shadow-sm ring-1 ring-slate-200 dark:ring-slate-800 rounded-lg active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">verified_user</span> Identity Verification
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors active:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined">monitoring</span> Shop Analytics
+            </a>
+</nav>
+<div class="mt-auto border-t border-slate-200 dark:border-slate-800 pt-4 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span> Settings
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">logout</span> Sign Out
+            </a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="md:ml-64 pt-[72px] min-h-screen">
+<div class="max-w-[1280px] mx-auto p-6 md:p-8 lg:p-10">
+<!-- Header Section -->
+<div class="mb-10 max-w-3xl">
+<h1 class="font-headline-lg text-headline-lg text-on-background mb-4">Биеийн байцаалт баталгаажуулах</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                    Манай платформ дээр бүтээгдэхүүнээ борлуулахын тулд хувийн болон бизнесийн мэдээллээ баталгаажуулах шаардлагатай. Энэ нь хуурамч хаягаас сэргийлж, худалдан авагчдын итгэлийг нэмэгдүүлэх зорилготой юм.
+                </p>
+</div>
+<!-- Status Banner -->
+<div class="bg-secondary-fixed text-on-secondary-fixed p-6 rounded-xl shadow-level-1 mb-8 flex items-start gap-4 border border-secondary-fixed-dim">
+<span class="material-symbols-outlined text-[32px] text-secondary mt-1" style="font-variation-settings: 'FILL' 1;">error</span>
+<div>
+<h2 class="font-headline-md text-headline-md mb-2">Шаардлагатай үйлдэл байна</h2>
+<p class="font-body-md text-body-md opacity-90">Таны бүртгэл хүлээгдэж байна. Доорх хэсэгт шаардлагатай бичиг баримтын зургийг тод, гаргацтайгаар байршуулна уу.</p>
+</div>
+</div>
+<!-- Bento Grid Layout for Uploads & Instructions -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Left Column: Upload Zones (8 columns) -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<!-- ID Upload Card -->
+<div class="bg-surface-container-lowest rounded-xl p-6 md:p-8 shadow-level-1 border border-outline-variant/30">
+<div class="flex items-center gap-3 mb-6 pb-4 border-b border-surface-container-high">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined">badge</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Иргэний үнэмлэх</h3>
+<p class="font-label-md text-label-md text-on-surface-variant mt-1">Хүчинтэй хугацаа нь дуусаагүй байх</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Front -->
+<div class="relative group cursor-pointer">
+<div class="border-2 border-dashed border-outline-variant hover:border-primary transition-colors rounded-lg h-48 flex flex-col items-center justify-center p-6 text-center bg-surface hover:bg-primary-fixed/20">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant group-hover:text-primary mb-3">add_photo_alternate</span>
+<span class="font-label-md text-label-md text-on-surface mb-1">Урд тал оруулах</span>
+<span class="font-label-sm text-label-sm text-outline">JPG, PNG (Max 10MB)</span>
+</div>
+</div>
+<!-- Back -->
+<div class="relative group cursor-pointer">
+<div class="border-2 border-dashed border-outline-variant hover:border-primary transition-colors rounded-lg h-48 flex flex-col items-center justify-center p-6 text-center bg-surface hover:bg-primary-fixed/20">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant group-hover:text-primary mb-3">add_photo_alternate</span>
+<span class="font-label-md text-label-md text-on-surface mb-1">Арын тал оруулах</span>
+<span class="font-label-sm text-label-sm text-outline">JPG, PNG (Max 10MB)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Business Registration Upload Card -->
+<div class="bg-surface-container-lowest rounded-xl p-6 md:p-8 shadow-level-1 border border-outline-variant/30">
+<div class="flex items-center gap-3 mb-6 pb-4 border-b border-surface-container-high">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined">storefront</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Улсын бүртгэлийн гэрчилгээ</h3>
+<p class="font-label-md text-label-md text-on-surface-variant mt-1">Аж ахуйн нэгж эсвэл хувиараа бизнес эрхлэгчийн гэрчилгээ</p>
+</div>
+</div>
+<div class="relative group cursor-pointer">
+<div class="border-2 border-dashed border-outline-variant hover:border-primary transition-colors rounded-lg h-56 flex flex-col items-center justify-center p-6 text-center bg-surface hover:bg-primary-fixed/20">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant group-hover:text-primary mb-3">upload_file</span>
+<span class="font-label-md text-label-md text-on-surface mb-2 text-lg">Зураг чирж оруулах эсвэл дарж сонгох</span>
+<span class="font-label-sm text-label-sm text-outline">Өндөр нягтаршилтай сканнердсан хуулбар эсвэл тод зураг байж болно.</span>
+</div>
+</div>
+</div>
+<!-- Submit Action -->
+<div class="flex justify-end mt-4">
+<button class="bg-secondary-container text-on-secondary-container font-label-md text-label-md py-3 px-8 rounded-lg hover:opacity-90 transition-opacity shadow-sm flex items-center gap-2">
+                            Баримтуудыг илгээх <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Right Column: Instructions Sidebar (4 columns) -->
+<div class="lg:col-span-4">
+<div class="bg-surface-container-low rounded-xl p-6 shadow-sm border border-surface-container-highest sticky top-24">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">lightbulb</span> Зааварчилгаа
+                        </h3>
+<div class="space-y-6">
+<div class="flex gap-4 items-start">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed-dim text-tertiary flex items-center justify-center shrink-0 mt-1">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-1">Гэрэлтүүлэг сайтай байх</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Сүүдэр тусаагүй, бичиг гаргацтай харагдахуйц гэрэлтэй орчинд дарсан байх.</p>
+</div>
+</div>
+<div class="flex gap-4 items-start">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed-dim text-tertiary flex items-center justify-center shrink-0 mt-1">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-1">Бүх булан бүтэн гарсан байх</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Бичиг баримтын 4 булан зурганд бүрэн багтсан байх шаардлагатай.</p>
+</div>
+</div>
+<div class="flex gap-4 items-start">
+<div class="w-8 h-8 rounded-full bg-error-container text-on-error-container flex items-center justify-center shrink-0 mt-1">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">cancel</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-1">Бүдэг эсвэл гялбаагүй байх</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Флаш гэрэл ашиглах үед гялбаа үүсч мэдээлэл уншигдахгүй болохоос сэргийлнэ үү.</p>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-outline-variant/30">
+<p class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">lock</span> Таны мэдээлэл шифрлэгдэн найдвартай хадгалагдана.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<script src="assets/site.js"></script></body></html>

@@ -1,0 +1,508 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-tint":"#545f73","secondary-fixed":"#ffe088","primary-container":"#1e293b","on-primary-fixed-variant":"#3c475a","inverse-on-surface":"#eff1f3","outline":"#75777d","secondary":"#735c00","on-tertiary-container":"#8191a9","surface-variant":"#e0e3e5","outline-variant":"#c5c6cd","tertiary-fixed":"#d3e4fe","on-error":"#ffffff","primary":"#091426","on-surface":"#191c1e","on-primary-fixed":"#111c2d","background":"#f7f9fb","primary-fixed-dim":"#bcc7de","inverse-primary":"#bcc7de","on-secondary-fixed-variant":"#574500","error":"#ba1a1a","on-secondary-fixed":"#241a00","error-container":"#ffdad6","on-error-container":"#93000a","on-secondary":"#ffffff","on-background":"#191c1e","on-secondary-container":"#745c00","inverse-surface":"#2d3133","surface-container-highest":"#e0e3e5","surface-container":"#eceef0","surface-container-high":"#e6e8ea","on-tertiary-fixed":"#0b1c30","tertiary-fixed-dim":"#b7c8e1","surface-bright":"#f7f9fb","on-primary-container":"#8590a6","surface-dim":"#d8dadc","on-tertiary-fixed-variant":"#38485d","secondary-fixed-dim":"#e9c349","primary-fixed":"#d8e3fb","surface-container-low":"#f2f4f6","secondary-container":"#fed65b","tertiary-container":"#1a2a3e","on-surface-variant":"#45474c","surface-container-lowest":"#ffffff","surface":"#f7f9fb","on-primary":"#ffffff","tertiary":"#041528","on-tertiary":"#ffffff"},borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},spacing:{"margin-desktop":"64px",unit:"8px","margin-mobile":"20px","container-max":"1440px",gutter:"24px"},fontFamily:{"display-lg":["Inter"],"headline-md":["Inter"],"body-lg":["Inter"],"label-caps":["Inter"],"headline-lg":["Inter"],"body-md":["Inter"],"headline-lg-mobile":["Inter"]},fontSize:{"display-lg":["48px",{lineHeight:"1.1",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-md":["24px",{lineHeight:"1.3",fontWeight:"600"}],"body-lg":["18px",{lineHeight:"1.6",fontWeight:"400"}],"label-caps":["12px",{lineHeight:"1.0",letterSpacing:"0.08em",fontWeight:"600"}],"headline-lg":["32px",{lineHeight:"1.2",fontWeight:"600"}],"body-md":["16px",{lineHeight:"1.5",fontWeight:"400"}],"headline-lg-mobile":["28px",{lineHeight:"1.2",fontWeight:"600"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 flex items-center px-6 gap-3 bg-surface-container-lowest"><div class="w-8 h-8 rounded bg-primary flex items-center justify-center text-on-primary font-headline-md text-headline-md">M</div><div class="flex flex-col"><span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Mongol Design Hub</span><span class="font-body-md text-body-md font-semibold text-primary">AI Ad Studio</span></div></div><div class="px-6 py-3"><div class="flex items-center justify-between px-3 py-2 bg-surface-container-low rounded"><span class="font-label-caps text-label-caps text-on-surface-variant">WORKSPACE</span><span class="font-label-caps text-label-caps text-secondary font-bold">PRO TIER</span></div></div><nav class="flex flex-col gap-1 px-4 mt-2" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded"><a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="campaigns-and-ad-manager" href="#"><span class="material-symbols-outlined text-[20px]">campaign</span><span class="">Campaigns &amp; Ad Manager</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="ai-creative-generator" href="#"><span class="material-symbols-outlined text-[20px]">auto_awesome</span><span class="">AI Creative Generator</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="audience-and-smart-targeting" href="#"><span class="material-symbols-outlined text-[20px]">group_add</span><span class="">Audience &amp; Smart Targeting</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="pixel-and-conversion-tracking" href="#"><span class="material-symbols-outlined text-[20px]">ads_click</span><span class="">Pixel &amp; Conversion Tracking</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="budget-and-automated-bidding" href="#"><span class="material-symbols-outlined text-[20px]">account_balance_wallet</span><span class="">Budget &amp; Automated Bidding</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="analytics-and-roas-insights" href="#"><span class="material-symbols-outlined text-[20px]">query_stats</span><span class="">Analytics &amp; ROAS Insights</span></a></nav></div><div class="p-4 flex flex-col gap-1"><div class="px-3 py-2 mb-2 bg-surface-container-low rounded flex items-center justify-between"><div class="flex flex-col"><span class="font-label-caps text-label-caps text-on-surface-variant">ACTIVE ENGINE</span><span class="font-label-caps text-label-caps text-on-surface font-semibold">Nexus AI v4.2</span></div><span class="w-2 h-2 rounded-full bg-secondary"></span></div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded"><a class="flex items-center gap-3 px-3 py-2 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="ad-policy-and-compliance" href="#"><span class="material-symbols-outlined text-[20px]">verified_user</span><span class="">Ad Policy &amp; Compliance</span></a><a class="flex items-center gap-3 px-3 py-2 rounded text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-body-md text-body-md" data-path="help-and-documentation" href="#"><span class="material-symbols-outlined text-[20px]">help_center</span><span class="">Help &amp; Support</span></a></nav></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-8 flex items-center justify-between"><div class="flex items-center gap-3"><span class="font-label-caps text-label-caps text-on-surface-variant">GROWTH SUITE</span><span class="material-symbols-outlined text-outline text-[16px]">chevron_right</span><span class="font-body-md text-body-md text-on-surface font-medium">Global Campaigns</span></div><div class="flex items-center gap-5"><div class="flex items-center gap-3 px-3 py-1.5 bg-surface-container-low rounded"><span class="material-symbols-outlined text-secondary text-[18px]">toll</span><div class="flex items-center gap-1.5"><span class="font-label-caps text-label-caps text-on-surface-variant">CREDITS:</span><span class="font-label-caps text-label-caps font-bold text-on-surface">$2,450.00</span></div></div><div class="flex items-center gap-1 bg-surface-container-low px-2 py-1 rounded"><button class="font-label-caps text-label-caps px-2 py-0.5 rounded bg-surface-container-lowest text-primary shadow-[0_1px_4px_rgba(0,0,0,0.04)] font-bold" type="button">EN</button><button class="font-label-caps text-label-caps px-2 py-0.5 rounded text-on-surface-variant hover:text-on-surface transition-colors font-medium" type="button">MN</button></div><button class="w-8 h-8 rounded flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all relative" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="w-full pt-16 bg-surface"><div class="flex flex-col w-full">
+<!-- Top Command Context Bar -->
+<div class="px-8 py-6 bg-surface-container-lowest shadow-sm flex flex-col xl:flex-row xl:items-center justify-between gap-6">
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Growth Suite</span>
+<span class="material-symbols-outlined text-outline-variant text-[14px]">chevron_right</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">AI Ad Studio</span>
+<span class="material-symbols-outlined text-outline-variant text-[14px]">chevron_right</span>
+<span class="font-label-caps text-label-caps text-primary font-bold tracking-widest">AI Video &amp; Reels Engine</span>
+<span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-label-caps text-label-caps font-bold">v2.4 Neural Motion</span>
+</div>
+<div class="flex items-center gap-4">
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">9:16 Dynamic Motion Studio</h1>
+<div class="hidden sm:flex items-center gap-2 px-3 py-1 bg-surface-container rounded-full">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-caps text-label-caps text-on-surface font-semibold tracking-wider">GPU Node 04: 4K 60fps Pipeline Ready</span>
+</div>
+</div>
+</div>
+<!-- Live Telemetry Matrix -->
+<div class="flex flex-wrap items-center gap-3">
+<div class="px-4 py-2.5 bg-surface-container-low rounded flex items-center gap-3 shadow-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">movie_edit</span>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Creatives Generated</span>
+<span class="font-body-md text-body-md font-bold text-on-surface">48 Reels</span>
+</div>
+</div>
+<div class="px-4 py-2.5 bg-surface-container-low rounded flex items-center gap-3 shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">trending_up</span>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Avg Video ROAS</span>
+<span class="font-body-md text-body-md font-bold text-secondary">5.2x Net</span>
+</div>
+</div>
+<div class="px-4 py-2.5 bg-primary text-on-primary rounded flex items-center gap-3 shadow-sm">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]">workspace_premium</span>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-primary-container">Top Performing Asset</span>
+<span class="font-label-caps text-label-caps font-bold tracking-normal">Steppe Breeze Cashmere</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Studio Main Workstation: Split 12-Column Layout -->
+<div class="px-8 py-8 grid grid-cols-1 xl:grid-cols-12 gap-8 items-start">
+<!-- LEFT PANEL: Multi-step AI Synthesis Generator (7 cols) -->
+<div class="xl:col-span-7 flex flex-col gap-6">
+<!-- Step 1: Asset Source & 3D Motion Presets -->
+<section class="p-6 bg-surface-container-lowest rounded-xl shadow-sm flex flex-col gap-5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="w-6 h-6 rounded bg-primary text-on-primary flex items-center justify-center font-label-caps text-label-caps">01</span>
+<h2 class="font-headline-md text-headline-md text-primary">Raw Material &amp; 3D Camera Engine</h2>
+</div>
+<span class="font-label-caps text-label-caps text-secondary font-bold px-2 py-0.5 rounded bg-secondary-fixed/30">TEXTURE SCAN 5000PX</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Material Card 1: Selected -->
+<div class="p-4 bg-surface-container-low rounded-lg relative cursor-pointer shadow-sm group">
+<div class="absolute top-3 right-3 w-5 h-5 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-primary text-[22px]">inventory_2</span>
+<span class="font-label-caps text-label-caps text-primary font-bold">HERITAGE YAK FIBER</span>
+</div>
+<p class="font-body-md text-body-md font-semibold text-primary">100% Organic Mongolian Yak Wool Blanket</p>
+<div class="mt-3 flex items-center gap-2">
+<span class="font-label-caps text-label-caps px-2 py-0.5 bg-surface-container text-on-surface-variant rounded">380 GSM</span>
+<span class="font-label-caps text-label-caps px-2 py-0.5 bg-surface-container text-on-surface-variant rounded">Arkhangai Valley</span>
+</div>
+</div>
+<!-- Material Card 2 -->
+<div class="p-4 bg-surface-container-lowest rounded-lg cursor-pointer shadow-sm hover:bg-surface-container-low transition-all">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-on-surface-variant text-[22px]">texture</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant font-bold">PRISTINE CASHMERE</span>
+</div>
+<p class="font-body-md text-body-md font-semibold text-on-surface">Pure Mongolian Grade-A Cashmere Scarf</p>
+<div class="mt-3 flex items-center gap-2">
+<span class="font-label-caps text-label-caps px-2 py-0.5 bg-surface-container text-on-surface-variant rounded">15.2 Micron</span>
+<span class="font-label-caps text-label-caps px-2 py-0.5 bg-surface-container text-on-surface-variant rounded">Bayankhongor</span>
+</div>
+</div>
+</div>
+<!-- 3D Camera Paths -->
+<div class="flex flex-col gap-2 pt-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant">NEURAL CAMERA TRAJECTORY PRESET</label>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-2">
+<button class="px-3 py-2.5 rounded bg-primary text-on-primary font-label-caps text-label-caps font-bold text-left flex flex-col gap-1 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary-fixed">air</span>
+<span class="">Steppe Wind Breeze</span>
+</button>
+<button class="px-3 py-2.5 rounded bg-surface-container text-on-surface font-label-caps text-label-caps font-semibold text-left flex flex-col gap-1 hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">360</span>
+<span class="">Cinematic 360 Orbit</span>
+</button>
+<button class="px-3 py-2.5 rounded bg-surface-container text-on-surface font-label-caps text-label-caps font-semibold text-left flex flex-col gap-1 hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">zoom_in</span>
+<span class="">Macro Stitch Zoom</span>
+</button>
+<button class="px-3 py-2.5 rounded bg-surface-container text-on-surface font-label-caps text-label-caps font-semibold text-left flex flex-col gap-1 hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">pan_tool_alt</span>
+<span class="">Texture Slow-Pan</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Step 2: AI Multi-Lingual Voiceover & Scriptwriter -->
+<section class="p-6 bg-surface-container-lowest rounded-xl shadow-sm flex flex-col gap-5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="w-6 h-6 rounded bg-primary text-on-primary flex items-center justify-center font-label-caps text-label-caps">02</span>
+<h2 class="font-headline-md text-headline-md text-primary">Script Synthesis &amp; Voiceover</h2>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 bg-surface-container-low rounded">
+<span class="material-symbols-outlined text-secondary text-[16px]">translate</span>
+<span class="font-label-caps text-label-caps text-on-surface font-bold">GLOBAL AUTO-LOCALE</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps text-on-surface-variant">DELIVERY TONE</label>
+<select class="w-full bg-surface-container-low px-3 py-2 rounded font-body-md text-body-md text-on-surface focus:outline-none shadow-sm cursor-pointer">
+<option selected="">Luxury Tactile Whisper (High Retention)</option>
+<option>Direct Response E-Commerce</option>
+<option>Storyteller Nomad Narrative</option>
+<option>High-Fashion Editorial Pace</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps text-on-surface-variant">VOICE MODEL</label>
+<select class="w-full bg-surface-container-low px-3 py-2 rounded font-body-md text-body-md text-on-surface focus:outline-none shadow-sm cursor-pointer">
+<option selected="">Sora-Nordic (Deep &amp; Warm 48kHz)</option>
+<option>Altai-Heritage (Authentic Mongolian En)</option>
+<option>Savile-Row (British Bespoke)</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-caps text-label-caps text-on-surface-variant">ACTIVE LOCALE</label>
+<div class="flex items-center gap-1 bg-surface-container-low p-1 rounded">
+<button class="flex-1 py-1 text-center font-label-caps text-label-caps rounded bg-primary text-on-primary font-bold shadow-sm" type="button">EN</button>
+<button class="flex-1 py-1 text-center font-label-caps text-label-caps rounded text-on-surface-variant hover:text-on-surface" type="button">DE</button>
+<button class="flex-1 py-1 text-center font-label-caps text-label-caps rounded text-on-surface-variant hover:text-on-surface" type="button">JA</button>
+<button class="flex-1 py-1 text-center font-label-caps text-label-caps rounded text-on-surface-variant hover:text-on-surface" type="button">MN</button>
+</div>
+</div>
+</div>
+<!-- Script Workspace -->
+<div class="p-4 bg-surface-container rounded-lg flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant">GENERATED NARRATIVE TELEPROMPTER</span>
+<button class="flex items-center gap-1 font-label-caps text-label-caps text-secondary font-bold hover:underline" type="button">
+<span class="material-symbols-outlined text-[14px]">cached</span>
+<span class="">REWRITE HOOK</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-primary italic leading-relaxed">
+            “Woven in sub-zero steppes. Purest ethical yak wool direct from nomadic cooperatives. Soft as cashmere, warmer than merino — delivered direct to your door with zero export VAT.”
+          </p>
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">graphic_eq</span>
+<span class="font-label-caps text-label-caps text-on-surface font-semibold">11.4s Read Duration</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">94 Words/min • 85% Predicted Completion</span>
+</div>
+</div>
+</section>
+<!-- Step 3: Sound Design & Subtitle Presets -->
+<section class="p-6 bg-surface-container-lowest rounded-xl shadow-sm flex flex-col gap-5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="w-6 h-6 rounded bg-primary text-on-primary flex items-center justify-center font-label-caps text-label-caps">03</span>
+<h2 class="font-headline-md text-headline-md text-primary">Acoustic Bed &amp; Kinetic Subtitles</h2>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- BGM Selection -->
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant">BACKGROUND SCORE</label>
+<div class="space-y-2">
+<div class="p-3 bg-surface-container-low rounded flex items-center justify-between cursor-pointer shadow-sm">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px]">music_note</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold text-primary">Minimal Steppe Ambient</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Morin Khuur + Lo-Fi Sub-bass</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[18px]">radio_button_checked</span>
+</div>
+<div class="p-3 bg-surface-container-lowest rounded flex items-center justify-between cursor-pointer hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">music_note</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-medium text-on-surface">Modern Lo-Fi Craft</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Warm Tape Vinyl Beats</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-[18px]">radio_button_unchecked</span>
+</div>
+</div>
+</div>
+<!-- Kinetic Subtitles -->
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant">DYNAMIC CAPTION STYLE</label>
+<div class="grid grid-cols-1 gap-2">
+<div class="p-3 bg-primary text-on-primary rounded flex items-center justify-between cursor-pointer shadow-sm">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-secondary-fixed font-bold">KARAOKE POP GLOW</span>
+<span class="font-body-md text-body-md text-surface-container-high">Word-by-word gold kinetic highlighting</span>
+</div>
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]">mobile_share_stack</span>
+</div>
+<div class="p-3 bg-surface-container-low rounded flex items-center justify-between cursor-pointer hover:bg-surface-container transition-colors">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface font-bold">LUXURY SERIF MINIMAL</span>
+<span class="font-body-md text-body-md text-on-surface-variant">High-fashion centered subtitle layout</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">style</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Step 4: Floating Trust Badges & Action Dock -->
+<section class="p-6 bg-surface-container-lowest rounded-xl shadow-sm flex flex-col gap-5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="w-6 h-6 rounded bg-primary text-on-primary flex items-center justify-center font-label-caps text-label-caps">04</span>
+<h2 class="font-headline-md text-headline-md text-primary">Cross-Border Trust Overlay Elements</h2>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">INTERACTIVE REELS STICKERS</span>
+</div>
+<div class="flex flex-wrap items-center gap-3">
+<label class="flex items-center gap-2.5 px-3 py-2 bg-surface-container-low rounded cursor-pointer shadow-sm">
+<input checked="" class="accent-primary w-4 h-4 rounded" type="checkbox">
+<span class="font-label-caps text-label-caps text-on-surface font-semibold">0% EXPORT VAT BADGE</span>
+</label>
+<label class="flex items-center gap-2.5 px-3 py-2 bg-surface-container-low rounded cursor-pointer shadow-sm">
+<input checked="" class="accent-primary w-4 h-4 rounded" type="checkbox">
+<span class="font-label-caps text-label-caps text-on-surface font-semibold">DHL 3-5 DAYS DOOR-TO-DOOR</span>
+</label>
+<label class="flex items-center gap-2.5 px-3 py-2 bg-surface-container-low rounded cursor-pointer shadow-sm">
+<input checked="" class="accent-primary w-4 h-4 rounded" type="checkbox">
+<span class="font-label-caps text-label-caps text-on-surface font-semibold">CN23 CUSTOMS CLEARED</span>
+</label>
+<label class="flex items-center gap-2.5 px-3 py-2 bg-surface-container-low rounded cursor-pointer shadow-sm">
+<input checked="" class="accent-primary w-4 h-4 rounded" type="checkbox">
+<span class="font-label-caps text-label-caps text-on-surface font-semibold">ECO-CERTIFIED NOMAD TRACE</span>
+</label>
+</div>
+<!-- Render & Export Actions -->
+<div class="pt-4 flex flex-col sm:flex-row items-center gap-3"><button class="w-full sm:w-auto px-6 py-3.5 bg-primary text-on-primary font-body-md text-body-md font-semibold rounded flex items-center justify-center gap-2 shadow-md hover:bg-tertiary transition-all cursor-pointer group" onclick="document.getElementById('export-modal').classList.remove('hidden')" type="button"><span class="material-symbols-outlined text-[20px] text-secondary-fixed">download_for_offline</span><span class="">Export Video (MP4 / 4K)</span><div class="flex items-center gap-1 ml-1.5 px-2 py-0.5 rounded bg-surface-container-highest/30 font-label-caps text-label-caps text-secondary-fixed"><span class="">4K UHD</span><span class="">•</span><span class="">ProRes</span></div></button><button class="w-full sm:w-auto px-5 py-3.5 bg-surface-container text-primary font-body-md text-body-md font-semibold rounded flex items-center justify-center gap-2 hover:bg-surface-container-high transition-colors cursor-pointer" type="button"><span class="material-symbols-outlined text-[20px]">refresh</span><span class="">Regenerate Neural Motion</span></button><button class="w-full sm:w-auto px-5 py-3.5 bg-secondary text-on-secondary font-body-md text-body-md font-semibold rounded flex items-center justify-center gap-2 shadow-sm hover:opacity-95 transition-opacity sm:ml-auto cursor-pointer" type="button" onclick="document.getElementById('export-modal').classList.remove('hidden')"><span class="material-symbols-outlined text-[20px]">send</span><span class="">Push to Meta &amp; TikTok</span></button></div>
+</section>
+</div>
+<!-- RIGHT PANEL: Live Interactive 9:16 Reels Video Preview & Scrubber (5 cols) -->
+<div class="xl:col-span-5 flex flex-col items-center">
+<!-- Device Chassis: Ultra-clean 9:16 Mockup Frame -->
+<div class="w-full max-w-[380px] bg-primary p-3 rounded-[36px] shadow-2xl relative">
+<!-- Screen Area (9:16 Ratio Container) -->
+<div class="relative w-full aspect-[9/16] rounded-[28px] overflow-hidden bg-tertiary flex flex-col justify-between">
+<!-- Background Video Image Plate -->
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="Cinematic luxury vertical video close up of a hand gently brushing pure organic Mongolian yak wool blanket with deep charcoal and natural taupe fibers. Soft wind blowing across texture under warm golden hour sub-zero steppe sunset light. Ultra-realistic editorial lighting, 8k resolution, cinematic shallow depth of field, high-end fashion campaign aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDijKOL5-Vvy_htcDbrS-FG5eHzQi5vG2dQnpI--Ifzu9CeA6KMRv8zApgkRyauRyPDYg9i_xZ55J4NxctRYy9Q1i1E2XCeR0bUEd-w_0ZxgyC-VLAuW3EAdrEZdG5KeqZ43zP1U2YvHuFq6-E9cnqBMonnEC4lq5ROr_Gqp0CkXOUW4w32PHoKZAgGJ0AWYZMH2GbYxf1CAH6jx0csD51jKJEWSY3IzGA8aEFwEMg">
+<!-- Ambient Vignette Gradient -->
+<div class="absolute inset-0 bg-gradient-to-b from-primary/60 via-transparent to-primary/90"></div>
+</div>
+<!-- Reels Top Bar Over Video -->
+<div class="relative z-10 p-4 flex items-center justify-between text-on-primary">
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps tracking-widest font-bold">REELS</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span>
+<span class="font-label-caps text-label-caps text-secondary-fixed font-bold">4K 60FPS</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">volume_up</span>
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</div>
+</div>
+<!-- Video Mid-Area: Dynamic Floating Subtitle Overlay -->
+<div class="relative z-10 px-5 flex flex-col items-center text-center my-auto">
+<div class="px-3 py-1 bg-primary/70 backdrop-blur-md rounded-full mb-3 shadow-md">
+<span class="font-label-caps text-label-caps text-secondary-fixed font-bold tracking-wider">SUB-ZERO STEPPES COLLECTION</span>
+</div>
+<p class="font-headline-md text-headline-md font-bold text-on-primary drop-shadow-md leading-snug">
+              Woven in sub-zero steppes. <span class="text-secondary-fixed bg-primary/80 px-1 rounded">Purest ethical yak wool</span> direct from nomads.
+            </p>
+</div>
+<!-- Reels Right Action Sidebar Overlay -->
+<div class="absolute right-3 bottom-24 z-10 flex flex-col items-center gap-5 text-on-primary">
+<div class="flex flex-col items-center gap-1">
+<div class="w-10 h-10 rounded-full bg-primary/50 backdrop-blur-md flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px] text-error">favorite</span>
+</div>
+<span class="font-label-caps text-label-caps font-bold">12.4K</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<div class="w-10 h-10 rounded-full bg-primary/50 backdrop-blur-md flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">chat_bubble</span>
+</div>
+<span class="font-label-caps text-label-caps font-bold">342</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<div class="w-10 h-10 rounded-full bg-primary/50 backdrop-blur-md flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</div>
+<span class="font-label-caps text-label-caps font-bold">1.8K</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-primary/50 backdrop-blur-md flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">bookmark</span>
+</div>
+</div>
+<!-- Bottom Sponsored Brand Card & Interactive Shopping Pill -->
+<div class="relative z-10 p-4 flex flex-col gap-2.5">
+<!-- Account & Sound Badge -->
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-bold text-label-caps font-label-caps">M</div>
+<span class="font-body-md text-body-md font-bold text-on-primary">mongoldesignhub</span>
+<span class="font-label-caps text-label-caps px-1.5 py-0.2 rounded bg-surface-container-highest/30 text-on-primary text-[10px]">SPONSORED</span>
+</div>
+<!-- Audio Track Ticker -->
+<div class="flex items-center gap-1.5 text-on-primary-fixed-variant">
+<span class="material-symbols-outlined text-[14px] text-on-primary">graphic_eq</span>
+<span class="font-label-caps text-label-caps text-on-primary font-medium truncate">Original Sound • Minimal Steppe Ambient (48kHz)</span>
+</div>
+<!-- Product Tag Card Overlay -->
+<div class="p-2.5 bg-surface-container-lowest/95 backdrop-blur-md rounded-lg shadow-lg flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[20px]">dry_cleaning</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps font-bold text-primary">Yak Wool Throw (Grey)</span>
+<div class="flex items-center gap-1.5">
+<span class="font-body-md text-body-md font-bold text-on-surface">$128.00</span>
+<span class="font-label-caps text-label-caps text-secondary font-bold">0% VAT EXPORT</span>
+</div>
+</div>
+</div>
+<button class="px-3.5 py-1.5 bg-primary text-on-primary font-label-caps text-label-caps font-bold rounded flex items-center gap-1 shadow-sm" type="button">
+<span class="">Shop Now</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Professional Timeline & Cue Marker Bar -->
+<div class="w-full mt-6 p-5 bg-surface-container-lowest rounded-xl shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">view_timeline</span>
+<span class="font-label-caps text-label-caps text-primary font-bold">NEURAL FRAME CUE SCRUBBER</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant font-mono">00:04.2 / 00:12.0</span>
+</div>
+<!-- Visual Segment Markers -->
+<div class="grid grid-cols-12 gap-1 h-3 rounded overflow-hidden bg-surface-container">
+<div class="col-span-3 bg-secondary-fixed" title="0-3s: Hook (Cold Steppe Intro)"></div>
+<div class="col-span-4 bg-primary" title="3-7s: Tactile Texture &amp; Origin"></div>
+<div class="col-span-3 bg-tertiary-container" title="7-10s: Social Proof &amp; Zero VAT"></div>
+<div class="col-span-2 bg-secondary" title="10-12s: DHL CTA &amp; Checkout"></div>
+</div>
+<!-- Legend for Timeline -->
+<div class="flex flex-wrap items-center justify-between text-on-surface-variant pt-1">
+<span class="font-label-caps text-label-caps flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed"></span> 0-3s Hook
+          </span>
+<span class="font-label-caps text-label-caps flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary"></span> 3-7s Texture Focus
+          </span>
+<span class="font-label-caps text-label-caps flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-tertiary-container"></span> 7-10s 0% VAT Trust
+          </span>
+<span class="font-label-caps text-label-caps flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> 10-12s CTA
+          </span>
+</div>
+<!-- Audio Waveform Visualization (SVG Under 2KB) -->
+<div class="pt-2 flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant">AI Voiceover &amp; BGM Sync Waveform</span>
+<div class="h-8 w-full bg-surface-container-low rounded flex items-center px-2">
+<svg class="w-full h-6 text-primary" fill="none" preserveAspectRatio="none" viewBox="0 0 400 24">
+<path d="M0,12 Q10,2 20,12 T40,12 T60,20 T80,4 T100,18 T120,8 T140,22 T160,2 T180,14 T200,6 T220,19 T240,5 T260,16 T280,3 T300,21 T320,8 T340,17 T360,6 T380,18 T400,12" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+<path d="M0,12 Q10,7 20,12 T40,15 T60,8 T80,16 T100,9 T120,14 T140,7 T160,15 T180,10 T200,14 T220,9 T240,15 T260,11 T280,14 T300,8 T320,13 T340,10 T360,14 T380,9 T400,12" stroke="#735c00" stroke-dasharray="3,3" stroke-width="1.5"></path>
+</svg>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Section: High-Converting Video Templates & Historical Performance Grid -->
+<div class="px-8 pb-12 flex flex-col gap-5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-[24px]">local_fire_department</span>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary">High-Converting Motion Blueprints</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Validated multi-channel Reels algorithms optimized for direct cross-border conversions.</p>
+</div>
+</div>
+<button class="font-label-caps text-label-caps text-primary font-bold hover:underline flex items-center gap-1" type="button">
+<span class="">VIEW ALL 24 BLUEPRINTS</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<!-- 4 Preset Video Templates Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Template 1 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col group hover:shadow-md transition-shadow">
+<div class="relative w-full aspect-[9/10] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Mongolian shepherd comb harvesting pure raw cashmere fibers against expansive snow-dusted Altai mountains. Sunlight glistening through wool. Editorial documentary film look, rich warm highlights and deep shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBej4JhPA6Jjy1XMXR4dBJkVtH0MOR01LJouaAiSKg2R6MVVZR1mKK2Qhi8Np04_2246MOqsfyVGnTYPSV9DRz-xCYDo8V42ga6PT6W95Cwb3pTnHv_jEBu1ENBKsmWOld5j4AQB-N-bIIKEaGsvCkrfN70rzSydtOnrp9E0hWxYLX-nlSbCfA1D2Vf-iR3mGfHv1B-uN8Bb_xGZ8Wdh1zX28-PCKo2U_YlkPeiWLw">
+<div class="absolute top-3 left-3 px-2 py-0.5 rounded bg-primary text-on-primary font-label-caps text-label-caps font-bold">12 SEC</div>
+<div class="absolute top-3 right-3 px-2 py-0.5 rounded bg-secondary text-on-secondary font-label-caps text-label-caps font-bold">ROAS 5.4x</div>
+<div class="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-primary/80 to-transparent flex items-center justify-between text-on-primary">
+<span class="font-label-caps text-label-caps font-semibold">Sound: Nomad Horizon</span>
+<span class="material-symbols-outlined text-[18px]">play_circle</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-3 flex-1 justify-between">
+<div>
+<h4 class="font-body-md text-body-md font-bold text-primary">Origin to Luxury</h4>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-1">Raw comb pasture hook leading directly to bespoke luxury packaging.</p>
+</div>
+<button class="w-full py-2 bg-surface-container text-primary font-label-caps text-label-caps font-bold rounded hover:bg-primary hover:text-on-primary transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+<span class="">USE BLUEPRINT</span>
+</button>
+</div>
+</div>
+<!-- Template 2 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col group hover:shadow-md transition-shadow">
+<div class="relative w-full aspect-[9/10] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Microscopic extreme macro view of woven cashmere scarf fibers showing tight artisan stitching and incredible tactile texture under studio key light. Minimalist luxury aesthetic with slate blue and golden tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZsPpnU7G4u1GP4RVuLT2UbPNyCfL5mz2LemgkmPUe4onZBmi6m-ZevLpAZwr3j-PkE1cGD-hTp7oODJxwjfgUaQ9ZaynC5BHy7472yZrSmyMGSyW4QZr-CiaixcXFezBAnTke5wnMIM-SsciuGasPjsWf4oGjES1uqPGzKzp1u_bjFCQz67Y7nVf4w7DiQS3ynJJwAnUTqEPwYzgsKK65am7AhQFmoX4epjckxOk">
+<div class="absolute top-3 left-3 px-2 py-0.5 rounded bg-primary text-on-primary font-label-caps text-label-caps font-bold">15 SEC</div>
+<div class="absolute top-3 right-3 px-2 py-0.5 rounded bg-secondary text-on-secondary font-label-caps text-label-caps font-bold">ROAS 4.9x</div>
+<div class="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-primary/80 to-transparent flex items-center justify-between text-on-primary">
+<span class="font-label-caps text-label-caps font-semibold">Sound: Whisper Craft</span>
+<span class="material-symbols-outlined text-[18px]">play_circle</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-3 flex-1 justify-between">
+<div>
+<h4 class="font-body-md text-body-md font-bold text-primary">Artisan Craftsmanship Close-up</h4>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-1">High-retention macro stitch sequence highlighting 15.2 micron purity.</p>
+</div>
+<button class="w-full py-2 bg-surface-container text-primary font-label-caps text-label-caps font-bold rounded hover:bg-primary hover:text-on-primary transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+<span class="">USE BLUEPRINT</span>
+</button>
+</div>
+</div>
+<!-- Template 3 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col group hover:shadow-md transition-shadow">
+<div class="relative w-full aspect-[9/10] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Elegant luxury unboxing experience of a Mongolian wool package with custom stamped wax seal, customs CN23 verification tag, and pristine matte navy blue gift box resting on minimalist concrete table." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPl55w2oJgCiymfcp9fhyRXWoChfEGpKcH_4oKJ0k2spygzBCnfvA_Pl0zBTobiP5Wsou7dBCqEt524oadWCxUyXzp1-CmlYP_utRu_ew5YQxPkKdWlKmXp__qda2lWHqirkNt5J3gUSAOEgBYtDOZa8oCDP8_CuwfEUK1IRViN5ls1acLRPWR5-lNYcBM4lcXdCizmzqprpLzYqGWLeD1FBRnF83PjQXfMRb9veQ">
+<div class="absolute top-3 left-3 px-2 py-0.5 rounded bg-primary text-on-primary font-label-caps text-label-caps font-bold">12 SEC</div>
+<div class="absolute top-3 right-3 px-2 py-0.5 rounded bg-secondary text-on-secondary font-label-caps text-label-caps font-bold">ROAS 5.1x</div>
+<div class="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-primary/80 to-transparent flex items-center justify-between text-on-primary">
+<span class="font-label-caps text-label-caps font-semibold">Sound: Modern Pulse</span>
+<span class="material-symbols-outlined text-[18px]">play_circle</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-3 flex-1 justify-between">
+<div>
+<h4 class="font-body-md text-body-md font-bold text-primary">Unboxing &amp; Zero VAT Guarantee</h4>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-1">Focuses on international buyer reassurance and DHL door-to-door speed.</p>
+</div>
+<button class="w-full py-2 bg-surface-container text-primary font-label-caps text-label-caps font-bold rounded hover:bg-primary hover:text-on-primary transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+<span class="">USE BLUEPRINT</span>
+</button>
+</div>
+</div>
+<!-- Template 4 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col group hover:shadow-md transition-shadow">
+<div class="relative w-full aspect-[9/10] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="High tech thermal sensor aesthetic showing insulation of yak wool blanket in -30 degree celsius snowy Mongolian winter backdrop. Frost on edges with warm radiant orange heat signature captured through fabric." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBq_u5vJsZnC60xtwsqKwbRRAT72O0UuNos-UHH8eolJ23rOAbcCgHnwxuWMvsWkGeO-uujBxa9IkH3hIk508_imdBGT-L7tANGOI80qh9a24BE24pjkjOPfVhSY0ZC1eqNisRPPjkonUSfIgKRFeWErm5D1XQvDHtZMCD6NqiP4GtDygo2pGWRae5SSH2yZBQ7XkgscFGUaVaFCwPKGBJBMsS-CTa0MiZ4qzpjw7c">
+<div class="absolute top-3 left-3 px-2 py-0.5 rounded bg-primary text-on-primary font-label-caps text-label-caps font-bold">14 SEC</div>
+<div class="absolute top-3 right-3 px-2 py-0.5 rounded bg-secondary text-on-secondary font-label-caps text-label-caps font-bold">ROAS 4.6x</div>
+<div class="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-primary/80 to-transparent flex items-center justify-between text-on-primary">
+<span class="font-label-caps text-label-caps font-semibold">Sound: Glacial Drift</span>
+<span class="material-symbols-outlined text-[18px]">play_circle</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-3 flex-1 justify-between">
+<div>
+<h4 class="font-body-md text-body-md font-bold text-primary">Sub-zero Winter Warmth Test</h4>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-1">Extreme climate proof hook showing thermal performance versus merino.</p>
+</div>
+<button class="w-full py-2 bg-surface-container text-primary font-label-caps text-label-caps font-bold rounded hover:bg-primary hover:text-on-primary transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+<span class="">USE BLUEPRINT</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div><div id="export-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-primary/80 backdrop-blur-md overflow-hidden"><div class="relative w-full max-w-4xl bg-surface-container-lowest rounded-xl shadow-2xl overflow-hidden border border-outline-variant/30 flex flex-col max-h-[92vh]"><div class="px-6 py-4 bg-primary text-on-primary flex items-center justify-between border-b border-primary-container"><div class="flex items-center gap-3"><div class="w-9 h-9 rounded bg-secondary-fixed/20 flex items-center justify-center text-secondary-fixed"><span class="material-symbols-outlined text-[22px]">video_file</span></div><div><div class="flex items-center gap-2"><h3 class="font-headline-md text-headline-md text-on-primary">Export &amp; Social Bridge</h3><span class="px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-caps text-label-caps font-bold">PRO ENGINE</span></div><p class="font-label-caps text-label-caps text-on-primary-container mt-0.5">Master Render, Bitrate Matrix &amp; Multi-Platform Sync</p></div></div><button class="w-8 h-8 rounded flex items-center justify-center text-on-primary-container hover:text-on-primary hover:bg-surface-container-high/20 transition-colors cursor-pointer" onclick="document.getElementById('export-modal').classList.add('hidden')" type="button"><span class="material-symbols-outlined text-[20px]">close</span></button></div><div class="p-6 overflow-y-auto space-y-6 flex-1 bg-surface"><div class="flex flex-col gap-2.5"><div class="flex items-center justify-between"><span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">1. Output Format &amp; Master Preset</span><span class="font-label-caps text-label-caps text-secondary font-bold">GPU Node 04: Hardware Accelerated</span></div><div class="grid grid-cols-1 md:grid-cols-3 gap-3"><div class="p-4 rounded-lg bg-surface-container-lowest border-2 border-primary cursor-pointer relative shadow-sm"><div class="absolute top-3 right-3 w-5 h-5 rounded-full bg-primary text-on-primary flex items-center justify-center"><span class="material-symbols-outlined text-[13px]">check</span></div><div class="flex items-center gap-2 mb-1.5"><span class="material-symbols-outlined text-secondary text-[20px]">high_quality</span><span class="font-label-caps text-label-caps font-bold text-primary">4K ULTRA HD</span></div><p class="font-body-md text-body-md font-semibold text-primary">3840×2160 • 60 FPS</p><p class="font-label-caps text-label-caps text-on-surface-variant mt-1">Master Archive • 45 Mbps VBR</p><div class="mt-3 flex items-center gap-1.5"><span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-label-caps text-label-caps font-bold">ProRes / H.265</span><span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-caps text-label-caps">48.2 MB</span></div></div><div class="p-4 rounded-lg bg-surface-container-lowest border border-outline-variant/50 hover:border-primary/50 cursor-pointer shadow-sm transition-all"><div class="flex items-center gap-2 mb-1.5"><span class="material-symbols-outlined text-on-surface-variant text-[20px]">smartphone</span><span class="font-label-caps text-label-caps font-bold text-on-surface">REELS &amp; TIKTOK</span></div><p class="font-body-md text-body-md font-semibold text-on-surface">1080×1920 • 60 FPS</p><p class="font-label-caps text-label-caps text-on-surface-variant mt-1">Native 9:16 Social • 22 Mbps</p><div class="mt-3 flex items-center gap-1.5"><span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-caps text-label-caps font-bold">MP4 (H.264)</span><span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-caps text-label-caps">19.4 MB</span></div></div><div class="p-4 rounded-lg bg-surface-container-lowest border border-outline-variant/50 hover:border-primary/50 cursor-pointer shadow-sm transition-all"><div class="flex items-center gap-2 mb-1.5"><span class="material-symbols-outlined text-on-surface-variant text-[20px]">globe</span><span class="font-label-caps text-label-caps font-bold text-on-surface">WEBM LIGHTWEIGHT</span></div><p class="font-body-md text-body-md font-semibold text-on-surface">1080×1920 • 30 FPS</p><p class="font-label-caps text-label-caps text-on-surface-variant mt-1">Web Backgrounds • VP9 Codec</p><div class="mt-3 flex items-center gap-1.5"><span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-label-caps text-label-caps font-bold">WebM</span><span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label-caps text-label-caps">6.8 MB</span></div></div></div></div><div class="grid grid-cols-1 md:grid-cols-2 gap-4"><div class="p-4 bg-surface-container-lowest rounded-lg border border-outline-variant/40 flex flex-col gap-3 shadow-sm"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[18px]">subtitles</span><span class="font-label-caps text-label-caps font-bold text-primary">CAPTIONS &amp; SUBTITLE PACKAGING</span></div><div class="space-y-2"><label class="flex items-center gap-3 p-2 rounded bg-surface-container-low cursor-pointer"><input type="checkbox" checked="" class="accent-primary w-4 h-4 rounded"><div class="flex flex-col"><span class="font-label-caps text-label-caps font-bold text-on-surface">Burn-in Kinetic Subtitles (Hardcoded)</span><span class="font-label-caps text-label-caps text-on-surface-variant text-[10px]">Render word-by-word gold karaoke directly into frame</span></div></label><label class="flex items-center gap-3 p-2 rounded bg-surface-container-low cursor-pointer"><input type="checkbox" checked="" class="accent-primary w-4 h-4 rounded"><div class="flex flex-col"><span class="font-label-caps text-label-caps font-bold text-on-surface">Include Sidecar SRT &amp; VTT Files</span><span class="font-label-caps text-label-caps text-on-surface-variant text-[10px]">Multi-lingual subtitle tracks (EN, DE, JA, MN)</span></div></label><label class="flex items-center gap-3 p-2 rounded bg-surface-container-low cursor-pointer"><input type="checkbox" class="accent-primary w-4 h-4 rounded"><div class="flex flex-col"><span class="font-label-caps text-label-caps font-bold text-on-surface">Stem Stems &amp; Clean Audio Split (WAV)</span><span class="font-label-caps text-label-caps text-on-surface-variant text-[10px]">Separate AI voiceover from Morin Khuur bed</span></div></label></div></div><div class="p-4 bg-surface-container-lowest rounded-lg border border-outline-variant/40 flex flex-col gap-3 shadow-sm"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[18px]">tune</span><span class="font-label-caps text-label-caps font-bold text-primary">ENCODING &amp; COLOR PROFILES</span></div><div class="space-y-2.5"><div class="flex items-center justify-between text-body-md"><span class="font-label-caps text-label-caps text-on-surface-variant">Target Bitrate</span><span class="font-label-caps text-label-caps font-bold text-primary">45 Mbps (2-Pass VBR)</span></div><div class="w-full bg-surface-container rounded-full h-1.5 overflow-hidden"><div class="bg-primary h-full rounded-full w-4/5"></div></div><div class="flex items-center justify-between pt-1"><span class="font-label-caps text-label-caps text-on-surface-variant">Audio Standard</span><span class="font-label-caps text-label-caps font-bold text-on-surface">320 kbps AAC (Spatial Stereo)</span></div><div class="flex items-center justify-between"><span class="font-label-caps text-label-caps text-on-surface-variant">Color Primaries</span><span class="font-label-caps text-label-caps font-bold text-secondary">DCI-P3 Wide Gamut / Rec.709</span></div><div class="flex items-center justify-between"><span class="font-label-caps text-label-caps text-on-surface-variant">Frame Cadence</span><span class="font-label-caps text-label-caps font-bold text-on-surface">59.94 fps Progressive</span></div></div></div></div><div class="p-3.5 bg-surface-container-low rounded-lg flex flex-wrap items-center justify-between gap-3 border border-outline-variant/30"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-[20px]">speed</span><div class="flex items-center gap-2"><span class="font-label-caps text-label-caps text-on-surface-variant">ESTIMATED SIZE:</span><span class="font-label-caps text-label-caps font-bold text-primary">48.2 MB</span><span class="text-outline-variant">•</span><span class="font-label-caps text-label-caps text-on-surface-variant">RENDER SPEED:</span><span class="font-label-caps text-label-caps font-bold text-secondary">~18s via GPU Node 04</span></div></div><div class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-caps text-label-caps text-on-surface font-semibold">Render Queue Status: Ready</span></div></div></div><div class="p-6 bg-surface-container-lowest border-t border-outline-variant/30 flex flex-col md:flex-row items-center justify-between gap-4"><div class="flex items-center gap-3 w-full md:w-auto"><button class="flex-1 md:flex-none px-5 py-3 bg-primary text-on-primary font-body-md text-body-md font-semibold rounded flex items-center justify-center gap-2 shadow-md hover:bg-tertiary transition-all cursor-pointer" type="button"><span class="material-symbols-outlined text-[20px] text-secondary-fixed">download</span><span class="">Download Master MP4 (4K 60fps)</span></button><button class="flex-1 md:flex-none px-4 py-3 bg-surface-container text-primary font-body-md text-body-md font-semibold rounded flex items-center justify-center gap-2 hover:bg-surface-container-high transition-colors cursor-pointer" type="button"><span class="material-symbols-outlined text-[18px]">share</span><span class="">Download 9:16 Social Pack</span></button></div><div class="flex items-center gap-2.5 w-full md:w-auto justify-end"><button class="px-4 py-3 bg-surface-container text-on-surface-variant font-label-caps text-label-caps font-bold rounded hover:bg-surface-container-high transition-colors flex items-center gap-1.5 cursor-pointer" type="button"><span class="material-symbols-outlined text-[18px]">link</span><span class="">COPY CDN LINK</span></button><button class="px-5 py-3 bg-secondary text-on-secondary font-body-md text-body-md font-semibold rounded flex items-center justify-center gap-2 shadow-sm hover:opacity-95 transition-opacity cursor-pointer" type="button"><span class="material-symbols-outlined text-[20px]">rocket_launch</span><span class="">Push to Meta Ads Library</span></button></div></div></div></div></main></div>
+
+<script src="assets/site.js"></script></body></html>

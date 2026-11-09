@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html lang="mn"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>White Gold - Premium Mongolian Marketplace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#eff4ff",
+                        "surface": "#f8f9ff",
+                        "primary-fixed": "#d8e3fb",
+                        "on-tertiary-fixed": "#00201d",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "secondary-fixed-dim": "#ffb690",
+                        "on-secondary-fixed-variant": "#783200",
+                        "on-tertiary-fixed-variant": "#005049",
+                        "on-surface": "#0b1c30",
+                        "surface-container": "#e5eeff",
+                        "secondary-fixed": "#ffdbca",
+                        "on-background": "#0b1c30",
+                        "surface-container-highest": "#d3e4fe",
+                        "surface-variant": "#d3e4fe",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#8590a6",
+                        "secondary": "#9d4300",
+                        "on-primary-fixed-variant": "#3c475a",
+                        "inverse-primary": "#bcc7de",
+                        "surface-dim": "#cbdbf5",
+                        "on-primary-fixed": "#111c2d",
+                        "tertiary": "#001815",
+                        "tertiary-container": "#002f2a",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#545f73",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#213145",
+                        "background": "#f8f9ff",
+                        "outline": "#75777d",
+                        "outline-variant": "#c5c6cd",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#dce9ff",
+                        "secondary-container": "#fd761a",
+                        "on-secondary-container": "#5c2400",
+                        "on-surface-variant": "#45474c",
+                        "primary-container": "#1e293b",
+                        "primary": "#091426",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#6bd8cb",
+                        "primary-fixed-dim": "#bcc7de",
+                        "surface-bright": "#f8f9ff",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#89f5e7",
+                        "on-tertiary-container": "#28a094",
+                        "on-secondary-fixed": "#341100"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "margin": "32px",
+                        "gutter": "24px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "headline-xl": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col md:flex-row font-body-md">
+<!-- SideNavBar (Hidden on Mobile, Visible on Desktop) -->
+<nav class="hidden md:flex h-screen w-64 border-r bg-slate-50 dark:bg-slate-950 flex-col p-4 gap-4 sticky top-0 z-40">
+<!-- Brand -->
+<div class="px-2 py-4 mb-4">
+<h1 class="font-headline-md text-headline-md text-xl font-black text-indigo-950 dark:text-white">White Gold</h1>
+<p class="font-label-sm text-label-sm text-slate-500 mt-1">Premium Mongolian Marketplace</p>
+</div>
+<!-- Navigation Links -->
+<ul class="flex flex-col gap-2 flex-grow">
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-indigo-900 dark:text-indigo-400 font-semibold border-b-2 border-indigo-900 bg-white dark:bg-slate-900 text-indigo-900 dark:text-indigo-300 shadow-sm rounded-lg scale-100 hover:scale-[1.02] transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="texture">texture</span>
+<span class="font-label-md text-label-md">Wool</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 hover:text-indigo-900 scale-100 hover:scale-[1.02] transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="temp_preferences_custom">temp_preferences_custom</span>
+<span class="font-label-md text-label-md">Cashmere</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 hover:text-indigo-900 scale-100 hover:scale-[1.02] transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="hardware">hardware</span>
+<span class="font-label-md text-label-md">Leather</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 hover:text-indigo-900 scale-100 hover:scale-[1.02] transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="brush">brush</span>
+<span class="font-label-md text-label-md">Artisans</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 hover:text-indigo-900 scale-100 hover:scale-[1.02] transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-label-md text-label-md">New Arrivals</span>
+</a>
+</li>
+</ul>
+<!-- CTA -->
+<div class="mt-auto mb-4">
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-3 rounded-lg hover:bg-opacity-90 transition-opacity">
+                View Collections
+            </button>
+</div>
+<!-- Footer Links -->
+<div class="border-t border-slate-200 dark:border-slate-800 pt-4">
+<ul class="flex flex-col gap-2">
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 hover:text-indigo-900 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="font-label-md text-label-md">Support</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 hover:text-indigo-900 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col w-full min-w-0">
+<!-- TopAppBar (Visible on all sizes, acts as main header on mobile) -->
+<header class="flex justify-between items-center w-full px-6 h-16 sticky top-0 z-50 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 shadow-sm font-inter text-sm antialiased text-indigo-900 dark:text-indigo-400">
+<!-- Mobile Menu Toggle (Visible only on mobile) -->
+<button class="md:hidden text-slate-500 hover:bg-slate-50 p-2 rounded-lg transition-colors cursor-pointer active:opacity-70">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<!-- Brand / Page Title -->
+<div class="flex-1 md:flex-none">
+<h2 class="text-2xl font-bold tracking-tight text-indigo-900 dark:text-white md:hidden">White Gold</h2>
+<span class="hidden md:block font-headline-md text-headline-md text-on-surface">Цагаан Алт - Ноос, Арьс Ширний Төрөлжсөн Зах Зээл</span>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-4">
+<div class="hidden md:flex relative text-slate-500 dark:text-slate-400">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2" data-icon="search">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border-outline-variant rounded-full focus:ring-primary focus:border-primary font-body-md text-body-md w-64" placeholder="Search premium items..." type="text"/>
+</div>
+<button class="text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 p-2 rounded-full transition-colors cursor-pointer active:opacity-70">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 p-2 rounded-full transition-colors cursor-pointer active:opacity-70 relative">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-secondary-container rounded-full"></span>
+</button>
+<button class="text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 p-1 rounded-full transition-colors cursor-pointer active:opacity-70">
+<span class="material-symbols-outlined text-3xl" data-icon="account_circle" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Page Content -->
+<div class="flex-1 overflow-y-auto p-4 md:p-margin mx-auto max-w-container-max w-full">
+<!-- Hero Section -->
+<section class="relative rounded-xl overflow-hidden mb-margin bg-primary-container h-[400px] flex items-center shadow-md">
+<img alt="Hero Image" class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-overlay" data-alt="close up of soft premium cashmere texture in warm lighting with elegant folds" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHosFv9Hibg5X-FnLxWmeob8OUKkl0fElNajYWNw5IlrIRr8GzvM2iWXGdzbRQm1L8PM3LKnaRRtqgpVisqDZxftuOfI2tZCaDNBCQ1f2S5wVYYfFM120TJOrrtgsyNTxQrmojflK2xyRRRvuR0ZjaT9QCFJ7oj7rwpNSGvJg5_SFAZKJRYZI4l-NLe5tC9T2E63vHGifH4xhZOmPaSdSI0aqzdiDooccTPmS2t8hi2OkYmjlCsi7QfYmTsXSxWnnWM2MLdbshabM"/>
+<div class="relative z-10 p-8 md:p-12 max-w-2xl text-on-primary">
+<h2 class="font-headline-xl text-headline-xl mb-4">Жинхэнэ Монгол Чанар</h2>
+<p class="font-body-lg text-body-lg mb-8 text-inverse-primary">Уламжлалт аргаар боловсруулсан, дээд зэргийн чанартай ноос, ноолуур, арьс ширэн бүтээгдэхүүний сонгомол цуглуулга.</p>
+<button class="bg-secondary-container text-on-secondary-container font-label-md text-label-md px-6 py-3 rounded-lg hover:opacity-90 transition-opacity shadow-sm">
+                        Бүх бүтээгдэхүүн үзэх
+                    </button>
+</div>
+</section>
+<!-- Material Filters -->
+<section class="mb-margin">
+<div class="flex flex-wrap gap-4 items-center mb-6">
+<h3 class="font-headline-md text-headline-md text-on-surface mr-4">Материалаар шүүх:</h3>
+<button class="px-5 py-2 rounded-full border border-outline-variant bg-surface text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors">Бүгд</button>
+<button class="px-5 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md shadow-sm">Ноос</button>
+<button class="px-5 py-2 rounded-full border border-outline-variant bg-surface text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors">Ноолуур</button>
+<button class="px-5 py-2 rounded-full border border-outline-variant bg-surface text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors">Арьс</button>
+</div>
+</section>
+<!-- Bento Grid Products -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-gutter mb-margin">
+<!-- Product 1 -->
+<article class="bg-surface-container-lowest rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow duration-300 border border-surface-variant flex flex-col">
+<div class="relative rounded-lg overflow-hidden mb-4 aspect-square bg-surface-container-low">
+<img alt="Cashmere Sweater" class="w-full h-full object-cover" data-alt="premium beige cashmere sweater elegantly folded on a dark marble surface with soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfUeK8QjPWO1bMMo0kbWm3MrV91Pvy1sa8Sx_HmenEXli9w9UklhlVbBEOC2zv-4nsiv3agp2mxZB1B607guSwgdQvuaB5QbfpihGrZvQWNGFCPoHMRLHMmBjrImIzI68-jwxUz0licp47tnNqyrc1UiByXRNz_Y_hQWkLMZ60ukV-XHlSbTSw4Jh1ek3IG-lMEDGjGvEGDfIg_nwDI5OzMXPWM8NiRssQRciH0w4yEZNtf-m8F_qsNgYYmvH-8vFlCID_H3uphTg"/>
+<div class="absolute top-2 left-2 bg-white/90 backdrop-blur-sm px-2 py-1 rounded flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-tertiary-container text-sm" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label-sm text-label-sm text-on-surface">Verified Quality</span>
+</div>
+<button class="absolute top-2 right-2 p-1.5 bg-white/80 backdrop-blur-sm rounded-full text-outline hover:text-error transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="favorite">favorite</span>
+</button>
+</div>
+<div class="flex-1 flex flex-col">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-label-md text-label-md text-on-surface line-clamp-2">Premium Cashmere Sweater</h4>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-3 flex-1">100% Pure Mongolian Cashmere</p>
+<div class="flex justify-between items-end mt-auto">
+<span class="font-headline-md text-headline-md text-primary">₮ 450,000</span>
+<button class="p-2 bg-primary-container text-on-primary-container rounded-lg hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Product 2 -->
+<article class="bg-surface-container-lowest rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow duration-300 border border-surface-variant flex flex-col lg:col-span-2">
+<div class="flex flex-col md:flex-row gap-4 h-full">
+<div class="relative rounded-lg overflow-hidden md:w-1/2 aspect-video md:aspect-auto bg-surface-container-low">
+<img alt="Leather Bag" class="w-full h-full object-cover" data-alt="high quality rich brown leather travel duffel bag sitting on a rustic wooden table with warm studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXuYmgCY5NlQOA3MBA5u75AY3thYGP5euT13Ji3JYvMKVsm_-1XUlheeGX46sXnJjnUMHXaY4Kk9ODZQOJACaWxTyd3HxZv-FJBo5UQxUEsmYNFAO_3S8n3uet5DmfBvUSo_CK6Jl4MLtkNkzPawg1WiTdaBsie0l7IvfHllO7euyeZpGF49Bqfa7Ik32qbYtVTOgvF09BrUXHCc0I3Toa3zylWrr3QSwZCtEuMmRHeC_jgCFfuZNNMBbrH75Oq6g1LF6tVhka9Sc"/>
+<div class="absolute top-2 left-2 bg-white/90 backdrop-blur-sm px-2 py-1 rounded flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-tertiary-container text-sm" data-icon="military_tech" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+<span class="font-label-sm text-label-sm text-on-surface">Authentic Mongolian</span>
+</div>
+</div>
+<div class="flex-1 flex flex-col py-2">
+<div class="flex justify-between items-start mb-2">
+<h4 class="font-headline-md text-headline-md text-on-surface">Leather Travel Bag</h4>
+<button class="text-outline hover:text-error transition-colors">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Handcrafted from premium genuine leather, this spacious travel bag features reinforced stitching and durable brass hardware. Perfect for weekend getaways.</p>
+<div class="mt-auto">
+<div class="flex items-center gap-2 mb-4">
+<span class="px-2 py-1 bg-surface-container-high rounded text-xs font-medium text-on-surface-variant">Арьс</span>
+<span class="px-2 py-1 bg-surface-container-high rounded text-xs font-medium text-on-surface-variant">Гар хийц</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-headline-md text-headline-md text-primary">₮ 850,000</span>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg font-label-md text-label-md hover:opacity-90 transition-opacity">
+                                        Сагсанд нэмэх
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- Product 3 -->
+<article class="bg-surface-container-lowest rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow duration-300 border border-surface-variant flex flex-col">
+<div class="relative rounded-lg overflow-hidden mb-4 aspect-square bg-surface-container-low">
+<img alt="Wool Rug" class="w-full h-full object-cover" data-alt="intricately patterned traditional mongolian wool rug draped over a wooden chair in a sunlit room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRtdZPlXiBtAZm0uY4bdce_p87b1WVkWnL_lg0QBEKgVFTLRRXvVuXXZQrVup38ubq2z2iYma_5bLJ2Qwx9md3LqLTYhDv8aZHSo9R0Pf-C3hsRWvfO0cf273Br1FnTQJnq9xiAIjvsM8OSWcWKuTVNuzYiy0O38K6Vkgm03qbvcGPhBHCehn6U1t5uR2vxOjBXzGqcBo53aZVSX54B92FapyrFe7XV0GnUKyYnYbmNkfbOW9qywlhGCdH6_972evwH0V3odZPlLY"/>
+<div class="absolute top-2 left-2 bg-white/90 backdrop-blur-sm px-2 py-1 rounded flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-tertiary-container text-sm" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label-sm text-label-sm text-on-surface">Verified Quality</span>
+</div>
+</div>
+<div class="flex-1 flex flex-col">
+<h4 class="font-label-md text-label-md text-on-surface mb-1">Hand-stitched Wool Rug</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-3 flex-1">Traditional patterns, 100% sheep wool</p>
+<div class="flex justify-between items-end mt-auto">
+<span class="font-headline-md text-headline-md text-primary">₮ 320,000</span>
+<button class="p-2 bg-primary-container text-on-primary-container rounded-lg hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+</div>
+</div>
+</article>
+</section>
+<!-- Artisan Tenders Section -->
+<section class="bg-surface-container rounded-xl p-8 shadow-sm border border-surface-variant relative overflow-hidden">
+<div class="absolute right-0 top-0 w-64 h-full bg-gradient-to-l from-primary/10 to-transparent pointer-events-none"></div>
+<div class="max-w-3xl relative z-10">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-secondary-container text-3xl" data-icon="handyman">handyman</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Artisan Tenders</h2>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-6">Looking for something unique? Submit a request for custom leather or wool work to our network of verified traditional artisans.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label-md text-label-md hover:bg-opacity-90 transition-opacity flex items-center justify-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-sm" data-icon="add_circle">add_circle</span>
+                            Шинэ захиалга үүсгэх
+                        </button>
+<button class="bg-surface-container-lowest text-primary border border-primary px-6 py-3 rounded-lg font-label-md text-label-md hover:bg-surface-container-low transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="list_alt">list_alt</span>
+                            Нээлттэй захиалгууд харах
+                        </button>
+</div>
+</div>
+</section>
+</div>
+</main>
+<script src="assets/site.js"></script></body></html>

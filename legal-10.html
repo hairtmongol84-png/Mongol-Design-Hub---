@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+<html class="light" lang="mn"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Тусламжийн Төв - Mongol Design Hub</title>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary": "#001815",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#e5eeff",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#8590a6",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#ffb690",
+                        "on-secondary": "#ffffff",
+                        "background": "#f8f9ff",
+                        "on-surface": "#0b1c30",
+                        "on-tertiary-fixed-variant": "#005049",
+                        "tertiary-fixed-dim": "#6bd8cb",
+                        "surface-container-low": "#eff4ff",
+                        "secondary-container": "#fd761a",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-tertiary-fixed": "#00201d",
+                        "on-primary-fixed": "#111c2d",
+                        "outline": "#75777d",
+                        "surface-container-high": "#dce9ff",
+                        "secondary": "#9d4300",
+                        "secondary-fixed": "#ffdbca",
+                        "on-tertiary-container": "#28a094",
+                        "surface-variant": "#d3e4fe",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#eaf1ff",
+                        "tertiary-container": "#002f2a",
+                        "primary-container": "#1e293b",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#d8e3fb",
+                        "surface-tint": "#545f73",
+                        "surface": "#f8f9ff",
+                        "on-secondary-fixed-variant": "#783200",
+                        "outline-variant": "#c5c6cd",
+                        "surface-dim": "#cbdbf5",
+                        "tertiary-fixed": "#89f5e7",
+                        "primary": "#091426",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#341100",
+                        "surface-bright": "#f8f9ff",
+                        "on-primary-fixed-variant": "#3c475a",
+                        "primary-fixed-dim": "#bcc7de",
+                        "on-secondary-container": "#5c2400",
+                        "on-surface-variant": "#45474c",
+                        "on-background": "#0b1c30",
+                        "inverse-primary": "#bcc7de",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#213145"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "margin": "32px",
+                        "gutter": "24px"
+                    },
+                    fontFamily: {
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    fontSize: {
+                        "label-sm": ["12px", { lineHeight: "1.4", fontWeight: "500" }],
+                        "label-md": ["14px", { lineHeight: "1.4", fontWeight: "600" }],
+                        "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+                        "headline-md": ["24px", { lineHeight: "1.3", fontWeight: "600" }],
+                        "headline-xl": ["40px", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "body-md": ["16px", { lineHeight: "1.5", fontWeight: "400" }],
+                        "headline-lg": ["32px", { lineHeight: "1.2", fontWeight: "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-hidden flex h-screen">
+<!-- SideNavBar Component -->
+<nav class="fixed left-0 top-0 bottom-0 flex flex-col pt-16 h-screen w-64 border-r bg-slate-50 border-slate-200 z-40">
+<div class="px-6 pb-6 border-b border-slate-200 flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<img alt="Admin User" class="w-10 h-10 rounded-full" data-alt="Admin User" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASyys3h-Y5uvmY848ZCiNAoNMMDf6GgV2k65OBBO27SAqskAZw6-FUdyxPZCWbDYq5pEWR5HV10BMzJDyiJ07baF_ANf7yHkIBXfXxjVGJi2zkwaJmdHDPkbG92bzITCx_ANbSsxtHR2ZtZ2d5IAHCKhYyIC1GpPl6O9AxBGqyKeHfY72cXx96GAiP0cAwZBSd2Sdf2yLO-uhjJqwxvuJsTxxvvMhhdwM5dNuU8LiAk3Cpmk-j1U4d2PSMQJ9hk8u73vc48k27pVQ"/>
+<div>
+<h2 class="text-indigo-900 font-label-md text-label-md">Admin Portal</h2>
+<p class="text-slate-500 font-label-sm text-label-sm">System Overview</p>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary py-2 px-4 rounded-lg font-label-md text-label-md hover:opacity-90 transition-opacity">
+                Generate Report
+            </button>
+</div>
+<div class="flex-1 overflow-y-auto py-4 flex flex-col gap-1 px-3">
+<!-- Inactive Tab -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium font-['Inter'] text-slate-600 hover:bg-slate-100 hover:pl-2 transition-all duration-200 cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+<!-- Inactive Tab -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium font-['Inter'] text-slate-600 hover:bg-slate-100 hover:pl-2 transition-all duration-200 cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">shopping_bag</span>
+                Orders
+            </a>
+<!-- Inactive Tab -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium font-['Inter'] text-slate-600 hover:bg-slate-100 hover:pl-2 transition-all duration-200 cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">gavel</span>
+                Disputes
+            </a>
+<!-- Active Tab -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium font-['Inter'] bg-indigo-50 text-indigo-700 border-r-4 border-indigo-600 hover:pl-2 transition-all duration-200 cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">help_center</span>
+                Help Center
+            </a>
+<!-- Inactive Tab -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium font-['Inter'] text-slate-600 hover:bg-slate-100 hover:pl-2 transition-all duration-200 cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">shield_person</span>
+                Security Audit
+            </a>
+<!-- Inactive Tab -->
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium font-['Inter'] text-slate-600 hover:bg-slate-100 hover:pl-2 transition-all duration-200 cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">analytics</span>
+                Analytics
+            </a>
+</div>
+<div class="p-3 border-t border-slate-200 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium font-['Inter'] text-slate-600 hover:bg-slate-100 hover:pl-2 transition-all duration-200 cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">logout</span>
+                Logout
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium font-['Inter'] text-slate-600 hover:bg-slate-100 hover:pl-2 transition-all duration-200 cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">chat_bubble_outline</span>
+                Feedback
+            </a>
+</div>
+</nav>
+<!-- Main Content Wrapper -->
+<div class="ml-64 flex-1 flex flex-col h-screen overflow-hidden relative">
+<!-- TopAppBar Component -->
+<header class="sticky top-0 z-50 flex h-16 items-center justify-between px-6 w-full bg-white border-b border-slate-200 shadow-sm font-['Inter'] antialiased">
+<div class="flex items-center gap-8">
+<h1 class="text-xl font-bold tracking-tight text-indigo-900">Mongol Design Hub</h1>
+<div class="relative hidden lg:flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-slate-400">search</span>
+<input class="pl-10 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 w-64 transition-all" placeholder="Search..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-slate-900 hover:bg-slate-50 transition-colors p-2 rounded-full active:scale-95 duration-150">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-slate-900 hover:bg-slate-50 transition-colors p-2 rounded-full active:scale-95 duration-150">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<button class="text-slate-900 hover:bg-slate-50 transition-colors p-2 rounded-full active:scale-95 duration-150">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="h-6 w-px bg-slate-200 mx-2"></div>
+<button class="text-slate-900 font-medium text-sm hover:bg-slate-50 transition-colors px-3 py-2 rounded-lg active:scale-95 duration-150">
+                    Support
+                </button>
+<button class="bg-indigo-600 text-white font-medium text-sm px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors active:scale-95 duration-150">
+                    New Ticket
+                </button>
+<img alt="User profile avatar" class="w-8 h-8 rounded-full ml-2 border border-slate-200 cursor-pointer" data-alt="User profile avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDv8VnTYQelIxYb_s1DmTIHVnOBoEFawFQ2ffvp0sV1_kXBCRjStZRX8WzBFnbx9aYMJG2Vp5H_dNri-m6OB8W9VWL-0s6i8q8upUoGl-u6uTrijdB74v4qTtgOXxMc71KYvASOT6rbbjzfaNa3kBcDDHwY3hi-aLL5ag-Lu0fF23Nb08qoKVFVeWjKi5j0CSQqnyAlwX111Ai27Vm4W03GBzvuGOEIqSKEPcmB_-lDuI1miULd3PVplfobSelr6gqB3UJw7AWoAjk"/>
+</div>
+</header>
+<!-- Canvas -->
+<main class="flex-1 overflow-y-auto w-full">
+<div class="max-w-[1280px] mx-auto px-6 py-8">
+<!-- Hero Section -->
+<section class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/30 p-12 mb-8 flex flex-col items-center justify-center text-center relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-surface-container-low to-surface-container-lowest opacity-50"></div>
+<div class="relative z-10 max-w-2xl">
+<h1 class="font-headline-xl text-headline-xl text-on-surface mb-4">Тусламжийн Төв</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">Танд юу туслах вэ? Асуултаа хайх эсвэл доорх категориудаас сонгоно уу.</p>
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-[24px]">search</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-bright border border-outline-variant rounded-lg font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary transition-all shadow-sm" placeholder="Нийтлэг асуултууд, зааварчилгаа хайх..." type="text"/>
+</div>
+</div>
+</section>
+<!-- Action Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter mb-12">
+<button class="flex items-center gap-4 bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/30 hover:shadow-md transition-shadow group text-left">
+<div class="w-12 h-12 rounded-full bg-surface-container-low text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">support_agent</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Тусламжийн тасалбар нээх</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Бидний багтай шууд холбогдож асуудлаа шийдвэрлэх</p>
+</div>
+</button>
+<button class="flex items-center gap-4 bg-surface-container-lowest p-6 rounded-xl shadow-sm border border-outline-variant/30 hover:shadow-md transition-shadow group text-left">
+<div class="w-12 h-12 rounded-full bg-surface-container-low text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">library_books</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Түгээмэл асуултууд</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Хамгийн их асуугддаг асуултуудын хариулт</p>
+</div>
+</button>
+</div>
+<!-- Bento Grid: User Segments -->
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-6">Хэрэглэгчийн гарын авлага</h2>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-12">
+<!-- Buyers -->
+<div class="col-span-1 md:col-span-4 bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/30 flex flex-col">
+<div class="w-12 h-12 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center mb-6">
+<span class="material-symbols-outlined">shopping_cart</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Худалдан авагчид</h3>
+<ul class="space-y-4 flex-1">
+<li>
+<a class="flex items-start gap-3 group" href="#">
+<span class="material-symbols-outlined text-outline mt-0.5 group-hover:text-primary transition-colors">article</span>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Тендер хэрхэн эхлүүлэх вэ?</span>
+</a>
+</li>
+<li>
+<a class="flex items-start gap-3 group" href="#">
+<span class="material-symbols-outlined text-outline mt-0.5 group-hover:text-primary transition-colors">verified_user</span>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Эскроу төлбөрийн аюулгүй байдал</span>
+</a>
+</li>
+<li>
+<a class="flex items-start gap-3 group" href="#">
+<span class="material-symbols-outlined text-outline mt-0.5 group-hover:text-primary transition-colors">manage_search</span>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Шилдэг дизайнерыг хэрхэн сонгох</span>
+</a>
+</li>
+</ul>
+<button class="mt-6 font-label-md text-label-md text-primary hover:underline self-start">Бүгдийг үзэх →</button>
+</div>
+<!-- Designers -->
+<div class="col-span-1 md:col-span-4 bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/30 flex flex-col">
+<div class="w-12 h-12 rounded-full bg-tertiary-fixed-dim text-on-tertiary-fixed flex items-center justify-center mb-6">
+<span class="material-symbols-outlined">brush</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Дизайнерууд</h3>
+<ul class="space-y-4 flex-1">
+<li>
+<a class="flex items-start gap-3 group" href="#">
+<span class="material-symbols-outlined text-outline mt-0.5 group-hover:text-primary transition-colors">copyright</span>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Зохиогчийн эрх ба өмчлөл</span>
+</a>
+</li>
+<li>
+<a class="flex items-start gap-3 group" href="#">
+<span class="material-symbols-outlined text-outline mt-0.5 group-hover:text-primary transition-colors">payments</span>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Роялти төлбөр хэрхэн ажилладаг вэ?</span>
+</a>
+</li>
+<li>
+<a class="flex items-start gap-3 group" href="#">
+<span class="material-symbols-outlined text-outline mt-0.5 group-hover:text-primary transition-colors">work</span>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Портфолио үүсгэх заавар</span>
+</a>
+</li>
+</ul>
+<button class="mt-6 font-label-md text-label-md text-primary hover:underline self-start">Бүгдийг үзэх →</button>
+</div>
+<!-- Sellers -->
+<div class="col-span-1 md:col-span-4 bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/30 flex flex-col">
+<div class="w-12 h-12 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center mb-6">
+<span class="material-symbols-outlined">storefront</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Борлуулагчид</h3>
+<ul class="space-y-4 flex-1">
+<li>
+<a class="flex items-start gap-3 group" href="#">
+<span class="material-symbols-outlined text-outline mt-0.5 group-hover:text-primary transition-colors">receipt_long</span>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Татварын удирдамж ба тайлан</span>
+</a>
+</li>
+<li>
+<a class="flex items-start gap-3 group" href="#">
+<span class="material-symbols-outlined text-outline mt-0.5 group-hover:text-primary transition-colors">fact_check</span>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Аж ахуйн нэгжийн баталгаажуулалт</span>
+</a>
+</li>
+<li>
+<a class="flex items-start gap-3 group" href="#">
+<span class="material-symbols-outlined text-outline mt-0.5 group-hover:text-primary transition-colors">inventory_2</span>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Бүтээгдэхүүн байршуулах дүрэм</span>
+</a>
+</li>
+</ul>
+<button class="mt-6 font-label-md text-label-md text-primary hover:underline self-start">Бүгдийг үзэх →</button>
+</div>
+</div>
+<!-- Video Tutorials -->
+<div class="flex items-center justify-between mb-6">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Видео хичээлүүд</h2>
+<button class="font-label-md text-label-md text-primary hover:underline">Бүх видеог үзэх</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-12">
+<!-- Video Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/30 overflow-hidden group cursor-pointer">
+<div class="relative h-48 bg-surface-container-high w-full">
+<img alt="Video thumbnail" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" data-alt="professional modern clean UI design interface showing a dashboard on a laptop screen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7d27Q2lWHLx5dRHCMdhMKl-0TeM0YucThwHfjfQcHbLb12HTfk58JUGrsC3hbOt7CikoiNzn2cErBQ8cA-vWlHpy1pctA30C4NDTnc2sMp8EWGQjwfTdgz3DLxgTP48U3A0xROKS-bmM0IAMPnZB_CV_8vJzcK-5v_fF-oJ5zhXE4KadO6KzGg-18XEA9pO-E7uI_jm6QoOnCgzVfLoYYrSTUKDMjghBCJEeCWWeLMoDlRErPEshMf4E_rgZstLedtVxI1A3PKs4"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest/90 text-primary flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="p-4">
+<h4 class="font-label-md text-label-md text-on-surface mb-1">Системд хэрхэн бүртгүүлэх вэ?</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Хугацаа: 2:45</p>
+</div>
+</div>
+<!-- Video Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/30 overflow-hidden group cursor-pointer">
+<div class="relative h-48 bg-surface-container-high w-full">
+<img alt="Video thumbnail" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" data-alt="hands typing on a modern laptop keyboard close up soft warm lighting business setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRYyUE2tkZ9myao7ZIGx4dGOFSOwvmrXfBQuVH66DFFDn11TODWb38NFNyC8NRZAd-HWLY8lLy3A4O7kuO4txPKLRfYRxCfcLsh71neyknV9sPYvGNBQSNSyxzP8ekA9c5ZohJW59nS92lfiziekUuO29CuUmmpLZb-wk0AVv8Gi8GTTgYCr3C4ZtsuICF3BjW0Hxn8et_zGacTvTEBHWm88xn7kiD_5fHTlSoeFJdCU1JlrTZF7WQm9njJa48x9R3IV1VbD75Pt8"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest/90 text-primary flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="p-4">
+<h4 class="font-label-md text-label-md text-on-surface mb-1">Анхны тендерийг үүсгэх</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Хугацаа: 5:20</p>
+</div>
+</div>
+<!-- Video Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant/30 overflow-hidden group cursor-pointer">
+<div class="relative h-48 bg-surface-container-high w-full">
+<img alt="Video thumbnail" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" data-alt="person holding a mobile phone looking at financial charts modern clean office background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFr8D07Pak9pRxjI69KYg09Ra8ENsC2FwaK2XPdzYrXXbKdFKQocmEKakLxpV2qiOk8o--6FnwRiE3krWBCAuaucdYQMjVAQZ5kkWlHrI8oQUZHiRn02vjZi0oj9QY6AHQmlhveE8zDMhzRnG90UfZCJaYJTTBzcfni5Xw20AMMC0TuX9Bal6wYagBOgbhXrYM7s9D2oBzNB1GsJflrtUiAFfz8O6LuQ7a9WxEOkJzvsPgTjjSHwSQvCcQXvQumUTUJWK08Lt3auY"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest/90 text-primary flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="p-4">
+<h4 class="font-label-md text-label-md text-on-surface mb-1">Төлбөр тооцоог удирдах</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Хугацаа: 4:15</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<script src="assets/site.js"></script></body></html>
